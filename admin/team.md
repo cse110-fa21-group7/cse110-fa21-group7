@@ -16,7 +16,7 @@ Problem-solving: Be pro-active in fixing issues.
 
 ## Roster
 
-Kunal Arora
+Kunal Arora: [Github](https://github.com/aroralanuk)
 
 Jiayan Dong
 
