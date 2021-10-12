@@ -16,20 +16,22 @@ Problem-solving: Be pro-active in fixing issues.
 
 ## Roster
 
-Vince Rothenberg
+Kunal Arora
 
-Chris Harness
+Jiayan Dong
+
+Christopher Harness
 
 Jianfan Huo
 
-Kunal Arora
+Kimberly Liu
+
+Yifan Lu
 
 Nidhin Madhu
 
-Shu Xie
+Vincent Rothenberg
 
 Yalong Tian
-
-Yifan Lu
 
 Youjia Weng
