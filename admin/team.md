@@ -30,7 +30,7 @@ Yifan Lu
 
 Nidhin Madhu
 
-Vincent Rothenberg [Github](https://github.com/vrothenbergUCSD)
+Vincent Rothenberg: [Github](https://github.com/vrothenbergUCSD)
 
 Yalong Tian
 
