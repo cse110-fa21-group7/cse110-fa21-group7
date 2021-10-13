@@ -24,7 +24,7 @@ Christopher Harness
 
 Jianfan Huo
 
-Kimberly Liu
+Kimberly Liu: [Github](https://github.com/LJW0105)
 
 Yifan Lu
 
