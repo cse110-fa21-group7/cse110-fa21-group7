@@ -1,8 +1,11 @@
 # Team ASAP
 
 ## Brand
-
-// Insert Logo here
+<img src="./branding/logo.png"
+     alt="team logo"
+     style="float: left; margin-right: 10px;"
+     width="100px"
+     height="100px"/>
 
 ## Values
 
