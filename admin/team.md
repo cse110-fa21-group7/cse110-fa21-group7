@@ -35,6 +35,6 @@ Nidhin Madhu
 
 Vincent Rothenberg: [Github](https://github.com/vrothenbergUCSD)
 
-Yalong Tian
+Yalong Tian： Hi! I'm a third year CS major in Revelle College.  I like to play video games and read books in my free time. Here's a link to my Github Pages: [Github](https://github.com/Yalong-T)
 
 Youjia Weng
