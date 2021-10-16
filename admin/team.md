@@ -25,7 +25,7 @@ Problem-solving: Be pro-active in fixing issues.
 
 3. Christopher Harness
 
-4. Jianfan Huo
+4. Jianfan Huo: [Github](https://github.com/WilliamHJF) I'm a senior CS major from ERC. I enjoy playing basketball and watching movies in my free time.
 
 5. Kimberly Liu: [Github](https://github.com/LJW0105) I'm a third-year Math-CS major from Warren College. I really like playing TT🏓 and watching Netflix.
 
