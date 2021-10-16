@@ -19,22 +19,22 @@ Problem-solving: Be pro-active in fixing issues.
 
 ## Roster
 
-Kunal Arora: [Github](https://github.com/aroralanuk)
+1. Kunal Arora: [Github](https://github.com/aroralanuk)
 
-Jiayan Dong: [Github](https://github.com/Jiayan-Dong) I'm a senior computer science student at UCSD and I'm interested in computer architecture.
+2. Jiayan Dong: [Github](https://github.com/Jiayan-Dong) I'm a senior computer science student at UCSD and I'm interested in computer architecture.
 
-Christopher Harness
+3. Christopher Harness
 
-Jianfan Huo
+4. Jianfan Huo
 
-Kimberly Liu: [Github](https://github.com/LJW0105) I'm a third-year Math-CS major from Warren College. I really like playing TT🏓 and watching Netflix.
+5. Kimberly Liu: [Github](https://github.com/LJW0105) I'm a third-year Math-CS major from Warren College. I really like playing TT🏓 and watching Netflix.
 
-Yifan Lu
+6. Yifan Lu
 
-Nidhin Madhu
+7. Nidhin Madhu
 
-Vincent Rothenberg: [Github](https://github.com/vrothenbergUCSD)
+8. Vincent Rothenberg: [Github](https://github.com/vrothenbergUCSD)
 
-Yalong Tian： Hi! I'm a third year CS major in Revelle College.  I like to play video games and read books in my free time. Here's a link to my Github Pages: [Github](https://github.com/Yalong-T)
+9. Yalong Tian： Hi! I'm a third year CS major in Revelle College.  I like to play video games and read books in my free time. Here's a link to my Github Pages: [Github](https://github.com/Yalong-T)
 
-Youjia Weng
+10. Youjia Weng
