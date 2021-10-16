@@ -29,7 +29,7 @@ Problem-solving: Be pro-active in fixing issues.
 
 5. Kimberly Liu: [Github](https://github.com/LJW0105) I'm a third-year Math-CS major from Warren College. I really like playing TT🏓 and watching Netflix.
 
-6. Yifan Lu
+6. Yifan Lu: [Github](https://github.com/FAN-666666) I'm a third-year CS major from Warren.
 
 7. Nidhin Madhu
 
