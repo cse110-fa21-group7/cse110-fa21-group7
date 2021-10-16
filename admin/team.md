@@ -21,7 +21,7 @@ Problem-solving: Be pro-active in fixing issues.
 
 Kunal Arora: [Github](https://github.com/aroralanuk)
 
-Jiayan Dong
+Jiayan Dong: [Github](https://github.com/Jiayan-Dong) I'm a senior computer science student at UCSD and I'm interested in computer architecture.
 
 Christopher Harness
 
