@@ -27,7 +27,7 @@ Christopher Harness
 
 Jianfan Huo
 
-Kimberly Liu: [Github](https://github.com/LJW0105)
+Kimberly Liu: [Github](https://github.com/LJW0105) I'm a third-year Math-CS major from Warren College. I really like playing TT🏓 and watching Netflix.
 
 Yifan Lu
 
