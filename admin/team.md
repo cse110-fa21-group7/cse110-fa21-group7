@@ -33,7 +33,7 @@ Problem-solving: Be pro-active in fixing issues.
 
 7. Nidhin Madhu [Github](https://github.com/nidhinmadhu) I'm a senior CogSci Major student from Warren College. I enjoy going out and traveling in my free time.
 
-8. Vincent Rothenberg: [Github](https://github.com/vrothenbergUCSD)
+8. Vincent Rothenberg: [Github](https://github.com/vrothenbergUCSD) I'm a senior CS major from Revelle.  I enjoy hiking, finance, and reading cool books. 
 
 9. Yalong Tian： Hi! I'm a third year CS major in Revelle College.  I like to play video games and read books in my free time. Here's a link to my Github Pages: [Github](https://github.com/Yalong-T)
 
