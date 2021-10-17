@@ -23,7 +23,7 @@ Problem-solving: Be pro-active in fixing issues.
 
 2. Jiayan Dong: [Github](https://github.com/Jiayan-Dong) I'm a senior computer science student at UCSD and I'm interested in computer architecture.
 
-3. Christopher Harness
+3. Christopher Harness: [Github](https://github.com/chrisharness) Hi, I'm a 2nd-year transfer CS Major from Warren College. I like cooking, playing video games, and spending time with friends.
 
 4. Jianfan Huo: [Github](https://github.com/WilliamHJF) I'm a senior CS major from ERC. I enjoy playing basketball and watching movies in my free time.
 
