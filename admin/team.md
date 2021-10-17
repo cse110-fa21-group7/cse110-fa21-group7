@@ -19,7 +19,7 @@ Problem-solving: Be pro-active in fixing issues.
 
 ## Roster
 
-1. Kunal Arora: [Github](https://github.com/aroralanuk)
+1. Kunal Arora: I'm a junior Math-CS student from ERC. I'm interested in blockchain, cycling, and travelling around. Here's my [Github](https://github.com/aroralanuk)
 
 2. Jiayan Dong: [Github](https://github.com/Jiayan-Dong) I'm a senior computer science student at UCSD and I'm interested in computer architecture.
 
