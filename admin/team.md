@@ -37,4 +37,4 @@ Problem-solving: Be pro-active in fixing issues.
 
 9. Yalong Tian： Hi! I'm a third year CS major in Revelle College.  I like to play video games and read books in my free time. Here's a link to my Github Pages: [Github](https://github.com/Yalong-T)
 
-10. Youjia Weng
+10. Youjia Weng: [Github](https://github.com/BrianWengAlreadyTaken)
