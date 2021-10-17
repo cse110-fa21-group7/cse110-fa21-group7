@@ -31,7 +31,7 @@ Problem-solving: Be pro-active in fixing issues.
 
 6. Yifan Lu: [Github](https://github.com/FAN-666666) I'm a third-year CS major from Warren.
 
-7. Nidhin Madhu
+7. Nidhin Madhu [Github](https://github.com/nidhinmadhu) I'm a senior CogSci Major student from Warren College. I enjoy going out and traveling in my free time.
 
 8. Vincent Rothenberg: [Github](https://github.com/vrothenbergUCSD)
 
