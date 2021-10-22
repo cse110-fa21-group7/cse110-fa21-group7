@@ -28,8 +28,6 @@ Note Taker: Christopher Harness
 
 ### Group Roles
 
-* Vince and Chris will be the designers
-* Others will be assigned after Yalong check the google form results and will be dynamic as the project evolves
   
 *  Yalong Tian (Back-end/Test)
    Jingwen Liu (Back-end/Test)
