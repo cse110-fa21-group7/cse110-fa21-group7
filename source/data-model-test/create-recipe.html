@@ -41,11 +41,12 @@
       <div class="row">
         <div class="col-lg-6">
           <div class="bs-component">
-            <form>
+            <form action="create-recipe.html" method="post" id="recipeForm">
               <fieldset>
-                <div class="form-group">
-                  <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Recipe Title</label>
-                  <input class="form-control form-control-lg" type="text" placeholder="Enter your recipe name.." id="inputLarge">
+                <div class="form-group has-danger has-success">
+                  <label class="col-form-label col-form-label-lg mt-4" for="recipeTitle">Recipe Title</label>
+                  <input class="form-control form-control-lg" type="text" placeholder="Enter your recipe name" id="recipeTitle">
+                  <div class="invalid-feedback"></div>
                 </div>
                 <div class="form-group">
                   <label for="formFile" class="form-label mt-4">Upload image</label>
@@ -55,52 +56,65 @@
                 <legend class="mt-4">Ingredients</legend>
 
                 <div class="form-group">
-                  <label class="col-form-label mt-4" for="inputDefault">Ingredient 1</label>
-                  <input type="text" class="form-control" placeholder="Ingredient" id="ingredient1name">
+                  <div class="col-form-label mt-4">
+                    <label class="col-form-label mt-4" for="inputDefault">Ingredient 1</label>
+                    <input type="text" class="form-control" placeholder="Ingredient" id="ingredient1name">
+                    <div class="invalid-feedback"></div>
+                  </div>
 
                   <label class="form-label mt-4">Amount</label>
                   <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)" id="ingredient1amount">
                     <span class="input-group-text">g</span>
+                    <small></small>
                   </div>
 
                   <label class="form-label mt-4">Ingredient cost</label>
                   <div class="input-group mb-3">
                     <span class="input-group-text">$</span>
                     <input type="text" class="form-control" placeholder="1.00" aria-label="Amount" id="ingredient1cost">
+                    <small></small>
                   </div>
+                  
                 </div>
 
                 <div class="form-group">
-                  <label class="col-form-label mt-4" for="inputDefault">Ingredient 2</label>
-                  <input type="text" class="form-control" placeholder="Ingredient" id="ingredient2name">
+                  <div class="col-form-label mt-4">
+                    <label class="col-form-label mt-4" for="inputDefault">Ingredient 2</label>
+                    <input type="text" class="form-control" placeholder="Ingredient" id="ingredient2name">
+                    <small></small>
+                  </div>
 
                   <label class="form-label mt-4">Amount</label>
                   <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)" id="ingredient2amount">
                     <span class="input-group-text">g</span>
+                    <small></small>
                   </div>
 
                   <label class="form-label mt-4">Ingredient cost</label>
                   <div class="input-group mb-3">
                     <span class="input-group-text">$</span>
                     <input type="text" class="form-control" placeholder="1.00" aria-label="Amount" id="ingredient2cost">
+                    <small></small>
                   </div>
                 </div>
                 <legend class="mt-4">Steps</legend>
                 <div class="form-group">
                   <label for="exampleTextarea" class="form-label mt-4">Step 1</label>
                   <textarea class="form-control" id="step1" rows="3"></textarea>
+                  <small></small>
                 </div>
                 <div class="form-group">
                   <label for="exampleTextarea" class="form-label mt-4">Step 2</label>
                   <textarea class="form-control" id="step2" rows="3"></textarea>
+                  <small></small>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </fieldset>
             
             </form>
-        </div>
+          </div>
         </div>
       </div>
     </div>
