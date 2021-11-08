@@ -1,4 +1,4 @@
-# [Use cost levels for recipes' budgets]
+# Use cost levels for recipes' budgets
 
 * Status: Accepted
 * Deciders: Yifan Lu and Vincent Rothenberg
@@ -10,8 +10,8 @@ The target users of our website are college students who are sensitive to budget
 
 ## Considered Options
 
-1. 1 let users input an exact amount for estimated costs. For example, 17 dollars
-2. 2 Give users cost level options ranging from 1 to 3. For example, cost level 2
+1. Let users input an exact amount for estimated costs. For example, 17 dollars
+2. Give users cost level options ranging from 1 to 3. For example, cost level 2
 
 ## Decision Outcome
 We decide to use price levels to represent total budget of a recipe
@@ -21,8 +21,10 @@ We decide to use price levels to represent total budget of a recipe
 
 ### [option 1]
 Pros: Give recipe viewers a more precise sense of recipe costs
+
 Cons: hard for recipe creators to estimate
 
 ### [option 2]
 Pros: Simple for recipe creators to estimate costs
+
 Cons: unable to give precise estimations for costs
