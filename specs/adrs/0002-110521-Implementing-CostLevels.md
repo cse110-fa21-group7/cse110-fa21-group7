@@ -14,7 +14,7 @@ The target users of our website are college students who are sensitive to budget
 2. Give users cost level options ranging from 1 to 3. For example, cost level 2
 
 ## Decision Outcome
-We decide to use price levels to represent total budget of a recipe
+We decide to use cost levels to represent the total cost of a recipe
 
 
 ## Pros and Cons of the Options
