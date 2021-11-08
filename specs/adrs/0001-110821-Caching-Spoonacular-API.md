@@ -20,8 +20,10 @@ We decided to pursue storing the results of queries to the Spoonacular API in a 
 
 ### [option 1]
 Pros: Faster response time.  Reduces number of calls to API.  Saves money / reduces chance of hitting limit of 150 searches money. 
+
 Cons: More complex / difficult to implement.
 
 ### [option 2]
 Pros: Simple to implement.
+
 Cons: Slower and more expensive.
