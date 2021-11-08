@@ -25,5 +25,3 @@ Cons: More complex / difficult to implement.
 ### [option 2]
 Pros: Simple to implement.
 Cons: Slower and more expensive.
-
-### [option 3]
