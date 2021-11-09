@@ -55,25 +55,25 @@
                 
                 <legend class="mt-4">Ingredients</legend>
 
-                <div class="form-group">
-                  <div class="col-form-label mt-4">
+                <div class="form-group ">
+                  <div class="col-form-label mt-4 has-danger has-success">
                     <label class="col-form-label mt-4" for="inputDefault">Ingredient 1</label>
                     <input type="text" class="form-control" placeholder="Ingredient" id="ingredient1name">
                     <div class="invalid-feedback"></div>
                   </div>
 
                   <label class="form-label mt-4">Amount</label>
-                  <div class="input-group mb-3">
+                  <div class="input-group mb-3 has-danger has-success">
                     <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)" id="ingredient1amount">
                     <span class="input-group-text">g</span>
-                    <small></small>
+                    <div class="invalid-feedback"></div>
                   </div>
 
                   <label class="form-label mt-4">Ingredient cost</label>
                   <div class="input-group mb-3">
                     <span class="input-group-text">$</span>
                     <input type="text" class="form-control" placeholder="1.00" aria-label="Amount" id="ingredient1cost">
-                    <small></small>
+                    <div class="invalid-feedback"></div>
                   </div>
                   
                 </div>
@@ -100,10 +100,10 @@
                   </div>
                 </div>
                 <legend class="mt-4">Steps</legend>
-                <div class="form-group">
+                <div class="form-group has-danger has-success">
                   <label for="exampleTextarea" class="form-label mt-4">Step 1</label>
                   <textarea class="form-control" id="step1" rows="3"></textarea>
-                  <small></small>
+                  <div class="invalid-feedback"></div>
                 </div>
                 <div class="form-group">
                   <label for="exampleTextarea" class="form-label mt-4">Step 2</label>
