@@ -8,7 +8,11 @@
   <title>Back End Testing</title>
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.png"/>
 
-  <!-- https://bootswatch.com/minty/ -->
+  <!-- Web Components -->
+  <script src="assets/components/ReadRecipe.js" type="module"></script>
+
+  <!-- Router -->
+  <script src="assets/scripts/Router.js" type="module"></script>
 
 
   <!-- Main Stylesheets & Scripts -->
@@ -19,6 +23,37 @@
 
 <body class style>
   <section class="section--navbar">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" id="ASAP-logo-home">ASAP Recipe</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarColor03">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#Cookbook" id="link-cookbook">Cookbook</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Create" id="link-create-recipe">Create</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Read" id="link-read-recipe">Read</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </section>
+  
+
+  <!--
+    <section class="section--navbar shown">
     <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary" style="">
       <div class="container">
         <a href="#" class="navbar-brand" id="ASAP-logo-home">ASAP Recipe</a>
@@ -34,6 +69,9 @@
               <a class="nav-link" href="#Create" id="link-create-recipe">Create</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#Read" id="link-read-recipe">Read</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#Help" id="link-help">Help</a>
             </li>
           </ul>
@@ -41,6 +79,8 @@
       </div>
     </div>
   </section>
+  -->
+  
 
   <section class="container section--main-container">
     
@@ -53,6 +93,35 @@
         </div>
       </div>
     </div>
+
+    <!-- Home -->
+    <section class="section--home">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="bs-component">
+            <h2>Example body text</h2>
+            <p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+            <p><small>This line of text is meant to be treated as fine print.</small></p>
+            <p>The following is <strong>rendered as bold text</strong>.</p>
+            <p>The following is <em>rendered as italicized text</em>.</p>
+            <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="bs-component">
+            <h2>Emphasis classes</h2>
+            <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+            <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <p class="text-secondary">Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+            <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+            <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+            <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+            <p class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Create Recipe -->
     <section class="section--create-recipe">
       <div class="bs-docs-section">
@@ -150,51 +219,58 @@
       </div>
     </section>
 
+    <!-- Read Recipe -->
     <section class="section--read-recipe">
-      <div class="bs-docs-section">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="page-header">
-              <h2 id="forms">Read Recipe</h2>
+      <article>
+        <header>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="page-header">
+                <h2 id="forms">Read Recipe</h2>
+              </div>
             </div>
           </div>
-        </div>
-  
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="bs-component">
-              <div class="card mb-3">
-                  <h3 class="card-header" id="recipeTitle"></h3>
-                  <div class="card-body">
-                    <h6 class="card-title" id="recipeDescription"></h6>
+        </header>
+        <main>
+          <div class="bs-docs-section">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="bs-component">
+                  <div class="card mb-3">
+                    <h3 class="card-header" id="recipeTitle"></h3>
+                    <div class="card-body">
+                      <h6 class="card-title" id="recipeDescription"></h6>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+                      <rect width="100%" height="100%" fill="#868e96"></rect>
+                      <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image</text>
+                    </svg>
+                    <ul class="list-group list-group-flush ingredients">
+                      <li class="list-group-item" id="ingredient1name">Ingredient 1</li>
+                      <li class="list-group-item" id="ingredient2name">Ingredient 2</li>
+                    </ul>
                   </div>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
-                    <rect width="100%" height="100%" fill="#868e96"></rect>
-                    <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image</text>
-                  </svg>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item" id="ingredient1name">Ingredient 1</li>
-                    <li class="list-group-item" id="ingredient2name">Ingredient 2</li>
-                  </ul>
-                </div>
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Steps</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Step 1</h6>
-                    <p class="card-text" id="step1">Step 1 instructions..</p>
+                  <div class="card">
+                    <div class="card-body instructions">
+                      <h4 class="card-title">Steps</h4>
+                      <div class="step-instruction">
+                        <h6 class="card-subtitle mb-2">Step 1</h6>
+                        <p class="card-text" id="step1">Step 1 instructions..</p>
+                      </div>
+                      <div class="step-instruction">
+                        <h6 class="card-subtitle mb-2">Step 2</h6>
+                        <p class="card-text" id="step2">Step 2 instructions..</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-
+        </main>  
+      </article> 
     </section>
-
   </section>
-
-
-
 </body>
 
 </html>
