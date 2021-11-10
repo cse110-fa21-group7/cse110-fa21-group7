@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="../styles/styles.css">
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- Web Components -->
+    <script src="components/RecipeCard.js" type="module"></script>
+    <script src="components/RecipeExpand.js" type="module"></script>
+    <script src=" " type="module"></script>
+    <script src=" " type="module"></script>
+
+    <!-- Main Stylesheet & Scripts -->
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="scripts/main.js" type="module"></script>
+  </head>
+
+  <body>
+    <style>
+      body {
+        background-color: lightblue;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+    </style>
+    <header>
+        <div class = "top header"></div>
+            <img src = "../images/logo.png", alt="Web Logo", width="100">
+            <h1 id = "header-title">ASAP Recipe</h1>
+        </div>
+
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="cookbook.html">Cook Book</a></li>
+          <li><a href="createRecipe.html">Create Recipe</a></li>
+        </ul>
+    </header>
+
+    <main>
+      <section class="section--recipe-cards shown">
+        <div class="recipe-cards--wrapper">
+          <!-- Recipes Added Here -->
+        </div>
+        <div class="button--wrapper">
+          <img src="images/icons/arrow-down.png" alt="Arrow down" />
+          <button>Show more</button>
+        </div>
+        <div class="button--horizontal-line"></div>
+      </section>
+      <section class="section--recipe-expand">
+        <recipe-expand></recipe-expand>
+      </section>
+    </main>
+  </body>
+
+</html>
