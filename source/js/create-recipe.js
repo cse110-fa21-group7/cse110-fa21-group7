@@ -17,12 +17,13 @@ function initializeStorage() {
 
   if (json === null) {
     console.log('Recipes not initialized in localStorage cache');
+    recipes.currID = 1;
     localStorage.setItem('recipes', JSON.stringify(recipes));
     return;
   }
 
   recipes = JSON.parse(json);
-  if (Object.keys(recipeData).length == 0) {
+  if (Object.keys(recipes).length == 0) {
     console.log('Empty recipes object');
   }
 }
@@ -122,7 +123,7 @@ form.addEventListener('submit', function(event) {
         step1Valid) {
         
     const recipe = {};
-    let recipes = {};
+    
     recipe.title = document.getElementById('recipeTitle').value.trim();
     const ingredients = [];
     recipe.ingredients = ingredients;
@@ -135,6 +136,12 @@ form.addEventListener('submit', function(event) {
     recipe.steps = steps;
     steps.push(document.getElementById('step1').value.trim());
     console.log(document.getElementById('step2').value.trim());
-    localStorage.setItem('recipe', JSON.stringify(recipe));
+
+    const id = parseInt(recipes.currID, 10);
+    recipes.currID = id + 1;
+
+    recipes.id = recipe;
+    
+    localStorage.setItem('recipes', JSON.stringify(recipes));
   }
 });
