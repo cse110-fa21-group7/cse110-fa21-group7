@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Back End Testing</title>
+
+  <!-- https://bootswatch.com/minty/ -->
+
+
+  <!-- Main Stylesheets & Scripts -->
+  <link rel="stylesheet" href="assets/styles/main.css" />
+  <link rel="stylesheet" href="assets/styles/bootstrap.min.css" />
+  <script src="assets/scripts/main.js" type="module"></script>
+</head>
+
+<body class style>
+  <div class="container">
+    
+    <div class="bs-docs-section">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <h1 id="recipe">ASAP Recipe</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bs-docs-section">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <h2 id="forms">Create Recipe Form</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="bs-component">
+            <form action="create-recipe.html" method="post" id="recipeForm">
+              <fieldset>
+                <div class="form-group has-danger has-success">
+                  <label class="col-form-label col-form-label-lg mt-4" for="recipeTitle">Recipe Title</label>
+                  <input class="form-control form-control-lg" type="text" placeholder="Enter your recipe name" id="recipeTitle">
+                  <div class="invalid-feedback"></div>
+                </div>
+                <div class="form-group has-danger has-success">
+                  <label for="exampleTextarea" class="form-label mt-4">Description</label>
+                  <textarea class="form-control" id="recipeDescription" rows="3"></textarea>
+                  <div class="invalid-feedback"></div>
+                </div>
+                <div class="form-group">
+                  <label for="formFile" class="form-label mt-4">Upload image</label>
+                  <input class="form-control" type="file" id="formFile">
+                </div>
+                
+                <legend class="mt-4">Ingredients</legend>
+
+                <div class="form-group ">
+                  <div class="col-form-label mt-4 has-danger has-success">
+                    <label class="col-form-label mt-4" for="inputDefault">Ingredient 1</label>
+                    <input type="text" class="form-control" placeholder="Ingredient" id="ingredient1name">
+                    <div class="invalid-feedback"></div>
+                  </div>
+
+                  <label class="form-label mt-4">Amount</label>
+                  <div class="input-group mb-3 has-danger has-success">
+                    <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)" id="ingredient1amount">
+                    <span class="input-group-text">g</span>
+                    <div class="invalid-feedback"></div>
+                  </div>
+
+                  <label class="form-label mt-4">Ingredient cost</label>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text">$</span>
+                    <input type="text" class="form-control" placeholder="1.00" aria-label="Amount" id="ingredient1cost">
+                    <div class="invalid-feedback"></div>
+                  </div>
+                  
+                </div>
+
+                <div class="form-group">
+                  <div class="col-form-label mt-4">
+                    <label class="col-form-label mt-4" for="inputDefault">Ingredient 2</label>
+                    <input type="text" class="form-control" placeholder="Ingredient" id="ingredient2name">
+                    <small></small>
+                  </div>
+
+                  <label class="form-label mt-4">Amount</label>
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)" id="ingredient2amount">
+                    <span class="input-group-text">g</span>
+                    <small></small>
+                  </div>
+
+                  <label class="form-label mt-4">Ingredient cost</label>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text">$</span>
+                    <input type="text" class="form-control" placeholder="1.00" aria-label="Amount" id="ingredient2cost">
+                    <small></small>
+                  </div>
+                </div>
+                <legend class="mt-4">Steps</legend>
+                <div class="form-group has-danger has-success">
+                  <label for="exampleTextarea" class="form-label mt-4">Step 1</label>
+                  <textarea class="form-control" id="step1" rows="3"></textarea>
+                  <div class="invalid-feedback"></div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleTextarea" class="form-label mt-4">Step 2</label>
+                  <textarea class="form-control" id="step2" rows="3"></textarea>
+                  <small></small>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </fieldset>
+            
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</body>
+
+</html>
