@@ -83,7 +83,7 @@ class RecipeCard extends HTMLElement {
         // ---------------need fix later!------
         // Wait for add img link. Cannot save img in local
         let img = document.createElement('img');
-        img.setAttribute('src', '../../recipe-img-example/recipe_' + Math.floor(Math.random() * 3) + '.jpg');
+        img.setAttribute('src', '../recipe-img-example/recipe_' + Math.floor(Math.random() * 3) + '.jpg');
         img.setAttribute('alt', data);
         card.appendChild(img)
 

@@ -18,5 +18,5 @@ function updateRecipe(id) {
 
     createRecipe()
 
-    
+
 }
