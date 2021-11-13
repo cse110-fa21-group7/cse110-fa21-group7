@@ -10,11 +10,13 @@ async function init() {
   checkID();
 }
 
+/** Populate forms by ID
+ * @param {int} id
+*/
 function populateForm(id) {
   if (id in recipes) {
     const recipe = recipes[id];
     console.log(recipe['title']);
-
   } else {
     console.log(`ID: ${id} does not exist in recipes`);
   }
@@ -33,12 +35,12 @@ function populateForm(id) {
   document.getElementById('step1')
   document.getElementById('step2')
   */
-
 }
 
+/** Checks if ID is in localStorage */
 function checkID() {
   const queryString = window.location.search;
-  //console.log(queryString);
+  // console.log(queryString);
   const urlParams = new URLSearchParams(queryString);
   const id = urlParams.get('id');
   if (id === null) {
@@ -47,9 +49,9 @@ function checkID() {
   }
   console.log(`id: ${id}`);
   populateForm(id);
-  
 }
 
+/** Initializes recipes object from localStorage cache */
 function initializeStorage() {
   console.log('Initializing recipes object');
   const json = localStorage.getItem('recipes');
@@ -64,6 +66,10 @@ function initializeStorage() {
 
   recipes = JSON.parse(json);
   if (Object.keys(recipes).length == 0) {
+    // Check properly formatted
+    if (!('currID' in recipes)) {
+      recipes['currID'] = 1;
+    }
     console.log('Empty recipes object');
   }
 }
@@ -177,7 +183,6 @@ form.addEventListener('submit', function(event) {
     recipes.currID = id + 1;
 
     recipes[id] = recipe;
-    
     localStorage.setItem('recipes', JSON.stringify(recipes));
   }
 });
