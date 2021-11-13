@@ -166,14 +166,23 @@ form.addEventListener('submit', function(event) {
         ingredient1AmountValid &&
         step1Valid) {
     const recipe = {};
-    recipe.title = document.getElementById('recipeTitle').value.trim();
-    const ingredients = [];
-    recipe.ingredients = ingredients;
-    const ingredient1 = {};
-    ingredient1.name = document.getElementById('ingredient1name').value.trim();
-    ingredient1.amount = document.getElementById('ingredient1amount')
+    recipe['title'] = document.getElementById('recipeTitle').value.trim();
+    recipe['description'] = document.getElementById('recipeDescription')
         .value.trim();
-    ingredients.push(ingredient1);
+    const ingredients = [];
+    const ingredientElems = document.getElementById('ingredients')
+        .getElementsByClassName('form-group');
+    for (let i = 0; i < ingredientElems.length; i++) {
+      const ingElem = ingredientElems[i];
+      const recipeIng = {};
+      recipeIng['name'] = ingElem.getElementByClassName('ingredient-name')
+          .value.trim();
+      recipeIng['amount'] = ingElem.getElementByClassName('ingredient-amount')
+          .value.trim();
+      recipeIng['cost'] = ingElem.getElementByClassName('ingredient-amount')
+          .value.trim();
+      ingredients.push(recipeIng);
+    }
     const steps = [];
     recipe.steps = steps;
     steps.push(document.getElementById('step1').value.trim());

@@ -68,17 +68,18 @@
                     </div>
                     
                     <legend class="mt-4">Ingredients</legend>
-    
-                    <div class="form-group ">
+
+                    <div id="ingredients">
+                      <div class="form-group">
                         <div class="col-form-label mt-4 has-danger has-success">
-                        <label class="col-form-label mt-4" for="inputDefault">Ingredient 1</label>
-                        <input type="text" class="form-control" placeholder="Ingredient" id="ingredient1name">
+                        <label class="col-form-label mt-4" for="inputDefault">Ingredient X</label>
+                        <input type="text" class="form-control ingredient-name" placeholder="Ingredient">
                         <div class="invalid-feedback"></div>
                         </div>
     
                         <label class="form-label mt-4">Amount</label>
                         <div class="input-group mb-3 has-danger has-success">
-                        <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)" id="ingredient1amount">
+                        <input type="text" class="form-control ingredient-amount" placeholder="100" aria-label="Amount (grams)">
                         <span class="input-group-text">g</span>
                         <div class="invalid-feedback"></div>
                         </div>
@@ -86,45 +87,49 @@
                         <label class="form-label mt-4">Ingredient cost</label>
                         <div class="input-group mb-3">
                         <span class="input-group-text">$</span>
-                        <input type="text" class="form-control" placeholder="1.00" aria-label="Amount" id="ingredient1cost">
+                        <input type="text" class="form-control ingredient-cost" placeholder="1.00" aria-label="Amount">
                         <div class="invalid-feedback"></div>
-                        </div>
-                        
-                    </div>
+                        </div>                        
+                      </div>
     
-                    <div class="form-group">
-                        <div class="col-form-label mt-4">
-                        <label class="col-form-label mt-4" for="inputDefault">Ingredient 2</label>
-                        <input type="text" class="form-control" placeholder="Ingredient" id="ingredient2name">
-                        <small></small>
+                      <div class="form-group">
+                        <div class="col-form-label mt-4 has-danger has-success">
+                        <label class="col-form-label mt-4" for="inputDefault">Ingredient X</label>
+                        <input type="text" class="form-control ingredient-name" placeholder="Ingredient">
+                        <div class="invalid-feedback"></div>
                         </div>
     
                         <label class="form-label mt-4">Amount</label>
-                        <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)" id="ingredient2amount">
+                        <div class="input-group mb-3 has-danger has-success">
+                        <input type="text" class="form-control ingredient-amount" placeholder="100" aria-label="Amount (grams)">
                         <span class="input-group-text">g</span>
-                        <small></small>
+                        <div class="invalid-feedback"></div>
                         </div>
     
                         <label class="form-label mt-4">Ingredient cost</label>
                         <div class="input-group mb-3">
                         <span class="input-group-text">$</span>
-                        <input type="text" class="form-control" placeholder="1.00" aria-label="Amount" id="ingredient2cost">
-                        <small></small>
-                        </div>
-                    </div>
-                    <legend class="mt-4">Steps</legend>
-                    <div class="form-group has-danger has-success">
-                        <label for="exampleTextarea" class="form-label mt-4">Step 1</label>
-                        <textarea class="form-control" id="step1" rows="3"></textarea>
+                        <input type="text" class="form-control ingredient-cost" placeholder="1.00" aria-label="Amount">
                         <div class="invalid-feedback"></div>
+                        </div>                        
+                      </div>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleTextarea" class="form-label mt-4">Step 2</label>
-                        <textarea class="form-control" id="step2" rows="3"></textarea>
-                        <small></small>
+    
+                    <div id="steps">
+                      <legend class="mt-4">Steps</legend>
+                      <div class="form-group has-danger has-success">
+                          <label for="exampleTextarea" class="form-label mt-4">Step 1</label>
+                          <textarea class="form-control step-instruction" id="step1" rows="3"></textarea>
+                          <div class="invalid-feedback"></div>
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleTextarea" class="form-label mt-4">Step 2</label>
+                          <textarea class="form-control step-instruction" id="step2" rows="3"></textarea>
+                          <small></small>
+                      </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
+
                     </fieldset>
                 
                 </form>
