@@ -40,11 +40,27 @@ function populateHTML(id) {
   }
   const recipe = recipes[id];
   console.log(`Recipe: ${recipe['title']}`);
+
   document.getElementById('recipeTitle').innerText = recipe['title'];
   document.getElementById('recipeDescription').innerText =
       recipe['description'];
-  document.getElementById('ingredient1name').innerText = recipe['ingredients'];
 
+  const recipeIngredients = recipe['ingredients'];
+  const ingredientElems = document.getElementById('ingredients').getElementsByClassName('ingredient');
+  for (let i = 0; i < ingredientElems.length; i++) {
+    const ingElem = ingredientElems[i];
+    const recipeIng = recipeIngredients[i];
+    ingElem.innerText = `${recipeIng['name']} Amount: ${recipeIng['amount']} Cost: ${recipeIng['cost']}`;
+  }
+
+  const recipeSteps = recipe['steps'];
+  const stepElems = document.getElementById('instructions').getElementsByClassName('step-instruction');
+  for (let i = 0; i < stepElems.length; i++) {
+    const stepElem = stepElems[i];
+    const recipeStep = recipeSteps[i];
+    stepElem.querySelector('.card-subtitle').innerText = `Step ${i+1}`;
+    stepElem.querySelector('.card-text').innerText = recipeStep;
+  }
 
 
   /*

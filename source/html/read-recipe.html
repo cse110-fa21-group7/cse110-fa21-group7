@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <script src="../js/read-recipe.js" type="module"></script>
 </head>
 <body>
     <section class="section--navbar">
@@ -62,21 +63,21 @@
                         <rect width="100%" height="100%" fill="#868e96"></rect>
                         <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image</text>
                       </svg>
-                      <ul class="list-group list-group-flush ingredients">
-                        <li class="list-group-item" id="ingredient1name">Ingredient 1</li>
-                        <li class="list-group-item" id="ingredient2name">Ingredient 2</li>
+                      <ul class="list-group list-group-flush" id="ingredients">
+                        <li class="list-group-item ingredient">Ingredient X</li>
+                        <li class="list-group-item ingredient">Ingredient X</li>
                       </ul>
                     </div>
                     <div class="card">
-                      <div class="card-body instructions">
+                      <div class="card-body" id="instructions">
                         <h4 class="card-title">Steps</h4>
                         <div class="step-instruction">
-                          <h6 class="card-subtitle mb-2">Step 1</h6>
-                          <p class="card-text" id="step1">Step 1 instructions..</p>
+                          <h6 class="card-subtitle mb-2">Step X</h6>
+                          <p class="card-text">Step X instructions..</p>
                         </div>
                         <div class="step-instruction">
-                          <h6 class="card-subtitle mb-2">Step 2</h6>
-                          <p class="card-text" id="step2">Step 2 instructions..</p>
+                          <h6 class="card-subtitle mb-2">Step X</h6>
+                          <p class="card-text">Step X instructions..</p>
                         </div>
                       </div>
                     </div>
