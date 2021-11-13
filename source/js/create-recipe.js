@@ -8,7 +8,47 @@ window.addEventListener('DOMContentLoaded', init);
 async function init() {
   console.log('Initializing');
   initializeStorage();
+  checkID();
+}
 
+function populateForm(id) {
+  if (id in recipes) {
+    const recipe = recipes[id];
+    console.log(recipe['title']);
+
+  } else {
+    console.log(`ID: ${id} does not exist in recipes`);
+  }
+  document.getElementById('recipeTitle').innerText = 'test';
+
+  /*
+  const ingredients = [];
+  recipe.ingredients = ingredients;
+  const ingredient1 = {};
+  ingredient1.name = document.getElementById('ingredient1name').value.trim();
+  ingredient1.amount = document.getElementById('ingredient1amount')
+      .value.trim();
+  ingredients.push(ingredient1);
+  const steps = [];
+  recipe.steps = steps;
+  document.getElementById('step1')
+  document.getElementById('step2')
+  */
+
+}
+
+function checkID() {
+  const queryString = window.location.search;
+  //console.log(queryString);
+  const urlParams = new URLSearchParams(queryString);
+  const id = urlParams.get('id');
+  if (id === null) {
+    console.log('No id parameter');
+    return;
+  }
+  console.log(`id: ${id}`);
+  populateForm(id);
+  
 }
 
 function initializeStorage() {
@@ -140,7 +180,7 @@ form.addEventListener('submit', function(event) {
     const id = parseInt(recipes.currID, 10);
     recipes.currID = id + 1;
 
-    recipes.id = recipe;
+    recipes[id] = recipe;
     
     localStorage.setItem('recipes', JSON.stringify(recipes));
   }
