@@ -152,6 +152,9 @@ form.addEventListener('submit', function(event) {
   // validate form
   const titleValid = hasValue(document.getElementById('recipeTitle'),
       TITLE_REQUIRED);
+  
+  // TODO: Validate at least 1 ingredient and 1 step
+  /*
   const ingredient1NameValid = hasValue(
       document.getElementById('ingredient1name'),
       INGREDIENT_NAME_REQUIRED);
@@ -159,12 +162,13 @@ form.addEventListener('submit', function(event) {
       document.getElementById('ingredient1amount'),
       INGREDIENT_AMOUNT_REQUIRED);
   const step1Valid = hasValue(document.getElementById('step1'), STEP_REQUIRED);
+  */
 
   // if valid, submit the form.
-  if (titleValid &&
+  if (titleValid /*&&
         ingredient1NameValid &&
         ingredient1AmountValid &&
-        step1Valid) {
+        step1Valid*/) {
     const recipe = {};
     recipe['title'] = document.getElementById('recipeTitle').value.trim();
     recipe['description'] = document.getElementById('recipeDescription')
@@ -175,18 +179,23 @@ form.addEventListener('submit', function(event) {
     for (let i = 0; i < ingredientElems.length; i++) {
       const ingElem = ingredientElems[i];
       const recipeIng = {};
-      recipeIng['name'] = ingElem.getElementByClassName('ingredient-name')
+      recipeIng['name'] = ingElem.querySelector('.ingredient-name')
           .value.trim();
-      recipeIng['amount'] = ingElem.getElementByClassName('ingredient-amount')
+      recipeIng['amount'] = ingElem.querySelector('.ingredient-amount')
           .value.trim();
-      recipeIng['cost'] = ingElem.getElementByClassName('ingredient-amount')
+      recipeIng['cost'] = ingElem.querySelector('.ingredient-cost')
           .value.trim();
       ingredients.push(recipeIng);
     }
+    recipe['ingredients'] = ingredients;
     const steps = [];
-    recipe.steps = steps;
-    steps.push(document.getElementById('step1').value.trim());
-    console.log(document.getElementById('step2').value.trim());
+    const stepElems = document.getElementById('steps').getElementsByClassName('form-group');
+    for (let i = 0; i < stepElems.length; i++) {
+      const stepElem = stepElems[i];
+      const step = stepElem.querySelector('.step-instruction').value.trim();
+      steps.push(step);
+    }
+    recipe['steps'] = steps;
 
     const id = parseInt(recipes.currID, 10);
     recipes.currID = id + 1;
