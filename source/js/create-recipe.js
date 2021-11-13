@@ -1,23 +1,25 @@
 // create-recipe.js
 
 let recipes = {};
-
 window.addEventListener('DOMContentLoaded', init);
 
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
   console.log('Initializing');
   initializeStorage();
-
 }
 
+/**
+ * Initializes recipes object from localStorage cache
+ */
 function initializeStorage() {
   console.log('Initializing recipes object');
   const json = localStorage.getItem('recipes');
 
   if (json === null) {
     console.log('Recipes not initialized in localStorage cache');
-    recipes.currID = 1;
+    // Good practice to use brackets to ensure proper type
+    recipes['currID'] = 1;
     localStorage.setItem('recipes', JSON.stringify(recipes));
     return;
   }
@@ -27,8 +29,6 @@ function initializeStorage() {
     console.log('Empty recipes object');
   }
 }
-
-
 
 /**  Show a message in the invalid-feedback div below the input element
  * @param {HTMLElement} input
@@ -121,9 +121,7 @@ form.addEventListener('submit', function(event) {
         ingredient1NameValid &&
         ingredient1AmountValid &&
         step1Valid) {
-        
     const recipe = {};
-    
     recipe.title = document.getElementById('recipeTitle').value.trim();
     const ingredients = [];
     recipe.ingredients = ingredients;
@@ -137,11 +135,10 @@ form.addEventListener('submit', function(event) {
     steps.push(document.getElementById('step1').value.trim());
     console.log(document.getElementById('step2').value.trim());
 
-    const id = parseInt(recipes.currID, 10);
-    recipes.currID = id + 1;
-
-    recipes.id = recipe;
-    
+    const id = parseInt(recipes['currID'], 10);
+    recipes['currID']= id + 1;
+    recipes[id] = recipe;
+    // Overwrite recipes object with new recipe entry
     localStorage.setItem('recipes', JSON.stringify(recipes));
   }
 });
