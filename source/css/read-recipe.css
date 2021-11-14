@@ -1,0 +1,20 @@
+.step-instruction {
+    padding-top: 20px;
+}
+
+
+button:hover {
+  background-color: #d5e3ff;
+}
+
+button.active {
+  background-color: white;
+}
+
+.active {
+  background-color: white;
+}
+
+.content.active {
+  display: block;
+}

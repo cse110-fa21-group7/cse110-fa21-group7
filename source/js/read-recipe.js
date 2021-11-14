@@ -1,7 +1,9 @@
 window.addEventListener('DOMContentLoaded', init)
 
 async function init () {
-  console.log('Init initialized')
+  console.log('Init initialized');
+  // setUpTabs();
+  /*
   const recipe = JSON.parse(localStorage.getItem('recipe'))
   const recipeTitleElem = document.getElementById('recipeTitle')
   recipeTitleElem.innerText = recipe.title
@@ -11,4 +13,29 @@ async function init () {
   // ingredient2NameElem.innerText = recipe.ingredients[1].name
   const step1Elem = document.getElementById('step1')
   step1Elem.innerText = recipe.steps[0]
+  */
 }
+
+function setUpTabs() {
+  const tabs = document.querySelector(".nav-pills");
+  const tabButton = document.querySelectorAll(".tab-button");
+  const contents = document.querySelectorAll(".content");
+
+  tabs.onclick = e => {
+    const id = e.target.dataset.id;
+    if (id) {
+      tabButton.forEach(btn => {
+        btn.classList.remove("active");
+      });
+      e.target.classList.add("active");
+
+      contents.forEach(content => {
+        content.classList.remove("active");
+      });
+      const element = document.getElementById(id);
+      element.classList.add("active");
+    }
+  }
+
+}
+
