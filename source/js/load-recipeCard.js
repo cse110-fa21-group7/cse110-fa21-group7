@@ -34,8 +34,15 @@ async function init() {
 
 
 async function fetchRecipes() {
-    let test = {title: "test", ingredients: [{name: "Ingredient 1", amount: "1"}], steps: ["Step 1"]}
-    recipeData['test'] = test
+    for(let i=0;i<10;i++){
+      let name = "test"+i;
+      let test = {title: name, ingredients: [{name: "Ingredient 1", amount: "1"}], steps: ["Step 1"]}
+      recipeData[name] = test;
+      // let test2 = {title: "test2", ingredients: [{name: "Ingredient 1", amount: "1"}], steps: ["Step 1"]}
+      // recipeData['test2'] = test2;
+      // let test3 = {title: "test3", ingredients: [{name: "Ingredient 1", amount: "1"}], steps: ["Step 1"]}
+      // recipeData['test3'] = test3;
+    }
     return true;
 }
 
@@ -43,8 +50,11 @@ async function fetchRecipes() {
 function createRecipeCards() {
     let main = document.querySelector('.recipe-cards--wrapper');
     console.log(main);
-    let card = document.createElement('recipe-card');
-    card.data = recipeData['test'];
-    main.appendChild(card)
-}
 
+    for(let i=0;i<10;i++){
+      let card = document.createElement('recipe-card');
+      let name = "test"+i;
+      card.data = recipeData[name];
+      main.appendChild(card)
+    }
+  }

@@ -29,7 +29,7 @@ class RecipeCard extends HTMLElement {
             height: auto;
             row-gap: 5px;
             padding: 0 16px 16px 16px;
-            width: 178px;
+            width: 300px;
             }
             div.rating {
             align-items: center;
@@ -46,7 +46,7 @@ class RecipeCard extends HTMLElement {
             article > img {
             border-top-left-radius: 8px;
             border-top-right-radius: 8px;
-            height: 118px;
+            height: 130px;
             object-fit: cover;
             margin-left: -16px;
             width: calc(100% + 32px);
@@ -98,7 +98,24 @@ class RecipeCard extends HTMLElement {
         card.appendChild(title.appendChild(titleLink));
    
         // add total cost
+        const priceValue = Math.round(data['price']);
+        let priceDiv = document.createElement('div');
+        // if (priceValue) {
+        //     rating.innerHTML = `
+        //       <span>${priceValue}</span>
+        //       <img src="assets/images/icons/${numStars}-star.svg" alt="${numStars} stars">
+        //     `;
+        //     if (ratingTotal) {
+        //       rating.innerHTML += `<span>(${ratingTotal})</span>`;
+        //     }
+        //   } else {
+        //     rating.innerHTML = `
+        //       <span>No Reviews</span>
+        //     `;
+        //   }
+        
         let price = document.createElement('p');
+        price.classList.add('price')
         price.textContent = 'Show a total cost here';
         card.appendChild(price)
 
