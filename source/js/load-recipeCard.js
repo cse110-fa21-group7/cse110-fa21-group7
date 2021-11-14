@@ -34,17 +34,31 @@ async function init() {
 
 
 async function fetchRecipes() {
-    let test = {title: "test", ingredients: [{name: "Ingredient 1", amount: "1"}], steps: ["Step 1"]}
-    recipeData['test'] = test
+    const storage = window.localStorage;
+    const recipes = JSON.parse(storage.getItem('recipes'));
+    const total = Number(recipes.currID);
+    for(let i = 1; i < total; i++){
+      let id = i;
+      let recipe = recipes[id];
+      recipeData[id] = recipe;
+      // let test2 = {title: "test2", ingredients: [{name: "Ingredient 1", amount: "1"}], steps: ["Step 1"]}
+      // recipeData['test2'] = test2;
+      // let test3 = {title: "test3", ingredients: [{name: "Ingredient 1", amount: "1"}], steps: ["Step 1"]}
+      // recipeData['test3'] = test3;
+    }
     return true;
 }
 
 
 function createRecipeCards() {
     let main = document.querySelector('.recipe-cards--wrapper');
-    console.log(main);
-    let card = document.createElement('recipe-card');
-    card.data = recipeData['test'];
-    main.appendChild(card)
-}
 
+    const total = Object.keys(recipeData).length;
+
+    for(let i = 0; i < total; i++){
+      let card = document.createElement('recipe-card');
+      let id = i + 1;
+      card.data = recipeData[id];
+      main.appendChild(card)
+    }
+  }
