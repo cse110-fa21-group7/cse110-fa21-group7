@@ -36,7 +36,7 @@ async function init() {
 async function fetchRecipes() {
     for(let i=0;i<10;i++){
       let name = "test"+i;
-      let test = {title: name, ingredients: [{name: "Ingredient 1", amount: "1"}], steps: ["Step 1"]}
+      let test = {id:i, title: name, ingredients: [{name: "Ingredient 1", amount: "1"}], steps: ["Step 1"]}
       recipeData[name] = test;
       // let test2 = {title: "test2", ingredients: [{name: "Ingredient 1", amount: "1"}], steps: ["Step 1"]}
       // recipeData['test2'] = test2;
