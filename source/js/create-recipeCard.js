@@ -115,7 +115,7 @@ class RecipeCard extends HTMLElement {
         
         let price = document.createElement('p');
         price.classList.add('price')
-        price.textContent = 'Show a total cost here';
+        price.textContent = data['totalCost'];
         card.appendChild(price)
 
         // ingredients
@@ -123,7 +123,7 @@ class RecipeCard extends HTMLElement {
         ingredients.classList.add('ingredients');
         let ingredientsContent = '';
         for(let each of data['ingredients']) {
-            ingredientsContent += each['name']
+            ingredientsContent += each['name'] + '\n';
         }
         ingredients.textContent = ingredientsContent;
         card.appendChild(ingredients);

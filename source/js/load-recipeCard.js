@@ -34,10 +34,13 @@ async function init() {
 
 
 async function fetchRecipes() {
-    for(let i=0;i<10;i++){
-      let name = "test"+i;
-      let test = {id:i, title: name, ingredients: [{name: "Ingredient 1", amount: "1"}], steps: ["Step 1"]}
-      recipeData[name] = test;
+    const storage = window.localStorage;
+    const recipes = JSON.parse(storage.getItem('recipes'));
+    const total = Number(recipes.currID);
+    for(let i = 1; i < total; i++){
+      let id = i;
+      let recipe = recipes[id];
+      recipeData[id] = recipe;
       // let test2 = {title: "test2", ingredients: [{name: "Ingredient 1", amount: "1"}], steps: ["Step 1"]}
       // recipeData['test2'] = test2;
       // let test3 = {title: "test3", ingredients: [{name: "Ingredient 1", amount: "1"}], steps: ["Step 1"]}
@@ -49,12 +52,13 @@ async function fetchRecipes() {
 
 function createRecipeCards() {
     let main = document.querySelector('.recipe-cards--wrapper');
-    console.log(main);
 
-    for(let i=0;i<10;i++){
+    const total = Object.keys(recipeData).length;
+
+    for(let i = 0; i < total; i++){
       let card = document.createElement('recipe-card');
-      let name = "test"+i;
-      card.data = recipeData[name];
+      let id = i + 1;
+      card.data = recipeData[id];
       main.appendChild(card)
     }
   }
