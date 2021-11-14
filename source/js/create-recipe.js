@@ -8,8 +8,10 @@ async function init() {
   console.log('Initializing');
   initializeStorage();
   checkID();
+  setFormListener();
 }
 
+// TODO: Finish populateForm
 /** Populate forms by ID
  * @param {int} id
 */
@@ -129,6 +131,19 @@ function hasValue(input, message) {
   return showSuccess(input);
 }
 
+/**
+ * Checks if an element has a float value
+ * @param {HTMLElement} input
+ * @param {String} message
+ * @return {Function}
+ */
+function hasFloat(input, message) {
+  if (isNaN(parseFloat(input.value.trim()))) {
+    return showError(input, message);
+  }
+  return showSuccess(input);
+}
+
 /*
 function getElementIfExists(elem) {
   if (elem != null && elem.value.trim() === '') {
@@ -138,69 +153,103 @@ function getElementIfExists(elem) {
 }
 */
 
-const form = document.getElementById('recipeForm');
+/**
+ * Set up form event listener
+ */
+function setFormListener() {
+  const form = document.getElementById('recipeForm');
 
-const TITLE_REQUIRED = 'Please enter your recipe title';
-const INGREDIENT_NAME_REQUIRED = 'Please enter your ingredient name';
-const INGREDIENT_AMOUNT_REQUIRED = 'Please enter your ingredient amount';
-const STEP_REQUIRED = 'Please enter your recipe instructions';
+  const TITLE_REQUIRED = 'Please enter your recipe title';
+  const INGREDIENT_NAME_REQUIRED = 'Please enter your ingredient name';
+  const INGREDIENT_AMOUNT_REQUIRED = 'Please enter your ingredient amount';
+  const STEP_REQUIRED = 'Please enter your recipe instructions';
 
-form.addEventListener('submit', function(event) {
-  // stop form submission
-  event.preventDefault();
-
-  // validate form
-  const titleValid = hasValue(document.getElementById('recipeTitle'),
-      TITLE_REQUIRED);
-  
-  // TODO: Validate at least 1 ingredient and 1 step
-  /*
-  const ingredient1NameValid = hasValue(
-      document.getElementById('ingredient1name'),
-      INGREDIENT_NAME_REQUIRED);
-  const ingredient1AmountValid = hasValue(
-      document.getElementById('ingredient1amount'),
-      INGREDIENT_AMOUNT_REQUIRED);
-  const step1Valid = hasValue(document.getElementById('step1'), STEP_REQUIRED);
-  */
-
-  // if valid, submit the form.
-  if (titleValid /*&&
-        ingredient1NameValid &&
-        ingredient1AmountValid &&
-        step1Valid*/) {
+  form.addEventListener('submit', function(event) {
+    // Stop form submission
+    event.preventDefault();
+    console.log('Submit button clicked');
+    let allValid = true;
     const recipe = {};
-    recipe['title'] = document.getElementById('recipeTitle').value.trim();
+
+    // Validate form
+    const titleValid = hasValue(document.getElementById('recipeTitle'),
+        TITLE_REQUIRED);
+    if (titleValid) {
+      recipe['title'] = document.getElementById('recipeTitle').value.trim();
+    } else {
+      allValid = false;
+    }
+
     recipe['description'] = document.getElementById('recipeDescription')
         .value.trim();
+
+    const totalCost = document.getElementById('recipeCost')
+        .value.trim();
+    const cost = null;
+    if (totalCost.length > 0) {
+      if (hasFloat(document.getElementById('recipeCost'))) {
+        cost = parseFloat(totalCost);
+      } else {
+        allValid = false;
+      }
+    }
+    recipe['totalCost'] = cost;
+
+    // TODO: Upload Image
+
     const ingredients = [];
     const ingredientElems = document.getElementById('ingredients')
-        .getElementsByClassName('form-group');
+        .getElementsByClassName('ingredient');
     for (let i = 0; i < ingredientElems.length; i++) {
       const ingElem = ingredientElems[i];
       const recipeIng = {};
-      recipeIng['name'] = ingElem.querySelector('.ingredient-name')
+      const ingredientNameValid = hasValue(
+          ingElem.querySelector('.ingredient-name > input'),
+          INGREDIENT_NAME_REQUIRED);
+      const ingredientAmountValid = hasValue(
+          ingElem.querySelector('.ingredient-amount > input'),
+          INGREDIENT_AMOUNT_REQUIRED);
+      recipeIng['name'] = ingElem.querySelector('.ingredient-name > input')
           .value.trim();
-      recipeIng['amount'] = ingElem.querySelector('.ingredient-amount')
+      recipeIng['amount'] = ingElem.querySelector('.ingredient-amount > input')
           .value.trim();
-      recipeIng['cost'] = ingElem.querySelector('.ingredient-cost')
-          .value.trim();
-      ingredients.push(recipeIng);
+
+
+      if (ingredientNameValid && ingredientAmountValid) {
+        ingredients.push(recipeIng);
+      } else {
+        allValid = false;
+      }
     }
+
     recipe['ingredients'] = ingredients;
+
     const steps = [];
-    const stepElems = document.getElementById('steps').getElementsByClassName('form-group');
+    const stepElems = document.getElementById('steps')
+        .getElementsByClassName('step-sec');
     for (let i = 0; i < stepElems.length; i++) {
       const stepElem = stepElems[i];
-      const step = stepElem.querySelector('.step-instruction').value.trim();
-      steps.push(step);
+      console.log(`stepElem: ${stepElem}`);
+      const stepValid = hasValue(
+          stepElem.querySelector('.form-control'), STEP_REQUIRED);
+      if (stepValid) {
+        const step = stepElem.querySelector('.form-control').value.trim();
+        steps.push(step);
+      } else {
+        allValid = false;
+      }
     }
     recipe['steps'] = steps;
 
-    const id = parseInt(recipes.currID, 10);
-    recipes.currID = id + 1;
+    if (allValid) {
+      const id = parseInt(recipes.currID, 10);
+      recipes.currID = id + 1;
 
-    recipes[id] = recipe;
-    localStorage.setItem('recipes', JSON.stringify(recipes));
-  }
-});
+      recipes[id] = recipe;
+      localStorage.setItem('recipes', JSON.stringify(recipes));
+    } else {
+      console.log('Invalid recipe');
+    }
+  });
+}
+

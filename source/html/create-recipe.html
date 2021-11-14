@@ -67,66 +67,75 @@
                         <input class="form-control" type="file" id="recipeImage">
                     </div>
                     
-                    <legend class="ingredient-sec">Ingredients</legend>
-                    <div class="ingredient-info1">
-                        <div class="ingredient-name1">
-                            <label class="name1-label" for="inputDefault">Ingredient 1</label>
-                            <input type="text" class="form-control" placeholder="Ingredient" id="ingredient1name">
-                            <div class="invalid-feedback"></div>
-                        </div>
-    
-                        <div class="ingredient-amount1">
-                            <label class="amount1-label">Amount</label>
-                            <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)" id="ingredient1amount">
-                            <span class="amount-unit">g</span>
-                            <div class="invalid-feedback"></div>
-                        </div>                       
-                    </div>
-    
-                    <div class="ingredient-info2">
-                        <div class="ingredient-name2">
-                            <label class="name2-label" for="inputDefault">Ingredient 2</label>
-                            <input type="text" class="form-control" placeholder="Ingredient" id="ingredient2name">
-                            <small></small>
-                        </div>
-    
-                        <div class="ingredient-amount2">
-                            <label class="amount2-label">Amount</label>
-                            <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)" id="ingredient2amount">
-                            <span class="amount-unit">g</span>
-                            <small></small>
-                        </div>
-                    </div>
-
-                    <div class="ingredient-info3">
-                        <div class="ingredient-name3">
-                            <label class="name3-label" for="inputDefault">Ingredient 3</label>
-                            <input type="text" class="form-control" placeholder="Ingredient" id="ingredient3name">
-                            <small></small>
-                        </div>
-                         
-                        <div class="ingredient-amount3">
-                            <label class="amount3-label">Amount</label>
-                            <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)" id="ingredient3amount">
-                            <span class="amount-unit">g</span>
-                            <small></small>
-                        </div>
-                    </div>
-
-                    <button type="Add" class="btn-add-ingred">Add</button>
-
-                    <legend class="steps-sec">Steps</legend>
-                    <div class="step1-sec">
-                        <label class="recipeStep1-label" for="stepLabel">Step 1</label>
-                        <textarea class="form-control" id="step1" rows="3"></textarea>
-                        <div class="invalid-feedback"></div>
-                    </div>
+                    <div id="ingredients">
+                        <legend class="ingredient-sec">Ingredients</legend>
                     
-                    <div class="step2-sec">
-                        <label class="recipeStep1-label" for="stepLabel">Step 2</label>
-                        <textarea class="form-control" id="step2" rows="3"></textarea>
-                        <div class="invalid-feedback"></div>
+                        <div class="ingredient">
+                            <div class="ingredient-name">
+                                <label class="name-label" for="inputDefault">Ingredient 1</label>
+                                <input type="text" class="form-control" placeholder="Ingredient">
+                                <div class="invalid-feedback"></div>
+                            </div>
+        
+                            <div class="ingredient-amount">
+                                <label class="amount-label">Amount</label>
+                                <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)">
+                                <span class="amount-unit">g</span>
+                                <div class="invalid-feedback"></div>
+                            </div>                       
+                        </div>
+        
+                        <div class="ingredient">
+                            <div class="ingredient-name">
+                                <label class="name-label" for="inputDefault">Ingredient 2</label>
+                                <input type="text" class="form-control" placeholder="Ingredient">
+                                <div class="invalid-feedback"></div>
+                            </div>
+        
+                            <div class="ingredient-amount">
+                                <label class="amount-label">Amount</label>
+                                <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)">
+                                <span class="amount-unit">g</span>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                        </div>
+
+                        <div class="ingredient">
+                            <div class="ingredient-name">
+                                <label class="name-label" for="inputDefault">Ingredient 3</label>
+                                <input type="text" class="form-control" placeholder="Ingredient">
+                                <div class="invalid-feedback"></div>
+                            </div>
+                            
+                            <div class="ingredient-amount">
+                                <label class="amount-label">Amount</label>
+                                <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)">
+                                <span class="amount-unit">g</span>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                        </div>
+
+                        
                     </div>
+                    <button type="Add" class="btn-add-ingred">Add</button>  
+                    
+                    <div id="steps">
+
+                        <legend class="steps-sec">Steps</legend>
+                        <div class="step-sec">
+                            <label class="recipeStep-label" for="stepLabel">Step 1</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        
+                        <div class="step-sec">
+                            <label class="recipeStep-label" for="stepLabel">Step 2</label>
+                            <textarea class="form-control" id="step2" rows="3"></textarea>
+                            <div class="invalid-feedback"></div>
+                        </div>
+
+                    </div>
+                    <button class="btn-add-step" type="button">Add</button>
 
                     </div>
                     </div>
@@ -139,10 +148,10 @@
                     </div>
                     -->
 
-                    <button class="btn-add-step" type="button">Add</button>
+                    
 
                     <div class="submit">
-                        <button class="btn-submit" type="button">Submit</button>
+                        <button class="btn-submit" type="submit">Submit</button>
                     </div>
                 </fieldset>
             </form>
