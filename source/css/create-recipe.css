@@ -81,5 +81,5 @@ span{
 
 .btn-add-ingred:hover, .btn-add-step:hover, .btn-submit:hover{
     cursor: pointer;
-    background: deeppink;
+    background: rgb(231, 16, 27);
 }
