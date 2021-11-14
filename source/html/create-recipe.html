@@ -5,132 +5,137 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="../css/navigation-bar.css" />
     <link rel="stylesheet" href="../css/create-recipe.css" />
     <script src="../js/create-recipe.js" type="module"></script>
 </head>
 <body>
     <header>
-        <nav class="nav--navbar">
-            <a class="navbar-icon" href="./home-page.html" id="ASAP-logo-home">ASAP Recipe</a>
-            <button class="icon-button" type="button">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="./home-page.html" id="ASAP-logo-home">ASAP Recipe</a>
+            <button class="navbar-toggler" type="button">
+              <span class="navbar-toggler-icon"></span>
             </button>
         
-            <div class="collapse navbar-collapse nav_title" id="navbarColor03">
-                <ul class="navbar-list">
+              <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="./cook-book.html" id="link-cookbook">Cookbook</a>
+                  <a class="nav-link" href="./cook-book.html" id="link-cookbook">Cookbook</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./create-recipe.html" id="link-create-recipe">Create</a>
+                  <a class="nav-link" href="./create-recipe.html" id="link-create-recipe">Create</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./read-recipe.html" id="link-read-recipe">Read</a>
+                  <a class="nav-link" href="./read-recipe.html" id="link-read-recipe">Read</a>
                 </li>
-                </ul>
-                <form class="d-flex">
-                <input class="nav-search-input" type="text" placeholder="&ensp;Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
+              </ul>
+              <form class="nav-form">
+                <input class="form-control" type="text" placeholder="&ensp;Search">
+                <button class="btn" type="submit">Search</button>
+              </form>
+          </div>
         </nav>
-    </header>
+  </header>
+
     <!-- Create Recipe -->
     <section class="section--create-recipe">
-        <div class="bs-docs-section">
-            <div class="row">
-            <div class="col-lg-12">
-                <div class="page-header">
-                <h2 id="forms">Create Recipe Form</h2>
-                </div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-lg-6">
-                <div class="bs-component">
-                <form action="create-recipe.html" method="post" id="recipeForm">
-                    <fieldset>
-                    <div class="form-group has-danger has-success">
-                        <label class="col-form-label col-form-label-lg mt-4" for="recipeTitle">Recipe Title</label>
-                        <input class="form-control form-control-lg" type="text" placeholder="Enter your recipe name" id="recipeTitle">
+        <div class="page-header">
+            <h2 id="forms">Create Recipe Form</h2>
+        </div>
+            
+        <div class="component">
+            <form action="create-recipe.html" method="post" id="recipeForm">
+                <fieldset>
+                    <legend class="recipeInfo-sec">Recipe Information</legend> 
+                    <div class="recipeTitle">
+                        <label class="recipeTitle-label" for="recipe-title">Recipe Title</label>
+                        <input class="form-control" type="text" placeholder="Enter your recipe name" id="recipeTitle">
                         <div class="invalid-feedback"></div>
                     </div>
-                    <div class="form-group has-danger has-success">
-                        <label for="exampleTextarea" class="form-label mt-4">Description</label>
+                    <div class="recipeDescription">
+                        <label class="recipeDescription-label" for="recipe-description">Description</label>
                         <textarea class="form-control" id="recipeDescription" rows="3"></textarea>
                         <div class="invalid-feedback"></div>
                     </div>
-                    <div class="form-group">
-                        <label for="formFile" class="form-label mt-4">Upload image</label>
-                        <input class="form-control" type="file" id="formFile">
+                    <div class="recipeCost">
+                        <label class="recipeCost-label" for="recipe-cost">Total cost</label>
+                        <input class="form-control" type="text" placeholder="$" id="recipeCost">
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="recipeImage">
+                        <label class="recipeImage-label" for="recipe-image">Upload image</label>
+                        <input class="form-control" type="file" id="recipeImage">
                     </div>
                     
-                    <legend class="mt-4">Ingredients</legend>
-    
-                    <div class="form-group ">
-                        <div class="col-form-label mt-4 has-danger has-success">
-                        <label class="col-form-label mt-4" for="inputDefault">Ingredient 1</label>
-                        <input type="text" class="form-control" placeholder="Ingredient" id="ingredient1name">
-                        <div class="invalid-feedback"></div>
+                    <legend class="ingredient-sec">Ingredients</legend>
+                    <div class="ingredient-info1">
+                        <div class="ingredient-name1">
+                            <label class="name1-label" for="inputDefault">Ingredient 1</label>
+                            <input type="text" class="form-control" placeholder="Ingredient" id="ingredient1name">
+                            <div class="invalid-feedback"></div>
                         </div>
     
-                        <label class="form-label mt-4">Amount</label>
-                        <div class="input-group mb-3 has-danger has-success">
-                        <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)" id="ingredient1amount">
-                        <span class="input-group-text">g</span>
-                        <div class="invalid-feedback"></div>
-                        </div>
-    
-                        <label class="form-label mt-4">Ingredient cost</label>
-                        <div class="input-group mb-3">
-                        <span class="input-group-text">$</span>
-                        <input type="text" class="form-control" placeholder="1.00" aria-label="Amount" id="ingredient1cost">
-                        <div class="invalid-feedback"></div>
-                        </div>
-                        
+                        <div class="ingredient-amount1">
+                            <label class="amount1-label">Amount</label>
+                            <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)" id="ingredient1amount">
+                            <span class="amount-unit">g</span>
+                            <div class="invalid-feedback"></div>
+                        </div>                       
                     </div>
     
-                    <div class="form-group">
-                        <div class="col-form-label mt-4">
-                        <label class="col-form-label mt-4" for="inputDefault">Ingredient 2</label>
-                        <input type="text" class="form-control" placeholder="Ingredient" id="ingredient2name">
-                        <small></small>
+                    <div class="ingredient-info2">
+                        <div class="ingredient-name2">
+                            <label class="name2-label" for="inputDefault">Ingredient 2</label>
+                            <input type="text" class="form-control" placeholder="Ingredient" id="ingredient2name">
+                            <small></small>
                         </div>
     
-                        <label class="form-label mt-4">Amount</label>
-                        <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)" id="ingredient2amount">
-                        <span class="input-group-text">g</span>
-                        <small></small>
-                        </div>
-    
-                        <label class="form-label mt-4">Ingredient cost</label>
-                        <div class="input-group mb-3">
-                        <span class="input-group-text">$</span>
-                        <input type="text" class="form-control" placeholder="1.00" aria-label="Amount" id="ingredient2cost">
-                        <small></small>
+                        <div class="ingredient-amount2">
+                            <label class="amount2-label">Amount</label>
+                            <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)" id="ingredient2amount">
+                            <span class="amount-unit">g</span>
+                            <small></small>
                         </div>
                     </div>
-                    <legend class="mt-4">Steps</legend>
-                    <div class="form-group has-danger has-success">
-                        <label for="exampleTextarea" class="form-label mt-4">Step 1</label>
+
+                    <div class="ingredient-info3">
+                        <div class="ingredient-name3">
+                            <label class="name3-label" for="inputDefault">Ingredient 3</label>
+                            <input type="text" class="form-control" placeholder="Ingredient" id="ingredient3name">
+                            <small></small>
+                        </div>
+                         
+                        <div class="ingredient-amount3">
+                            <label class="amount3-label">Amount</label>
+                            <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)" id="ingredient3amount">
+                            <span class="amount-unit">g</span>
+                            <small></small>
+                        </div>
+                    </div>
+
+                    <button type="Add" class="btn-add-ingred">Add</button>
+
+                    <legend class="steps-sec">Steps</legend>
+                    <div class="step1-sec">
+                        <label class="recipeStep1-label" for="stepLabel">Step 1</label>
                         <textarea class="form-control" id="step1" rows="3"></textarea>
                         <div class="invalid-feedback"></div>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleTextarea" class="form-label mt-4">Step 2</label>
+
+                    <div class="step2-sec">
+                        <label class="recipeStep2-label" for="step2Label">Step 2</label>
                         <textarea class="form-control" id="step2" rows="3"></textarea>
                         <small></small>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    </fieldset>
-                
-                </form>
-                </div>
-            </div>
-            </div>
+
+                    <button class="btn-add-step" type="button">Add</button>
+
+                    <div class="submit">
+                        <button class="btn-submit" type="button">Submit</button>
+                    </div>
+                </fieldset>
+            </form>
         </div>
-        </section>
+    </section>
 </body>
 </html>
