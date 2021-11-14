@@ -8,9 +8,6 @@ class RecipeCard extends HTMLElement {
         const styleElem = document.createElement('style');
         const styles = `
             * {
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
             }
 
             a {
@@ -22,15 +19,22 @@ class RecipeCard extends HTMLElement {
 
             article {
             align-items: center;
-            border: 1px solid rgb(223, 225, 229);
+            border: 5px solid #ecf8f5;
             border-radius: 8px;
             display: grid;
             grid-template-rows: 118px 56px 14px 18px 15px 36px;
             height: auto;
-            row-gap: 5px;
+            row-gap: 10px;
             padding: 0 16px 16px 16px;
-            width: 178px;
+            width: 300px;
             }
+            article:hover {
+                border-radius: 8px;
+                cursor: pointer;
+                filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+                transition: all 0.2s ease;
+                transform: scale(1.02);
+              }
             div.rating {
             align-items: center;
             column-gap: 5px;
@@ -46,7 +50,7 @@ class RecipeCard extends HTMLElement {
             article > img {
             border-top-left-radius: 8px;
             border-top-right-radius: 8px;
-            height: 118px;
+            height: 130px;
             object-fit: cover;
             margin-left: -16px;
             width: calc(100% + 32px);
@@ -58,12 +62,9 @@ class RecipeCard extends HTMLElement {
             overflow: hidden;
             }
 
-            p.organization {
-            color: black !important;
-            }
             p.title {
             display: -webkit-box;
-            font-size: 16px;
+            font-size: 18px;
             height: 36px;
             line-height: 18px;
             overflow: hidden;
@@ -79,7 +80,8 @@ class RecipeCard extends HTMLElement {
         styleElem.innerHTML = styles;
         let card = document.createElement('article');
         this.shadowRoot.append(styleElem, card);
-        
+        // add id for each recipe
+        card.id = data['id'];
         // ---------------need fix later!------
         // Wait for add img link. Cannot save img in local
         let img = document.createElement('img');
@@ -89,16 +91,30 @@ class RecipeCard extends HTMLElement {
 
         // add title
         let title = document.createElement('p');
+        title.textContent = data['title']
         title.classList.add('title');
-        // if the recipe is from internet, we can add this 
-        let titleLink = document.createElement('a');
-        titleLink.setAttribute('href', 'home.html');
-        titleLink.textContent = data['title'];
 
-        card.appendChild(title.appendChild(titleLink));
+        card.appendChild(title);
    
         // add total cost
+        const priceValue = Math.round(data['price']);
+        let priceDiv = document.createElement('div');
+        // if (priceValue) {
+        //     rating.innerHTML = `
+        //       <span>${priceValue}</span>
+        //       <img src="assets/images/icons/${numStars}-star.svg" alt="${numStars} stars">
+        //     `;
+        //     if (ratingTotal) {
+        //       rating.innerHTML += `<span>(${ratingTotal})</span>`;
+        //     }
+        //   } else {
+        //     rating.innerHTML = `
+        //       <span>No Reviews</span>
+        //     `;
+        //   }
+        
         let price = document.createElement('p');
+        price.classList.add('price')
         price.textContent = 'Show a total cost here';
         card.appendChild(price)
 
