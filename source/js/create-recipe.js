@@ -185,7 +185,7 @@ function setFormListener() {
 
     const totalCost = document.getElementById('recipeCost')
         .value.trim();
-    const cost = null;
+    let cost = null;
     if (totalCost.length > 0) {
       if (hasFloat(document.getElementById('recipeCost'))) {
         cost = parseFloat(totalCost);
