@@ -8,6 +8,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+        fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+
     - name: Run Jest
       uses: stefanoeb/jest-action@1.0.3
+
+    - name: Build
+      uses: andstor/jsdoc-action@v1
+      with:
+        source_dir: ./source/
+        recurse: true
+        output_dir: ./out
+
+    - name: Commit files
+      run: |
+        git config --local user.email "jid001@ucsd.edu"
+        git config --local user.name "Jiayan Dong"
+        git add out
+        git commit -m "JSDOC"
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        branch: ${{ github.ref }}
