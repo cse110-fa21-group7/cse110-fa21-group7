@@ -1,131 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../css/read-recipe.css" />
-    <link rel="stylesheet" href="../css/navigation-bar.css" />
-    
-    <script src="../js/read-recipe.js" type="module"></script>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/read-recipe.css" />
+  <link rel="stylesheet" href="../css/navigation-bar.css" />
+
+  <script src="../js/recipe-info.js" type="module"></script>
+
 </head>
+
 <body>
-    <header>
-        <nav class="navbar">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="./home-page.html" id="ASAP-logo-home">ASAP Recipe</a>
-            <button class="navbar-toggler" type="button">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-        
-              <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="./cook-book.html" id="link-cookbook">Cookbook</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./create-recipe.html" id="link-create-recipe">Create</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./read-recipe.html" id="link-read-recipe">Read</a>
-                </li>
-              </ul>
-              <form class="nav-form">
-                <input class="form-control" type="text" placeholder="&ensp;Search">
-                <button class="btn" type="submit">Search</button>
-              </form>
-          </div>
-        </nav>
+  <header>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./home-page.html" id="ASAP-logo-home">ASAP Recipe</a>
+        <button class="navbar-toggler" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./cook-book.html" id="link-cookbook">Cookbook</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./create-recipe.html" id="link-create-recipe">Create</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./read-recipe.html" id="link-read-recipe">Read</a>
+          </li>
+        </ul>
+        <form class="nav-form">
+          <input class="form-control" type="text" placeholder="&ensp;Search">
+          <button class="btn" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
   </header>
-    <!-- Read Recipe -->
-    <section class="section--read-recipe">
-        <article>
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="page-header">
-                  <h2 id="forms">Read Recipe</h2>
-                </div>
-              </div>
-            </div>
-          <main>
-            <div class="bs-docs-section">
-  
-              <button type="button" class="btn btn-primary" id="Edit">Edit</button>
-              <button type="button" class="btn btn-danger" id="Delete">Delete</button>
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="bs-component">
-                    <div class="card mb-3">
-        
-                      <h3 class="card-header" id="recipeTitle">Recipe Title</h3>
-                      <div class="card-body">
-                        <h6 class="card-title" id="recipeDescription"></h6>
-                      </div>
-                      <img src="../recipe-img-example/recipe_0.jpg" class="img-rounded" alt="Image">
-                      <div class="content">
-                        
-                        <!-- Nav pills -->
-                        <ul class="nav nav-pills" role="tablist">
-                          <li class="nav-item tab-button">
-                            <button class="nav-link active" data-id="ingredients-tab" data-toggle="pill">Ingredients</button>
-                          </li>
-                          <li class="nav-item tab-button">
-                            <button class="nav-link" data-id="steps-tab" data-toggle="pill">Steps</button>
-                          </li>
+  <!-- Read Recipe -->
+  <section class="section--read-recipe">
+    <article>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <h2 id="forms">Read Recipe</h2>
+          </div>
+        </div>
+      </div>
+      <main>
+        <div class="bs-docs-section">
+
+          <button type="button" class="btn btn-primary" id="Edit">Edit</button>
+          <button type="button" class="btn btn-danger" id="Delete">Delete</button>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="bs-component">
+                <div class="card mb-3">
+
+                  <h3 class="card-header" id="recipeTitle">Recipe Title</h3>
+                  <div class="card-body">
+                    <h6 class="card-title" id="recipeDescription"></h6>
+                  </div>
+                  <img src="../recipe-img-example/recipe_0.jpg" class="img-rounded" alt="Image">
+                  <div class="content">
+
+                    <div class="tab-container">
+                      <div class="tab-menu">
+                        <ul>
+                          <li><a href="#" class="tab-a active-a" data-id="tab1">Ingredients</a></li>
+                          <li><a href="#" class="tab-a" data-id="tab2">Steps</a></li>
                         </ul>
                       </div>
-                    </div>
-                    </div>
-                    <div class="tab-content">
-                    
-                      <div id="ingredients" class="container tab-pane active">
-                        
-                      </div>
-                      <div id="steps" class="container tab-pane fade">
-                        
-                      </div>
-                    
-                    </div>
-                  </div>
-                    <div class="card">
-                      <div class="card-body content ingredients active" data-id="ingredients">
-                        
-                        <h4 class="card-title">Ingredients</h4>
-                        <ul class="list-group">
-                          <li class="list-group-item">Ingredient 1</li>
-                          <li class="list-group-item">Ingredient 2</li>
-                        </ul>      
-                                        
-                      </div>
-                        
-                      
+                      <div class="tab tab-active" data-id="tab1">
+                        <div class="card">
+                          <div class="card-body content ingredients active" data-id="ingredients">
 
-                      <div class="card-body content instructions" data-id="instructions">
-                        <!--style="display: none;"-->
-                        <div class="steps">
-                          <h4 class="card-title">Steps</h4>
-                          <div class="step-instruction">
-                            <h6 class="card-subtitle mb-2">Step 1</h6>
-                            <p class="card-text" id="step1">Step 1 instructions..</p>
+                            <h4 class="card-title">Ingredients</h4>
+                            <ul class="list-group">
+                              <li class="list-group-item">Ingredient 1</li>
+                              <li class="list-group-item">Ingredient 2</li>
+                            </ul>
+
                           </div>
-                          <div class="step-instruction">
-                            <h6 class="card-subtitle mb-2">Step 2</h6>
-                            <p class="card-text" id="step2">Step 2 instructions..</p>
+
+                        </div>
+
+                        <div class="tab " data-id="tab2">
+                          <div class="card-body content instructions" data-id="instructions">
+                            <div class="steps">
+                              <h4 class="card-title">Steps</h4>
+                              <div class="step-instruction">
+                                <h6 class="card-subtitle mb-2">Step 1</h6>
+                                <p class="card-text" id="step1">Step 1 instructions..</p>
+                              </div>
+                              <div class="step-instruction">
+                                <h6 class="card-subtitle mb-2">Step 2</h6>
+                                <p class="card-text" id="step2">Step 2 instructions..</p>
+                              </div>
+                            </div>
+
+
                           </div>
                         </div>
-                      
-                        
                       </div>
                     </div>
                   </div>
                 </div>
+                <div class="tab-content">
+
+                  <div id="ingredients" class="container tab-pane active">
+
+                  </div>
+                  <div id="steps" class="container tab-pane fade">
+
+                  </div>
+
+                </div>
               </div>
+
+
+
+
+
             </div>
-          
-          </main>  
-        </article> 
-      </section>
-  </body>
+          </div>
+        </div>
+
+
+      </main>
+    </article>
+  </section>
+</body>
+
 </html>
