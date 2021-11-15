@@ -14,7 +14,7 @@ label{
 }
 
 .section--create-recipe{
-    background-color: #ecf8f5;
+    background-color: #ffffff;
 }
 
 h2 {
@@ -65,7 +65,7 @@ span{
     color: #666;
 }
 
-.btn-add-ingred, .btn-add-step{
+.btn-add{
     margin-left: 140px;
     margin-bottom: 20px;
     width: 70px;
@@ -87,3 +87,11 @@ span{
     cursor: pointer;
     background: rgb(231, 16, 27);
 }
+
+.invalid-feedback {
+    /* display: none; */
+    width: 100%;
+    margin-top: .25rem;
+    font-size: .875em;
+    color: #ff7851;
+   }

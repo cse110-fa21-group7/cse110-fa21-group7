@@ -251,5 +251,32 @@ function setFormListener() {
       console.log('Invalid recipe');
     }
   });
-}
 
+  const addIng = form.querySelector('#add-ingredient');
+
+  addIng.addEventListener('click', function(event) {
+    console.log('Add ingredient');
+    const ingsDiv = document.getElementById('ingredients');
+    const ingElems = ingsDiv.querySelectorAll('.ingredient');
+    const ingAdded = ingElems[0].cloneNode(true);
+    const numIngs = ingElems.length;
+    console.log(`numIngs: ${numIngs}`);
+    ingAdded.querySelector('.ingredient-name > .name-label')
+        .innerText = `Ingredient ${numIngs + 1}`;
+    ingsDiv.appendChild(ingAdded);
+  });
+
+  const addStep = form.querySelector('#add-step');
+
+  addStep.addEventListener('click', function(event) {
+    console.log('Add step');
+    const stepsDiv = document.getElementById('steps');
+    const stepElems = stepsDiv.querySelectorAll('.step-sec');
+    const stepAdded = stepElems[0].cloneNode(true);
+    const numSteps = stepElems.length;
+    console.log(`numSteps: ${numSteps}`);
+    stepAdded.querySelector('.recipeStep-label')
+        .innerText = `Step ${numSteps + 1}`;
+    stepsDiv.appendChild(stepAdded);
+  });
+}
