@@ -75,6 +75,15 @@ span{
     background: rgb(243, 150, 154);
 }
 
+.btn-remove-ingred, .btn-remove-step{
+    margin-bottom: 20px;
+    width: 70px;
+    height: 35px;
+    border-radius: 5px;
+    color: #fff;
+    background: rgb(243, 150, 154);
+}
+
 .btn-submit{
     width: 70px;
     height: 35px;
@@ -83,7 +92,7 @@ span{
     background: rgb(243, 150, 154);
 }
 
-.btn-add-ingred:hover, .btn-add-step:hover, .btn-submit:hover{
+.btn-add-ingred:hover, .btn-add-step:hover, .btn-submit:hover, .btn-remove-ingred:hover, .btn-remove-step:hover{
     cursor: pointer;
     background: rgb(231, 16, 27);
 }
