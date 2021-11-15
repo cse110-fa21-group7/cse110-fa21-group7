@@ -1,5 +1,8 @@
 // create-recipe.js
 
+const MAX_INGREDIENTS = 20;
+const MAX_STEPS = 10;
+
 let recipes = {};
 window.addEventListener('DOMContentLoaded', init);
 
@@ -251,5 +254,46 @@ function setFormListener() {
       console.log('Invalid recipe');
     }
   });
-}
 
+  const addIng = form.querySelector('#add-ingredient');
+
+  addIng.addEventListener('click', function(event) {
+    console.log('Add ingredient');
+    const ingsDiv = document.getElementById('ingredients');
+    const ingElems = ingsDiv.querySelectorAll('.ingredient');
+    const numIngs = ingElems.length;
+
+    // Setting hard upper bound per ADR
+    if (numIngs >= MAX_INGREDIENTS) {
+      console.log('Maximum amount of ingredients');
+      return;
+    }
+
+    const ingAdded = ingElems[0].cloneNode(true);
+    console.log(`numIngs: ${numIngs}`);
+    ingAdded.querySelector('.ingredient-name > .name-label')
+        .innerText = `Ingredient ${numIngs + 1}`;
+    ingsDiv.appendChild(ingAdded);
+  });
+
+  const addStep = form.querySelector('#add-step');
+
+  addStep.addEventListener('click', function(event) {
+    console.log('Add step');
+    const stepsDiv = document.getElementById('steps');
+    const stepElems = stepsDiv.querySelectorAll('.step-sec');
+    const numSteps = stepElems.length;
+
+    // Setting hard upper bound per ADR
+    if (numSteps >= MAX_STEPS) {
+      console.log('Maximum amount of steps');
+      return;
+    }
+
+    const stepAdded = stepElems[0].cloneNode(true);
+    console.log(`numSteps: ${numSteps}`);
+    stepAdded.querySelector('.recipeStep-label')
+        .innerText = `Step ${numSteps + 1}`;
+    stepsDiv.appendChild(stepAdded);
+  });
+}
