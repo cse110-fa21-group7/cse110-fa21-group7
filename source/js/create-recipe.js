@@ -1,5 +1,8 @@
 // create-recipe.js
 
+const MAX_INGREDIENTS = 20;
+const MAX_STEPS = 10;
+
 let recipes = {};
 window.addEventListener('DOMContentLoaded', init);
 
@@ -258,8 +261,15 @@ function setFormListener() {
     console.log('Add ingredient');
     const ingsDiv = document.getElementById('ingredients');
     const ingElems = ingsDiv.querySelectorAll('.ingredient');
-    const ingAdded = ingElems[0].cloneNode(true);
     const numIngs = ingElems.length;
+
+    // Setting hard upper bound per ADR
+    if (numIngs >= MAX_INGREDIENTS) {
+      console.log('Maximum amount of ingredients');
+      return;
+    }
+
+    const ingAdded = ingElems[0].cloneNode(true);
     console.log(`numIngs: ${numIngs}`);
     ingAdded.querySelector('.ingredient-name > .name-label')
         .innerText = `Ingredient ${numIngs + 1}`;
@@ -272,8 +282,15 @@ function setFormListener() {
     console.log('Add step');
     const stepsDiv = document.getElementById('steps');
     const stepElems = stepsDiv.querySelectorAll('.step-sec');
-    const stepAdded = stepElems[0].cloneNode(true);
     const numSteps = stepElems.length;
+
+    // Setting hard upper bound per ADR
+    if (numSteps >= MAX_STEPS) {
+      console.log('Maximum amount of steps');
+      return;
+    }
+
+    const stepAdded = stepElems[0].cloneNode(true);
     console.log(`numSteps: ${numSteps}`);
     stepAdded.querySelector('.recipeStep-label')
         .innerText = `Step ${numSteps + 1}`;
