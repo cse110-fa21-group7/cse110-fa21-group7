@@ -1,6 +1,7 @@
 {
     "scripts": {
-      "test": "jest"
+      "test": "jest",
+      "lint": "eslint ./source --ext .js"
     },
     "devDependencies": {
       "jest": "^27.3.1",
