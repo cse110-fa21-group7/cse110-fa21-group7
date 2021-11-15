@@ -31,8 +31,8 @@ jobs:
         git add out
         git commit -m "JSDOC"
 
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        branch: ${{ github.ref }}
+    #- name: Push changes
+    #  uses: ad-m/github-push-action@master
+    #  with:
+    #    github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+    #    branch: ${{ github.ref }}
