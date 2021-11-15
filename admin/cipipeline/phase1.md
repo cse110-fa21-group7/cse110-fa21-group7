@@ -26,4 +26,4 @@ Our Super Lint includes three types languages checking:
 - check and resolve conflicts
 
 ## Pipeline Diagram
-![diagram]()
+<img src="./pipeline_diagram.png" alt="diagram">
