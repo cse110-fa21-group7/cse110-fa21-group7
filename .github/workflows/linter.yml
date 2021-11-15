@@ -50,5 +50,11 @@ jobs:
         uses: github/super-linter@v4.8.1
         env:
           VALIDATE_ALL_CODEBASE: false
+          VALIDATE_JSON: false
+          VALIDATE_CSS: false
+          VALIDATE_HTML: false
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LINTER_RULES_PATH: /
+          JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
+          VALIDATE_JAVASCRIPT_STANDARD: false
