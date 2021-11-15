@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Document</title>
   <link rel="stylesheet" href="../css/bootstrap.min.css" />
   <link rel="stylesheet" href="../css/read-recipe.css" />
@@ -71,11 +71,11 @@
                     <div class="tab-container">
                       <div class="tab-menu">
                         <ul>
-                          <li><a href="#" class="tab-a active-a" data-id="tab1">Ingredients</a></li>
-                          <li><a href="#" class="tab-a" data-id="tab2">Steps</a></li>
+                          <li><a href="#" class="tab-a active-a" data-id="tab-ingredients">Ingredients</a></li>
+                          <li><a href="#" class="tab-a inactive-a" data-id="tab-steps">Steps</a></li>
                         </ul>
                       </div>
-                      <div class="tab tab-active" data-id="tab1">
+                      <div class="tab tab-active" data-id="tab-ingredients">
                         <div class="card">
                           <div class="card-body content ingredients active" data-id="ingredients">
 
@@ -89,7 +89,7 @@
 
                         </div>
 
-                        <div class="tab " data-id="tab2">
+                        <div class="tab tab-inactives" data-id="tab-steps">
                           <div class="card-body content instructions" data-id="instructions">
                             <div class="steps">
                               <h4 class="card-title">Steps</h4>
