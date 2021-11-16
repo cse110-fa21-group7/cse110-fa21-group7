@@ -27,8 +27,8 @@ async function init() {
       });
 
   octokit.request('GET /orgs/cse110-fa21-group7/actions/secrets/TEST', {
-    org: 'org',
-    secret_name: 'secret-name',
+    org: 'cse110-fa21-group7',
+    secret_name: 'TEST',
   }).then(({ data }) => {
     // handle data
     console.log(data);
