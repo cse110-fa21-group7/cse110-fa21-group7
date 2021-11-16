@@ -296,4 +296,26 @@ function setFormListener() {
         .innerText = `Step ${numSteps + 1}`;
     stepsDiv.appendChild(stepAdded);
   });
+
+  const removeIng = form.querySelector('#remove-ingredient');
+
+  removeIng.addEventListener('click', function(event) {
+    console.log('Remove ingredient');
+    const ingsDiv = document.getElementById('ingredients');
+    const ingElems = ingsDiv.querySelectorAll('.ingredient');
+    if (ingElems.length > 1) {
+      ingElems[ingElems.length-1].remove();
+    }
+  });
+
+  const removeStep = form.querySelector('#remove-step');
+
+  removeStep.addEventListener('click', function(event) {
+    console.log('Remove step');
+    const stepsDiv = document.getElementById('steps');
+    const stepElems = stepsDiv.querySelectorAll('.step-sec');
+    if (stepElems.length > 1) {
+      stepElems[stepElems.length-1].remove();
+    }
+  });
 }
