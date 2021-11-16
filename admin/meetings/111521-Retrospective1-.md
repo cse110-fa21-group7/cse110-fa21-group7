@@ -22,7 +22,8 @@ Note Taker:
 * Retrospective meeting
 
 ## Discussion Items
-
+![Mad/Sad/Glas](retrospectives/s1.png)
+![Mad/Sad/Glas](retrospectives/s2.png)
 ### Retrium Top 5 voted
 * Group progress
 * Lack of participation
