@@ -34,6 +34,15 @@ async function init() {
     console.log(data);
   });
 
+  octokit.request('GET /repos/cse110-fa21-group7/cse110-fa21-group7/actions/secrets/CLIENT_ID', {
+    owner: 'cse110-fa21-group7',
+    repo: 'cse110-fa21-group7',
+    secret_name: 'CLIENT_ID',
+  }).then(({ data }) => {
+    // handle data
+    console.log(data);
+  });
+
   
 }
 
