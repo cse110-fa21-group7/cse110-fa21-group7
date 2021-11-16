@@ -1,5 +1,5 @@
 Catch up timeline
-### Date: Tuesday, Nov 14 @ 10AM - 11AM
+### Date: Sundayt, Nov 14 @ 4PM - 6PM
 
 ### location: zoom
 
@@ -9,19 +9,14 @@ Note Taker:
 
 - [x] Yalong Tian
 - [x] Jingwen Liu
-- [ ] Christopher Harness 
-- [ ] Jiayan Dong 
-- [x] Vince Rothenberg 
-- [ ] Nidhin Madhu 
+- [x] Jiayan Dong 
 - [ ] Youjia Weng 
-- [ ] Kunal Arora
-- [x] Jianfan Huo
 - [x] Yifan Lu 
 
 ## Agenda
 
-* fix html/css bugs
-* combine all js parts together
+* pipeline diagram 
+* pipeline doc
 
 ## Discussion Items
 
