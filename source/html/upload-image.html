@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/navigation-bar.css" />
+    <link rel="stylesheet" href="../css/create-recipe.css" />
+    <script src="../js/upload-image.js" type="module"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="./home-page.html" id="ASAP-logo-home">ASAP Recipe</a>
+            <button class="navbar-toggler" type="button">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="./cook-book.html" id="link-cookbook">Cookbook</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./create-recipe.html" id="link-create-recipe">Create</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./read-recipe.html" id="link-read-recipe">Read</a>
+                </li>
+              </ul>
+              <form class="nav-form">
+                <input class="form-control" type="text" placeholder="&ensp;Search">
+                <button class="btn" type="submit">Search</button>
+              </form>
+          </div>
+        </nav>
+  </header>
+
+    <!-- Create Recipe -->
+    <section class="section--create-recipe">
+        <div class="page-header">
+            <h2 id="forms">Test Upload Image</h2>
+        </div>
+            
+        <div class="component">
+            <form action="upload-image.html" method="post" id="recipeForm">
+                <fieldset>
+                    <legend class="recipeInfo-sec"></legend> 
+
+                    <div class="recipeImage">
+                        <label class="recipeImage-label" for="recipe-image">Upload image</label>
+                        <input class="form-control" type="file" id="recipeImage">
+                    </div>    
+                    <div class="submit">
+                        <button class="btn-submit" type="submit">Submit</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
