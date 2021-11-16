@@ -19,39 +19,68 @@ Note Taker:
 - [x] Yifan Lu 
 
 ## Agenda
-
 * Retrospective meeting
 
 ## Discussion Items
 
 ### Retrium Top 5 voted
+* Group progress
+* Lack of participation
+* Vince did a lot of things!!
+* Frontend slow progress
+* meeting absentees
 
-
-## Action items
+## Action items ddl: before Sunday
 
 ### Yalong Tian:
-* 1
+* Cypress setup include locally and on github actions
+* create e2e test for create page and load recipe card
+* API
 
 ### Jingwen Liu:
-* 1
+* Finish the update recipe function
+* Start working on the delete recipe function
+* Help with the CI/CD pipeline set up
+* Research on the APIs for search function
 
 ### Christopher Harness:
-* 1
+* Work on curated list page
+* Assist Back-end
+* Research color schemes for pages
 
 ### Jiayan Dong:
-* 1
+* Finish JSDoc setup
+* Add test and documentation for JS functions
+* Do some research on API to store pictures
 
 ### Vince Rothenberg:
-* 1
+* Update recipe form 
+* Upload image with API to external site
+* Recipe cost level
+* Curated list add to Cookbook
 
 ### Nidhin Madhu:
-* 1
+* Styling create recipe page
+* Bug fixing across the html pages
+* Home Page designing
 
 ### Youjia Weng:
-* 1
-* 
+* Try to keep up with back-end progress
+* add tests to recipe-related functions, trivial bug fixes
+* Assistance with recipe forms
+
 ### Jianfan Huo:
-* 1
+* Polish every pages CSS + HTML
+* Bug fixes
 * 
 ### Yifan Lu:
-* 1
+* Add more tests on GitHub
+* update styles of cookbook page
+* bug fix
+
+### Kunal Arora
+* Bug fixes read recipe
+* Make read recipe a popup using a shadow DOM
+* Styling create recipe page
+* Curated list cards for each recipe
+
