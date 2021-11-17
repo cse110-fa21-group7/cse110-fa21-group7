@@ -4,6 +4,8 @@ const MAX_INGREDIENTS = 20;
 const MAX_STEPS = 10;
 
 let recipes = {};
+const recipe = {};
+let formdata = new FormData();
 window.addEventListener('DOMContentLoaded', init);
 
 /** Initialize function, begins all of the JS code in this file */
@@ -167,12 +169,12 @@ function setFormListener() {
   const INGREDIENT_AMOUNT_REQUIRED = 'Please enter your ingredient amount';
   const STEP_REQUIRED = 'Please enter your recipe instructions';
 
+  // Form submission, saves recipe to localStorage
   form.addEventListener('submit', function(event) {
     // Stop form submission
     event.preventDefault();
     console.log('Submit button clicked');
     let allValid = true;
-    const recipe = {};
 
     // Validate form
     const titleValid = hasValue(document.getElementById('recipeTitle'),
@@ -255,8 +257,41 @@ function setFormListener() {
     }
   });
 
+  const file = document.getElementById('recipeImage');
+
+  // Image upload, saves URL to recipe object
+  file.addEventListener('change', (e) => {
+    formdata = new FormData();
+    formdata.append('image', e.target.files[0]);
+    // console.log(file);
+    fetch('https://api.imgur.com/3/image/', {
+      method: 'post',
+      headers: {
+        Authorization: 'Client-ID 1b99956c57a5642',
+      },
+      body: formdata,
+    }).then((data) => data.json()).then((data) => {
+      console.log(data);
+      const divImg = document.getElementById('img-spot');
+      const childImgs = divImg.getElementsByTagName('img');
+      let img;
+      if (childImgs.length == 0) {
+        img = document.createElement('img');
+        divImg.append(img);
+      } else {
+        img = childImgs[0];
+      }
+      console.log(`URL: ${data.data.link}`);
+      img.src = data.data.link;
+      img.height = '200';
+      img.referrerPolicy = 'no-referrer';
+      recipe['img-url'] = data.data.link;
+    });
+  });
+
   const addIng = form.querySelector('#add-ingredient');
 
+  // Create additional ingredient element
   addIng.addEventListener('click', function(event) {
     console.log('Add ingredient');
     const ingsDiv = document.getElementById('ingredients');
@@ -270,6 +305,7 @@ function setFormListener() {
     }
 
     const ingAdded = ingElems[0].cloneNode(true);
+    ingAdded.innerText = '';
     console.log(`numIngs: ${numIngs}`);
     ingAdded.querySelector('.ingredient-name > .name-label')
         .innerText = `Ingredient ${numIngs + 1}`;
@@ -278,6 +314,7 @@ function setFormListener() {
 
   const addStep = form.querySelector('#add-step');
 
+  // Create additional step element
   addStep.addEventListener('click', function(event) {
     console.log('Add step');
     const stepsDiv = document.getElementById('steps');
@@ -291,6 +328,7 @@ function setFormListener() {
     }
 
     const stepAdded = stepElems[0].cloneNode(true);
+    stepAdded.innerText = '';
     console.log(`numSteps: ${numSteps}`);
     stepAdded.querySelector('.recipeStep-label')
         .innerText = `Step ${numSteps + 1}`;
