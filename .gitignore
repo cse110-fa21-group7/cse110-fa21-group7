@@ -1,5 +1,2 @@
 node_modules/
-.eslintrc.js
-package.json
-package-lock.json
 secrets.yml
