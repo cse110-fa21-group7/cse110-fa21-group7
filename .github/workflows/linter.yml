@@ -16,3 +16,5 @@ jobs:
           node-version: "16"
       - run: npm install
       - run: npm run lint
+      - name: Run Codacy Analysis CLI
+        uses: codacy/codacy-analysis-cli-action@master
