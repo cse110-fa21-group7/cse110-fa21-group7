@@ -1,32 +1,31 @@
 // main.js
 
-import {Router} from './Router.js';
+import { Router } from "./Router.js";
 
 let recipeData = {};
 
 const navbarLinks = [
-  ['#ASAP-logo-home', 'home'],
-  ['#link-cookbook', 'cookbook'],
-  ['#link-create-recipe', 'create-recipe'],
-  ['#link-read-recipe', 'read-recipe'],
-
+  ["#ASAP-logo-home", "home"],
+  ["#link-cookbook", "cookbook"],
+  ["#link-create-recipe", "create-recipe"],
+  ["#link-read-recipe", "read-recipe"],
 ];
 
-const router = new Router(function() {
+const router = new Router(function () {
   const doc = document;
-  doc.querySelector('section.section--navbar').classList.add('shown');
-  doc.querySelector('div.div--asap-recipe-header').classList.add('shown');
-  doc.querySelector('section.section--home').classList.add('shown');
-  doc.querySelector('section.section--create-recipe').classList.remove('shown');
-  doc.querySelector('section.section--main-container').classList.add('shown');
-  doc.querySelector('section.section--read-recipe').classList.remove('shown');
+  doc.querySelector("section.section--navbar").classList.add("shown");
+  doc.querySelector("div.div--asap-recipe-header").classList.add("shown");
+  doc.querySelector("section.section--home").classList.add("shown");
+  doc.querySelector("section.section--create-recipe").classList.remove("shown");
+  doc.querySelector("section.section--main-container").classList.add("shown");
+  doc.querySelector("section.section--read-recipe").classList.remove("shown");
 });
 
-window.addEventListener('DOMContentLoaded', init);
+window.addEventListener("DOMContentLoaded", init);
 
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
-  console.log('Initializing');
+  console.log("Initializing");
   bindNavbarLinks();
   createSections();
   bindEscKey();
@@ -37,18 +36,18 @@ async function init() {
  * Gets recipes from localStorage
  */
 function getRecipesFromCache() {
-  console.log('Getting recipes from cache');
-  const json = localStorage.getItem('recipes');
+  console.log("Getting recipes from cache");
+  const json = localStorage.getItem("recipes");
 
   if (json === null) {
-    console.log('Recipes not initialized in cache');
-    localStorage.setItem('recipes', JSON.stringify(recipeData));
+    console.log("Recipes not initialized in cache");
+    localStorage.setItem("recipes", JSON.stringify(recipeData));
     return;
   }
 
-  recipeData = JSON.parse(localStorage.getItem('recipes'));
+  recipeData = JSON.parse(localStorage.getItem("recipes"));
   if (Object.keys(recipeData).length == 0) {
-    console.log('Empty recipes object');
+    console.log("Empty recipes object");
   }
 }
 /**
@@ -64,16 +63,15 @@ function loadRecipe(id, element) {
     return recipe;
   }
   recipe = recipes.id;
-  const recipeTitleElem = document.getElementById('recipeTitle')
-  recipeTitleElem.innerText = recipe.title
-  const ingredient1NameElem = document.getElementById('ingredient1name')
-  ingredient1NameElem.innerText = recipe.ingredients[0].name
+  const recipeTitleElem = document.getElementById("recipeTitle");
+  recipeTitleElem.innerText = recipe.title;
+  const ingredient1NameElem = document.getElementById("ingredient1name");
+  ingredient1NameElem.innerText = recipe.ingredients[0].name;
   // const ingredient2NameElem = document.getElementById('ingredient2name')
   // ingredient2NameElem.innerText = recipe.ingredients[1].name
-  const step1Elem = document.getElementById('step1')
-  step1Elem.innerText = recipe.steps[0]
+  const step1Elem = document.getElementById("step1");
+  step1Elem.innerText = recipe.steps[0];
 }
-
 
 /**
  * Generates the <recipe-card> elements from the fetched recipes and
@@ -100,29 +98,30 @@ function createSections() {
     i++;
   }
   */
-  router.addPage('create-recipe', function() {
+  router.addPage("create-recipe", function () {
     const doc = document;
-    doc.querySelector('section.section--navbar').classList.add('shown');
-    doc.querySelector('div.div--asap-recipe-header').classList.add('shown');
-    doc.querySelector('section.section--home').classList.remove('shown');
-    doc.querySelector('section.section--main-container').classList.add('shown');
-    doc.querySelector('section.section--create-recipe').classList.add('shown');
-    doc.querySelector('section.section--read-recipe').classList.remove('shown');
+    doc.querySelector("section.section--navbar").classList.add("shown");
+    doc.querySelector("div.div--asap-recipe-header").classList.add("shown");
+    doc.querySelector("section.section--home").classList.remove("shown");
+    doc.querySelector("section.section--main-container").classList.add("shown");
+    doc.querySelector("section.section--create-recipe").classList.add("shown");
+    doc.querySelector("section.section--read-recipe").classList.remove("shown");
   });
 
-  router.addPage('read-recipe', function() {
+  router.addPage("read-recipe", function () {
     const doc = document;
-    doc.querySelector('section.section--navbar').classList.add('shown');
-    doc.querySelector('section.section--home').classList.remove('shown');
-    doc.querySelector('div.div--asap-recipe-header').classList.add('shown');
-    doc.querySelector('section.section--main-container').classList.add('shown');
-    doc.querySelector('section.section--create-recipe')
-        .classList.remove('shown');
-    doc.querySelector('section.section--read-recipe').classList.add('shown');
+    doc.querySelector("section.section--navbar").classList.add("shown");
+    doc.querySelector("section.section--home").classList.remove("shown");
+    doc.querySelector("div.div--asap-recipe-header").classList.add("shown");
+    doc.querySelector("section.section--main-container").classList.add("shown");
+    doc
+      .querySelector("section.section--create-recipe")
+      .classList.remove("shown");
+    doc.querySelector("section.section--read-recipe").classList.add("shown");
   });
 
-  console.log('Router navigate to home');
-  router.navigate('home', true);
+  console.log("Router navigate to home");
+  router.navigate("home", true);
 }
 
 /**
@@ -130,12 +129,12 @@ function createSections() {
  * clicked more recipes will be shown
  */
 function bindNavbarLinks() {
-  console.log('Binding Navbar links');
+  console.log("Binding Navbar links");
   navbarLinks.forEach((link) => {
     console.log(link);
     const elem = document.querySelector(link[0]);
-    
-    elem.addEventListener('click', () => {
+
+    elem.addEventListener("click", () => {
       router.navigate(link[1], false);
       console.log(`Clicked ${link[1]}`);
     });
@@ -181,9 +180,9 @@ function bindNavbarLinks() {
  * @param {String} pageName the name of the page to navigate to on click
  */
 function bindRecipeCard(recipeCard, pageName) {
-  recipeCard.addEventListener('click', (e) => {
+  recipeCard.addEventListener("click", (e) => {
     // console.log(`Clicked on ${pageName}`);
-    if (e.path[0].nodeName == 'A') return;
+    if (e.path[0].nodeName == "A") return;
     router.navigate(pageName, false);
   });
 }
@@ -193,9 +192,9 @@ function bindRecipeCard(recipeCard, pageName) {
  * it is clicked, the home page is returned to
  */
 function bindEscKey() {
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      router.navigate('home', false);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      router.navigate("home", false);
     }
   });
 }

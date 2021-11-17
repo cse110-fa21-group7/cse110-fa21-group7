@@ -1,3 +1,3 @@
-function findRecipe(id){
-    return JSON.parse(localStorage.getItem(id));
+function findRecipe(id) {
+  return JSON.parse(localStorage.getItem(id));
 }

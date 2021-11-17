@@ -1,152 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../css/navigation-bar.css" />
     <link rel="stylesheet" href="../css/create-recipe.css" />
     <script src="../js/create-recipe.js" type="module"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav class="navbar">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="./home-page.html" id="ASAP-logo-home">ASAP Recipe</a>
-            <button class="navbar-toggler" type="button">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-        
-              <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="./cook-book.html" id="link-cookbook">Cookbook</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./create-recipe.html" id="link-create-recipe">Create</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./read-recipe.html" id="link-read-recipe">Read</a>
-                </li>
-              </ul>
-              <form class="nav-form">
-                <input class="form-control" type="text" placeholder="&ensp;Search">
-                <button class="btn" type="submit">Search</button>
-              </form>
-          </div>
-        </nav>
-  </header>
+      <nav class="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./home-page.html" id="ASAP-logo-home"
+            >ASAP Recipe</a
+          >
+          <button class="navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./cook-book.html" id="link-cookbook"
+                >Cookbook</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="./create-recipe.html"
+                id="link-create-recipe"
+                >Create</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="./read-recipe.html"
+                id="link-read-recipe"
+                >Read</a
+              >
+            </li>
+          </ul>
+          <form class="nav-form">
+            <input
+              class="form-control"
+              type="text"
+              placeholder="&ensp;Search"
+            />
+            <button class="btn" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
 
     <!-- Create Recipe -->
     <section class="section--create-recipe">
-        <div class="page-header">
-            <h2 id="forms">Create Recipe Form</h2>
-        </div>
-            
-        <div class="component">
-            <form action="create-recipe.html" method="post" id="recipeForm">
-                <fieldset>
-                    <legend class="recipeInfo-sec">Recipe Information</legend> 
-                    <div class="recipeTitle">
-                        <label class="recipeTitle-label" for="recipe-title">Recipe Title</label>
-                        <input class="form-control" type="text" placeholder="Enter your recipe name" id="recipeTitle">
-                        <div class="invalid-feedback"></div>
-                    </div>
-                    <div class="recipeDescription">
-                        <label class="recipeDescription-label" for="recipe-description">Description</label>
-                        <textarea class="form-control" id="recipeDescription" rows="3"></textarea>
-                        <div class="invalid-feedback"></div>
-                    </div>
-                    <div class="recipeCost">
-                        <label class="recipeCost-label" for="recipe-cost">Total cost</label>
-                        <input class="form-control" type="text" placeholder="$" id="recipeCost">
-                        <div class="invalid-feedback"></div>
-                    </div>
-                    <div class="recipeImage">
-                        <label class="recipeImage-label" for="recipe-image">Upload image</label>
-                        <input class="form-control" type="file" id="recipeImage">
-                    </div>
-                    <div id="img-spot"></div>
-                    
-                    <div id="ingredients">
-                        <legend class="ingredient-sec">Ingredients</legend>
-                    
-                        <div class="ingredient">
-                            <div class="ingredient-name">
-                                <label class="name-label" for="inputDefault">Ingredient 1</label>
-                                <input type="text" class="form-control" placeholder="Ingredient">
-                                <div class="invalid-feedback"></div>
-                            </div>
-        
-                            <div class="ingredient-amount">
-                                <label class="amount-label">Amount</label>
-                                <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)">
-                                <span class="amount-unit">g</span>
-                                <div class="invalid-feedback"></div>
-                            </div>                       
-                        </div>
-        
-                        <div class="ingredient">
-                            <div class="ingredient-name">
-                                <label class="name-label" for="inputDefault">Ingredient 2</label>
-                                <input type="text" class="form-control" placeholder="Ingredient">
-                                <div class="invalid-feedback"></div>
-                            </div>
-        
-                            <div class="ingredient-amount">
-                                <label class="amount-label">Amount</label>
-                                <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)">
-                                <span class="amount-unit">g</span>
-                                <div class="invalid-feedback"></div>
-                            </div>
-                        </div>
+      <div class="page-header">
+        <h2 id="forms">Create Recipe Form</h2>
+      </div>
 
-                        <div class="ingredient">
-                            <div class="ingredient-name">
-                                <label class="name-label" for="inputDefault">Ingredient 3</label>
-                                <input type="text" class="form-control" placeholder="Ingredient">
-                                <div class="invalid-feedback"></div>
-                            </div>
-                            
-                            <div class="ingredient-amount">
-                                <label class="amount-label">Amount</label>
-                                <input type="text" class="form-control" placeholder="100" aria-label="Amount (grams)">
-                                <span class="amount-unit">g</span>
-                                <div class="invalid-feedback"></div>
-                            </div>
-                        </div>
+      <div class="component">
+        <form action="create-recipe.html" method="post" id="recipeForm">
+          <fieldset>
+            <legend class="recipeInfo-sec">Recipe Information</legend>
+            <div class="recipeTitle">
+              <label class="recipeTitle-label" for="recipe-title"
+                >Recipe Title</label
+              >
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Enter your recipe name"
+                id="recipeTitle"
+              />
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="recipeDescription">
+              <label class="recipeDescription-label" for="recipe-description"
+                >Description</label
+              >
+              <textarea
+                class="form-control"
+                id="recipeDescription"
+                rows="3"
+              ></textarea>
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="recipeCost">
+              <label class="recipeCost-label" for="recipe-cost"
+                >Total cost</label
+              >
+              <input
+                class="form-control"
+                type="text"
+                placeholder="$"
+                id="recipeCost"
+              />
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="recipeImage">
+              <label class="recipeImage-label" for="recipe-image"
+                >Upload image</label
+              >
+              <input class="form-control" type="file" id="recipeImage" />
+            </div>
+            <div id="img-spot"></div>
 
-                        
-                    </div>
-                    <button type="button" class="btn-add" id="add-ingredient">Add</button>  
-                    <button type="button" class="btn-remove" id="remove-ingredient">Remove</button> 
-                    
-                    <div id="steps">
+            <div id="ingredients">
+              <legend class="ingredient-sec">Ingredients</legend>
 
-                        <legend class="steps-sec">Steps</legend>
-                        <div class="step-sec">
-                            <label class="recipeStep-label" for="stepLabel">Step 1</label>
-                            <textarea class="form-control" rows="3"></textarea>
-                            <div class="invalid-feedback"></div>
-                        </div>
-                        
-                        <div class="step-sec">
-                            <label class="recipeStep-label" for="stepLabel">Step 2</label>
-                            <textarea class="form-control" id="step2" rows="3"></textarea>
-                            <div class="invalid-feedback"></div>
-                        </div>
+              <div class="ingredient">
+                <div class="ingredient-name">
+                  <label class="name-label" for="inputDefault"
+                    >Ingredient 1</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Ingredient"
+                  />
+                  <div class="invalid-feedback"></div>
+                </div>
 
-                    </div>
-                    <button type="button" class="btn-add" id="add-step">Add</button>
-                    <button type="button" class="btn-remove" id="remove-step">Remove</button>
-                    
+                <div class="ingredient-amount">
+                  <label class="amount-label">Amount</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="100"
+                    aria-label="Amount (grams)"
+                  />
+                  <span class="amount-unit">g</span>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
 
-                    <div class="submit">
-                        <button class="btn-submit" type="submit">Submit</button>
-                    </div>
-                </fieldset>
-            </form>
-        </div>
+              <div class="ingredient">
+                <div class="ingredient-name">
+                  <label class="name-label" for="inputDefault"
+                    >Ingredient 2</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Ingredient"
+                  />
+                  <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="ingredient-amount">
+                  <label class="amount-label">Amount</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="100"
+                    aria-label="Amount (grams)"
+                  />
+                  <span class="amount-unit">g</span>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+
+              <div class="ingredient">
+                <div class="ingredient-name">
+                  <label class="name-label" for="inputDefault"
+                    >Ingredient 3</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Ingredient"
+                  />
+                  <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="ingredient-amount">
+                  <label class="amount-label">Amount</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="100"
+                    aria-label="Amount (grams)"
+                  />
+                  <span class="amount-unit">g</span>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn-add" id="add-ingredient">
+              Add
+            </button>
+            <button type="button" class="btn-remove" id="remove-ingredient">
+              Remove
+            </button>
+
+            <div id="steps">
+              <legend class="steps-sec">Steps</legend>
+              <div class="step-sec">
+                <label class="recipeStep-label" for="stepLabel">Step 1</label>
+                <textarea class="form-control" rows="3"></textarea>
+                <div class="invalid-feedback"></div>
+              </div>
+
+              <div class="step-sec">
+                <label class="recipeStep-label" for="stepLabel">Step 2</label>
+                <textarea class="form-control" id="step2" rows="3"></textarea>
+                <div class="invalid-feedback"></div>
+              </div>
+            </div>
+            <button type="button" class="btn-add" id="add-step">Add</button>
+            <button type="button" class="btn-remove" id="remove-step">
+              Remove
+            </button>
+
+            <div class="submit">
+              <button class="btn-submit" type="submit">Submit</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
     </section>
-</body>
+  </body>
 </html>

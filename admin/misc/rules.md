@@ -1,8 +1,8 @@
-# **ASAP: *Team Working Agreement***
+# **ASAP: _Team Working Agreement_**
 
 ## **Fall 2021**
 
-### *Creation 10/12/2021*
+### _Creation 10/12/2021_
 
 ### I. **Group Idenitification**
 
@@ -52,9 +52,8 @@ All members will be expected to read Slack messages from anyone in the group on 
 
 1. What should we do if there is a disagreement? Take a vote on it or suggest something else that the team can agree on.
 2. If the conflict isn't able to be resolved between the individuals? Talk about it during meeting time.
-3. If a team member is not meeting deadlines? Talk with the team member first to figure out why the team member is not meeting deadlines. 
+3. If a team member is not meeting deadlines? Talk with the team member first to figure out why the team member is not meeting deadlines.
 
 ### VII. **Expectations of Faculty and GTA’s**
 
-If a team member fails to live up to this agreement, the situation may be reported to Raaghav, but the team will still be responsible for submitting a completed assignment. 
-
+If a team member fails to live up to this agreement, the situation may be reported to Raaghav, but the team will still be responsible for submitting a completed assignment.

@@ -1,0 +1,12 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+echo '🏗️ auto format and checking your project before committing'
+# # npm run format
+# # Check ESLint Standards
+# npm run lint ||
+# (
+#         echo '😤ESLint Check Failed. Make the required changes listed above, add changes and try to commit again.'
+#         false; 
+# )
+
+# echo '✅✅✅✅ You win this time... I am committing this now. ✅✅✅✅'

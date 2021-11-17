@@ -1,12 +1,10 @@
 # [Title]
 
-* Status: Accepted
-* Deciders: 
-* Date: 
+- Status: Accepted
+- Deciders:
+- Date:
 
 ## Context and Problem Statement
-
-
 
 ## Considered Options
 
@@ -15,8 +13,6 @@
 3. 3
 
 ## Decision Outcome
-
-
 
 ## Pros and Cons of the Options
 

@@ -8,14 +8,15 @@ A set of instructions for preparing a particular dish, including a list of ingre
 
 An application to assist cooks in their culinary journey and their day-to-day kitchen adventures.
 Recipe apps are a broad field but it has the following "nice-to-have" functionality:
+
 - TBD
 
+**Format**
 
-**Format**  
-- Name  
-- Brief description - usually one line  
+- Name
+- Brief description - usually one line
 - Metadata - prep time, calories, macro information
-- Ingredient List 
+- Ingredient List
 - Cooking instructions either in video or step-by-steo bullet form
 - Reviews left by other users
 
@@ -26,8 +27,3 @@ parsing of data from websites and to promote as search results. It makes your we
 index for a search engine's web scraper.
 
 Coming soon
-
-
-
-
-

@@ -10,40 +10,40 @@ Note Taker: Yalong Tian
 
 - [x] Yalong Tian
 - [x] Jingwen Liu
-- [x] Christopher Harness 
-- [x] Jiayan Dong 
-- [x] Vince Rothenberg 
-- [x] Nidhin Madhu 
-- [x] Youjia Weng 
+- [x] Christopher Harness
+- [x] Jiayan Dong
+- [x] Vince Rothenberg
+- [x] Nidhin Madhu
+- [x] Youjia Weng
 - [x] Kunal Arora
 - [x] Jianfan Huo
-- [x] Yifan Lu 
+- [x] Yifan Lu
 
 ## Agenda
 
-* Team logo
-* Group Contract
-* Group video & team page
+- Team logo
+- Group Contract
+- Group video & team page
 
 ## Discussion Items
 
 ### Team brand and team page
 
-* Talk about team logo, and Kunal will design it.
+- Talk about team logo, and Kunal will design it.
 
-* Need to finish roster part for team page.  The roster should provide a brief overview of each member with a link to their personal GitHub page.
+- Need to finish roster part for team page. The roster should provide a brief overview of each member with a link to their personal GitHub page.
 
 ### Group Contract
 
-* Discuss about Group Contract, and everyone agree with it.
-* Edit the final version upload to GitHub.
+- Discuss about Group Contract, and everyone agree with it.
+- Edit the final version upload to GitHub.
+
 ### Team Video
 
-* record it during meeting time.
-*  introduce all the team members and team name
+- record it during meeting time.
+- introduce all the team members and team name
 
 ## Action Items
 
-* Talk about Team Roles
-* Brainstorm  
-
+- Talk about Team Roles
+- Brainstorm

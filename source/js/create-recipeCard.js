@@ -1,12 +1,12 @@
 class RecipeCard extends HTMLElement {
-    constructor() {
-        super();
-        this.attachShadow({mode: 'open'});
-    }
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+  }
 
-    set data(data) {
-        const styleElem = document.createElement('style');
-        const styles = `
+  set data(data) {
+    const styleElem = document.createElement("style");
+    const styles = `
             * {
             }
 
@@ -77,57 +77,59 @@ class RecipeCard extends HTMLElement {
             }
         `;
 
-        styleElem.innerHTML = styles;
-        let card = document.createElement('article');
-        this.shadowRoot.append(styleElem, card);
-        // add id for each recipe
-        card.id = data['id'];
-        // ---------------need fix later!------
-        // Wait for add img link. Cannot save img in local
-        let img = document.createElement('img');
-        img.setAttribute('src', '../recipe-img-example/recipe_' + Math.floor(Math.random() * 3) + '.jpg');
-        img.setAttribute('alt', data);
-        card.appendChild(img)
+    styleElem.innerHTML = styles;
+    let card = document.createElement("article");
+    this.shadowRoot.append(styleElem, card);
+    // add id for each recipe
+    card.id = data["id"];
+    // ---------------need fix later!------
+    // Wait for add img link. Cannot save img in local
+    let img = document.createElement("img");
+    img.setAttribute(
+      "src",
+      "../recipe-img-example/recipe_" + Math.floor(Math.random() * 3) + ".jpg"
+    );
+    img.setAttribute("alt", data);
+    card.appendChild(img);
 
-        // add title
-        let title = document.createElement('p');
-        title.textContent = data['title']
-        title.classList.add('title');
+    // add title
+    let title = document.createElement("p");
+    title.textContent = data["title"];
+    title.classList.add("title");
 
-        card.appendChild(title);
-   
-        // add total cost
-        const priceValue = Math.round(data['price']);
-        let priceDiv = document.createElement('div');
-        // if (priceValue) {
-        //     rating.innerHTML = `
-        //       <span>${priceValue}</span>
-        //       <img src="assets/images/icons/${numStars}-star.svg" alt="${numStars} stars">
-        //     `;
-        //     if (ratingTotal) {
-        //       rating.innerHTML += `<span>(${ratingTotal})</span>`;
-        //     }
-        //   } else {
-        //     rating.innerHTML = `
-        //       <span>No Reviews</span>
-        //     `;
-        //   }
-        
-        let price = document.createElement('p');
-        price.classList.add('price')
-        price.textContent = data['totalCost'];
-        card.appendChild(price)
+    card.appendChild(title);
 
-        // ingredients
-        let ingredients = document.createElement('p');
-        ingredients.classList.add('ingredients');
-        let ingredientsContent = '';
-        for(let each of data['ingredients']) {
-            ingredientsContent += each['name'] + '\n';
-        }
-        ingredients.textContent = ingredientsContent;
-        card.appendChild(ingredients);
-  
+    // add total cost
+    const priceValue = Math.round(data["price"]);
+    let priceDiv = document.createElement("div");
+    // if (priceValue) {
+    //     rating.innerHTML = `
+    //       <span>${priceValue}</span>
+    //       <img src="assets/images/icons/${numStars}-star.svg" alt="${numStars} stars">
+    //     `;
+    //     if (ratingTotal) {
+    //       rating.innerHTML += `<span>(${ratingTotal})</span>`;
+    //     }
+    //   } else {
+    //     rating.innerHTML = `
+    //       <span>No Reviews</span>
+    //     `;
+    //   }
+
+    let price = document.createElement("p");
+    price.classList.add("price");
+    price.textContent = data["totalCost"];
+    card.appendChild(price);
+
+    // ingredients
+    let ingredients = document.createElement("p");
+    ingredients.classList.add("ingredients");
+    let ingredientsContent = "";
+    for (let each of data["ingredients"]) {
+      ingredientsContent += each["name"] + "\n";
     }
+    ingredients.textContent = ingredientsContent;
+    card.appendChild(ingredients);
+  }
 }
-customElements.define('recipe-card', RecipeCard);
+customElements.define("recipe-card", RecipeCard);
