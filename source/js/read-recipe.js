@@ -54,7 +54,8 @@ function populateHTML(id) {
   for (let i = 0; i < ingredientElems.length; i++) {
     const ingElem = ingredientElems[i];
     const recipeIng = recipeIngredients[i];
-    ingElem.innerText = `${recipeIng['name']} Amount: ${recipeIng['amount']} Cost: ${recipeIng['cost']}`;
+    ingElem.innerText = `${recipeIng['name']} Amount: ${recipeIng['amount']} 
+    Cost: ${recipeIng['cost']}`;
   }
 
   const recipeSteps = recipe['steps'];
