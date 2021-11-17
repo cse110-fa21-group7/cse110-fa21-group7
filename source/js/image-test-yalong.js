@@ -15,13 +15,13 @@ file.addEventListener("change", (e) => {
     .then((data) => data.json())
     .then((data) => {
       console.log(data);
-      let divImg = document.getElementById("img-spot");
-      let img = document.createElement("img");
+      const divImg = document.getElementById("img-spot");
+      const img = document.createElement("img");
       console.log(data.data.link);
       img.src = data.data.link;
       img.height = "200";
       img.referrerPolicy = "no-referrer";
-      let url = document.createElement("p");
+      const url = document.createElement("p");
       url.innerHTML = data.data.link;
       divImg.append(img, url);
     });

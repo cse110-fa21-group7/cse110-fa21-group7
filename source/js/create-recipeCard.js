@@ -78,13 +78,13 @@ class RecipeCard extends HTMLElement {
         `;
 
     styleElem.innerHTML = styles;
-    let card = document.createElement("article");
+    const card = document.createElement("article");
     this.shadowRoot.append(styleElem, card);
     // add id for each recipe
     card.id = data["id"];
     // ---------------need fix later!------
     // Wait for add img link. Cannot save img in local
-    let img = document.createElement("img");
+    const img = document.createElement("img");
     img.setAttribute(
       "src",
       "../recipe-img-example/recipe_" + Math.floor(Math.random() * 3) + ".jpg"
@@ -93,15 +93,15 @@ class RecipeCard extends HTMLElement {
     card.appendChild(img);
 
     // add title
-    let title = document.createElement("p");
+    const title = document.createElement("p");
     title.textContent = data["title"];
     title.classList.add("title");
 
     card.appendChild(title);
 
     // add total cost
-    const priceValue = Math.round(data["price"]);
-    let priceDiv = document.createElement("div");
+    // const priceValue = Math.round(data["price"]);
+    // const priceDiv = document.createElement("div");
     // if (priceValue) {
     //     rating.innerHTML = `
     //       <span>${priceValue}</span>
@@ -116,16 +116,16 @@ class RecipeCard extends HTMLElement {
     //     `;
     //   }
 
-    let price = document.createElement("p");
+    const price = document.createElement("p");
     price.classList.add("price");
     price.textContent = data["totalCost"];
     card.appendChild(price);
 
     // ingredients
-    let ingredients = document.createElement("p");
+    const ingredients = document.createElement("p");
     ingredients.classList.add("ingredients");
     let ingredientsContent = "";
-    for (let each of data["ingredients"]) {
+    for (const each of data["ingredients"]) {
       ingredientsContent += each["name"] + "\n";
     }
     ingredients.textContent = ingredientsContent;

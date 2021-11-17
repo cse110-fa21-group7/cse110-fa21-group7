@@ -56,22 +56,22 @@ function getRecipesFromCache() {
  * @param {HTMLElement} element
  * @return {Object}
  */
-function loadRecipe(id, element) {
-  const recipe = null;
-  if (recipes.id == null) {
-    console.log(`Recipes does not contain id: ${id}`);
-    return recipe;
-  }
-  recipe = recipes.id;
-  const recipeTitleElem = document.getElementById("recipeTitle");
-  recipeTitleElem.innerText = recipe.title;
-  const ingredient1NameElem = document.getElementById("ingredient1name");
-  ingredient1NameElem.innerText = recipe.ingredients[0].name;
-  // const ingredient2NameElem = document.getElementById('ingredient2name')
-  // ingredient2NameElem.innerText = recipe.ingredients[1].name
-  const step1Elem = document.getElementById("step1");
-  step1Elem.innerText = recipe.steps[0];
-}
+// function loadRecipe(id, element) {
+//   const recipe = null;
+//   if (recipes.id == null) {
+//     console.log(`Recipes does not contain id: ${id}`);
+//     return recipe;
+//   }
+//   recipe = recipes.id;
+//   const recipeTitleElem = document.getElementById("recipeTitle");
+//   recipeTitleElem.innerText = recipe.title;
+//   const ingredient1NameElem = document.getElementById("ingredient1name");
+//   ingredient1NameElem.innerText = recipe.ingredients[0].name;
+//   // const ingredient2NameElem = document.getElementById('ingredient2name')
+//   // ingredient2NameElem.innerText = recipe.ingredients[1].name
+//   const step1Elem = document.getElementById("step1");
+//   step1Elem.innerText = recipe.steps[0];
+// }
 
 /**
  * Generates the <recipe-card> elements from the fetched recipes and
@@ -179,13 +179,13 @@ function bindNavbarLinks() {
  *                              event listeners to
  * @param {String} pageName the name of the page to navigate to on click
  */
-function bindRecipeCard(recipeCard, pageName) {
-  recipeCard.addEventListener("click", (e) => {
-    // console.log(`Clicked on ${pageName}`);
-    if (e.path[0].nodeName == "A") return;
-    router.navigate(pageName, false);
-  });
-}
+// function bindRecipeCard(recipeCard, pageName) {
+//   recipeCard.addEventListener("click", (e) => {
+//     // console.log(`Clicked on ${pageName}`);
+//     if (e.path[0].nodeName == "A") return;
+//     router.navigate(pageName, false);
+//   });
+// }
 
 /**
  * Binds the 'keydown' event listener to the Escape key (esc) such that when

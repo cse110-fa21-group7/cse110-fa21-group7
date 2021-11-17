@@ -18,7 +18,7 @@ window.addEventListener("DOMContentLoaded", init);
 // This is the first function to be called, so when you are tracing your code start here.
 async function init() {
   // fetch the recipes and wait for them to load
-  let fetchSuccessful = await fetchRecipes();
+  const fetchSuccessful = await fetchRecipes();
   // if they didn't successfully load, quit the function
   if (!fetchSuccessful) {
     console.log("Recipe fetch unsuccessful");
@@ -33,8 +33,8 @@ async function fetchRecipes() {
   const recipes = JSON.parse(storage.getItem("recipes"));
   const total = Number(recipes.currID);
   for (let i = 1; i < total; i++) {
-    let id = i;
-    let recipe = recipes[id];
+    const id = i;
+    const recipe = recipes[id];
     recipeData[id] = recipe;
     // let test2 = {title: "test2", ingredients: [{name: "Ingredient 1", amount: "1"}], steps: ["Step 1"]}
     // recipeData['test2'] = test2;
@@ -45,13 +45,13 @@ async function fetchRecipes() {
 }
 
 function createRecipeCards() {
-  let main = document.querySelector(".recipe-cards--wrapper");
+  const main = document.querySelector(".recipe-cards--wrapper");
 
   const total = Object.keys(recipeData).length;
 
   for (let i = 0; i < total; i++) {
-    let card = document.createElement("recipe-card");
-    let id = i + 1;
+    const card = document.createElement("recipe-card");
+    const id = i + 1;
     card.data = recipeData[id];
     main.appendChild(card);
   }

@@ -25,8 +25,8 @@ function setFormListener() {
 
     // TODO: Upload Image
     // const file = document.getElementById('recipeImage');
-    //const.formdata.append()
-    //file.files[0];
+    // const.formdata.append()
+    // file.files[0];
   });
 
   const file = document.getElementById("recipeImage");
@@ -46,8 +46,8 @@ function setFormListener() {
       .then((data) => data.json())
       .then((data) => {
         console.log(data);
-        let divImg = document.getElementById("img-spot");
-        let childImgs = divImg.getElementsByTagName("img");
+        const divImg = document.getElementById("img-spot");
+        const childImgs = divImg.getElementsByTagName("img");
         let img;
         if (childImgs.length == 0) {
           img = document.createElement("img");

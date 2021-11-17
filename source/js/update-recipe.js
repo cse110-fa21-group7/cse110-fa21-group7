@@ -13,7 +13,7 @@ function updateRecipe(id) {
   ingredient1Amount.value = ingredient1.amount;
 
   const steps = recipe.steps;
-  const step1 = steps[0];
+  step1 = steps[0];
   step1.value = step1;
 
   createRecipe();

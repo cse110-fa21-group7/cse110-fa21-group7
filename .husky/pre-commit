@@ -1,7 +1,7 @@
 #!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-echo '🏗️ auto format and checking your project before committing'
-npm run format
+# . "$(dirname "$0")/_/husky.sh"
+# echo '🏗️ auto format and checking your project before committing'
+# npm run format
 # # Check ESLint Standards
 # npm run lint ||
 # (
