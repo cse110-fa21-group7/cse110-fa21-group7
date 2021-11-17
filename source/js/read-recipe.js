@@ -1,8 +1,8 @@
-window.addEventListener('DOMContentLoaded', init)
+window.addEventListener('DOMContentLoaded', init);
 // read-recipe.js
 
-  const recipeTitleElem = document.getElementById('recipeTitle')
-  recipeTitleElem.innerText = recipe.title
+const recipeTitleElem = document.getElementById('recipeTitle');
+recipeTitleElem.innerText = recipe.title;
 let recipes = {};
 window.addEventListener('DOMContentLoaded', init);
 
@@ -49,15 +49,18 @@ function populateHTML(id) {
       recipe['description'];
 
   const recipeIngredients = recipe['ingredients'];
-  const ingredientElems = document.getElementById('ingredients').getElementsByClassName('ingredient');
+  const ingredientElems = document.getElementById('ingredients')
+      .getElementsByClassName('ingredient');
   for (let i = 0; i < ingredientElems.length; i++) {
     const ingElem = ingredientElems[i];
     const recipeIng = recipeIngredients[i];
-    ingElem.innerText = `${recipeIng['name']} Amount: ${recipeIng['amount']} Cost: ${recipeIng['cost']}`;
+    ingElem.innerText = `${recipeIng['name']} Amount: ${recipeIng['amount']} 
+    Cost: ${recipeIng['cost']}`;
   }
 
   const recipeSteps = recipe['steps'];
-  const stepElems = document.getElementById('instructions').getElementsByClassName('step-instruction');
+  const stepElems = document.getElementById('instructions')
+      .getElementsByClassName('step-instruction');
   for (let i = 0; i < stepElems.length; i++) {
     const stepElem = stepElems[i];
     const recipeStep = recipeSteps[i];

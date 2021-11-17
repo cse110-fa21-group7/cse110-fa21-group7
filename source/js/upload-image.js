@@ -1,7 +1,6 @@
 // upload-image.js
-import { Octokit } from 'https://cdn.skypack.dev/@octokit/rest';
-
-const octokit = new Octokit();
+const recipe = {};
+const formdata = new FormData();
 
 window.addEventListener('DOMContentLoaded', init);
 
@@ -9,41 +8,6 @@ window.addEventListener('DOMContentLoaded', init);
 async function init() {
   console.log('Initializing');
   setFormListener();
-  /*
-  let result = await octokit.request('GET /orgs/cse110-fa21-group7/actions/secrets/TEST', {
-    org: 'org',
-    secret_name: 'secret-name',
-  });
-  console.log(result);
-  */
-  octokit.rest.repos
-      .listForOrg({
-        org: 'cse110-fa21-group7',
-        type: "public",
-      })
-      .then(({ data }) => {
-        // handle data
-        console.log(data);
-      });
-
-  octokit.request('GET /orgs/cse110-fa21-group7/actions/secrets/TEST', {
-    org: 'cse110-fa21-group7',
-    secret_name: 'TEST',
-  }).then(({ data }) => {
-    // handle data
-    console.log(data);
-  });
-
-  octokit.request('GET /repos/cse110-fa21-group7/cse110-fa21-group7/actions/secrets/CLIENT_ID', {
-    owner: 'cse110-fa21-group7',
-    repo: 'cse110-fa21-group7',
-    secret_name: 'CLIENT_ID',
-  }).then(({ data }) => {
-    // handle data
-    console.log(data);
-  });
-
-  
 }
 
 
@@ -57,12 +21,45 @@ function setFormListener() {
     // Stop form submission
     event.preventDefault();
     console.log('Submit button clicked');
+    console.log(recipe);
     // <input class="form-control" type="file" id="recipeImage">
 
     // TODO: Upload Image
-    const file = document.getElementById('recipeImage');
+    // const file = document.getElementById('recipeImage');
     //const.formdata.append()
     //file.files[0];
 
   });
+
+  const file = document.getElementById('recipeImage');
+
+  file.addEventListener('change', (e) => {
+    formdata = new FormData();
+    formdata.append('image', e.target.files[0]);
+    
+    // console.log(file);
+    fetch('https://api.imgur.com/3/image/', {
+      method:'post',
+      headers: {
+        Authorization:'Client-ID 1b99956c57a5642'
+      },
+      body: formdata,
+    }).then((data) => data.json()).then((data) => {
+      console.log(data);
+      let divImg = document.getElementById('img-spot');
+      let childImgs = divImg.getElementsByTagName('img');
+      let img;
+      if (childImgs.length == 0) {
+        img = document.createElement('img');
+        divImg.append(img);
+      } else {
+        img = childImgs[0];
+      }
+      console.log(data.data.link)
+      img.src = data.data.link;
+      img.height = '200'
+      img.referrerPolicy = 'no-referrer';
+      recipe['img-url'] = data.data.link; 
+    })
+  })
 }
