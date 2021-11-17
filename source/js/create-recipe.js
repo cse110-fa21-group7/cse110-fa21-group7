@@ -251,7 +251,7 @@ function setFormListener() {
       recipes[id] = recipe;
       localStorage.setItem('recipes', JSON.stringify(recipes));
     } else {
-      console.log('Invalid recipe');
+      console.log('Invalid recipe')
     }
   });
 
