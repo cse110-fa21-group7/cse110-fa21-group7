@@ -34,7 +34,7 @@ async function fetchRecipes() {
   // recipeData['test'] = test;
   const example = {
         "id": 0,
-        "img-url": "https://i.imgur.com/FJNLoj4.png",
+        "img-url": "https://i.imgur.com/JzoDwoQ.png",
         "title": "money2",
         "description": "apple",
         "totalCost": 2,
