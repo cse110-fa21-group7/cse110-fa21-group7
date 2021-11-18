@@ -1,10 +1,9 @@
 function searchRecipe(key){
     let query = "https://api.spoonacular.com/recipes/complexSearch?apiKey=48d15a6f601f4207861fb19c299525fa&query="+key;
     const recipeData = {}
-    fetch(recipes[i])
+    fetch(query)
     .then(response => response.json())
     .then(data => {
-        console.log(data["results"]);
         for(let i=0;i<=data["results"].length;i++){
           let id = data["results"][i]["id"];
           let title = data["results"][i]["title"];
@@ -34,6 +33,12 @@ function searchRecipe(key){
                 steps.push(stepsData[i]["step"]);
               }
             });
+            console.log(id);
+            console.log(image);
+            console.log(title);
+            console.log(description);
+            console.log(cost);
+            console.log(ingredients);
             console.log(steps);
             recipeData[id] = {"img-url":image,"title":title,"description":description,
             "totalCost":cost,"ingredients":ingredients,"steps":steps}; 
