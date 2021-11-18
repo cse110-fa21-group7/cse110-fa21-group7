@@ -1,8 +1,8 @@
 window.addEventListener("DOMContentLoaded", init);
 // read-recipe.js
 
-const recipeTitleElem = document.getElementById("recipeTitle");
-recipeTitleElem.innerText = recipe.title;
+// const recipeTitleElem = document.getElementById("recipeTitle");
+// recipeTitleElem.innerText = recipe.title;
 let recipes = {};
 window.addEventListener("DOMContentLoaded", init);
 
@@ -56,7 +56,7 @@ function populateHTML(id) {
     const ingElem = ingredientElems[i];
     const recipeIng = recipeIngredients[i];
     ingElem.innerText = `${recipeIng["name"]} Amount: ${recipeIng["amount"]} 
-    Cost: ${recipeIng["cost"]}`;
+      Cost: ${recipeIng["cost"]}`;
   }
 
   const recipeSteps = recipe["steps"];

@@ -33,30 +33,27 @@ async function fetchRecipes() {
   // const test = {id: "0", title: "test2", ingredients: [{name: "Ingredient 1", amount: "1"}], steps: ["Step 1"]};
   // recipeData['test'] = test;
   const example = {
-        "id": 0,
-        "img-url": "https://i.imgur.com/JzoDwoQ.png",
-        "title": "money2",
-        "description": "apple",
-        "totalCost": 2,
-        "ingredients": [
-            {
-                "name": "apple",
-                "amount": "100"
-            },
-            {
-                "name": "beef",
-                "amount": "5"
-            },
-            {
-                "name": "egg",
-                "amount": "2"
-            }
-        ],
-        "steps": [
-            "apple",
-            "beef"
-        ]
-    };
+    id: 0,
+    "img-url": "https://i.imgur.com/JzoDwoQ.png",
+    title: "money2",
+    description: "apple",
+    totalCost: 2,
+    ingredients: [
+      {
+        name: "apple",
+        amount: "100",
+      },
+      {
+        name: "beef",
+        amount: "5",
+      },
+      {
+        name: "egg",
+        amount: "2",
+      },
+    ],
+    steps: ["apple", "beef"],
+  };
   recipeData[0] = example;
   const storage = window.localStorage;
   const recipes = JSON.parse(storage.getItem("recipes"));
