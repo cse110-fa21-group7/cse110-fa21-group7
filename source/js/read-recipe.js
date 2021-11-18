@@ -57,7 +57,7 @@ function populateHTML(id) {
     const recipeIng = recipeIngredients[i];
     ingElem.innerText = `${recipeIng["name"]} Amount: ${recipeIng["amount"]} 
       Cost: ${recipeIng["cost"]}`;
-  }  
+  }
 
   const recipeSteps = recipe["steps"];
   const stepElems = document
