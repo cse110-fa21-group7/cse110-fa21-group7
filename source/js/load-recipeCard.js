@@ -29,6 +29,35 @@ async function init() {
 }
 
 async function fetchRecipes() {
+  // load one example recipe card first:
+  // const test = {id: "0", title: "test2", ingredients: [{name: "Ingredient 1", amount: "1"}], steps: ["Step 1"]};
+  // recipeData['test'] = test;
+  const example = {
+        "id": 0,
+        "img-url": "https://i.imgur.com/FJNLoj4.png",
+        "title": "money2",
+        "description": "apple",
+        "totalCost": 2,
+        "ingredients": [
+            {
+                "name": "apple",
+                "amount": "100"
+            },
+            {
+                "name": "beef",
+                "amount": "5"
+            },
+            {
+                "name": "egg",
+                "amount": "2"
+            }
+        ],
+        "steps": [
+            "apple",
+            "beef"
+        ]
+    };
+  recipeData[0] = example;
   const storage = window.localStorage;
   const recipes = JSON.parse(storage.getItem("recipes"));
   const total = Number(recipes.currID);
@@ -36,10 +65,6 @@ async function fetchRecipes() {
     const id = i;
     const recipe = recipes[id];
     recipeData[id] = recipe;
-    // let test2 = {title: "test2", ingredients: [{name: "Ingredient 1", amount: "1"}], steps: ["Step 1"]}
-    // recipeData['test2'] = test2;
-    // let test3 = {title: "test3", ingredients: [{name: "Ingredient 1", amount: "1"}], steps: ["Step 1"]}
-    // recipeData['test3'] = test3;
   }
   return true;
 }
@@ -48,10 +73,13 @@ function createRecipeCards() {
   const main = document.querySelector(".recipe-cards--wrapper");
 
   const total = Object.keys(recipeData).length;
-
-  for (let i = 0; i < total; i++) {
+  // load one example first:
+  const cardExample = document.createElement("recipe-card");
+  cardExample.data = recipeData[0];
+  main.appendChild(cardExample);
+  // loop whole local storge
+  for (let i = 1; i < total; i++) {
     const card = document.createElement("recipe-card");
-    const id = i + 1;
     card.data = recipeData[id];
     main.appendChild(card);
   }
