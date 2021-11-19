@@ -1,128 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Back End Testing</title>
 
-    <!-- Main Stylesheets & Scripts -->
-    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css" /> -->
-    <link rel="stylesheet" href="../css/navigation-bar.css" />
-    <link rel="stylesheet" href="../css/home-page.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Back End Testing</title>
 
-  <body>
-    <header>
-      <nav class="navbar">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="./home-page.html" id="ASAP-logo-home"
-            >ASAP Recipe</a
-          >
-          <button class="navbar-toggler" type="button">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+  <!-- Main Stylesheets & Scripts -->
+  <!-- <link rel="stylesheet" href="../css/bootstrap.min.css" /> -->
+  <link rel="stylesheet" href="../css/navigation-bar.css" />
+  <link rel="stylesheet" href="../css/home-page.css" />
+</head>
 
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="./cook-book.html" id="link-cookbook"
-                >Cookbook</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="./create-recipe.html"
-                id="link-create-recipe"
-                >Create</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="./read-recipe.html"
-                id="link-read-recipe"
-                >Read</a
-              >
-            </li>
-          </ul>
-          <form class="nav-form">
-            <input
-              class="form-control"
-              type="text"
-              placeholder="&ensp;Search"
-            />
-            <button class="btn" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
-    </header>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./home-page.html" id="ASAP-logo-home">ASAP Recipe</a>
+        <button class="navbar-toggler" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <section class="container section--main-container">
-      <div class="bs-docs-section div--asap-recipe-header">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="page-header">
-              <h1 id="recipe">ASAP Recipe</h1>
-            </div>
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./cook-book.html" id="link-cookbook">Cookbook</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./create-recipe.html" id="link-create-recipe">Create</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./read-recipe.html" id="link-read-recipe">Read</a>
+          </li>
+        </ul>
+        <form class="nav-form">
+          <input class="form-control" type="text" placeholder="&ensp;Search" />
+          <button class="btn" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <section class="container section--main-container">
+    <div class="bs-docs-section div--asap-recipe-header">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <h1 id="recipe">ASAP Recipe</h1>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Home -->
-      <section class="section--home">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="bs-component">
-              <h2>Example body text</h2>
-              <p>
-                Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu
-                leo. Cum sociis natoque penatibus et magnis dis parturient
-                montes, nascetur ridiculus mus. Nullam id dolor id nibh
-                ultricies vehicula.
-              </p>
-              <p>
-                <small
-                  >This line of text is meant to be treated as fine
-                  print.</small
-                >
-              </p>
-              <p>The following is <strong>rendered as bold text</strong>.</p>
-              <p>The following is <em>rendered as italicized text</em>.</p>
-              <p>
-                An abbreviation of the word attribute is
-                <abbr title="attribute">attr</abbr>.
-              </p>
+    <!-- Home -->
+    <section class="section--home">
+      <div class="wrapper">
+        <a href="https://cooking.nytimes.com/recipes/7985-turkey-chili" title=" Turkey chili recipe">
+          <article>
+            <img width="294" height="196"
+              src="https://static01.nyt.com/images/2020/09/27/dining/27ah-chili/pf-turkey-chili-articleLarge.jpg">
+            <h3>Turkey chili</h3>
+            <div class="other_details">
+              <div class="view">
+                <i class="fa fa-eye"></i> 45 mins
+              </div>
+              <div class="likes">
+                <i class="fa fa-heart"></i> 560 cal
+              </div>
+              <div class="user">
+
+                $$
+
+              </div>
             </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="bs-component">
-              <h2>Emphasis classes</h2>
-              <p class="text-muted">
-                Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
-              </p>
-              <p class="text-primary">
-                Nullam id dolor id nibh ultricies vehicula ut id elit.
-              </p>
-              <p class="text-secondary">
-                Pellentesque ornare sem lacinia quam venenatis vestibulum.
-              </p>
-              <p class="text-warning">
-                Etiam porta sem malesuada magna mollis euismod.
-              </p>
-              <p class="text-danger">
-                Donec ullamcorper nulla non metus auctor fringilla.
-              </p>
-              <p class="text-success">
-                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-              </p>
-              <p class="text-info">
-                Maecenas sed diam eget risus varius blandit sit amet non magna.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+
+            <a href="https://cooking.nytimes.com/recipes/7985-turkey-chili" title=" Turkey chili recipe">
+              <article>
+                <img width="294" height="196"
+                  src="https://static01.nyt.com/images/2020/09/27/dining/27ah-chili/pf-turkey-chili-articleLarge.jpg">
+                <h3>Turkey chili</h3>
+                <div class="other_details">
+                  <div class="view">
+                    <i class="fa fa-eye"></i> 45 mins
+                  </div>
+                  <div class="likes">
+                    <i class="fa fa-heart"></i> 560 cal
+                  </div>
+                  <div class="user">
+
+                    $$
+
+                  </div>
+                </div>
+
+                <a href="https://cooking.nytimes.com/recipes/7985-turkey-chili" title=" Turkey chili recipe">
+                  <article>
+                    <img width="294" height="196"
+                      src="https://static01.nyt.com/images/2020/09/27/dining/27ah-chili/pf-turkey-chili-articleLarge.jpg">
+                    <h3>Turkey chili</h3>
+                    <div class="other_details">
+                      <div class="view">
+                        <i class="fa fa-eye"></i> 45 mins
+                      </div>
+                      <div class="likes">
+                        <i class="fa fa-heart"></i> 560 cal
+                      </div>
+                      <div class="user">
+
+                        $$
+
+                      </div>
+                    </div>
+                  </article>
+                </a>
+      </div>
     </section>
-  </body>
+  </section>
+</body>
+
 </html>

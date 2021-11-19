@@ -1,0 +1,30 @@
+.section--home {
+  margin: 2em 0;
+}
+
+.section--home.wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+article {
+    width: 23.438%;
+    margin: 0 .6% 20px;
+    border-radius: 5px;
+    width: 23%;
+    margin: 0 1% 20px;
+    background: #fff;
+    display: flex;
+    flex-flow: column;
+}
+
+.other_details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 90%;
+}
