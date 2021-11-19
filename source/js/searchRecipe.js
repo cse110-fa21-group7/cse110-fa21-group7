@@ -1,7 +1,7 @@
 function searchRecipe(key){
   let query = "https://api.spoonacular.com/recipes/complexSearch?apiKey=48d15a6f601f4207861fb19c299525fa&query="+key;
   const recipeData = {}
-  fetch(recipes[i])
+  fetch(query)
   .then(response => response.json())
   .then(data => {
     for(let i=0;i<=data["results"].length;i++){
