@@ -5,10 +5,11 @@ function searchRecipe(key){
   .then(response => response.json())
   .then(data => {
     for(let i=0;i<=data["results"].length;i++){
+      
       let id = data["results"][i]["id"];
       let title = data["results"][i]["title"];
       let image = data["results"][i]["image"];
-      let description = key;
+      let description = 0;
       let cost;
       let ingredients = []
         
@@ -16,6 +17,7 @@ function searchRecipe(key){
       .then(response => response.json())
       .then(data => {
         cost = data["pricePerServing"];
+        description = data["summary"];
         let ingInfo = data["extendedIngredients"];
         ingredients = [];
         for(let i=0;i<ingInfo.length;i++){
@@ -41,5 +43,6 @@ function searchRecipe(key){
       });
     }
   });
+  
   return recipeData;  
 }
