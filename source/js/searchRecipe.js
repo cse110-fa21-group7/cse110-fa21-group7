@@ -1,5 +1,5 @@
-function searchRecipe(key){
-  let query = "https://api.spoonacular.com/recipes/complexSearch?apiKey=48d15a6f601f4207861fb19c299525fa&query="+key;
+function searchRecipe(key,apiKey){
+  let query = "https://api.spoonacular.com/recipes/complexSearch?apiKey="+apiKey+"&query="+key;
   const recipeData = {}
   fetch(query)
   .then(response => response.json())
@@ -13,7 +13,7 @@ function searchRecipe(key){
       let cost;
       let ingredients = []
         
-      fetch("https://api.spoonacular.com/recipes/"+id+"/information?apiKey=48d15a6f601f4207861fb19c299525fa")
+      fetch("https://api.spoonacular.com/recipes/"+id+"/information?apiKey="+apiKey)
       .then(response => response.json())
       .then(data => {
         cost = data["pricePerServing"];
@@ -28,7 +28,7 @@ function searchRecipe(key){
         recipeData[id] = {"img-url":image,"title":title,"description":description,
         "totalCost":cost,"ingredients":ingredients,"steps":0}; 
         let steps = [];
-        fetch("https://api.spoonacular.com/recipes/"+id+"/analyzedInstructions?apiKey=48d15a6f601f4207861fb19c299525fa")
+        fetch("https://api.spoonacular.com/recipes/"+id+"/analyzedInstructions?apiKey="+apiKey)
         .then(response => response.json())
         .then(data => {
           var stepsData = data[0]["steps"];
