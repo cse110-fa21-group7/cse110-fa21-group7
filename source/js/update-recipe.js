@@ -242,7 +242,7 @@ function setFormListener() {
     }
     recipe["totalCost"] = cost;
 
-    // TODO: Upload Image
+    recipe['img-url'] = document.querySelector('#img-spot > img').src;
 
     const ingredients = [];
     const ingredientElems = document
@@ -301,11 +301,10 @@ function setFormListener() {
     } else {
       console.log("Invalid recipe");
     }
-  });
-
-  const file = document.getElementById("recipeImage");
+  }); 
 
   // Image upload, saves URL to recipe object
+  const file = document.getElementById("recipeImage");
   file.addEventListener("change", (e) => {
     formdata = new FormData();
     formdata.append("image", e.target.files[0]);
@@ -333,13 +332,15 @@ function setFormListener() {
         img.src = data.data.link;
         img.height = "200";
         img.referrerPolicy = "no-referrer";
-        recipe["img-url"] = data.data.link;
+        if (data.data.link !== '') {
+          recipe["img-url"] = data.data.link;
+        } 
+        
       });
   });
 
-  const addIng = form.querySelector("#add-ingredient");
-
   // Create additional ingredient element
+  const addIng = form.querySelector("#add-ingredient");
   addIng.addEventListener("click", function (event) {
     console.log("Add ingredient");
     const ingsDiv = document.getElementById("ingredients");
@@ -362,9 +363,8 @@ function setFormListener() {
     ingsDiv.appendChild(ingAdded);
   });
 
-  const addStep = form.querySelector("#add-step");
-
   // Create additional step element
+  const addStep = form.querySelector("#add-step");
   addStep.addEventListener("click", function (event) {
     console.log("Add step");
     const stepsDiv = document.getElementById("steps");
@@ -387,8 +387,8 @@ function setFormListener() {
     stepsDiv.appendChild(stepAdded);
   });
 
+  // Removes last ingredient element
   const removeIng = form.querySelector("#remove-ingredient");
-
   removeIng.addEventListener("click", function (event) {
     console.log("Remove ingredient");
     const ingsDiv = document.getElementById("ingredients");
@@ -398,8 +398,8 @@ function setFormListener() {
     }
   });
 
+  // Remove last step element
   const removeStep = form.querySelector("#remove-step");
-
   removeStep.addEventListener("click", function (event) {
     console.log("Remove step");
     const stepsDiv = document.getElementById("steps");
