@@ -25,6 +25,7 @@ const MAX_STEPS = 10;
 
 let recipes = {};
 const recipe = {};
+let recipeID = 0;
 let formdata = new FormData();
 window.addEventListener("DOMContentLoaded", init);
 
@@ -47,6 +48,7 @@ function checkID() {
     return;
   }
   console.log(`id: ${id}`);
+  recipeID = id;
   populateForm(id);
 }
 
@@ -54,7 +56,7 @@ function checkID() {
 /** Populate forms by ID
  * @param {int} id
  */
-function populateForm(id) {
+async function populateForm(id) {
   let recipe;
   if (id in recipes) {
     recipe = recipes[id];
@@ -66,21 +68,52 @@ function populateForm(id) {
   document.getElementById('recipeTitle').value = recipe['title'];
   document.getElementById('recipeDescription').value = recipe['description'];
   document.getElementById('recipeCost').value = recipe['totalCost'];
-  document.getElementById('recipeImage').src = recipe['img-url'];
+  const img = document.createElement("img");
+  img.src = recipe['img-url'];
+  img.height = "200";
+  document.getElementById('img-spot').append(img);
 
-  /*
-  const ingredients = [];
-  recipe.ingredients = ingredients;
-  const ingredient1 = {};
-  ingredient1.name = document.getElementById('ingredient1name').value.trim();
-  ingredient1.amount = document.getElementById('ingredient1amount')
-      .value.trim();
-  ingredients.push(ingredient1);
-  const steps = [];
-  recipe.steps = steps;
-  document.getElementById('step1')
-  document.getElementById('step2')
-  */
+  const ingredients = recipe['ingredients'];
+  const ingredientsDiv = document.getElementById("ingredients");
+
+  // Get template ingredient element 
+  const ingElemTemplate = ingredientsDiv.getElementsByClassName("ingredient")[0].cloneNode(true);
+
+  // Clear unfilled elements 
+  const ingredientElems = ingredientsDiv.getElementsByClassName('ingredient');
+  while (ingredientElems.length > 0) {
+    ingredientElems[0].remove();
+  }
+
+  // Populate ingredientsDiv with ingredient elements using recipe data
+  for (let i = 0; i < ingredients.length; i++) {
+    const ingElem = ingElemTemplate.cloneNode(true);
+    ingElem.querySelector('.ingredient-name > .name-label').innerText = `Ingredient ${i + 1}`;
+    ingElem.querySelector('.ingredient-name > input').value = ingredients[i].name;
+    ingElem.querySelector('.ingredient-amount > input').value = ingredients[i].amount;
+    ingredientsDiv.appendChild(ingElem);
+  }
+
+  const steps = recipe['steps'];
+  const stepsDiv = document.getElementById('steps');
+
+  // Get template step element 
+  const stepElemTemplate = stepsDiv.getElementsByClassName('step-sec')[0];
+
+  // Clear unfilled elements
+  const stepsElems = stepsDiv.getElementsByClassName('step-sec');
+  while (stepsElems.length > 0) {
+    stepsElems[0].remove();
+  }
+
+  // Populate stepsDiv with step elements using recipe data
+  for (let i = 0; i < steps.length; i++) {
+    const stepElem = stepElemTemplate.cloneNode(true);
+    stepElem.querySelector('.recipeStep-label').innerText = `Step ${i + 1}`;
+    stepElem.querySelector('textarea').value = steps[i];
+    stepsDiv.appendChild(stepElem);
+  }   
+
 }
 
 
@@ -283,10 +316,7 @@ function setFormListener() {
     recipe["steps"] = steps;
 
     if (allValid) {
-      const id = parseInt(recipes.currID, 10);
-      recipes.currID = id + 1;
-
-      recipes[id] = recipe;
+      recipes[recipeID] = recipe;
       localStorage.setItem("recipes", JSON.stringify(recipes));
     } else {
       console.log("Invalid recipe");
@@ -343,11 +373,12 @@ function setFormListener() {
     }
 
     const ingAdded = ingElems[0].cloneNode(true);
-    ingAdded.innerText = "";
+    // ingAdded.innerText = "";
     console.log(`numIngs: ${numIngs}`);
     ingAdded.querySelector(
       ".ingredient-name > .name-label"
     ).innerText = `Ingredient ${numIngs + 1}`;
+    ingAdded.querySelector('input').value = '';
     ingsDiv.appendChild(ingAdded);
   });
 
@@ -367,11 +398,12 @@ function setFormListener() {
     }
 
     const stepAdded = stepElems[0].cloneNode(true);
-    stepAdded.innerText = "";
+    // stepAdded.innerText = "";
     console.log(`numSteps: ${numSteps}`);
     stepAdded.querySelector(".recipeStep-label").innerText = `Step ${
       numSteps + 1
     }`;
+    stepAdded.querySelector('textarea').value = '';
     stepsDiv.appendChild(stepAdded);
   });
 
