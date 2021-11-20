@@ -1,4 +1,3 @@
-window.addEventListener("DOMContentLoaded", init);
 // read-recipe.js
 
 // const recipeTitleElem = document.getElementById("recipeTitle");
@@ -33,6 +32,20 @@ function initializeStorage() {
   }
 }
 
+/** Checks if ID is in localStorage */
+function checkID() {
+  const queryString = window.location.search;
+  // console.log(queryString);
+  const urlParams = new URLSearchParams(queryString);
+  const id = urlParams.get("id");
+  if (id === null) {
+    console.log("No id parameter");
+    return;
+  }
+  console.log(`id: ${id}`);
+  populateHTML(id);
+}
+
 /** Populate forms by ID
  * @param {int} id
  */
@@ -47,54 +60,51 @@ function populateHTML(id) {
   document.getElementById("recipeTitle").innerText = recipe["title"];
   document.getElementById("recipeDescription").innerText =
     recipe["description"];
+  
+  const recipeDiv = document.getElementById('recipe');
+  const img = recipeDiv.querySelector('img');
+  img.src = recipe['img-url'];
+  
+  const ingList = document.getElementById('ingredients');
+  const ingElems = ingList.getElementsByTagName('li');
+  const ingTemplate = ingElems[0].cloneNode(true);
 
+  // Clear filler elements
+  
+  while (ingElems.length > 0) {
+    console.log('removing');
+    ingElems[0].remove();
+  }
+  
+
+  // Create new list elements
   const recipeIngredients = recipe["ingredients"];
-  const ingredientElems = document
-    .getElementById("ingredients")
-    .getElementsByClassName("ingredient");
-  for (let i = 0; i < ingredientElems.length; i++) {
-    const ingElem = ingredientElems[i];
-    const recipeIng = recipeIngredients[i];
-    ingElem.innerText = `${recipeIng["name"]} Amount: ${recipeIng["amount"]} 
-      Cost: ${recipeIng["cost"]}`;
+  for (let i = 0; i < recipeIngredients.length; i++) {
+    const ingElem = ingTemplate.cloneNode(true); 
+    ingElem.innerText = `${recipeIngredients[i]['name']} ${recipeIngredients[i]['amount']}`;
+    ingList.appendChild(ingElem);
   }
 
-  const recipeSteps = recipe["steps"];
-  const stepElems = document
-    .getElementById("instructions")
-    .getElementsByClassName("step-instruction");
-  for (let i = 0; i < stepElems.length; i++) {
-    const stepElem = stepElems[i];
-    const recipeStep = recipeSteps[i];
-    stepElem.querySelector(".card-subtitle").innerText = `Step ${i + 1}`;
-    stepElem.querySelector(".card-text").innerText = recipeStep;
-  }
+  const stepsDiv = document.getElementById('steps');
+  const stepElems = stepsDiv.getElementsByClassName('step-instruction');
+  const stepTemplate = stepElems[0].cloneNode(true);
 
-  /*
-  const ingredients = [];
-  recipe.ingredients = ingredients;
-  const ingredient1 = {};
-  ingredient1.name = document.getElementById('ingredient1name').value.trim();
-  ingredient1.amount = document.getElementById('ingredient1amount')
-      .value.trim();
-  ingredients.push(ingredient1);
-  const steps = [];
-  recipe.steps = steps;
-  document.getElementById('step1')
-  document.getElementById('step2')
-  */
+  // Clear filler elements 
+  
+  while (stepElems.length > 0) {
+    console.log('removing');
+    stepElems[0].remove();
+  }
+  
+
+  // Create new step elements
+  const recipeSteps = recipe['steps'];
+  for (let i = 0; i < recipeSteps.length; i++) {
+    const stepElem = stepTemplate.cloneNode(true);
+    stepElem.querySelector('.card-subtitle').innerText = `Step ${i+1}`;
+    stepElem.querySelector('.card-text').innerText = recipeSteps[i];
+    stepsDiv.appendChild(stepElem);
+  }
 }
 
-/** Checks if ID is in localStorage */
-function checkID() {
-  const queryString = window.location.search;
-  // console.log(queryString);
-  const urlParams = new URLSearchParams(queryString);
-  const id = urlParams.get("id");
-  if (id === null) {
-    console.log("No id parameter");
-    return;
-  }
-  console.log(`id: ${id}`);
-  populateHTML(id);
-}
+

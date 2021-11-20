@@ -57,3 +57,12 @@ button.active {
 .tab-active {
   display: block;
 }
+
+#img-spot {
+  height: 300px;
+}
+
+#img-spot > img {
+  max-height: 100%; 
+  max-width: 100%;
+}
