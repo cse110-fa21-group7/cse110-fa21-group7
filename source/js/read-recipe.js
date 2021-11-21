@@ -79,8 +79,15 @@ function setButtonListener() {
   });
 
   const deleteButton = document.getElementById("Delete");
+  deleteButton.addEventListener("click", (e) => {
+    delete recipes[recipeID];
+    localStorage.setItem("recipes", JSON.stringify(recipes));
+    location.href = location.origin + "/source/html/cook-book.html";
+  });
+  /**
   const modal = document.getElementById("deleteModal");
 
+  
   deleteButton.onclick = function () {
     console.log("Delete clicked");
     modal.style.display = "block";
@@ -101,6 +108,7 @@ function setButtonListener() {
       modal.style.display = "none";
     }
   };
+  */
 
   return;
 }
