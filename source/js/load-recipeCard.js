@@ -77,7 +77,7 @@ function createRecipeCards() {
   // loop whole local storge
   for (let i = 1; i < total; i++) {
     const card = document.createElement("recipe-card");
-    card.data = recipeData[id];
+    card.data = recipeData[i];
     main.appendChild(card);
   }
 }
