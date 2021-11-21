@@ -11,9 +11,9 @@ window.addEventListener("DOMContentLoaded", init);
 
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
-  // console.log("Initializing");
-  // initializeStorage();
-  // checkID();
+  console.log("Initializing");
+  initializeStorage();
+  checkID();
   setFormListener();
 }
 
@@ -361,7 +361,12 @@ function setFormListener() {
     ingAdded.querySelector(
       ".ingredient-name > .name-label"
     ).innerText = `Ingredient ${numIngs + 1}`;
-    ingAdded.querySelector("input").value = "";
+    ingAdded.querySelector(
+      ".ingredient-name > .form-control"
+    ).value = "";
+    ingAdded.querySelector(
+      ".ingredient-amount > .form-control"
+    ).value = "";
     ingsDiv.appendChild(ingAdded);
   });
 
