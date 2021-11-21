@@ -1,8 +1,7 @@
 // read-recipe.js
 
-// const recipeTitleElem = document.getElementById("recipeTitle");
-// recipeTitleElem.innerText = recipe.title;
 let recipes = {};
+let recipeID = null;
 window.addEventListener("DOMContentLoaded", init);
 
 /** Initialize function, begins all of the JS code in this file */
@@ -10,6 +9,7 @@ async function init() {
   console.log("Initializing");
   initializeStorage();
   checkID();
+  setButtonListener();
 }
 
 /** Initializes recipes object from localStorage cache */
@@ -43,6 +43,7 @@ function checkID() {
     return;
   }
   console.log(`id: ${id}`);
+  recipeID = id;
   populateHTML(id);
 }
 
@@ -107,4 +108,17 @@ function populateHTML(id) {
   }
 }
 
+/** Sets event listeners */
+function setButtonListener() {
+  const editButton = document.getElementById('Edit');
+  editButton.addEventListener('click', (e) => {
+    location.href = `update-recipe.html?id=${recipeID}`;
 
+  });
+
+  const deleteButton = document.getElementById('Delete');
+  deleteButton.addEventListener('click', (e) => {
+
+  });
+  return;
+}
