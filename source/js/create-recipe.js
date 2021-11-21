@@ -3,7 +3,8 @@
 const MAX_INGREDIENTS = 20;
 const MAX_STEPS = 10;
 
-let recipes = {};
+let recipes; // save local storage recipes
+// let recipes = {};
 const recipe = {};
 let formdata = new FormData();
 window.addEventListener("DOMContentLoaded", init);
@@ -11,11 +12,14 @@ window.addEventListener("DOMContentLoaded", init);
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
   console.log("Initializing");
-  initializeStorage();
+  getRecipes();
+  // initializeStorage();
   checkID();
   setFormListener();
 }
-
+function getRecipes() {
+  recipes = localStorage.getItem("recipes");
+}
 // TODO: Finish populateForm
 /** Populate forms by ID
  * @param {int} id

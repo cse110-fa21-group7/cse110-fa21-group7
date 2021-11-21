@@ -11,9 +11,9 @@ window.addEventListener("DOMContentLoaded", init);
 
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
-  console.log("Initializing");
-  initializeStorage();
-  checkID();
+  // console.log("Initializing");
+  // initializeStorage();
+  // checkID();
   setFormListener();
 }
 
@@ -40,27 +40,29 @@ async function populateForm(id) {
   let recipe;
   if (id in recipes) {
     recipe = recipes[id];
-    console.log(`Found recipe: ${recipe['title']}`);
+    console.log(`Found recipe: ${recipe["title"]}`);
   } else {
     console.log(`ID: ${id} does not exist in recipes`);
     return;
   }
-  document.getElementById('recipeTitle').value = recipe['title'];
-  document.getElementById('recipeDescription').value = recipe['description'];
-  document.getElementById('recipeCost').value = recipe['totalCost'];
+  document.getElementById("recipeTitle").value = recipe["title"];
+  document.getElementById("recipeDescription").value = recipe["description"];
+  document.getElementById("recipeCost").value = recipe["totalCost"];
   const img = document.createElement("img");
-  img.src = recipe['img-url'];
+  img.src = recipe["img-url"];
   img.height = "200";
-  document.getElementById('img-spot').append(img);
+  document.getElementById("img-spot").append(img);
 
-  const ingredients = recipe['ingredients'];
+  const ingredients = recipe["ingredients"];
   const ingredientsDiv = document.getElementById("ingredients");
 
-  // Get template ingredient element 
-  const ingElemTemplate = ingredientsDiv.getElementsByClassName("ingredient")[0].cloneNode(true);
+  // Get template ingredient element
+  const ingElemTemplate = ingredientsDiv
+    .getElementsByClassName("ingredient")[0]
+    .cloneNode(true);
 
-  // Clear unfilled elements 
-  const ingredientElems = ingredientsDiv.getElementsByClassName('ingredient');
+  // Clear unfilled elements
+  const ingredientElems = ingredientsDiv.getElementsByClassName("ingredient");
   while (ingredientElems.length > 0) {
     ingredientElems[0].remove();
   }
@@ -68,20 +70,24 @@ async function populateForm(id) {
   // Populate ingredientsDiv with ingredient elements using recipe data
   for (let i = 0; i < ingredients.length; i++) {
     const ingElem = ingElemTemplate.cloneNode(true);
-    ingElem.querySelector('.ingredient-name > .name-label').innerText = `Ingredient ${i + 1}`;
-    ingElem.querySelector('.ingredient-name > input').value = ingredients[i].name;
-    ingElem.querySelector('.ingredient-amount > input').value = ingredients[i].amount;
+    ingElem.querySelector(
+      ".ingredient-name > .name-label"
+    ).innerText = `Ingredient ${i + 1}`;
+    ingElem.querySelector(".ingredient-name > input").value =
+      ingredients[i].name;
+    ingElem.querySelector(".ingredient-amount > input").value =
+      ingredients[i].amount;
     ingredientsDiv.appendChild(ingElem);
   }
 
-  const steps = recipe['steps'];
-  const stepsDiv = document.getElementById('steps');
+  const steps = recipe["steps"];
+  const stepsDiv = document.getElementById("steps");
 
-  // Get template step element 
-  const stepElemTemplate = stepsDiv.getElementsByClassName('step-sec')[0];
+  // Get template step element
+  const stepElemTemplate = stepsDiv.getElementsByClassName("step-sec")[0];
 
   // Clear unfilled elements
-  const stepsElems = stepsDiv.getElementsByClassName('step-sec');
+  const stepsElems = stepsDiv.getElementsByClassName("step-sec");
   while (stepsElems.length > 0) {
     stepsElems[0].remove();
   }
@@ -89,14 +95,11 @@ async function populateForm(id) {
   // Populate stepsDiv with step elements using recipe data
   for (let i = 0; i < steps.length; i++) {
     const stepElem = stepElemTemplate.cloneNode(true);
-    stepElem.querySelector('.recipeStep-label').innerText = `Step ${i + 1}`;
-    stepElem.querySelector('textarea').value = steps[i];
+    stepElem.querySelector(".recipeStep-label").innerText = `Step ${i + 1}`;
+    stepElem.querySelector("textarea").value = steps[i];
     stepsDiv.appendChild(stepElem);
-  }   
-
+  }
 }
-
-
 
 /** Initializes recipes object from localStorage cache */
 function initializeStorage() {
@@ -242,7 +245,7 @@ function setFormListener() {
     }
     recipe["totalCost"] = cost;
 
-    recipe['img-url'] = document.querySelector('#img-spot > img').src;
+    recipe["img-url"] = document.querySelector("#img-spot > img").src;
 
     const ingredients = [];
     const ingredientElems = document
@@ -301,7 +304,7 @@ function setFormListener() {
     } else {
       console.log("Invalid recipe");
     }
-  }); 
+  });
 
   // Image upload, saves URL to recipe object
   const file = document.getElementById("recipeImage");
@@ -332,10 +335,9 @@ function setFormListener() {
         img.src = data.data.link;
         img.height = "200";
         img.referrerPolicy = "no-referrer";
-        if (data.data.link !== '') {
+        if (data.data.link !== "") {
           recipe["img-url"] = data.data.link;
-        } 
-        
+        }
       });
   });
 
@@ -359,7 +361,7 @@ function setFormListener() {
     ingAdded.querySelector(
       ".ingredient-name > .name-label"
     ).innerText = `Ingredient ${numIngs + 1}`;
-    ingAdded.querySelector('input').value = '';
+    ingAdded.querySelector("input").value = "";
     ingsDiv.appendChild(ingAdded);
   });
 
@@ -383,7 +385,7 @@ function setFormListener() {
     stepAdded.querySelector(".recipeStep-label").innerText = `Step ${
       numSteps + 1
     }`;
-    stepAdded.querySelector('textarea').value = '';
+    stepAdded.querySelector("textarea").value = "";
     stepsDiv.appendChild(stepAdded);
   });
 
