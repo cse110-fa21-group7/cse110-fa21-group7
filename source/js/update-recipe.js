@@ -301,6 +301,9 @@ function setFormListener() {
     if (allValid) {
       recipes[recipeID] = recipe;
       localStorage.setItem("recipes", JSON.stringify(recipes));
+      window.alert("successfully created a recipe!");
+      let currUrl = location.toString().replace("update-recipe.html?id=" + recipeID, "cook-book.html");
+      location.href = currUrl;
     } else {
       console.log("Invalid recipe");
     }
