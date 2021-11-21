@@ -12,10 +12,7 @@ div {
   max-width: 90%;
   max-height: 90%;
 }
-#recipeImg {
-  border-radius: 20px;
-  border: 10px solid #fff;
-}
+
 .recipe-card-header-container {
   position: relative;
   text-align: center;
@@ -37,28 +34,119 @@ div {
   cursor: pointer;
   border-radius: 4px;
 }
-/* #Edit {
-  display: block;
-  border-radius: 3px;
-  padding: 8px;
-  font-style: normal;
-  text-decoration: none;
-  font-size: 12px;
-  line-height: 1.4;
-  border: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  color: #fff;
-  background-color: #222;
-} */
-.rating > span:hover:before {
+#recipeImg {
+  border-radius: 20px;
+  border: 10px solid #fff;
+}
+/* .rating > span:hover:before {
   content: "\2605";
   position: absolute;
-}
+} */
 
 .recipe-details-container {
   border-left: 1px solid rgba(0, 0, 0, 0.1);
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   padding: 10px 20px 0;
   background-color: #fff;
+}
+
+.flex-container {
+  display: flex;
+}
+.flex-child {
+  flex: 1;
+}
+.detail-item {
+  -ms-flex: 1 0 calc(100% / 4);
+  flex: 1 0 calc(100% / 4);
+  padding: 8px 1.5%;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* ingredient CSS start */
+label {
+  font-weight: 400;
+  display: block;
+  width: 150px;
+  float: center;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+}
+.each-ingredient {
+  line-height: 2;
+}
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #86c7a7;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* Steps CSS */
+.orderList {
+  font-weight: 400;
+  display: block;
+  float: center;
+  font-size: 16px;
+  line-height: 2;
+}
+
+h2 {
+  color: #86c7a7;
 }

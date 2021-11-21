@@ -45,15 +45,25 @@ function populateHTML() {
   document.getElementById("recipeDescription").innerText =
     recipe["description"];
   // add ingredient list
+  // <div id="ingredient-list">
+  // <div class="each-ingredient">
+  //   <label class = "container">duck 0.5 lb
+  //     <input type="checkbox">
+  //     <span class="checkmark"></span>
+  //   </label>
+  // </div>
   const ingList = document.getElementById("ingredient-list");
   for (const ingredient of recipe["ingredients"]) {
     const eachIng = document.createElement("div");
     eachIng.classList.add("each-ingredient");
-    const input = document.createElement("input");
-    input.type = "checkbox";
-    eachIng.appendChild(input);
     const label = document.createElement("label");
     label.innerText = `${ingredient["name"]} ${ingredient["amount"]}`;
+    label.classList.add("container");
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    const span = document.createElement("span");
+    span.classList.add("checkmark");
+    label.append(input, span);
     eachIng.appendChild(label);
     ingList.appendChild(eachIng);
   }
@@ -83,31 +93,6 @@ function setButtonListener() {
     window.alert("successfully deleted the recipe!");
     location.href = location.origin + "/source/html/cook-book.html";
   });
-  /**
-  const modal = document.getElementById("deleteModal");
-
-  
-  deleteButton.onclick = function () {
-    console.log("Delete clicked");
-    modal.style.display = "block";
-  };
-
-  const span = modal.getElementsByClassName("close")[0];
-  span.onclick = function () {
-    modal.style.display = "none";
-  };
-
-  const deleteSpan = modal.getElementsByClassName("delete")[0];
-  deleteSpan.onclick = function () {
-    console.log(`Deleting ${recipeID}`);
-  };
-
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
-  */
 
   return;
 }
