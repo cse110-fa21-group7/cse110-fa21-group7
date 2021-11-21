@@ -47,7 +47,6 @@ function populateHTML() {
   // add ingredient list
   const ingList = document.getElementById("ingredient-list");
   for (const ingredient of recipe["ingredients"]) {
-    console.log(ingredient);
     const eachIng = document.createElement("div");
     eachIng.classList.add("each-ingredient");
     const input = document.createElement("input");
@@ -62,7 +61,6 @@ function populateHTML() {
   const stepList = document.getElementById("steps-list");
   const ul = document.createElement("ol");
   for (const step of recipe["steps"]) {
-    console.log(step);
     ul.classList.add("orderList");
     const li = document.createElement("li");
     li.innerHTML = step;
