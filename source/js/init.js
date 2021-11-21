@@ -3,7 +3,7 @@ window.addEventListener("DOMContentLoaded", init);
 async function init() {
   initializeStorage();
   checkID();
-  // addExamples();
+  addExamples();
 }
 /** Initializes recipes object from localStorage cache */
 function initializeStorage() {
