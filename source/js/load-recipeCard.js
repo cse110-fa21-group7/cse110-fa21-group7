@@ -78,6 +78,13 @@ function createRecipeCards() {
   for (let i = 1; i < total; i++) {
     const card = document.createElement("recipe-card");
     card.data = recipeData[i];
+    readRecipe(card, i)
     main.appendChild(card);
   }
+}
+
+function readRecipe(recipeCard, id) {
+  recipeCard.addEventListener('click', e => {
+    window.location.href = window.location.origin + '/source/html/read-recipe.html?id=' + id;
+  });
 }
