@@ -39,7 +39,7 @@ function createRecipeCards() {
 
 function readRecipe(recipeCard, id) {
   recipeCard.addEventListener("click", (e) => {
-    window.location.href =
-      window.location.origin + "/source/html/read-recipe.html?id=" + id;
+    let currUrl = location.toString().replace("cook-book.html", "read-recipe.html?id=" + id);
+    window.location.href = currUrl;
   });
 }
