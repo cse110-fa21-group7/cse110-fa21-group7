@@ -3,19 +3,22 @@
 const MAX_INGREDIENTS = 20;
 const MAX_STEPS = 10;
 
-let recipes = {};
+let recipes; // save local storage recipes
+// let recipes = {};
 const recipe = {};
 let formdata = new FormData();
 window.addEventListener("DOMContentLoaded", init);
 
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
-  console.log("Initializing");
-  initializeStorage();
+  getRecipes();
   checkID();
   setFormListener();
 }
-
+function getRecipes() {
+  recipes = localStorage.getItem("recipes");
+  recipes = JSON.parse(recipes);
+}
 // TODO: Finish populateForm
 /** Populate forms by ID
  * @param {int} id
@@ -28,20 +31,6 @@ function populateForm(id) {
     console.log(`ID: ${id} does not exist in recipes`);
   }
   document.getElementById("recipeTitle").innerText = "test";
-
-  /*
-  const ingredients = [];
-  recipe.ingredients = ingredients;
-  const ingredient1 = {};
-  ingredient1.name = document.getElementById('ingredient1name').value.trim();
-  ingredient1.amount = document.getElementById('ingredient1amount')
-      .value.trim();
-  ingredients.push(ingredient1);
-  const steps = [];
-  recipe.steps = steps;
-  document.getElementById('step1')
-  document.getElementById('step2')
-  */
 }
 
 /** Checks if ID is in localStorage */
@@ -56,29 +45,6 @@ function checkID() {
   }
   console.log(`id: ${id}`);
   populateForm(id);
-}
-
-/** Initializes recipes object from localStorage cache */
-function initializeStorage() {
-  console.log("Initializing recipes object");
-  const json = localStorage.getItem("recipes");
-
-  if (json === null) {
-    console.log("Recipes not initialized in localStorage cache");
-    // Good practice to use brackets to ensure proper type
-    recipes["currID"] = 1;
-    localStorage.setItem("recipes", JSON.stringify(recipes));
-    return;
-  }
-
-  recipes = JSON.parse(json);
-  if (Object.keys(recipes).length == 0) {
-    // Check properly formatted
-    if (!("currID" in recipes)) {
-      recipes["currID"] = 1;
-    }
-    console.log("Empty recipes object");
-  }
 }
 
 /**  Show a message in the invalid-feedback div below the input element
@@ -148,15 +114,6 @@ function hasFloat(input, message) {
   }
   return showSuccess(input);
 }
-
-/*
-function getElementIfExists(elem) {
-  if (elem != null && elem.value.trim() === '') {
-    return ''
-  }
-  return elem.value.trim()
-}
-*/
 
 /**
  * Set up form event listener
@@ -256,10 +213,11 @@ function setFormListener() {
     recipe["steps"] = steps;
 
     if (allValid) {
-      const id = parseInt(recipes.currID, 10);
-      recipes.currID = id + 1;
+      // const id = parseInt(recipes.currID, 10);
+      console.log(recipes["currID"]);
+      recipes[recipes["currID"]] = recipe;
+      recipes["currID"] += 1;
 
-      recipes[id] = recipe;
       localStorage.setItem("recipes", JSON.stringify(recipes));
     } else {
       console.log("Invalid recipe");
