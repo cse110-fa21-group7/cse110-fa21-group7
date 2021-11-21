@@ -28,12 +28,16 @@ div {
 #Delete {
   background-color: #c62122;
   color: #fff !important;
+  cursor: pointer;
+  border-radius: 4px;
 }
 #Edit {
   background-color: #222 !important;
   color: #fff !important;
+  cursor: pointer;
+  border-radius: 4px;
 }
-#Edit {
+/* #Edit {
   display: block;
   border-radius: 3px;
   padding: 8px;
@@ -44,10 +48,9 @@ div {
   border: none;
   -webkit-box-shadow: none;
   box-shadow: none;
-  cursor: pointer;
   color: #fff;
   background-color: #222;
-}
+} */
 .rating > span:hover:before {
   content: "\2605";
   position: absolute;
