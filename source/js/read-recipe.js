@@ -83,7 +83,8 @@ function setButtonListener() {
     delete recipes[recipeID];
     localStorage.setItem("recipes", JSON.stringify(recipes));
     window.alert("successfully deleted the recipe!");
-    location.href = location.origin + "/source/html/cook-book.html";
+    let currUrl = location.toString().replace("read-recipe.html?id=" + recipeID, "cook-book.html");
+    location.href = currUrl;
   });
   /**
   const modal = document.getElementById("deleteModal");
