@@ -277,11 +277,16 @@ function setFormListener() {
     }
 
     const ingAdded = ingElems[0].cloneNode(true);
-    ingAdded.innerText = "";
     console.log(`numIngs: ${numIngs}`);
     ingAdded.querySelector(
       ".ingredient-name > .name-label"
     ).innerText = `Ingredient ${numIngs + 1}`;
+    ingAdded.querySelector(
+      ".ingredient-name > .form-control"
+    ).value = "";
+    ingAdded.querySelector(
+      ".ingredient-amount > .form-control"
+    ).value = "";
     ingsDiv.appendChild(ingAdded);
   });
 
@@ -301,11 +306,13 @@ function setFormListener() {
     }
 
     const stepAdded = stepElems[0].cloneNode(true);
-    stepAdded.innerText = "";
     console.log(`numSteps: ${numSteps}`);
     stepAdded.querySelector(".recipeStep-label").innerText = `Step ${
       numSteps + 1
     }`;
+    stepAdded.querySelector(
+      ".step-sec > .form-control"
+    ).value = "";
     stepsDiv.appendChild(stepAdded);
   });
 
