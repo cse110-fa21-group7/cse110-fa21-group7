@@ -70,10 +70,8 @@ function populateHTML(id) {
   const ingElems = ingList.getElementsByTagName('li');
   const ingTemplate = ingElems[0].cloneNode(true);
 
-  // Clear filler elements
-  
+  // Clear default filler elements
   while (ingElems.length > 0) {
-    console.log('removing');
     ingElems[0].remove();
   }
   
@@ -90,10 +88,8 @@ function populateHTML(id) {
   const stepElems = stepsDiv.getElementsByClassName('step-instruction');
   const stepTemplate = stepElems[0].cloneNode(true);
 
-  // Clear filler elements 
-  
+  // Clear default filler elements 
   while (stepElems.length > 0) {
-    console.log('removing');
     stepElems[0].remove();
   }
   
@@ -117,8 +113,31 @@ function setButtonListener() {
   });
 
   const deleteButton = document.getElementById('Delete');
-  deleteButton.addEventListener('click', (e) => {
+  const modal = document.getElementById('deleteModal');
+  
+  deleteButton.onclick = function() {
+    console.log('Delete clicked');
+    modal.style.display = 'block';
+  };
 
-  });
+  const span = modal.getElementsByClassName('close')[0];
+  span.onclick = function() {
+    modal.style.display = "none";
+  };
+
+  const deleteSpan = modal.getElementsByClassName('delete')[0];
+  deleteSpan.onclick = function() {
+    console.log(`Deleting ${recipeID}`);
+  };
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+
+
+
+  
   return;
 }
