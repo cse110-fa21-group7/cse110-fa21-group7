@@ -46,8 +46,7 @@ function addExamples() {
   const ex1 = {
     "img-url": "https://spoonacular.com/recipeImages/75081-312x231.jpg",
     title: "Beef Wellington",
-    description:
-      'The recipe Beef Wellington could satisfy your Scottish craving in about <b>2 hours and 19 minutes</b>. This recipe serves 10 and costs $6.92 per serving. One serving contains <b>707 calories</b>, <b>67g of protein</b>, and <b>38g of fat</b>. It works well as a main course. 1 person has made this recipe and would make it again. Head to the store and pick up mushrooms, wine, milk, and a few other things to make it today. To use up the egg you could follow this main course with the <a href="https://spoonacular.com/recipes/rose-levy-beranbaums-chocolate-tomato-cake-with-mystery-ganache-27408">Rose Levy Beranbaum\'s Chocolate Tomato Cake with Mystery Ganache</a> as a dessert. All things considered, we decided this recipe <b>deserves a spoonacular score of 73%</b>. This score is solid. Try <a href="https://spoonacular.com/recipes/beef-wellington-72534">Beef Wellington</a>, <a href="https://spoonacular.com/recipes/beef-wellington-221452">Beef Wellington</a>, and <a href="https://spoonacular.com/recipes/beef-wellington-72490">Beef Wellington</a> for similar recipes.',
+    description: "The recipe Beef Wellington could satisfy your Scottish",
     totalCost: 691.54,
     ingredients: [
       {
@@ -81,8 +80,7 @@ function addExamples() {
   const ex2 = {
     "img-url": "https://spoonacular.com/recipeImages/634593-312x231.jpg",
     title: "Beef Bourguignon",
-    description:
-      'Beef Bourguignon takes about <b>about 45 minutes</b> from beginning to end. This recipe makes 8 servings with <b>406 calories</b>, <b>39g of protein</b>, and <b>21g of fat</b> each. For <b>$2.76 per serving</b>, this recipe <b>covers 25%</b> of your daily requirements of vitamins and minerals. Only a few people really liked this main course. This recipe from Foodista requires strong beef broth, bay leaf, butter, and peppercorns. 1 person has made this recipe and would make it again. With a spoonacular <b>score of 56%</b>, this dish is solid. If you like this recipe, take a look at these similar recipes: <a href="https://spoonacular.com/recipes/beef-bourguignon-buf-bourguignon-buf-la-bourguignonne-beef-burgundy-521886">Beef bourguignon (bœuf bourguignon / bœuf à la bourguignonne / beef Burgundy)</a>, <a href="https://spoonacular.com/recipes/beef-bourguignon-735745">Beef Bourguignon</a>, and <a href="https://spoonacular.com/recipes/beef-bourguignon-940129">Beef Bourguignon</a>.',
+    description: "Beef Bourguignon takes about about 45 minutes",
     totalCost: 276,
     ingredients: [
       {

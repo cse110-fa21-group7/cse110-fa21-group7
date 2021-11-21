@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>ASAP Recipe</title>
-  <link rel="icon" type="image/x-icon" href="../img/favicon.png" />
-  <link rel="stylesheet" href="../css/main.css" />
-  <link rel="stylesheet" href="../css/read-recipe.css" />
-  <!-- <link rel="stylesheet" href="../css/navigation-bar.css" /> -->
-
-  <script src="../js/read-recipe.js" type="module"></script>
-
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASAP Recipe</title>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.png" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/read-recipe.css" />
+    <!-- load & create recipe card to cook book -->
+    <script src="../js/read-recipe.js" type="module"></script>
 </head>
 
 <body>
@@ -28,107 +26,51 @@
             <li class="nav-item">
               <a class="nav-link" href="./create-recipe.html" id="link-create-recipe">Create</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="./read-recipe.html" id="link-read-recipe">Read</a>
-            </li>
+            </li> -->
           </ul>
       </div>
-      <main>
-        <div class="bs-docs-section">
+    </nav>
+</header>
+  <!-- Read Recipe -->
+  <article id="recipeDetails">
+    <h1 id="recipeTitle">Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs</h1>
+    <img src="https://i.imgur.com/oDNCfFS.png" id="recipeImg" alt="Image">
+  
+    <button type="button" class="btn btn-primary" id="Edit">Edit</button>
+    <button type="button" class="btn btn-danger" id="Delete">Delete</button>
+    <h2 id="description">Description</h2>
+    <p id="recipeDescription">The recipe Beef Wellington</p>
+    
+    <h2 id="ingredient">Ingredient</h2>
+    <div id="ingredient-list">
+      <!-- back end should make each ingredient like this model -->
+      <!-- <div class="each-ingredient">
+        <input type="checkbox">
+        <label>duck 0.5 lb</label>
+      </div>
+      <div class="each-ingredient">
+        <input type="checkbox">
+        <label>egg 1</label>
+      </div>
+      <div class="each-ingredient">
+        <input type="checkbox">
+        <label>mushrooms 8oz</label>
+      </div> -->
+    </div>
+    <h2 id="steps">Steps</h2>
+    <!-- back end should make each steps list like this model -->
+    <div id="steps-list">
+      <!-- <ol class="orderList">
+        <li>In a large saucepan, heat the oil over medium-high heat. Once your oil is hot, brown the beef. Do it in 2 
+          batches if you need to, to allow an even browning on all pieces. Set aside.</li>
+        <li>In the same pan, fry the onion, garlic, carrots and celery, about 3-5 minutes, before adding the meat back.</li>
+      </ol> -->
+    </div>
 
-          <button type="button" class="btn btn-primary" id="Edit">Edit</button>
-          <button type="button" class="btn btn-danger" id="Delete">Delete</button>
+  </article>
 
-          <!-- The Modal -->
-          <div id="deleteModal" class="modal">
-
-            <!-- Modal content -->
-            <div class="modal-content">
-              <span class="close">&leftarrow; Cancel</span>
-              <span class="delete">&times; Delete</span>
-            </div>
-          
-          </div>
-
-
-
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="bs-component">
-                <div class="card mb-3" id="recipe">
-
-                  <h3 class="card-header" id="recipeTitle">Recipe Title</h3>
-                  <div class="card-body">
-                    <h6 class="card-title" id="recipeDescription"></h6>
-                  </div>
-                  <div id="img-spot">
-                    <img src="../recipe-img-example/recipe_0.jpg" class="img-rounded" alt="Image">
-
-                  </div>
-                  
-                  <div class="content">
-
-                    <div class="tab-container">
-                      <div class="tab-menu">
-                        <ul>
-                          <li><a href="#" class="tab-a active-a" data-id="tab-ingredients">Ingredients</a></li>
-                          <li><a href="#" class="tab-a inactive-a" data-id="tab-steps">Steps</a></li>
-                        </ul>
-                      </div>
-                      <div class="tab tab-active" data-id="tab-ingredients">
-                        <div class="card">
-                          <div class="card-body content ingredients active" data-id="ingredients" >
-
-                            <h4 class="card-title">Ingredients</h4>
-                            <ul class="list-group" id="ingredients">
-                              <li class="list-group-item">Ingredient 1</li>
-                            </ul>
-
-                          </div>
-
-                        </div>
-
-                        <div class="tab tab-inactives" data-id="tab-steps">
-                          <div class="card-body content instructions" data-id="instructions">
-                            <div class="steps" id="steps">
-                              <h4 class="card-title">Steps</h4>
-                              <div class="step-instruction">
-                                <h6 class="card-subtitle mb-2">Step 1</h6>
-                                <p class="card-text">Step 1 instructions..</p>
-                              </div>
-                            </div>
-
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-content">
-
-                  <div id="ingredients" class="container tab-pane active">
-
-                  </div>
-                  <div id="steps" class="container tab-pane fade">
-
-                  </div>
-
-                </div>
-              </div>
-
-
-
-
-
-            </div>
-          </div>
-        </div>
-
-
-      </main>
-    </article>
-  </section>
 </body>
 
 </html>

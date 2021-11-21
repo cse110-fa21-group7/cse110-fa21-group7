@@ -1,143 +1,113 @@
 // read-recipe.js
 
 let recipes = {};
-let recipeID = null;
+let recipeID;
 window.addEventListener("DOMContentLoaded", init);
 
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
-  console.log("Initializing");
-  initializeStorage();
-  checkID();
+  getRecipes();
+  getID();
+  populateHTML();
   setButtonListener();
 }
-
-/** Initializes recipes object from localStorage cache */
-function initializeStorage() {
-  // TODO: This is duplicated code from create-recipe.js
-  console.log("Initializing recipes object");
-  const json = localStorage.getItem("recipes");
-
-  if (json === null) {
-    console.log("Recipes not initialized in localStorage cache");
-    // Good practice to use brackets to ensure proper type
-    recipes["currID"] = 1;
-    localStorage.setItem("recipes", JSON.stringify(recipes));
-    return;
-  }
-
-  recipes = JSON.parse(json);
-  if (Object.keys(recipes).length == 0) {
-    console.log("Empty recipes object");
-  }
+function getRecipes() {
+  recipes = localStorage.getItem("recipes");
+  recipes = JSON.parse(recipes);
 }
-
-/** Checks if ID is in localStorage */
-function checkID() {
+/**
+ * Checks if ID is in localStorage,return it back
+ */
+function getID() {
   const queryString = window.location.search;
   // console.log(queryString);
   const urlParams = new URLSearchParams(queryString);
   const id = urlParams.get("id");
-  if (id === null) {
-    console.log("No id parameter");
-    return;
-  }
   console.log(`id: ${id}`);
-  recipeID = id;
-  populateHTML(id);
+  if (id) recipeID = id;
+  else console.error("open recipe page incorrectly!!");
 }
 
 /** Populate forms by ID
  * @param {int} id
  */
-function populateHTML(id) {
-  if (!(id in recipes)) {
-    console.log(`ID: ${id} does not exist in recipes`);
-    return;
-  }
-  const recipe = recipes[id];
+function populateHTML() {
+  const recipe = recipes[recipeID];
   console.log(`Recipe: ${recipe["title"]}`);
-
+  // get article element, so we can append elements
+  // const article = document.getElementById("recipeTitle");
+  // add title
   document.getElementById("recipeTitle").innerText = recipe["title"];
+  // add image
+  const img = document.getElementById("recipeImg");
+  img.src = recipe["img-url"];
+  // add Description
   document.getElementById("recipeDescription").innerText =
     recipe["description"];
-  
-  const recipeDiv = document.getElementById('recipe');
-  const img = recipeDiv.querySelector('img');
-  img.src = recipe['img-url'];
-  
-  const ingList = document.getElementById('ingredients');
-  const ingElems = ingList.getElementsByTagName('li');
-  const ingTemplate = ingElems[0].cloneNode(true);
-
-  // Clear default filler elements
-  while (ingElems.length > 0) {
-    ingElems[0].remove();
+  // add ingredient list
+  const ingList = document.getElementById("ingredient-list");
+  for (const ingredient of recipe["ingredients"]) {
+    const eachIng = document.createElement("div");
+    eachIng.classList.add("each-ingredient");
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    eachIng.appendChild(input);
+    const label = document.createElement("label");
+    label.innerText = `${ingredient["name"]} ${ingredient["amount"]}`;
+    eachIng.appendChild(label);
+    ingList.appendChild(eachIng);
   }
-  
-
-  // Create new list elements
-  const recipeIngredients = recipe["ingredients"];
-  for (let i = 0; i < recipeIngredients.length; i++) {
-    const ingElem = ingTemplate.cloneNode(true); 
-    ingElem.innerText = `${recipeIngredients[i]['name']} ${recipeIngredients[i]['amount']}`;
-    ingList.appendChild(ingElem);
+  // add step list
+  const stepList = document.getElementById("steps-list");
+  const ul = document.createElement("ol");
+  for (const step of recipe["steps"]) {
+    ul.classList.add("orderList");
+    const li = document.createElement("li");
+    li.innerHTML = step;
+    ul.appendChild(li);
   }
-
-  const stepsDiv = document.getElementById('steps');
-  const stepElems = stepsDiv.getElementsByClassName('step-instruction');
-  const stepTemplate = stepElems[0].cloneNode(true);
-
-  // Clear default filler elements 
-  while (stepElems.length > 0) {
-    stepElems[0].remove();
-  }
-  
-
-  // Create new step elements
-  const recipeSteps = recipe['steps'];
-  for (let i = 0; i < recipeSteps.length; i++) {
-    const stepElem = stepTemplate.cloneNode(true);
-    stepElem.querySelector('.card-subtitle').innerText = `Step ${i+1}`;
-    stepElem.querySelector('.card-text').innerText = recipeSteps[i];
-    stepsDiv.appendChild(stepElem);
-  }
+  stepList.appendChild(ul);
 }
 
 /** Sets event listeners */
 function setButtonListener() {
-  const editButton = document.getElementById('Edit');
-  editButton.addEventListener('click', (e) => {
+  const editButton = document.getElementById("Edit");
+  editButton.addEventListener("click", (e) => {
     location.href = `update-recipe.html?id=${recipeID}`;
-
   });
 
-  const deleteButton = document.getElementById('Delete');
-  const modal = document.getElementById('deleteModal');
+  const deleteButton = document.getElementById("Delete");
+  deleteButton.addEventListener("click", (e) => {
+    delete recipes[recipeID];
+    localStorage.setItem("recipes", JSON.stringify(recipes));
+    window.alert("successfully deleted the recipe!");
+    location.href = location.origin + "/source/html/cook-book.html";
+  });
+  /**
+  const modal = document.getElementById("deleteModal");
+
   
-  deleteButton.onclick = function() {
-    console.log('Delete clicked');
-    modal.style.display = 'block';
+  deleteButton.onclick = function () {
+    console.log("Delete clicked");
+    modal.style.display = "block";
   };
 
-  const span = modal.getElementsByClassName('close')[0];
-  span.onclick = function() {
+  const span = modal.getElementsByClassName("close")[0];
+  span.onclick = function () {
     modal.style.display = "none";
   };
 
-  const deleteSpan = modal.getElementsByClassName('delete')[0];
-  deleteSpan.onclick = function() {
+  const deleteSpan = modal.getElementsByClassName("delete")[0];
+  deleteSpan.onclick = function () {
     console.log(`Deleting ${recipeID}`);
   };
 
-  window.onclick = function(event) {
+  window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = "none";
     }
   };
+  */
 
-
-
-  
   return;
 }
