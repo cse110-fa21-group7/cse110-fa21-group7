@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", init);
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
   getRecipes();
-  const id = getID();
+  getID();
   populateHTML();
   setButtonListener();
 }
@@ -35,7 +35,7 @@ function populateHTML() {
   const recipe = recipes[recipeID];
   console.log(`Recipe: ${recipe["title"]}`);
   // get article element, so we can append elements
-  const article = document.getElementById("recipeTitle");
+  // const article = document.getElementById("recipeTitle");
   // add title
   document.getElementById("recipeTitle").innerText = recipe["title"];
   // add image
