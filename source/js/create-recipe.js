@@ -220,8 +220,8 @@ function setFormListener() {
 
       localStorage.setItem("recipes", JSON.stringify(recipes));
       window.alert("successfully created a recipe!");
-      let currUrl = location.toString().replace("create-recipe.html", "cook-book.html");
-      location.href = currUrl;
+      //let currUrl = location.toString().replace("create-recipe.html", "cook-book.html");
+      //location.href = currUrl;
     } else {
       console.log("Invalid recipe");
     }
