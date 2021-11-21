@@ -82,6 +82,7 @@ function setButtonListener() {
   deleteButton.addEventListener("click", (e) => {
     delete recipes[recipeID];
     localStorage.setItem("recipes", JSON.stringify(recipes));
+    window.alert("successfully deleted the recipe!");
     location.href = location.origin + "/source/html/cook-book.html";
   });
   /**

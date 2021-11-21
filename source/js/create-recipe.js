@@ -219,6 +219,8 @@ function setFormListener() {
       recipes["currID"] += 1;
 
       localStorage.setItem("recipes", JSON.stringify(recipes));
+      window.alert("successfully created a recipe!");
+      location.href = location.origin + "/source/html/cook-book.html";
     } else {
       console.log("Invalid recipe");
     }
