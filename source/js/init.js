@@ -1,11 +1,16 @@
 let recipes = {};
 window.addEventListener("DOMContentLoaded", init);
 async function init() {
-  initializeStorage();
+  if (initializeStorage()) {
+    addExamples();
+  }
   checkID();
-  addExamples();
 }
 /** Initializes recipes object from localStorage cache */
+/**
+ * Represents a book.
+ * @constructor
+ */
 function initializeStorage() {
   console.log("Initializing recipes object");
   const json = localStorage.getItem("recipes");
@@ -14,8 +19,9 @@ function initializeStorage() {
     // Good practice to use brackets to ensure proper type
     recipes["currID"] = 1;
     localStorage.setItem("recipes", JSON.stringify(recipes));
-    return;
+    return true;
   }
+  return false;
 }
 
 /** Checks if ID is in localStorage */
@@ -36,6 +42,7 @@ function checkID() {
  * if we do not want to save this example, we can commet out addExamples in init()
  */
 function addExamples() {
+  console.log("add examples");
   const ex1 = {
     "img-url": "https://spoonacular.com/recipeImages/75081-312x231.jpg",
     title: "Beef Wellington",
