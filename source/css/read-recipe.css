@@ -38,6 +38,7 @@ div {
 #recipeImg {
   border-radius: 20px;
   border: 10px solid #fff;
+  object-fit: cover;
 }
 
 .recipe-details-container {
