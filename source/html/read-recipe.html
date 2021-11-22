@@ -1,105 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASAP Recipe</title>
-    <link rel="icon" type="image/x-icon" href="../img/favicon.png" />
-    <link rel="stylesheet" href="../css/main.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/read-recipe.css" />
-    <!-- load & create recipe card to cook book -->
-    <script src="../js/read-recipe.js" type="module"></script>
-</head>
+    <link rel="stylesheet" href="../css/navigation-bar.css" />
 
-<body>
-  <header>
-    <nav class="navbar-nav">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="./home-page.html" id="ASAP-logo-home">ASAP Recipe</a>
-    
+
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar-nav">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./home-page.html" id="ASAP-logo-home"
+            >ASAP Recipe</a
+          >
+
           <ul class="navbar-nav-inline">
             <li class="nav-item">
-              <a class="nav-link" href="./cook-book.html" id="link-cookbook">Cookbook</a>
+              <a class="nav-link" href="./cook-book.html" id="link-cookbook"
+                >Cookbook</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./create-recipe.html" id="link-create-recipe">Create</a>
+              <a
+                class="nav-link"
+                href="./create-recipe.html"
+                id="link-create-recipe"
+                >Create</a
+              >
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="./read-recipe.html" id="link-read-recipe">Read</a>
-            </li> -->
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="./read-recipe.html"
+                id="link-read-recipe"
+                >Read</a
+              >
+            </li>
           </ul>
-      </div>
-    </nav>
-  </header>
-  
-  <!-- Read Recipe -->
-  <div class="box">
-    <article id="recipeDetails">
-      <div class="recipe-card-header-container">
-        <h1 id="recipeTitle">Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs</h1>
-        <p id="recipeDescription">The recipe Beef Wellington</p>
-        <button type="button" class="btn btn-primary" id="Edit">Edit</button>
-        <button type="button" class="btn btn-danger" id="Delete">Delete</button>
-      </div>
-      <div class="recipe-details-container">
-        <div class="flex-container">
-          <div class="flex-child img">
-            <div class="flex-child img"><img width="300" height="300" src="https://i.imgur.com/oDNCfFS.png" id="recipeImg" alt="Image"></div>
-          </div>
-          <div class="flex-child detail">
-            <div class="detail-item serving">
-              <span>&#127859</span><span>Servings: 1</span>
+        </div>
+      </nav>
+    </header>
+    <!-- Read Recipe -->
+    <section class="section--read-recipe">
+      <article>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h2 id="forms">Read Recipe</h2>
             </div>
-              <div class="detail-item cost">
-                <span>&#128176</span><span>Cost: $5</span>
+          </div>
+        </div>
+        <main>
+          <div class="bs-docs-section">
+            <button type="button" class="btn btn-primary" id="Edit" onclick="Edit()">
+              Edit
+            </button>
+            <button type="button" class="btn btn-danger" id="Delete" onclick="Delete()">
+              Delete
+            </button>
+            <div class="row" id="row" >
+              <div class="col-lg-6">
+                <div class="bs-component">
+                  <div class="card mb-3">
+                    <h3 class="card-header" id="recipeTitle">Recipe Title</h3>
+                    <div class="card-body">
+                      <h6 class="card-title" id="recipeDescription"></h6>
+                    </div>
+                    <img
+                      src="../recipe-img-example/recipe_0.jpg"
+                      class="img-rounded"
+                      alt="Image"
+                    />
+                    <div class="content">
+                      <div class="tab-container">
+                        <div class="tab-menu">
+                          <ul>
+                            <li>
+                              <a
+                                href="#"
+                                class="tab-a active-a"
+                                data-id="tab-ingredients"
+                                onclick="Ingredients()"
+                                >Ingredients</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="tab-a inactive-a"
+                                data-id="tab-steps"
+                                onclick="Steps()"
+                                >Steps</a
+                              >
+                            </li>
+                          </ul>
+                        </div>  
+                        <div  class="tab tab-active" data-id="tab-ingredients">
+                          <div class="card">
+                            <div
+                              id="Ingredients"
+                              class="card-body content ingredients active"
+                              data-id="ingredients"
+                            >
+                              <h4 class="card-title">Ingredients</h4>
+                              <ul  class="list-group">
+                                <li class="list-group-item"><input id="input1" value="flour" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input2" value="sugar" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input3" value="salt" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input4" value="yeast" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input5" value="olive oil" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input6" value="milk" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input7" value="tomato" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input8" value="onion" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input9" value="butter" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input10" value="garlic" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input11" value="salt" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input12" value="black" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input13" value="peppers" disabled="true"/></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div  class="tab tab-active" data-id="tab-ingredients" >
+                          <div class="card">
+                            <div
+                            id="stepssss"
+                              class="card-body content ingredients active"
+                              data-id="ingredients"
+                            >
+                              <h4 class="card-title" id="stepssss">Steps</h4>
+                              <ul width="100%" class="list-group">
+                                <li width="500px" class="list-group-item"><input id="input1" value="Flour, water, oil, yeast, salt, sugar, together with flour" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input2" value="Knead into dough" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input3" value="Ferment until your fingers poke in without retracting" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input4" value="Brush the baking pan with a thin coat of oil" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input5" value="Spread the flour and pierce the hole with a fork" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input6" value="Brush with red sauce, add vegetables and meat as you like, and finally sprinkle with mozzarella cheese. I add bacon, onion, mushroom, green pepper, black olive and corn" disabled="true"/></li>
+                                 <li class="list-group-item"><input id="input6" value="Preheat the oven at 210 degrees and bake for 15-20 minutes" disabled="true"/></li>
+                            
+                              </ul>
+                            </div>
+                          </div>
+
+                         
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-content">
+                    <div
+                      id="ingredients"
+                      class="container tab-pane active"
+                    ></div>
+                    <div  class="container tab-pane fade"></div>
+                  </div>
+                </div>
               </div>
-              <div class="detail-item time">
-                <span>&#9200</span><span>ReadyInMinutes: 30 </span>
-              </div>
+            </div>
           </div>
-        </div>
-  
-  
-        <h2 id="ingredient">Ingredient</h2>
-        <div id="ingredient-list">
-          <div class="each-ingredient">
-            <label class = "container">duck 0.5 lb
-              <input type="checkbox">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-          <!-- back end should make each ingredient like this model -->
-          <!-- <div class="each-ingredient">
-            <input type="checkbox">
-            <label>duck 0.5 lb</label>
-          </div>
-          <div class="each-ingredient">
-            <input type="checkbox">
-            <label>egg 1</label>
-          </div>
-          <div class="each-ingredient">
-            <input type="checkbox">
-            <label>mushrooms 8oz</label>
-          </div> -->
-        </div>
-        <h2 id="steps">Steps</h2>
-        <!-- back end should make each steps list like this model -->
-        <div id="steps-list">
-          <!-- <ol class="orderList">
-            <li>In a large saucepan, heat the oil over medium-high heat. Once your oil is hot, brown the beef. Do it in 2 
-              batches if you need to, to allow an even browning on all pieces. Set aside.</li>
-            <li>In the same pan, fry the onion, garlic, carrots and celery, about 3-5 minutes, before adding the meat back.</li>
-          </ol> -->
-        </div>
-    </article>
-
-  </div>
-
-  
-
-
-</body>
-
+        </main>
+      </article>
+    </section>
+  </body>
 </html>
+<script type="text/javascript">
+function Edit(){
+ document.getElementById('input1').disabled=""
+ document.getElementById('input2').disabled=""
+ document.getElementById('input3').disabled=""
+ document.getElementById('input4').disabled=""
+ document.getElementById('input5').disabled=""
+ document.getElementById('input6').disabled=""
+ document.getElementById('input7').disabled=""
+ document.getElementById('input8').disabled=""
+ document.getElementById('input9').disabled=""
+ document.getElementById('input10').disabled=""
+ document.getElementById('input11').disabled=""
+  document.getElementById('input10').disabled=""
+ document.getElementById('input11').disabled=""
+  document.getElementById('input12').disabled=""
+ document.getElementById('input13').disabled=""
+}
+function Delete(){
+ document.getElementById('row').style.display="none"
+}
+function Steps(){
+ document.getElementById('stepssss').style.display=""
+ document.getElementById('Ingredients').style.display="none"
+}
+function Ingredients(){
+ document.getElementById('stepssss').style.display="none"
+ document.getElementById('Ingredients').style.display=""
+}
+</script>
