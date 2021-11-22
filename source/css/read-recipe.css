@@ -10,8 +10,8 @@ div {
 #recipeDetails {
   width: auto;
   height: auto;
-  max-width: 90%;
-  max-height: 90%;
+  width: 90%;
+  height: 90%;
 }
 
 .recipe-card-header-container {
