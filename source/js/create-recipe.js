@@ -159,7 +159,10 @@ function setFormListener() {
     }
     recipe["totalCost"] = cost;
 
-    // TODO: Upload Image
+    // Set to default if no image uploaded
+    if (!('img-url' in recipe)) {
+      recipe['img-url'] = '../img/default.png';
+    }
 
     const ingredients = [];
     const ingredientElems = document
