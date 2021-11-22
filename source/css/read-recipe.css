@@ -39,10 +39,6 @@ div {
   border-radius: 20px;
   border: 10px solid #fff;
 }
-/* .rating > span:hover:before {
-  content: "\2605";
-  position: absolute;
-} */
 
 .recipe-details-container {
   border-left: 1px solid rgba(0, 0, 0, 0.1);
@@ -58,12 +54,7 @@ div {
   flex: 1;
 }
 .detail-item {
-  -ms-flex: 1 0 calc(100% / 4);
-  flex: 1 0 calc(100% / 4);
-  padding: 8px 1.5%;
-  position: relative;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+  padding: 30px 1.5%;
 }
 
 /* ingredient CSS start */
