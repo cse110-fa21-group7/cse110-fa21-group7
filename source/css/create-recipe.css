@@ -92,8 +92,7 @@ span {
   background: rgb(243, 150, 154);
 }
 
-.btn-add-ingred:hover,
-.btn-add-step:hover,
+.btn-add:hover,
 .btn-submit:hover,
 .btn-remove:hover {
   cursor: pointer;

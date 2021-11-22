@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/read-recipe.css" />
     <link rel="stylesheet" href="../css/navigation-bar.css" />
 
-    <script src="../js/recipe-info.js" type="module"></script>
+
   </head>
 
   <body>
@@ -61,13 +61,13 @@
         </div>
         <main>
           <div class="bs-docs-section">
-            <button type="button" class="btn btn-primary" id="Edit">
+            <button type="button" class="btn btn-primary" id="Edit" onclick="Edit()">
               Edit
             </button>
-            <button type="button" class="btn btn-danger" id="Delete">
+            <button type="button" class="btn btn-danger" id="Delete" onclick="Delete()">
               Delete
             </button>
-            <div class="row">
+            <div class="row" id="row" >
               <div class="col-lg-6">
                 <div class="bs-component">
                   <div class="card mb-3">
@@ -89,6 +89,7 @@
                                 href="#"
                                 class="tab-a active-a"
                                 data-id="tab-ingredients"
+                                onclick="Ingredients()"
                                 >Ingredients</a
                               >
                             </li>
@@ -97,46 +98,60 @@
                                 href="#"
                                 class="tab-a inactive-a"
                                 data-id="tab-steps"
+                                onclick="Steps()"
                                 >Steps</a
                               >
                             </li>
                           </ul>
-                        </div>
-                        <div class="tab tab-active" data-id="tab-ingredients">
+                        </div>  
+                        <div  class="tab tab-active" data-id="tab-ingredients">
                           <div class="card">
                             <div
+                              id="Ingredients"
                               class="card-body content ingredients active"
                               data-id="ingredients"
                             >
                               <h4 class="card-title">Ingredients</h4>
-                              <ul class="list-group">
-                                <li class="list-group-item">Ingredient 1</li>
-                                <li class="list-group-item">Ingredient 2</li>
+                              <ul  class="list-group">
+                                <li class="list-group-item"><input id="input1" value="flour" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input2" value="sugar" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input3" value="salt" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input4" value="yeast" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input5" value="olive oil" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input6" value="milk" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input7" value="tomato" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input8" value="onion" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input9" value="butter" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input10" value="garlic" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input11" value="salt" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input12" value="black" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input13" value="peppers" disabled="true"/></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div  class="tab tab-active" data-id="tab-ingredients" >
+                          <div class="card">
+                            <div
+                            id="stepssss"
+                              class="card-body content ingredients active"
+                              data-id="ingredients"
+                            >
+                              <h4 class="card-title" id="stepssss">Steps</h4>
+                              <ul width="100%" class="list-group">
+                                <li width="500px" class="list-group-item"><input id="input1" value="Flour, water, oil, yeast, salt, sugar, together with flour" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input2" value="Knead into dough" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input3" value="Ferment until your fingers poke in without retracting" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input4" value="Brush the baking pan with a thin coat of oil" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input5" value="Spread the flour and pierce the hole with a fork" disabled="true"/></li>
+                                <li class="list-group-item"><input id="input6" value="Brush with red sauce, add vegetables and meat as you like, and finally sprinkle with mozzarella cheese. I add bacon, onion, mushroom, green pepper, black olive and corn" disabled="true"/></li>
+                                 <li class="list-group-item"><input id="input6" value="Preheat the oven at 210 degrees and bake for 15-20 minutes" disabled="true"/></li>
+                            
                               </ul>
                             </div>
                           </div>
 
-                          <div class="tab tab-inactives" data-id="tab-steps">
-                            <div
-                              class="card-body content instructions"
-                              data-id="instructions"
-                            >
-                              <div class="steps">
-                                <h4 class="card-title">Steps</h4>
-                                <div class="step-instruction">
-                                  <h6 class="card-subtitle mb-2">Step 1</h6>
-                                  <p class="card-text" id="step1">
-                                    Step 1 instructions..
-                                  </p>
-                                </div>
-                                <div class="step-instruction">
-                                  <h6 class="card-subtitle mb-2">Step 2</h6>
-                                  <p class="card-text" id="step2">
-                                    Step 2 instructions..
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
+                         
+                            
                           </div>
                         </div>
                       </div>
@@ -147,7 +162,7 @@
                       id="ingredients"
                       class="container tab-pane active"
                     ></div>
-                    <div id="steps" class="container tab-pane fade"></div>
+                    <div  class="container tab-pane fade"></div>
                   </div>
                 </div>
               </div>
@@ -158,3 +173,33 @@
     </section>
   </body>
 </html>
+<script type="text/javascript">
+function Edit(){
+ document.getElementById('input1').disabled=""
+ document.getElementById('input2').disabled=""
+ document.getElementById('input3').disabled=""
+ document.getElementById('input4').disabled=""
+ document.getElementById('input5').disabled=""
+ document.getElementById('input6').disabled=""
+ document.getElementById('input7').disabled=""
+ document.getElementById('input8').disabled=""
+ document.getElementById('input9').disabled=""
+ document.getElementById('input10').disabled=""
+ document.getElementById('input11').disabled=""
+  document.getElementById('input10').disabled=""
+ document.getElementById('input11').disabled=""
+  document.getElementById('input12').disabled=""
+ document.getElementById('input13').disabled=""
+}
+function Delete(){
+ document.getElementById('row').style.display="none"
+}
+function Steps(){
+ document.getElementById('stepssss').style.display=""
+ document.getElementById('Ingredients').style.display="none"
+}
+function Ingredients(){
+ document.getElementById('stepssss').style.display="none"
+ document.getElementById('Ingredients').style.display=""
+}
+</script>

@@ -1,17 +1,3 @@
-// Recipe object format:
-// {
-//     "title": "test",
-//     "ingredients": [
-//       {
-//         "name": "Ingredient 1",
-//         "amount": "1"
-//       }
-//     ],
-//     "steps": [
-//       "Step 1"
-//     ]
-// }
-
 const recipeData = {};
 
 window.addEventListener("DOMContentLoaded", init);
@@ -31,28 +17,29 @@ async function init() {
 async function fetchRecipes() {
   const storage = window.localStorage;
   const recipes = JSON.parse(storage.getItem("recipes"));
-  const total = Number(recipes.currID);
-  for (let i = 1; i < total; i++) {
-    const id = i;
-    const recipe = recipes[id];
-    recipeData[id] = recipe;
-    // let test2 = {title: "test2", ingredients: [{name: "Ingredient 1", amount: "1"}], steps: ["Step 1"]}
-    // recipeData['test2'] = test2;
-    // let test3 = {title: "test3", ingredients: [{name: "Ingredient 1", amount: "1"}], steps: ["Step 1"]}
-    // recipeData['test3'] = test3;
+  for (const [key, value] of Object.entries(recipes)) {
+    if (key !== "currID") {
+      recipeData[key] = value;
+    }
   }
+  console.log(recipeData);
   return true;
 }
 
 function createRecipeCards() {
   const main = document.querySelector(".recipe-cards--wrapper");
-
-  const total = Object.keys(recipeData).length;
-
-  for (let i = 0; i < total; i++) {
+  // loop whole local storge
+  for (const [key, value] of Object.entries(recipeData)) {
     const card = document.createElement("recipe-card");
-    const id = i + 1;
-    card.data = recipeData[id];
+    card.data = value;
+    readRecipe(card, key);
     main.appendChild(card);
   }
+}
+
+function readRecipe(recipeCard, id) {
+  recipeCard.addEventListener("click", (e) => {
+    let currUrl = location.toString().replace("cook-book.html", "read-recipe.html?id=" + id);
+    window.location.href = currUrl;
+  });
 }

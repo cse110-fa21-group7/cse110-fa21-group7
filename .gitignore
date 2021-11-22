@@ -1,4 +1,5 @@
 node_modules/
 secrets.yml
-.vscode/
+.vscode
+.DS_Store
 out/
