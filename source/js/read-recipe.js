@@ -56,7 +56,13 @@ function populateHTML() {
   const costDiv = detailDiv.querySelector('.cost');
   const costSpan = costDiv.getElementsByTagName('span')[1];
   if ('totalCost' in recipe) {
-    costSpan.innerText = `Cost: ${recipe['totalCost']}`;
+    // appends dollar sign and either does division to get cents -> dollars if spoonacular or just appends price
+    if (recipe['img-url'].includes('https://spoonacular.com')){
+    costSpan.innerText = `Cost: $${recipe['totalCost']/100}`;
+    }
+    else{
+      costSpan.innerText = `Cost: $${recipe['totalCost']}`;
+    }
   } else {
     costSpan.innerText = 'Cost: Bout tree fiddy';
   }
