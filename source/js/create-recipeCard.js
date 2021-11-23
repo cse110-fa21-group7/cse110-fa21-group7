@@ -5,6 +5,7 @@ class RecipeCard extends HTMLElement {
   }
 
   set data(data) {
+    console.log(data);
     const styleElem = document.createElement("style");
     const styles = `
             * {
@@ -81,14 +82,11 @@ class RecipeCard extends HTMLElement {
     const card = document.createElement("article");
     this.shadowRoot.append(styleElem, card);
     // add id for each recipe
-    card.id = data["id"];
+    card.setAttribute("id", data["id"]);
     // ---------------need fix later!------
     // Wait for add img link. Cannot save img in local
     const img = document.createElement("img");
-    img.setAttribute(
-      "src",
-      "../recipe-img-example/recipe_" + Math.floor(Math.random() * 3) + ".jpg"
-    );
+    img.setAttribute("src", data["img-url"]);
     img.setAttribute("alt", data);
     card.appendChild(img);
 
@@ -118,7 +116,13 @@ class RecipeCard extends HTMLElement {
 
     const price = document.createElement("p");
     price.classList.add("price");
-    price.textContent = data["totalCost"];
+    // assume the user enters in terms of dollars - append a dollar sign to front
+    if (data['img-url'].includes('https://spoonacular.com')){
+    price.textContent = '$' + (data["totalCost"]/100).toFixed(2);
+    }
+    else{
+    price.textContent = '$' + data["totalCost"];
+    }
     card.appendChild(price);
 
     // ingredients

@@ -1,71 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css" /> -->
-    <link rel="stylesheet" href="../css/navigation-bar.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASAP Recipe</title>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.png" />
+    <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/cook-book.css" />
     <!-- load & create recipe card to cook book -->
+    <script src="../js/init.js" type="module"></script>
     <script src="../js/load-recipeCard.js" type="module"></script>
     <script src="../js/create-recipeCard.js" type="module"></script>
-  </head>
+</head>
 
-  <body>
-    <header>
-      <nav class="navbar">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="./home-page.html" id="ASAP-logo-home"
-            >ASAP Recipe</a
-          >
-          <button class="navbar-toggler" type="button">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./home-page.html" id="ASAP-logo-home">ASAP Recipe</a>
+        <button class="navbar-toggler" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <a class="nav-link" href="./cook-book.html" id="link-cookbook"
-                >Cookbook</a
-              >
+              <a class="nav-link" href="./cook-book.html" id="link-cookbook">Cookbook</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link"
-                href="./create-recipe.html"
-                id="link-create-recipe"
-                >Create</a
-              >
+              <a class="nav-link" href="./create-recipe.html" id="link-create-recipe">Create</a>
             </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="./read-recipe.html"
-                id="link-read-recipe"
-                >Read</a
-              >
-            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="./read-recipe.html" id="link-read-recipe">Read</a>
+            </li> -->
           </ul>
           <form class="nav-form">
-            <input
-              class="form-control"
-              type="text"
-              placeholder="&ensp;Search"
-            />
+            <input class="form-control" type="text" placeholder="&ensp;Search">
             <button class="btn" type="submit">Search</button>
           </form>
-        </div>
-      </nav>
-    </header>
-    <section class="section--recipe-cards shown">
-      <div class="recipe-cards--wrapper">
-        <!-- Recipes Added Here -->
       </div>
-      <div class="button--wrapper">
-        <button>Show more</button>
-      </div>
-      <div class="button--horizontal-line"></div>
-    </section>
-  </body>
+    </nav>
+  </header>
+  <section class="section--recipe-cards shown">
+  <div class="recipe-cards--wrapper">
+      <!-- Recipes Added Here -->
+  </div>
+  <div class="button--wrapper">
+      <button>Show more</button>
+  </div>
+  <div class="button--horizontal-line"></div>
+  </section>
+</body>
 </html>
