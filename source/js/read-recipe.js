@@ -58,7 +58,7 @@ function populateHTML() {
   if ('totalCost' in recipe) {
     // appends dollar sign and either does division to get cents -> dollars if spoonacular or just appends price
     if (recipe['img-url'].includes('https://spoonacular.com')){
-    costSpan.innerText = `Cost: $${recipe['totalCost']/100}`;
+    costSpan.innerText = `Cost: $${(recipe['totalCost']/100).toFixed(2)}`;
     }
     else{
       costSpan.innerText = `Cost: $${recipe['totalCost']}`;
