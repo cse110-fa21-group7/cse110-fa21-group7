@@ -151,16 +151,21 @@ customElements.define("recipe-card", RecipeCard);
 
 function addList(value) {
   // symbol does not work need to ask Kunal how to fix 
-    // const li = document.createElement('li');
     // const i = document.createElement('i');
     // const span = document.createElement('span');
     // span.innerHTML = '38 min'
-    // i.classList.add('fa')
-    // i.classList.add('fa-clock-o')
-    // i.ariaHidden = 'true';
+
   const li = document.createElement('li');
+    const i = document.createElement('i');
+
+      i.classList.add('fa')
+    i.classList.add('fa-clock-o')
+    i.ariaHidden = 'true';
+  
   const span = document.createElement('span');
   span.innerHTML = value;
+
+  li.appendChild(i);
   li.appendChild(span);
   return li;
 }
