@@ -27,10 +27,11 @@ async function fetchRecipes() {
 }
 
 function createRecipeCards() {
-  const main = document.querySelector(".recipe-cards--wrapper");
+  const main = document.querySelector(".wrapper");
   // loop whole local storge
   for (const [key, value] of Object.entries(recipeData)) {
     const card = document.createElement("recipe-card");
+    card.classList.add('card');
     card.data = value;
     readRecipe(card, key);
     main.appendChild(card);
