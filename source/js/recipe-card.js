@@ -6,104 +6,109 @@ class RecipeCard extends HTMLElement {
 
   set data(data) {
     console.log(data);
-    // const styleElem = document.createElement("style");
-    // const styles = `
-    //         * {
-    //         }
+    const styleElem = document.createElement("style");
+    const styles = `
 
-    //         a {
-    //         text-decoration: none;
-    //         }
-    //         a:hover {
-    //         text-decoration: underline;
-    //         }
+    .card {
+      overflow: hidden;
+      box-shadow: 0px 2px 20px #cfd8dc;
+      border-radius: 0.3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: transform 200ms ease-in;
+      background-color: #fff;
+      position: relative;
+      
+    
+    
+      /* // &__btn {
+      //   padding: 1rem;
+      //   font-family: inherit;
+      //   font-weight: bold;
+      //   font-size: 1rem;
+      //   margin: 1rem;
+      //   border: 2px solid var(--clr-primary);
+      //   background: transparent;
+      //   color: var(--clr-primary);
+      //   border-radius: var(--radius);
+      //   transition: background 200ms ease-in, color 200ms ease-in;
+      // }
+    
+      // &:hover &__btn {
+      //   background: var(--clr-primary);
+      //   color: white;
+      // } */
+    }
+    
+    .card__image {
+        height: 12rem;
+        width: 100%;
+        object-fit: cover;
+      }
+    
+    .card__title {
+        padding: 1rem;
+      }
+    
+    .card__description {
+        padding: 1rem 1rem;
+      }
+    
+    .card:hover {
+        transform: scale(1.02);
+     }
+    
+     .card__body {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+     }
+    
+    ul.info-row {
+        list-style: none;
+        margin: 0.5em auto;
+        padding: 0;
+        vertical-align: bottom;
+    }
+    
+    .info-row li {
+            display: inline-block;
+            margin-left: 1em;
+            line-height: 1em; }
+    
+    .info-row li span {
+      margin-left: 0.5em;
+              font-weight: 300;
+              vertical-align: middle;
+              color: #838689;
+    }
+    
+    .add-to-cookbook a .fa-plus {
+          background: #57abf2;
+          border-radius: 50%;
+          position: absolute;
+          top: 10.75rem;
+          right: 10%;
+          width: 2.5rem;
+          height: 2.5rem;
+          text-align: center;
+          color: white;
+          font-size: 1.3rem;
+          padding: 0.6rem 0.52rem;
+    }`;
 
-    //         article {
-    //         align-items: center;
-    //         border: 5px solid #ecf8f5;
-    //         border-radius: 8px;
-    //         display: grid;
-    //         grid-template-rows: 118px 56px 14px 18px 15px 36px;
-    //         height: auto;
-    //         row-gap: 10px;
-    //         padding: 0 16px 16px 16px;
-    //         width: 300px;
-    //         }
-    //         article:hover {
-    //             border-radius: 8px;
-    //             cursor: pointer;
-    //             filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
-    //             transition: all 0.2s ease;
-    //             transform: scale(1.02);
-    //           }
-    //         div.rating {
-    //         align-items: center;
-    //         column-gap: 5px;
-    //         display: flex;
-    //         }
-
-    //         div.rating > img {
-    //         height: auto;
-    //         display: inline-block;
-    //         object-fit: scale-down;
-    //         width: 78px;
-    //         }
-    //         article > img {
-    //         border-top-left-radius: 8px;
-    //         border-top-right-radius: 8px;
-    //         height: 130px;
-    //         object-fit: cover;
-    //         margin-left: -16px;
-    //         width: calc(100% + 32px);
-    //         }
-    //         p.ingredients {
-    //         height: 32px;
-    //         line-height: 16px;
-    //         padding-top: 4px;
-    //         overflow: hidden;
-    //         }
-
-    //         p.title {
-    //         display: -webkit-box;
-    //         font-size: 18px;
-    //         height: 36px;
-    //         line-height: 18px;
-    //         overflow: hidden;
-    //         -webkit-line-clamp: 2;
-    //         -webkit-box-orient: vertical;
-    //         }
-    //         p:not(.title), span, time {
-    //         color: #70757A;
-    //         font-size: 12px;
-    //         }
-    //     `;
-
-    // styleElem.innerHTML = styles;
-  //   <div class="card">
-  //   <div class="card__body">
-  //     <img
-  //       src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/gnocchi-1d16725.jpg?quality=90&webp=true&resize=300,272"
-  //       alt="" class="card__image">
-  //     <div class="add-to-cookbook">
-  //       <a href="#"><i class="fa fa-plus"></i></a>
-  //     </div>
-  //     <h2 class="card__title">Chorizo & mozzarella gnocchi bake</h2>
-  //     <ul class="info-row">
-  //       <li>
-  //         <i class="fa fa-clock-o" aria-hidden="true"></i>
-  //         <span>35 min</span>
-  //       </li>
-  //       <li>
-  //         <i class="fa fa-fire" aria-hidden="true"></i>
-  //         <span>318 kcal </span>
-  //       </li>
-  //       <li><span class="dollar-rating">$$</span></li>
-  //     </ul>
-  //   </div>
-  // </div>
-    let cardBody = document.createElement('div');
-    cardBody.classList.add('card__body');
-    this.shadowRoot.append(cardBody);
+    styleElem.innerHTML = styles;
+    const cardDiv = document.createElement("div");
+    cardDiv.classList.add('card');
+    const cardBody = document.createElement("div");
+    cardBody.classList.add('card_body');
+    
+    this.shadowRoot.append(styleElem, cardDiv);
+    cardDiv.appendChild(cardBody);
+    
 
     // add img
     const img = document.createElement("img");
@@ -121,54 +126,41 @@ class RecipeCard extends HTMLElement {
     // add info list
     const ul = document.createElement('ul');
     ul.classList.add('info-row');
-    const li = document.createElement('li');
-    const i = document.createElement('i');
-    const span = document.createElement('span');
-    span.innerHTML = '38 min'
-    i.classList.add('fa')
-    i.classList.add('fa-clock-o')
-    i.ariaHidden = 'true';
-    li.append(i, span)
-    ul.appendChild(li);
-    cardBody.appendChild(ul)
+    // 
+
+    // li.append(i, span)
+    ul.appendChild(addList('38 min'));
+    // add kcal
+    ul.appendChild(addList('318 kcal'));
+
     // add total cost
-    // const priceValue = Math.round(data["price"]);
-    // const priceDiv = document.createElement("div");
-    // if (priceValue) {
-    //     rating.innerHTML = `
-    //       <span>${priceValue}</span>
-    //       <img src="assets/images/icons/${numStars}-star.svg" alt="${numStars} stars">
-    //     `;
-    //     if (ratingTotal) {
-    //       rating.innerHTML += `<span>(${ratingTotal})</span>`;
-    //     }
-    //   } else {
-    //     rating.innerHTML = `
-    //       <span>No Reviews</span>
-    //     `;
-    //   }
+    let price;
+    // assume the user enters in terms of dollars - append a dollar sign to front
+    if (data['img-url'].includes('https://spoonacular.com')){
+    price = '$' + (data["totalCost"]/100).toFixed(2);
+    }
+    else{
+    price = '$' + data["totalCost"];
+    }
+    ul.appendChild(addList(price));
+    cardBody.appendChild(ul)
 
-    // const price = document.createElement("p");
-    // price.classList.add("price");
-    // // assume the user enters in terms of dollars - append a dollar sign to front
-    // if (data['img-url'].includes('https://spoonacular.com')){
-    // price.textContent = '$' + (data["totalCost"]/100).toFixed(2);
-    // }
-    // else{
-    // price.textContent = '$' + data["totalCost"];
-    // }
-    // cardBody.appendChild(price);
-
-    // // ingredients
-    // const ingredients = document.createElement("p");
-    // ingredients.classList.add("ingredients");
-    // let ingredientsContent = "";
-    // for (const each of data["ingredients"]) {
-    //   ingredientsContent += each["name"] + "\n";
-    // }
-    // ingredients.textContent = ingredientsContent;
-    // cardBody.appendChild(ingredients);
   }
 }
 customElements.define("recipe-card", RecipeCard);
 
+function addList(value) {
+  // symbol does not work need to ask Kunal how to fix 
+    // const li = document.createElement('li');
+    // const i = document.createElement('i');
+    // const span = document.createElement('span');
+    // span.innerHTML = '38 min'
+    // i.classList.add('fa')
+    // i.classList.add('fa-clock-o')
+    // i.ariaHidden = 'true';
+  const li = document.createElement('li');
+  const span = document.createElement('span');
+  span.innerHTML = value;
+  li.appendChild(span);
+  return li;
+}
