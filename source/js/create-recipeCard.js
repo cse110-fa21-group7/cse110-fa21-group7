@@ -116,7 +116,13 @@ class RecipeCard extends HTMLElement {
 
     const price = document.createElement("p");
     price.classList.add("price");
-    price.textContent = data["totalCost"];
+    // assume the user enters in terms of dollars - append a dollar sign to front
+    if (data['img-url'].includes('https://spoonacular.com')){
+    price.textContent = '$' + data["totalCost"]/100;
+    }
+    else{
+    price.textContent = '$' + data["totalCost"];
+    }
     card.appendChild(price);
 
     // ingredients
