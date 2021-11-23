@@ -1,0 +1,117 @@
+html {
+  font-size: 1em;
+  background-color: #ffe599;
+}
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  font-family: Oxygen, sans-serif;
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));
+  grid-gap: 2rem;
+  justify-content: center;
+  min-width: 350px;
+}
+
+.card {
+  overflow: hidden;
+  box-shadow: 0px 2px 20px #cfd8dc;
+  border-radius: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 200ms ease-in;
+  background-color: #fff;
+  position: relative;
+  
+
+
+  /* // &__btn {
+  //   padding: 1rem;
+  //   font-family: inherit;
+  //   font-weight: bold;
+  //   font-size: 1rem;
+  //   margin: 1rem;
+  //   border: 2px solid var(--clr-primary);
+  //   background: transparent;
+  //   color: var(--clr-primary);
+  //   border-radius: var(--radius);
+  //   transition: background 200ms ease-in, color 200ms ease-in;
+  // }
+
+  // &:hover &__btn {
+  //   background: var(--clr-primary);
+  //   color: white;
+  // } */
+}
+
+.card__image {
+    height: 12rem;
+    width: 100%;
+    object-fit: cover;
+  }
+
+.card__title {
+    padding: 1rem;
+  }
+
+.card__description {
+    padding: 1rem 1rem;
+  }
+
+.card:hover {
+    transform: scale(1.02);
+ }
+
+ .card__body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+ }
+
+ul.info-row {
+    list-style: none;
+    margin: 0.5em auto;
+    padding: 0;
+    vertical-align: bottom;
+}
+
+.info-row li {
+				display: inline-block;
+				margin-left: 1em;
+				line-height: 1em; }
+
+.info-row li span {
+  margin-left: 0.5em;
+					font-weight: 300;
+					vertical-align: middle;
+					color: #838689;
+}
+
+.add-to-cookbook a .fa-plus {
+			background: #57abf2;
+			border-radius: 50%;
+			position: absolute;
+			top: 10.75rem;
+			right: 10%;
+			width: 2.5rem;
+			height: 2.5rem;
+			text-align: center;
+      color: white;
+      font-size: 1.3rem;
+      padding: 0.6rem 0.52rem;
+}
+
+
