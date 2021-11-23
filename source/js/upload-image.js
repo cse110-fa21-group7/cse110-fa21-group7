@@ -59,7 +59,7 @@ function setFormListener() {
         img.src = data.data.link;
         img.height = "200";
         img.referrerPolicy = "no-referrer";
-        recipe["img-url"] = data.data.link;
+        recipe["img-url"] = data.data.link
       });
   });
 }
