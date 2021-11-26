@@ -3,7 +3,7 @@
 const MAX_INGREDIENTS = 20;
 const MAX_STEPS = 10;
 
-let recipes = {};
+let recipes;
 const recipe = {};
 let recipeID = 0;
 let formdata = new FormData();
@@ -12,7 +12,8 @@ window.addEventListener("DOMContentLoaded", init);
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
   console.log("Initializing");
-  initializeStorage();
+  const json = window.localStorage.getItem("recipes");
+  recipes = JSON.parse(json);
   checkID();
   setFormListener();
 }
@@ -101,29 +102,6 @@ async function populateForm(id) {
   }
 }
 
-/** Initializes recipes object from localStorage cache */
-function initializeStorage() {
-  console.log("Initializing recipes object");
-  const json = localStorage.getItem("recipes");
-
-  if (json === null) {
-    console.log("Recipes not initialized in localStorage cache");
-    // Good practice to use brackets to ensure proper type
-    recipes["currID"] = 1;
-    localStorage.setItem("recipes", JSON.stringify(recipes));
-    return;
-  }
-
-  recipes = JSON.parse(json);
-  if (Object.keys(recipes).length == 0) {
-    // Check properly formatted
-    if (!("currID" in recipes)) {
-      recipes["currID"] = 1;
-    }
-    console.log("Empty recipes object");
-  }
-}
-
 /**  Show a message in the invalid-feedback div below the input element
  * @param {HTMLElement} input
  * @param {String} message
@@ -191,15 +169,6 @@ function hasFloat(input, message) {
   }
   return showSuccess(input);
 }
-
-/*
-function getElementIfExists(elem) {
-  if (elem != null && elem.value.trim() === '') {
-    return ''
-  }
-  return elem.value.trim()
-}
-*/
 
 /**
  * Set up form event listener
@@ -302,7 +271,9 @@ function setFormListener() {
       recipes[recipeID] = recipe;
       localStorage.setItem("recipes", JSON.stringify(recipes));
       window.alert("successfully updated a recipe!");
-      let currUrl = location.toString().replace("update-recipe.html?id=" + recipeID, "cook-book.html");
+      let currUrl = location
+        .toString()
+        .replace("update-recipe.html?id=" + recipeID, "cook-book.html");
       location.href = currUrl;
     } else {
       console.log("Invalid recipe");
@@ -364,12 +335,8 @@ function setFormListener() {
     ingAdded.querySelector(
       ".ingredient-name > .name-label"
     ).innerText = `Ingredient ${numIngs + 1}`;
-    ingAdded.querySelector(
-      ".ingredient-name > .form-control"
-    ).value = "";
-    ingAdded.querySelector(
-      ".ingredient-amount > .form-control"
-    ).value = "";
+    ingAdded.querySelector(".ingredient-name > .form-control").value = "";
+    ingAdded.querySelector(".ingredient-amount > .form-control").value = "";
     ingsDiv.appendChild(ingAdded);
   });
 

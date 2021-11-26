@@ -123,7 +123,7 @@ function populateHTML() {
 function setButtonListener() {
   const editButton = document.getElementById("Edit");
   editButton.addEventListener("click", (e) => {
-    location.href = `/updateRecipe`;
+    location.href = `/updateRecipe?id=${recipeID}`;
   });
 
   const deleteButton = document.getElementById("Delete");
