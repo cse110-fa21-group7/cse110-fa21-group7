@@ -34,13 +34,12 @@ function createRecipeCards() {
     card.data = value;
     main.appendChild(card);
     readRecipe(card, key);
-
   }
 }
 
 function readRecipe(recipeCard, id) {
   recipeCard.addEventListener("click", (e) => {
-    let currUrl = location.toString().replace("cook-book.html", "read-recipe.html?id=" + id);
-    window.location.href = currUrl;
+    const url = `/recipeDetails?id=${id}`;
+    window.location.href = url;
   });
 }
