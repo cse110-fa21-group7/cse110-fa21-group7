@@ -4,7 +4,7 @@ const path = require("path");
 // const rateLimit = require("express-rate-limit");
 require("dotenv").config();
 // const errorHandler = require("./middleware/error");
-const PORT = process.env.PORT || 5000; // use heroku or 5000
+const PORT = process.env.PORT || 8000; // use heroku or 5000
 const app = express();
 
 // Rate limiting use this for product model
@@ -37,4 +37,6 @@ app.use("/create/image", require("./router"));
 // Error handler middleware
 // app.use(errorHandler);
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () =>
+  console.log(`Server running on port http://localhost:${PORT}/`)
+);
