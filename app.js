@@ -31,12 +31,10 @@ app.use(
   express.static(path.join(__dirname, "source/html/create-recipe.html"))
 );
 // Routes
-app.use("/search", require("./routes/router"));
-app.use("/create/image", require("./routes/router"));
+app.use("/search", require("./router"));
+app.use("/create/image", require("./router"));
 
 // Error handler middleware
 // app.use(errorHandler);
 
-app.listen(PORT, () =>
-  console.log(`Server running on port http://localhost:${PORT}/`)
-);
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
