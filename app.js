@@ -37,4 +37,6 @@ app.use("/create/image", require("./router"));
 // Error handler middleware
 // app.use(errorHandler);
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () =>
+  console.log(`Server running on :http://localhost:${PORT}/`)
+);
