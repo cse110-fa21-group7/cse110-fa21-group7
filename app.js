@@ -34,6 +34,10 @@ app.use(
   "/recipeDetails",
   express.static(path.join(__dirname, "source/html/read-recipe.html"))
 );
+app.use(
+  "/updateRecipe",
+  express.static(path.join(__dirname, "source/html/update-recipe.html"))
+);
 // Routes
 app.use("/search", require("./router"));
 app.use("/create/image", require("./router"));

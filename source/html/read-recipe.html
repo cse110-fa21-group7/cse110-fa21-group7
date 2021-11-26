@@ -15,24 +15,31 @@
 
 <body>
   <header>
-    <nav class="navbar-nav">
+    <nav class="navbar">
       <div class="container-fluid">
-        <a class="navbar-brand" href="./home-page.html" id="ASAP-logo-home">ASAP Recipe</a>
+        <a class="navbar-brand" href="/" id="ASAP-logo-home">ASAP Recipe</a>
+        <button class="navbar-toggler" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
     
-          <ul class="navbar-nav-inline">
+          <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <a class="nav-link" href="./cook-book.html" id="link-cookbook">Cookbook</a>
+              <a class="nav-link" href="/cookbook" id="link-cookbook">Cookbook</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./create-recipe.html" id="link-create-recipe">Create</a>
+              <a class="nav-link" href="/create" id="link-create-recipe">Create</a>
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="./read-recipe.html" id="link-read-recipe">Read</a>
             </li> -->
           </ul>
+          <form class="nav-form">
+            <input class="form-control" type="text" placeholder="&ensp;Search">
+            <button class="btn" type="submit">Search</button>
+          </form>
       </div>
     </nav>
-  </header>
+</header>
   
   <!-- Read Recipe -->
   <div class="box">

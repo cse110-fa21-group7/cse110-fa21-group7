@@ -92,15 +92,6 @@ function populateHTML() {
     // Old img.src code
     img.src = url;
   }
-
-  // add ingredient list
-  // <div id="ingredient-list">
-  // <div class="each-ingredient">
-  //   <label class = "container">duck 0.5 lb
-  //     <input type="checkbox">
-  //     <span class="checkmark"></span>
-  //   </label>
-  // </div>
   const ingList = document.getElementById("ingredient-list");
   for (const ingredient of recipe["ingredients"]) {
     const eachIng = document.createElement("div");
@@ -132,7 +123,7 @@ function populateHTML() {
 function setButtonListener() {
   const editButton = document.getElementById("Edit");
   editButton.addEventListener("click", (e) => {
-    location.href = `update-recipe.html?id=${recipeID}`;
+    location.href = `/updateRecipe`;
   });
 
   const deleteButton = document.getElementById("Delete");
@@ -140,10 +131,7 @@ function setButtonListener() {
     delete recipes[recipeID];
     localStorage.setItem("recipes", JSON.stringify(recipes));
     window.alert("successfully deleted the recipe!");
-    const currUrl = location
-      .toString()
-      .replace("read-recipe.html?id=" + recipeID, "cook-book.html");
-    location.href = currUrl;
+    window.location.href = "/cookbook";
   });
 
   return;
