@@ -31,8 +31,8 @@ app.use(
   express.static(path.join(__dirname, "source/html/create-recipe.html"))
 );
 // Routes
-app.use("/search", require("./router"));
-app.use("/create/image", require("./router"));
+app.use("/search", require("./routes/router"));
+app.use("/create/image", require("./routes/router"));
 
 // Error handler middleware
 // app.use(errorHandler);
