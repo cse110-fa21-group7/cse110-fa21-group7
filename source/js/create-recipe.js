@@ -1,5 +1,4 @@
 // create-recipe.js
-
 const MAX_INGREDIENTS = 20;
 const MAX_STEPS = 10;
 
@@ -160,8 +159,8 @@ function setFormListener() {
     recipe["totalCost"] = cost;
 
     // Set to default if no image uploaded
-    if (!('img-url' in recipe)) {
-      recipe['img-url'] = '../img/default.png';
+    if (!("img-url" in recipe)) {
+      recipe["img-url"] = "../img/default.png";
     }
 
     const ingredients = [];
@@ -223,7 +222,9 @@ function setFormListener() {
 
       localStorage.setItem("recipes", JSON.stringify(recipes));
       window.alert("successfully created a recipe!");
-      let currUrl = location.toString().replace("create-recipe.html", "cook-book.html");
+      let currUrl = location
+        .toString()
+        .replace("create-recipe.html", "cook-book.html");
       location.href = currUrl;
     } else {
       console.log("Invalid recipe");
@@ -236,32 +237,40 @@ function setFormListener() {
   file.addEventListener("change", (e) => {
     formdata = new FormData();
     formdata.append("image", e.target.files[0]);
-    // console.log(file);
-    fetch("https://api.imgur.com/3/image/", {
+    fetch("create/image/upload", {
       method: "post",
-      headers: {
-        Authorization: "Client-ID 1b99956c57a5642",
-      },
       body: formdata,
-    })
-      .then((data) => data.json())
-      .then((data) => {
-        console.log(data);
-        const divImg = document.getElementById("img-spot");
-        const childImgs = divImg.getElementsByTagName("img");
-        let img;
-        if (childImgs.length == 0) {
-          img = document.createElement("img");
-          divImg.append(img);
-        } else {
-          img = childImgs[0];
-        }
-        console.log(`URL: ${data.data.link}`);
-        img.src = data.data.link;
-        img.height = "200";
-        img.referrerPolicy = "no-referrer";
-        recipe["img-url"] = data.data.link;
-      });
+    }).then((data) => {
+      console.log(data);
+    });
+
+    // const data = res.json();
+
+    // fetch("https://api.imgur.com/3/image/", {
+    //   method: "post",
+    //   headers: {
+    //     Authorization: "Client-ID 1b99956c57a5642",
+    //   },
+    //   body: formdata,
+    // })
+    //   .then((data) => data.json())
+    //   .then((data) => {
+    //     console.log(data);
+    //     const divImg = document.getElementById("img-spot");
+    //     const childImgs = divImg.getElementsByTagName("img");
+    //     let img;
+    //     if (childImgs.length == 0) {
+    //       img = document.createElement("img");
+    //       divImg.append(img);
+    //     } else {
+    //       img = childImgs[0];
+    //     }
+    //     console.log(`URL: ${data.data.link}`);
+    //     img.src = data.data.link;
+    //     img.height = "200";
+    //     img.referrerPolicy = "no-referrer";
+    //     recipe["img-url"] = data.data.link;
+    //   });
   });
 
   const addIng = form.querySelector("#add-ingredient");
@@ -284,12 +293,8 @@ function setFormListener() {
     ingAdded.querySelector(
       ".ingredient-name > .name-label"
     ).innerText = `Ingredient ${numIngs + 1}`;
-    ingAdded.querySelector(
-      ".ingredient-name > .form-control"
-    ).value = "";
-    ingAdded.querySelector(
-      ".ingredient-amount > .form-control"
-    ).value = "";
+    ingAdded.querySelector(".ingredient-name > .form-control").value = "";
+    ingAdded.querySelector(".ingredient-amount > .form-control").value = "";
     ingsDiv.appendChild(ingAdded);
   });
 
@@ -313,9 +318,7 @@ function setFormListener() {
     stepAdded.querySelector(".recipeStep-label").innerText = `Step ${
       numSteps + 1
     }`;
-    stepAdded.querySelector(
-      ".step-sec > .form-control"
-    ).value = "";
+    stepAdded.querySelector(".step-sec > .form-control").value = "";
     stepsDiv.appendChild(stepAdded);
   });
 

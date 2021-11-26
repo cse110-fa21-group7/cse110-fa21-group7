@@ -8,6 +8,7 @@ async function init() {
 async function fetchRecipes(query) {
   const url = `/search?query=${query}`;
   const res = await fetch(url); // return back the reicpes object from spoonacular
+  console.log(res);
   const data = await res.json();
   if (data.cod === "404") {
     alert("Recipe not found");
@@ -20,6 +21,9 @@ async function fetchRecipes(query) {
   // --- we should use recipes ID to fetch all recipe's info, need other team member implement this part------
   const storage = window.localStorage;
   const recipeID = JSON.parse(storage.getItem("recipeID"));
+  // if (Object.keys(recipeID).length !== 0) {
+
+  // }
   for (const recipe of data["results"]) {
     recipeID[recipe["id"]] = recipe;
   }
@@ -29,6 +33,13 @@ async function fetchRecipes(query) {
   setTimeout(() => {
     console.log(recipeID);
   }, 10);
+  // for (const [key, value] of Object.entries(recipes)) {
+  //   if (key !== "currID") {
+  //     recipeData[key] = value;
+  //   }
+  // }
+  // console.log(recipeData);
+  // return true;
 }
 
 /**
@@ -36,11 +47,8 @@ async function fetchRecipes(query) {
  */
 function setSearchListener() {
   const searchForm = document.getElementById("search-form");
-  console.log(searchForm);
   const searchbtn = document.getElementById("search-button");
   searchbtn.addEventListener("click", (e) => {
-    console.log("search");
-
     e.preventDefault();
     const searchField = searchForm.querySelector("#query");
     const queryText = searchField.value;

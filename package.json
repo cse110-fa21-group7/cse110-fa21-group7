@@ -1,24 +1,28 @@
 {
   "name": "cse110-fa21-group7",
-  "dependencies": {
-    "next": "^12.0.4",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
+  "version": "1.0.0",
+  "description": "FA 21 CSE 110 Team 7 recipe APP",
+  "main": "app.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "start": "node app.js",
+    "dev": "nodemon app",
     "test": "jest",
     "lint": "eslint ./source --ext .js",
     "cypress-run": "cypress run",
-    "int-test": "start-server-and-test next http://localhost:5500 cypress-run",
     "prepare": "husky install",
     "format": "prettier --write ."
   },
   "jest": {
     "preset": "jest-cypress",
     "verbose": true
+  },
+  "dependencies": {
+    "connect-multiparty": "^2.2.0",
+    "cors": "^2.8.5",
+    "cross-fetch": "^3.1.4",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "needle": "^3.0.0"
   },
   "devDependencies": {
     "cypress": "^9.0.0",
@@ -27,7 +31,7 @@
     "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.4",
     "jest": "^27.3.1",
-    "prettier": "^2.4.1",
-    "start-server-and-test": "^1.14.0"
+    "nodemon": "^2.0.15",
+    "prettier": "^2.4.1"
   }
 }

@@ -13,8 +13,13 @@ async function init() {
  */
 function initializeStorage() {
   console.log("Initializing recipes object");
-  const json = localStorage.getItem("recipes");
-  if (json === null) {
+  const userRecipes = localStorage.getItem("recipes");
+  // const APIRecipes = localStorage.getItem("APIRecipes");
+  const recipeID = localStorage.getItem("recipeID");
+  if (recipeID === null) {
+    localStorage.setItem("recipeID", JSON.stringify({}));
+  }
+  if (userRecipes === null) {
     console.log("Recipes not initialized in localStorage cache");
     // Good practice to use brackets to ensure proper type
     recipes["currID"] = 1;
