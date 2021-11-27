@@ -222,7 +222,7 @@ function setFormListener() {
 
       localStorage.setItem("recipes", JSON.stringify(recipes));
       window.alert("successfully created a recipe!");
-      let currUrl = location
+      const currUrl = location
         .toString()
         .replace("create-recipe.html", "cook-book.html");
       location.href = currUrl;

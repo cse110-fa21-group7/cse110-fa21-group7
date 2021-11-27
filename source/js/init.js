@@ -1,4 +1,4 @@
-let recipes = {};
+const recipes = {};
 window.addEventListener("DOMContentLoaded", init);
 async function init() {
   if (initializeStorage()) {
