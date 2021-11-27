@@ -113,17 +113,18 @@ function hasFloat(input, message) {
   }
   return showSuccess(input);
 }
+
 /**
- * post the image to imgur and return back our url
+ * when user want to upload the image, we will upload it to imgur.
+ * Also, create a url for us.
  * @param {FormData} dataform
  */
-const file = document.getElementById("recipeImage");
-
 // Image upload, saves URL to recipe object
+const file = document.getElementById("recipeImage");
 file.addEventListener("change", (e) => {
   formdata = new FormData();
+  // if user did not upload image, just return this back
   if (e.target.files[0] === undefined) return;
-
   formdata.append("image", e.target.files[0]);
   fetch("create/image/upload", {
     method: "post",
