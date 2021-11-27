@@ -12,6 +12,6 @@
     "no-var": "warn",
     "semi": ["error", "always"],
     "prettier/prettier": "off", // don't show prettier errors as it will be fixed when saved anyway
-    "require-jsdoc": "off"
+    "require-jsdoc": 1
   }
 }

@@ -165,7 +165,7 @@ input {
 }
 */
 
-button {
+#search-button {
   all: unset;
   cursor: pointer;
   width: 75px;

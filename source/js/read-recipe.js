@@ -1,6 +1,6 @@
 // read-recipe.js
 
-let recipes = {};
+let userRecipes = {};
 let recipeID;
 window.addEventListener("DOMContentLoaded", init);
 
@@ -11,10 +11,15 @@ async function init() {
   populateHTML();
   setButtonListener();
 }
+
+/**
+ * Populates recipes object from localStorage
+ */
 function getRecipes() {
-  recipes = localStorage.getItem("recipes");
-  recipes = JSON.parse(recipes);
+  userRecipes = localStorage.getItem("userRecipes");
+  userRecipes = JSON.parse(userRecipes);
 }
+
 /**
  * Checks if ID is in localStorage,return it back
  */
@@ -32,7 +37,7 @@ function getID() {
  * @param {int} id
  */
 function populateHTML() {
-  const recipe = recipes[recipeID];
+  const recipe = userRecipes[recipeID];
   console.log(`Recipe: ${recipe["title"]}`);
   // get article element, so we can append elements
   // const article = document.getElementById("recipeTitle");
@@ -128,8 +133,8 @@ function setButtonListener() {
 
   const deleteButton = document.getElementById("Delete");
   deleteButton.addEventListener("click", (e) => {
-    delete recipes[recipeID];
-    localStorage.setItem("recipes", JSON.stringify(recipes));
+    delete userRecipes[recipeID];
+    localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
     window.alert("successfully deleted the recipe!");
     window.location.href = "/cookbook";
   });

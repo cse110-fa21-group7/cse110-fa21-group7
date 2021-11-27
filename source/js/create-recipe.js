@@ -2,7 +2,7 @@
 const MAX_INGREDIENTS = 20;
 const MAX_STEPS = 10;
 
-let recipes; // save local storage recipes
+let userRecipes; // save local storage recipes
 // let recipes = {};
 const recipe = {};
 let formdata = new FormData();
@@ -15,16 +15,16 @@ async function init() {
   setFormListener();
 }
 function getRecipes() {
-  recipes = localStorage.getItem("recipes");
-  recipes = JSON.parse(recipes);
+  userRecipes = localStorage.getItem("userRecipes");
+  userRecipes = JSON.parse(userRecipes);
 }
 // TODO: Finish populateForm
 /** Populate forms by ID
  * @param {int} id
  */
 function populateForm(id) {
-  if (id in recipes) {
-    const recipe = recipes[id];
+  if (id in userRecipes) {
+    const recipe = userRecipes[id];
     console.log(recipe["title"]);
   } else {
     console.log(`ID: ${id} does not exist in recipes`);
@@ -249,11 +249,11 @@ function setFormListener() {
 
     if (allValid) {
       // const id = parseInt(recipes.currID, 10);
-      console.log(recipes["currID"]);
-      recipes[recipes["currID"]] = recipe;
-      recipes["currID"] += 1;
+      console.log(userRecipes["currID"]);
+      userRecipes[userRecipes["currID"]] = recipe;
+      userRecipes["currID"] += 1;
 
-      localStorage.setItem("recipes", JSON.stringify(recipes));
+      localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
       window.alert("successfully created a recipe!");
       const currUrl = location
         .toString()

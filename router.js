@@ -23,6 +23,7 @@ router.get("/", async (req, res) => {
     const params = new URLSearchParams({
       ...url.parse(req.url, true).query,
       [API_KEY_NAME]: API_KEY_VALUE,
+      'number' : 12,
     });
     // Log the request to the public API
     if (process.env.NODE_ENV !== "production") {
@@ -30,7 +31,31 @@ router.get("/", async (req, res) => {
     }
     const apiRes = await fetch(`${API_BASE_URL}?${params}`);
     const data = await apiRes.json();
-    res.status(200).json(data);
+    res.status(200).json(data);  
+    
+  } catch (error) {
+    res.status(500).json({ error });
+    // next(error);
+  }
+});
+
+router.get("/recipe", async (req, res) => {
+  try {
+    console.log(url.parse(req.url, true));
+    const id = url.parse(req.url, true).query.id;
+    const params = new URLSearchParams({
+      [API_KEY_NAME]: API_KEY_VALUE,
+    });
+    // Log the request to the public API
+    if (process.env.NODE_ENV !== "production") {
+      // "https://api.spoonacular.com/recipes/{id}/information"
+      console.log(`https://api.spoonacular.com/recipes/${id}/information?${params}`);
+    }
+    const apiRes = await fetch(`https://api.spoonacular.com/recipes/${id}/information?${params}`);
+    const data = await apiRes.json();
+    res.status(200).json(data);   
+  
+    
   } catch (error) {
     res.status(500).json({ error });
     // next(error);
