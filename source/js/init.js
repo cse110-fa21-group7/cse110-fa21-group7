@@ -1,5 +1,9 @@
 const recipes = {};
 window.addEventListener("DOMContentLoaded", init);
+
+/**
+ * Entry point for initialization scripts
+ */
 async function init() {
   if (initializeStorage()) {
     addExamples();
@@ -13,17 +17,17 @@ async function init() {
  */
 function initializeStorage() {
   console.log("Initializing recipes object");
-  const userRecipes = localStorage.getItem("recipes");
+  const userRecipes = localStorage.getItem("userRecipes");
   // const APIRecipes = localStorage.getItem("APIRecipes");
-  const recipeID = localStorage.getItem("recipeID");
-  if (recipeID === null) {
-    localStorage.setItem("recipeID", JSON.stringify({}));
+  const storedRecipes = localStorage.getItem("storedRecipes");
+  if (storedRecipes === null) {
+    localStorage.setItem("storedRecipes", JSON.stringify({}));
   }
   if (userRecipes === null) {
     console.log("Recipes not initialized in localStorage cache");
     // Good practice to use brackets to ensure proper type
     recipes["currID"] = 1;
-    localStorage.setItem("recipes", JSON.stringify(recipes));
+    localStorage.setItem("userRecipes", JSON.stringify(recipes));
     return true;
   }
   return false;
@@ -120,11 +124,11 @@ function addExamples() {
       "Serves 8.",
     ],
   };
-  recipes["1"] = ex1;
-  recipes["2"] = ex2;
-  recipes["currID"] = 3;
-  console.log(recipes);
+  userRecipes["1"] = ex1;
+  userRecipes["2"] = ex2;
+  userRecipes["currID"] = 3;
+  console.log(userRecipes);
   // update
-  localStorage.setItem("recipes", JSON.stringify(recipes));
+  localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
   // after this line there should be 2 recipes examples saved in local storage
 }

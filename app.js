@@ -35,6 +35,10 @@ app.use(
   express.static(path.join(__dirname, "source/html/read-recipe.html"))
 );
 app.use(
+  "/previewRecipe",
+  express.static(path.join(__dirname, "source/html/preview-recipe.html"))
+);
+app.use(
   "/updateRecipe",
   express.static(path.join(__dirname, "source/html/update-recipe.html"))
 );

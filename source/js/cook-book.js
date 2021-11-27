@@ -2,6 +2,10 @@ const recipeData = {};
 
 window.addEventListener("DOMContentLoaded", init);
 // This is the first function to be called, so when you are tracing your code start here.
+/**
+ * Entry point
+ * @return {null}
+ */
 async function init() {
   // fetch the recipes and wait for them to load
   const fetchSuccessful = await fetchRecipes();
@@ -14,9 +18,13 @@ async function init() {
   createRecipeCards();
 }
 
+/**
+ * Get recipes from localStorage
+ * @return {Boolean} 
+ */
 async function fetchRecipes() {
   const storage = window.localStorage;
-  const recipes = JSON.parse(storage.getItem("recipes"));
+  const recipes = JSON.parse(storage.getItem("userRecipes"));
   for (const [key, value] of Object.entries(recipes)) {
     if (key !== "currID") {
       recipeData[key] = value;
@@ -26,6 +34,9 @@ async function fetchRecipes() {
   return true;
 }
 
+/**
+ * Create recipe cards
+ */
 function createRecipeCards() {
   const main = document.querySelector(".wrapper");
   // loop whole local storge
@@ -37,6 +48,11 @@ function createRecipeCards() {
   }
 }
 
+/**
+ * Add event listeners to recipe card elements
+ * @param {HTMLElement} recipeCard 
+ * @param {String} id 
+ */
 function readRecipe(recipeCard, id) {
   recipeCard.addEventListener("click", (e) => {
     const url = `/recipeDetails?id=${id}`;
