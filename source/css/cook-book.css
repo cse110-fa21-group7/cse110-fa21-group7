@@ -1,9 +1,7 @@
 html {
   font-size: 1em;
-  background-color: #ffe599;
+  background-color: ##fff;
 }
-
-
 
 *,
 *::before,
@@ -22,6 +20,3 @@ html {
   justify-content: center;
   min-width: 350px;
 }
-
-
-
