@@ -1,5 +1,4 @@
 html {
-  font-size: 1em;
   background-color: #fff;
 }
 
@@ -179,8 +178,7 @@ svg {
   fill: #fff;
   width: 26px;
   height: 26px;
-  padding-left: 20px;
-  
+  padding-left: 20px;  
 }
 
 #page-title {
