@@ -113,7 +113,40 @@ function hasFloat(input, message) {
   }
   return showSuccess(input);
 }
+/**
+ * post the image to imgur and return back our url
+ * @param {FormData} dataform
+ */
+const file = document.getElementById("recipeImage");
 
+// Image upload, saves URL to recipe object
+file.addEventListener("change", (e) => {
+  formdata = new FormData();
+  if (e.target.files[0] === undefined) return;
+
+  formdata.append("image", e.target.files[0]);
+  fetch("create/image/upload", {
+    method: "post",
+    body: formdata,
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      const divImg = document.getElementById("img-spot");
+      const childImgs = divImg.getElementsByTagName("img");
+      let img;
+      if (childImgs.length == 0) {
+        img = document.createElement("img");
+        divImg.append(img);
+      } else {
+        img = childImgs[0];
+      }
+      console.log(`URL: ${data.link}`);
+      img.src = data.link;
+      img.height = "200";
+      img.referrerPolicy = "no-referrer";
+      recipe["img-url"] = data.link;
+    });
+});
 /**
  * Set up form event listener
  */
@@ -229,48 +262,6 @@ function setFormListener() {
     } else {
       console.log("Invalid recipe");
     }
-  });
-
-  const file = document.getElementById("recipeImage");
-
-  // Image upload, saves URL to recipe object
-  file.addEventListener("change", (e) => {
-    formdata = new FormData();
-    formdata.append("image", e.target.files[0]);
-    fetch("create/image/upload", {
-      method: "post",
-      body: formdata,
-    }).then((data) => {
-      console.log(data);
-    });
-
-    // const data = res.json();
-
-    // fetch("https://api.imgur.com/3/image/", {
-    //   method: "post",
-    //   headers: {
-    //     Authorization: "Client-ID 1b99956c57a5642",
-    //   },
-    //   body: formdata,
-    // })
-    //   .then((data) => data.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //     const divImg = document.getElementById("img-spot");
-    //     const childImgs = divImg.getElementsByTagName("img");
-    //     let img;
-    //     if (childImgs.length == 0) {
-    //       img = document.createElement("img");
-    //       divImg.append(img);
-    //     } else {
-    //       img = childImgs[0];
-    //     }
-    //     console.log(`URL: ${data.data.link}`);
-    //     img.src = data.data.link;
-    //     img.height = "200";
-    //     img.referrerPolicy = "no-referrer";
-    //     recipe["img-url"] = data.data.link;
-    //   });
   });
 
   const addIng = form.querySelector("#add-ingredient");

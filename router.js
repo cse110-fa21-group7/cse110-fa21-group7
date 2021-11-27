@@ -3,8 +3,7 @@ const fs = require("fs");
 const FormData = require("form-data");
 const express = require("express");
 const router = express.Router();
-const needle = require("needle");
-const { nextTick } = require("process");
+// const { nextTick } = require("process");
 const multipart = require("connect-multiparty");
 const multipartMiddleware = multipart();
 const fetch = require("node-fetch");
@@ -29,9 +28,8 @@ router.get("/", async (req, res) => {
     if (process.env.NODE_ENV !== "production") {
       console.log(`REQUEST: ${API_BASE_URL}?${params}`);
     }
-    const apiRes = await needle("get", `${API_BASE_URL}?${params}`);
-    const data = apiRes.body;
-
+    const apiRes = await fetch(`${API_BASE_URL}?${params}`);
+    const data = await apiRes.json();
     res.status(200).json(data);
   } catch (error) {
     res.status(500).json({ error });
@@ -44,17 +42,14 @@ router.post("/upload", multipartMiddleware, async (req, res, next) => {
   const img = fs.createReadStream(req.files.image.path);
   const formdata = new FormData();
   formdata.append("image", img);
-  fetch("https://api.imgur.com/3/image/", {
+  const request = await fetch("https://api.imgur.com/3/image/", {
     method: "post",
-    headers: {
-      Authorization: `Client-ID ${API_IMGUR_KEY}`,
-    },
+    headers: { Authorization: `Client-ID ${API_IMGUR_KEY}` },
     body: formdata,
-  })
-    .then((data) => data.json())
-    .then((data) => {
-      console.log(data.data.link);
-    });
+  });
+  const result = await request.json();
+  console.log(result.data.link);
+  res.send(result.data);
 });
 
 module.exports = router;
