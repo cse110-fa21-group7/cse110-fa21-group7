@@ -46,11 +46,10 @@ async function fetchRecipes(query) {
  * Set up event listener for search
  */
 function setSearchListener() {
-  const searchForm = document.getElementById("search-form");
   const searchbtn = document.getElementById("search-button");
   searchbtn.addEventListener("click", (e) => {
     e.preventDefault();
-    const searchField = searchForm.querySelector("#query");
+    const searchField = document.querySelector("#query");
     const queryText = searchField.value;
     console.log(`Search query: ${queryText}`);
     if (queryText.value === "") {
