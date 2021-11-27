@@ -271,7 +271,7 @@ function setFormListener() {
       recipes[recipeID] = recipe;
       localStorage.setItem("recipes", JSON.stringify(recipes));
       window.alert("successfully updated a recipe!");
-      let currUrl = location
+      const currUrl = location
         .toString()
         .replace("update-recipe.html?id=" + recipeID, "cook-book.html");
       location.href = currUrl;

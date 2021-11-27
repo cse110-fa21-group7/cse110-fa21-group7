@@ -143,7 +143,7 @@ class RecipeCard extends HTMLElement {
     price = '$' + data["totalCost"];
     }
     ul.appendChild(addList(price));
-    cardBody.appendChild(ul)
+    cardBody.appendChild(ul);
 
   }
 }
@@ -158,8 +158,8 @@ function addList(value) {
   const li = document.createElement('li');
     const i = document.createElement('i');
 
-      i.classList.add('fa')
-    i.classList.add('fa-clock-o')
+    i.classList.add('fa');
+    i.classList.add('fa-clock-o');
     i.ariaHidden = 'true';
   
   const span = document.createElement('span');
