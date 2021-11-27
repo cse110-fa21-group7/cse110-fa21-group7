@@ -1,6 +1,5 @@
 html {
-  font-size: 1em;
-  background-color: #ffe599;
+  background-color: #fff;
 }
 
 
@@ -115,3 +114,84 @@ ul.info-row {
 }
 
 
+
+section.search {
+  padding:10px;
+}
+
+.search-container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.search-introduction {
+  font-size: 36px;
+  line-height: 1.333;
+  text-align: center;
+  padding-bottom: 60px;
+  padding-top:20px;
+}
+
+form {
+  background-color: hsl(0, 0%, 92%);
+  min-width: 300px;
+  max-width: 700px;
+  height: 50px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+}
+
+input {
+  all: unset;
+  font: 18px;
+  color: #666;
+  height: 100%;
+  width: 100%;
+  padding-top:0px;
+  padding-left:15px;
+  padding-bottom:5px;
+  margin: auto;
+}
+
+/*
+::placeholder {
+  color: #666;
+  opacity: 0.7; 
+}
+*/
+
+button {
+  all: unset;
+  cursor: pointer;
+  width: 75px;
+  height: 50px;
+  background-color: crimson;
+  border-radius: 5px;
+}
+
+#search-button > .icon {
+  padding-left: 23px;
+  color: white;
+}
+
+/*
+svg {
+  color: #fff;
+  fill: #fff;
+  width: 26px;
+  height: 26px;
+  padding-left: 20px;  
+}
+*/
+
+#page-title {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 44px;
+
+}
