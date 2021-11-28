@@ -13,8 +13,8 @@ async function init() {
 async function fetchRecipes(query) {
   const url = `/search/recipe?query=${query}`;
   const res = await fetch(url); // return back the reicpes object from spoonacular
-  console.log(res);
   const data = await res.json();
+  console.log(data);
   if (data.cod === "404") {
     alert("Recipe not found");
     return;
@@ -24,27 +24,29 @@ async function fetchRecipes(query) {
     return;
   }
   // --- we should use recipes ID to fetch all recipe's info, need other team member implement this part------
-  // const storage = window.localStorage;
-  // const searchedRecipeIDs = JSON.parse(storage.getItem("searchedRecipeIDs"));
+  const storage = window.localStorage;
+  const resultRecipes = JSON.parse(storage.getItem("resultRecipes"));
   // if (Object.keys(recipeID).length !== 0) {
 
   // }
   // /*
-  // for (const recipe of data["results"]) {
-  //   searchedRecipeIDs[recipe["id"]] = recipe;
-  // }
+  for (const recipe of data["results"]) {
+    resultRecipes[recipe["id"]] = recipe;
+  }
 
-  // // update
-  // // Store full recipes in searchedRecipes
-  // localStorage.setItem("searchedRecipeIDs", JSON.stringify(searchedRecipeIDs));
+  // update
+  // Store full recipes in searchedRecipes
+  localStorage.setItem("resultRecipes", JSON.stringify(resultRecipes));
   // */
 
-  displaySearchResults(data["results"]);
+  // displaySearchResults(data["results"]);
 
   // log the result
   setTimeout(() => {
     console.log(data["results"]);
   }, 10);
+  const urlchange = `/result?query=${query}`;
+  window.location.href = urlchange;
   // for (const [key, value] of Object.entries(recipes)) {
   //   if (key !== "currID") {
   //     recipeData[key] = value;
@@ -92,47 +94,47 @@ let cardTemplate = null;
  * Populates index.html results section with recipe card elements
  * @param {Object} searchedRecipeIDs
  */
-function displaySearchResults(searchedRecipeIDs) {
-  const curatedList = document.getElementById("curated-list");
-  curatedList.style.visibility = "hidden";
-  let recipeCardDiv;
-  if (cardTemplate == null) {
-    recipeCardDiv = curatedList.querySelector(".card");
-    recipeCardDiv.querySelector(".info-row").remove();
-    console.log(recipeCardDiv);
-    cardTemplate = recipeCardDiv;
-  } else {
-    recipeCardDiv = cardTemplate;
-  }
+// function displaySearchResults(searchedRecipeIDs) {
+//   const curatedList = document.getElementById("curated-list");
+//   curatedList.style.visibility = "hidden";
+//   let recipeCardDiv;
+//   if (cardTemplate == null) {
+//     recipeCardDiv = curatedList.querySelector(".card");
+//     recipeCardDiv.querySelector(".info-row").remove();
+//     console.log(recipeCardDiv);
+//     cardTemplate = recipeCardDiv;
+//   } else {
+//     recipeCardDiv = cardTemplate;
+//   }
 
-  const results = document.getElementById("results");
+//   const results = document.getElementById("results");
 
-  // Clear results
-  const cards = results.querySelectorAll(".card");
-  for (const card of cards) {
-    card.remove();
-  }
+//   // Clear results
+//   const cards = results.querySelectorAll(".card");
+//   for (const card of cards) {
+//     card.remove();
+//   }
 
-  for (const recipe of searchedRecipeIDs) {
-    const card = recipeCardDiv.cloneNode(true);
-    card.setAttribute("recipeID", recipe["id"]);
-    card.setAttribute("Added", false);
-    const img = card.querySelector("img");
-    img.src = recipe["image"];
-    const title = card.querySelector(".card__title");
-    title.innerText = recipe["title"];
-    card.addEventListener("click", (e) => {
-      if (card.getAttribute("Added") == "false") {
-        // alert(`Main body click, Added: ${card.getAttribute('Added')}`);
-        window.location.href = `/previewRecipe?id=${recipe["id"]}`;
-      }
-    });
-    card.querySelector(".add-to-cookbook").addEventListener("click", (e) => {
-      card.setAttribute("Added", "true");
-      window.location.href = `/previewRecipe?id=${recipe["id"]}`;
-      // alert(`recipeID: ${recipe['id']}, Title: ${recipe['title']}`);
-    });
+//   for (const recipe of searchedRecipeIDs) {
+//     const card = recipeCardDiv.cloneNode(true);
+//     card.setAttribute("recipeID", recipe["id"]);
+//     card.setAttribute("Added", false);
+//     const img = card.querySelector("img");
+//     img.src = recipe["image"];
+//     const title = card.querySelector(".card__title");
+//     title.innerText = recipe["title"];
+//     card.addEventListener("click", (e) => {
+//       if (card.getAttribute("Added") == "false") {
+//         // alert(`Main body click, Added: ${card.getAttribute('Added')}`);
+//         window.location.href = `/previewRecipe?id=${recipe["id"]}`;
+//       }
+//     });
+//     card.querySelector(".add-to-cookbook").addEventListener("click", (e) => {
+//       card.setAttribute("Added", "true");
+//       window.location.href = `/previewRecipe?id=${recipe["id"]}`;
+//       // alert(`recipeID: ${recipe['id']}, Title: ${recipe['title']}`);
+//     });
 
-    results.appendChild(card);
-  }
-}
+//     results.appendChild(card);
+//   }
+// }

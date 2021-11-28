@@ -15,6 +15,7 @@ async function init() {
     recipeObject = JSON.parse(localStorage.getItem("userRecipes"));
   } else if (queryString.includes("result")) {
     page = "result";
+    console.log("result");
     recipeObject = JSON.parse(localStorage.getItem("resultRecipes"));
   }
   makePage(page);
@@ -41,7 +42,7 @@ function makePage(page) {
     showList = ["cookbook"];
     // only cookbook need to hide the whole recipe-card-containe
     hideList = ["search", "results", "curatedList"];
-  } else if (page === "results") {
+  } else if (page === "result") {
     showList = ["search", "results"];
     hideList = ["search", "curatedList"];
   }
