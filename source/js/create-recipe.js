@@ -5,6 +5,7 @@ let updateFlag = false;
 let recipe = {};
 let userRecipes; // save local storage recipes
 let currID;
+let recipeID;
 let formdata = new FormData();
 window.addEventListener("DOMContentLoaded", init);
 
@@ -82,13 +83,14 @@ function checkID() {
   const urlParams = new URLSearchParams(queryString);
   const id = urlParams.get("id");
   if (id === null) return;
-  // means we are in update page!
+  // means we are in update page, but the id not found in user cookbook
   if (!id in userRecipes) {
     console.log("invalid ID");
     return;
   }
   // rn ID is correct and in update page
   updateFlag = true;
+  recipeID = id;
   recipe = userRecipes[id];
   updateFlag = true;
   console.log(`Found recipe: ${recipe["title"]}`);
@@ -207,11 +209,19 @@ form.addEventListener("submit", function (event) {
   console.log("Submit button clicked");
   const allValid = checkValid();
   if (!allValid) return;
-  // do not need to update means we add new recipe to user cookbook
-  if (!updateFlag) currID += 1;
-  userRecipes[currID] = recipe;
+  // dupdate means
+  if (updateFlag) {
+    userRecipes[recipeID] = recipe;
+  }
+  // we add new recipe to user cookbook
+  else {
+    currID += 1;
+    userRecipes[currID] = recipe;
+  }
+  // save all of object to local storage
   localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
   localStorage.setItem("currID", currID);
+  // back to cookbook page
   window.alert("successfully created a recipe!");
   location.href = "/cookbook";
 });
