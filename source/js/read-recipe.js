@@ -128,7 +128,7 @@ function populateHTML() {
 function setButtonListener() {
   const editButton = document.getElementById("Edit");
   editButton.addEventListener("click", (e) => {
-    location.href = `/updateRecipe?id=${recipeID}`;
+    location.href = `/create?id=${recipeID}`;
   });
 
   const deleteButton = document.getElementById("Delete");
