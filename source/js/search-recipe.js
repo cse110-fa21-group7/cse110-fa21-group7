@@ -29,15 +29,15 @@ async function fetchRecipes(query) {
   // if (Object.keys(recipeID).length !== 0) {
 
   // }
-  /*
-  for (const recipe of data["results"]) {
-    searchedRecipeIDs[recipe["id"]] = recipe;
-  }
-  
-  // update
-  // Store full recipes in searchedRecipes
-  localStorage.setItem("searchedRecipeIDs", JSON.stringify(searchedRecipeIDs));
-  */
+  // /*
+  // for (const recipe of data["results"]) {
+  //   searchedRecipeIDs[recipe["id"]] = recipe;
+  // }
+
+  // // update
+  // // Store full recipes in searchedRecipes
+  // localStorage.setItem("searchedRecipeIDs", JSON.stringify(searchedRecipeIDs));
+  // */
 
   displaySearchResults(data["results"]);
 

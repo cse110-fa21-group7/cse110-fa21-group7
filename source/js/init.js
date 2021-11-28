@@ -14,22 +14,37 @@ async function init() {
  * @constructor
  */
 function initializeStorage() {
+  if (localStorage.getItem("currID") === null)
+    localStorage.setItem("currID", 1);
+  if (localStorage.getItem("query") === null) localStorage.setItem("query", "");
+  const recipeObj = [
+    "storedRecipes",
+    "userRecipes",
+    "curatedRecipes",
+    "resultRecipes",
+  ];
+  let exampleFlag = false;
+  for (const obj of recipeObj) {
+    if (localStorage.getItem(obj) === null) {
+      exampleFlag = true;
+      localStorage.setItem(obj, JSON.stringify({}));
+    }
+  }
   console.log("Initializing recipes object");
-  let userRecipes = localStorage.getItem("userRecipes");
+  return exampleFlag;
   // const APIRecipes = localStorage.getItem("APIRecipes");
-  const storedRecipes = localStorage.getItem("storedRecipes");
-  if (storedRecipes === null) {
-    localStorage.setItem("storedRecipes", JSON.stringify({}));
-  }
-  if (userRecipes === null) {
-    userRecipes = {};
-    console.log("Recipes not initialized in localStorage cache");
-    // Good practice to use brackets to ensure proper type
-    userRecipes["currID"] = 1;
-    localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
-    return true;
-  }
-  return false;
+  // if (localStorage.getItem("storedRecipes") === null) {
+  //   storedRecipes = {};
+  // }
+  // if (localStorage.getItem("userRecipes") === null) {
+  //   userRecipes = {};
+  //   console.log("Recipes not initialized in localStorage cache");
+  //   // Good practice to use brackets to ensure proper type
+  //   userRecipes["currID"] = 1;
+  //   localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
+  //   return true;
+  // }
+  // return false;
 }
 
 /**
@@ -37,9 +52,10 @@ function initializeStorage() {
  * if we do not want to save this example, we can commet out addExamples in init()
  */
 function addExamples() {
-  let userRecipes = localStorage.getItem("userRecipes");
-  userRecipes = JSON.parse(userRecipes);
+  const userRecipes = JSON.parse(localStorage.getItem("userRecipes"));
+  // userRecipes = JSON.stringify(userRecipes);
   console.log("add examples");
+  console.log(userRecipes);
   const ex1 = {
     "img-url": "https://spoonacular.com/recipeImages/75081-312x231.jpg",
     title: "Beef Wellington",
@@ -115,7 +131,6 @@ function addExamples() {
   userRecipes["1"] = ex1;
   userRecipes["2"] = ex2;
   userRecipes["currID"] = 3;
-  console.log(userRecipes);
   // update
   localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
   // after this line there should be 2 recipes examples saved in local storage

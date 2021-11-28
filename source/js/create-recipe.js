@@ -8,16 +8,13 @@ window.addEventListener("DOMContentLoaded", init);
 
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
-  getRecipes();
+  userRecipes = localStorage.getItem("userRecipes");
+  userRecipes = JSON.parse(userRecipes);
   checkID();
   setFormListener();
 }
-function getRecipes() {
-  userRecipes = localStorage.getItem("userRecipes");
-  userRecipes = JSON.parse(userRecipes);
-}
-// TODO: Finish populateForm
-/** Populate forms by ID
+
+/** Populate forms by ID this is for update recipe form
  * @param {int} id
  */
 async function populateForm(id) {
@@ -85,7 +82,7 @@ async function populateForm(id) {
   }
 }
 
-/** Checks if ID is in localStorage */
+/** Checks if ID is in url or not, if yes means we need to update current recipe */
 function checkID() {
   const queryString = window.location.search;
   // console.log(queryString);
