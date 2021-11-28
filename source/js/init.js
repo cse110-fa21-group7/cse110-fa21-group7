@@ -15,7 +15,7 @@ async function init() {
  */
 function initializeStorage() {
   if (localStorage.getItem("currID") === null)
-    localStorage.setItem("currID", 1);
+    localStorage.setItem("currID", 0);
   if (localStorage.getItem("query") === null) localStorage.setItem("query", "");
   const recipeObj = [
     "storedRecipes",
@@ -32,19 +32,6 @@ function initializeStorage() {
   }
   console.log("Initializing recipes object");
   return exampleFlag;
-  // const APIRecipes = localStorage.getItem("APIRecipes");
-  // if (localStorage.getItem("storedRecipes") === null) {
-  //   storedRecipes = {};
-  // }
-  // if (localStorage.getItem("userRecipes") === null) {
-  //   userRecipes = {};
-  //   console.log("Recipes not initialized in localStorage cache");
-  //   // Good practice to use brackets to ensure proper type
-  //   userRecipes["currID"] = 1;
-  //   localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
-  //   return true;
-  // }
-  // return false;
 }
 
 /**
@@ -130,8 +117,8 @@ function addExamples() {
   };
   userRecipes["1"] = ex1;
   userRecipes["2"] = ex2;
-  userRecipes["currID"] = 3;
   // update
   localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
+  localStorage.setItem("currID", 2);
   // after this line there should be 2 recipes examples saved in local storage
 }
