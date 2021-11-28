@@ -43,8 +43,8 @@ app.use(
   express.static(path.join(__dirname, "source/html/update-recipe.html"))
 );
 // Routes
-app.use("/search", require("./router"));
-app.use("/create/image", require("./router"));
+app.use("/search", require("./routes/recipe"));
+app.use("/create", require("./routes/create"));
 
 // Error handler middleware
 // app.use(errorHandler);

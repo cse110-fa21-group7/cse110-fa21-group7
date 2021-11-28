@@ -1,5 +1,4 @@
 // read-recipe.js
-
 let recipe = {};
 let recipeID;
 window.addEventListener("DOMContentLoaded", init);
@@ -7,11 +6,8 @@ window.addEventListener("DOMContentLoaded", init);
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
   getID();
-  
   setButtonListener();
 }
-
-
 
 /**
  * Checks if ID is in localStorage,return it back
@@ -25,23 +21,21 @@ function getID() {
   if (id) {
     recipeID = id;
     fetchFullRecipe(recipeID);
-    
-  }
-  else console.error("open recipe page incorrectly!!");
+  } else console.error("open recipe page incorrectly!!");
 }
 
 /**
  * Gets full recipe from Spoonacular API based on ID
- * @param {String} id 
+ * @param {String} id
  * @return {null}
  */
 async function fetchFullRecipe(id) {
-  const storedRecipes = JSON.parse(localStorage.getItem('storedRecipes'));
+  const storedRecipes = JSON.parse(localStorage.getItem("storedRecipes"));
   if (id in storedRecipes) {
     recipe = storedRecipes[id];
   } else {
-    console.log('fetching full recipe');
-    const url = `/search/recipe?id=${id}`;
+    console.log("fetching full recipe");
+    const url = `/search/recipeId?id=${id}`;
     const res = await fetch(url); // return back the reicpes object from spoonacular
     console.log(res);
     const data = await res.json();
@@ -53,29 +47,27 @@ async function fetchFullRecipe(id) {
       alert("Invalid API Key");
       return;
     }
-    console.log('recipe:');
+    console.log("recipe:");
     console.log(data);
     recipe = data;
-    storedRecipes[id] = data;  
-    localStorage.setItem('storedRecipes',  JSON.stringify(storedRecipes));
+    storedRecipes[id] = data;
+    localStorage.setItem("storedRecipes", JSON.stringify(storedRecipes));
   }
-  populateHTML();  
-} 
+  populateHTML();
+}
 /**
  * Helper function, removes HTML tags from recipe summary
- * @param {String} str 
- * @return {String} 
+ * @param {String} str
+ * @return {String}
  */
 function removeTags(str) {
-  if ((str===null) || (str===''))
-      return false;
-  else
-      str = str.toString();
-        
-  // Regular expression to identify HTML tags in 
-  // the input string. Replacing the identified 
+  if (str === null || str === "") return false;
+  else str = str.toString();
+
+  // Regular expression to identify HTML tags in
+  // the input string. Replacing the identified
   // HTML tag with a null string.
-  return str.replace( /(<([^>]+)>)/ig, '');
+  return str.replace(/(<([^>]+)>)/gi, "");
 }
 
 /** Populate forms by ID
@@ -91,10 +83,10 @@ function populateHTML() {
 
   // add Description
   let description;
-  if ('description' in recipe) {
-    description = recipe['description'];
-  } else if ('summary' in recipe) {
-    description = removeTags(recipe['summary']).substring(0,300) + '...';
+  if ("description" in recipe) {
+    description = recipe["description"];
+  } else if ("summary" in recipe) {
+    description = removeTags(recipe["summary"]).substring(0, 300) + "...";
   }
   document.getElementById("recipeDescription").innerText = description;
 
@@ -116,8 +108,10 @@ function populateHTML() {
     } else {
       costSpan.innerText = `Cost: $${recipe["totalCost"]}`;
     }
-  } else if ('pricePerServing' in recipe) {
-    costSpan.innerText = `Cost: $${(recipe['pricePerServing'] / 100).toFixed(2)}`;
+  } else if ("pricePerServing" in recipe) {
+    costSpan.innerText = `Cost: $${(recipe["pricePerServing"] / 100).toFixed(
+      2
+    )}`;
   } else {
     costSpan.innerText = "Cost: Bout tree fiddy";
   }
@@ -126,8 +120,8 @@ function populateHTML() {
   const timeSpan = timeDiv.getElementsByTagName("span")[1];
   if ("time" in recipe) {
     timeSpan.innerText = recipe["time"];
-  } else if ('readyInMinutes' in recipe) { 
-    timeSpan.innerText = recipe['readyInMinutes'];
+  } else if ("readyInMinutes" in recipe) {
+    timeSpan.innerText = recipe["readyInMinutes"];
   } else {
     timeSpan.innerText = "Ready before you know it";
   }
@@ -135,7 +129,7 @@ function populateHTML() {
   // add image
   const img = document.getElementById("recipeImg");
 
-  if ('img-url' in recipe) {
+  if ("img-url" in recipe) {
     const url = recipe["img-url"];
     if (url.includes("https://i.imgur.com")) {
       // Tell imgur to resize image to medium (max 320x320) in case of large src image
@@ -148,21 +142,22 @@ function populateHTML() {
       // Old img.src code
       img.src = url;
     }
-  } else if ('image' in recipe) {
-    img.src = recipe['image'];
+  } else if ("image" in recipe) {
+    img.src = recipe["image"];
   } else {
     // No image uploaded, set default
     img.src = "../img/default.png";
   }
-  
 
   const ingList = document.getElementById("ingredient-list");
-  if ('ingredients' in recipe) {
+  if ("ingredients" in recipe) {
     for (const ingredient of recipe["ingredients"]) {
       const eachIng = document.createElement("div");
       eachIng.classList.add("each-ingredient");
       const label = document.createElement("label");
-      label.innerText = `${ingredient["name"]} ${(ingredient["amount"]).toFixed(2)}`;
+      label.innerText = `${ingredient["name"]} ${ingredient["amount"].toFixed(
+        2
+      )}`;
       label.classList.add("container");
       const input = document.createElement("input");
       input.type = "checkbox";
@@ -172,13 +167,14 @@ function populateHTML() {
       eachIng.appendChild(label);
       ingList.appendChild(eachIng);
     }
-
-  } else if ('extendedIngredients' in recipe) {
-    for (const ingredient of recipe['extendedIngredients']) {
+  } else if ("extendedIngredients" in recipe) {
+    for (const ingredient of recipe["extendedIngredients"]) {
       const eachIng = document.createElement("div");
       eachIng.classList.add("each-ingredient");
       const label = document.createElement("label");
-      label.innerText = `${ingredient["name"]} ${(ingredient["amount"]).toFixed(2)}`;
+      label.innerText = `${ingredient["name"]} ${ingredient["amount"].toFixed(
+        2
+      )}`;
       label.classList.add("container");
       const input = document.createElement("input");
       input.type = "checkbox";
@@ -189,11 +185,11 @@ function populateHTML() {
       ingList.appendChild(eachIng);
     }
   }
-  
+
   // add step list
   const stepList = document.getElementById("steps-list");
   const ul = document.createElement("ol");
-  if ('steps' in recipe) {
+  if ("steps" in recipe) {
     for (const step of recipe["steps"]) {
       ul.classList.add("orderList");
       const li = document.createElement("li");
@@ -201,18 +197,15 @@ function populateHTML() {
       ul.appendChild(li);
     }
     stepList.appendChild(ul);
-
-  } else if ('analyzedInstructions' in recipe) {
-    for (const step of recipe["analyzedInstructions"][0]['steps']) {
+  } else if ("analyzedInstructions" in recipe) {
+    for (const step of recipe["analyzedInstructions"][0]["steps"]) {
       ul.classList.add("orderList");
       const li = document.createElement("li");
-      li.innerHTML = step['step'];
+      li.innerHTML = step["step"];
       ul.appendChild(li);
     }
     stepList.appendChild(ul);
-
   }
-  
 }
 
 /** Sets event listeners */
@@ -225,4 +218,3 @@ function setButtonListener() {
 
   return;
 }
-
