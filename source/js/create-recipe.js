@@ -3,8 +3,6 @@ const MAX_INGREDIENTS = 20;
 const MAX_STEPS = 10;
 
 let userRecipes; // save local storage recipes
-// let recipes = {};
-const recipe = {};
 let formdata = new FormData();
 window.addEventListener("DOMContentLoaded", init);
 
@@ -22,14 +20,69 @@ function getRecipes() {
 /** Populate forms by ID
  * @param {int} id
  */
-function populateForm(id) {
+async function populateForm(id) {
+  let recipe;
   if (id in userRecipes) {
-    const recipe = userRecipes[id];
-    console.log(recipe["title"]);
+    recipe = userRecipes[id];
+    console.log(`Found recipe: ${recipe["title"]}`);
   } else {
     console.log(`ID: ${id} does not exist in recipes`);
+    return;
   }
-  document.getElementById("recipeTitle").innerText = "test";
+  document.getElementById("recipeTitle").value = recipe["title"];
+  document.getElementById("recipeDescription").value = recipe["description"];
+  document.getElementById("recipeCost").value = recipe["totalCost"];
+  const img = document.createElement("img");
+  img.src = recipe["img-url"];
+  img.height = "200";
+  document.getElementById("img-spot").append(img);
+
+  const ingredients = recipe["ingredients"];
+  const ingredientsDiv = document.getElementById("ingredients");
+
+  // Get template ingredient element
+  const ingElemTemplate = ingredientsDiv
+    .getElementsByClassName("ingredient")[0]
+    .cloneNode(true);
+
+  // Clear unfilled elements
+  const ingredientElems = ingredientsDiv.getElementsByClassName("ingredient");
+  while (ingredientElems.length > 0) {
+    ingredientElems[0].remove();
+  }
+
+  // Populate ingredientsDiv with ingredient elements using recipe data
+  for (let i = 0; i < ingredients.length; i++) {
+    const ingElem = ingElemTemplate.cloneNode(true);
+    ingElem.querySelector(
+      ".ingredient-name > .name-label"
+    ).innerText = `Ingredient ${i + 1}`;
+    ingElem.querySelector(".ingredient-name > input").value =
+      ingredients[i].name;
+    ingElem.querySelector(".ingredient-amount > input").value =
+      ingredients[i].amount;
+    ingredientsDiv.appendChild(ingElem);
+  }
+
+  const steps = recipe["steps"];
+  const stepsDiv = document.getElementById("steps");
+
+  // Get template step element
+  const stepElemTemplate = stepsDiv.getElementsByClassName("step-sec")[0];
+
+  // Clear unfilled elements
+  const stepsElems = stepsDiv.getElementsByClassName("step-sec");
+  while (stepsElems.length > 0) {
+    stepsElems[0].remove();
+  }
+
+  // Populate stepsDiv with step elements using recipe data
+  for (let i = 0; i < steps.length; i++) {
+    const stepElem = stepElemTemplate.cloneNode(true);
+    stepElem.querySelector(".recipeStep-label").innerText = `Step ${i + 1}`;
+    stepElem.querySelector("textarea").value = steps[i];
+    stepsDiv.appendChild(stepElem);
+  }
 }
 
 /** Checks if ID is in localStorage */
