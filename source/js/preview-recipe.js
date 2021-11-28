@@ -34,9 +34,10 @@ async function fetchFullRecipe(id) {
   if (id in storedRecipes) {
     recipe = storedRecipes[id];
   } else {
-    console.log("fetching full recipe");
+    console.log("Fetching full recipe");
     const url = `/search/recipeId?id=${id}`;
-    const res = await fetch(url); // return back the reicpes object from spoonacular
+    // Return the recipe object from spoonacular
+    const res = await fetch(url); 
     console.log(res);
     const data = await res.json();
     if (data.cod === "404") {
@@ -47,14 +48,46 @@ async function fetchFullRecipe(id) {
       alert("Invalid API Key");
       return;
     }
-    console.log("recipe:");
-    console.log(data);
+    console.log(`Recipe:\n${data}`);
     recipe = data;
-    storedRecipes[id] = data;
+    storedRecipes[id] = spoonToASAP(data);
     localStorage.setItem("storedRecipes", JSON.stringify(storedRecipes));
   }
   populateHTML();
 }
+
+/**
+ * Converts Spoonacular recipe object into ASAP recipe object
+ * @param {Object} data 
+ * @return {Object}
+ */
+function spoonToASAP(data) {
+  asap = {};
+  asap["title"] = data["title"];
+  asap["description"] = removeTags(recipe["summary"]).substring(0, 300) + "...";
+  asap["servings"] = data["servings"];
+  asap["totalCost"] = (data["totalCost"] / 100).toFixed(2);
+  asap["time"] = data["readyInMinutes"];
+  asap["image"] = data["image"];
+
+  ingredients = [];
+  for (const dataIng of data["extendedIngredients"]) {
+    ingredient = {};
+    ingredient["name"] = dataIng["name"];
+    ingredient["amount"] = dataIng["amount"].toFixed(2);
+    ingredients.push(ingredient);
+  }
+
+  steps = [];
+  for (const dataStep of data["analyzedInstructions"][0]["steps"]) {
+    const step = dataStep["step"];
+    steps.push(step);
+  }
+
+  return asap;
+}
+
+
 /**
  * Helper function, removes HTML tags from recipe summary
  * @param {String} str
@@ -69,6 +102,7 @@ function removeTags(str) {
   // HTML tag with a null string.
   return str.replace(/(<([^>]+)>)/gi, "");
 }
+
 
 /** Populate forms by ID
  * @param {int} id

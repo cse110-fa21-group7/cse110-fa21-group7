@@ -15,6 +15,8 @@
   <!-- load & create recipe card to cook book -->
   <script src="js/init.js" type="module"></script>
   <script src="js/search-recipe.js" type="module"></script>
+  <script src="js/home-page.js" type="module"></script>
+  <script src="../js/recipe-card.js" type="module"></script>
 </head>
 
 <body>
@@ -40,17 +42,15 @@
       </div>
     </nav>
   </header>
-
-  <section class="container section--main-container">
-
+  <div class="title-div">
     <div id="page-title">ASAP Recipe</div>
-    <!-- Search -->
+    <p class="search-introduction">Search and save your favorite recipes.</p>
+  </div>
+  <section class="recipe-card-containe">
 
+    <!-- Search bar-->
     <section class="search">
       <div class="search-container">
-        <p class="search-introduction">
-          Search and save your favorite recipes.
-        </p>
         <form id="form">
           <input type="text" id="query" name="q" 
           placeholder="Enter your favorite ingredient...">
@@ -59,22 +59,18 @@
           </button>
         </form>
       </div>
-  
-
-  
-  
+    </section>
+    <!-- cookbook -->
+    <section class="wrapper cookbook">
   
     </section>
-
     <!-- Search results -->
-    <section class="wrapper" id="results">
+    <section class="wrapper results">
   
     </section>
-
-
 
     <!-- Curated list -->
-    <section class="wrapper" id="curated-list"> 
+    <section class="wrapper curatedList"> 
       <div class="card">
         <div class="card__body">
           <img

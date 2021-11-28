@@ -1,11 +1,22 @@
+/**
+ * Get recipes from localStorage
+ *
+ */
 class RecipeCard extends HTMLElement {
+  /**
+   * Get recipes from localStorage
+   *
+   */
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
   }
-
+  /**
+   * Get recipes from localStorage
+   * @param {HTMLElement} data
+   */
   set data(data) {
-    console.log(data);
+    // console.log(data);
     const styleElem = document.createElement("style");
     const styles = `
 
@@ -102,19 +113,18 @@ class RecipeCard extends HTMLElement {
 
     styleElem.innerHTML = styles;
     const cardDiv = document.createElement("div");
-    cardDiv.classList.add('card');
+    cardDiv.classList.add("card");
     const cardBody = document.createElement("div");
-    cardBody.classList.add('card_body');
-    
+    cardBody.classList.add("card_body");
+
     this.shadowRoot.append(styleElem, cardDiv);
     cardDiv.appendChild(cardBody);
-    
 
     // add img
     const img = document.createElement("img");
     img.setAttribute("src", data["img-url"]);
-    img.setAttribute("alt", data['title']);
-    img.classList.add('card__image');
+    img.setAttribute("alt", data["title"]);
+    img.classList.add("card__image");
     cardBody.appendChild(img);
 
     // add title
@@ -124,45 +134,46 @@ class RecipeCard extends HTMLElement {
     cardBody.appendChild(title);
 
     // add info list
-    const ul = document.createElement('ul');
-    ul.classList.add('info-row');
-    // 
+    const ul = document.createElement("ul");
+    ul.classList.add("info-row");
+    //
 
     // li.append(i, span)
-    ul.appendChild(addList('38 min'));
+    ul.appendChild(addList("38 min"));
     // add kcal
-    ul.appendChild(addList('318 kcal'));
-
+    ul.appendChild(addList("318 kcal"));
     // add total cost
     let price;
     // assume the user enters in terms of dollars - append a dollar sign to front
-    if (data['img-url'].includes('https://spoonacular.com')){
-    price = '$' + (data["totalCost"]/100).toFixed(2);
-    }
-    else{
-    price = '$' + data["totalCost"];
+    if (data["img-url"].includes("https://spoonacular.com")) {
+      price = "$" + (data["totalCost"] / 100).toFixed(2);
+    } else {
+      price = "$" + data["totalCost"];
     }
     ul.appendChild(addList(price));
     cardBody.appendChild(ul);
-
   }
 }
 customElements.define("recipe-card", RecipeCard);
-
+/**
+ * Get recipes from localStorage
+ * @param {string} value
+ * @return {HTMLElement}
+ */
 function addList(value) {
-  // symbol does not work need to ask Kunal how to fix 
-    // const i = document.createElement('i');
-    // const span = document.createElement('span');
-    // span.innerHTML = '38 min'
+  // symbol does not work need to ask Kunal how to fix
+  // const i = document.createElement('i');
+  // const span = document.createElement('span');
+  // span.innerHTML = '38 min'
 
-  const li = document.createElement('li');
-    const i = document.createElement('i');
+  const li = document.createElement("li");
+  const i = document.createElement("i");
 
-    i.classList.add('fa');
-    i.classList.add('fa-clock-o');
-    i.ariaHidden = 'true';
-  
-  const span = document.createElement('span');
+  i.classList.add("fa");
+  i.classList.add("fa-clock-o");
+  i.ariaHidden = "true";
+
+  const span = document.createElement("span");
   span.innerHTML = value;
 
   li.appendChild(i);

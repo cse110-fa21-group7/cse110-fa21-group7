@@ -23,9 +23,14 @@ app.use(express.static(path.join(__dirname, "source")));
 
 app.use(
   "/cookbook",
-  express.static(path.join(__dirname, "source/html/cook-book.html"))
+  // express.static(path.join(__dirname, "source/html/cook-book.html"))
+  express.static(path.join(__dirname, "source"))
 );
-
+app.use(
+  "/result",
+  // express.static(path.join(__dirname, "source/html/cook-book.html"))
+  express.static(path.join(__dirname, "source"))
+);
 app.use(
   "/create",
   express.static(path.join(__dirname, "source/html/create-recipe.html"))
