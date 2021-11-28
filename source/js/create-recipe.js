@@ -126,7 +126,7 @@ file.addEventListener("change", (e) => {
   // if user did not upload image, just return this back
   if (e.target.files[0] === undefined) return;
   formdata.append("image", e.target.files[0]);
-  fetch("create/image/upload", {
+  fetch("create/image", {
     method: "post",
     body: formdata,
   })

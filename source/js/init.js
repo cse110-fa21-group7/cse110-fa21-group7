@@ -1,4 +1,3 @@
-const recipes = {};
 window.addEventListener("DOMContentLoaded", init);
 
 /**
@@ -8,7 +7,6 @@ async function init() {
   if (initializeStorage()) {
     addExamples();
   }
-  checkID();
 }
 /** Initializes recipes object from localStorage cache */
 /**
@@ -17,40 +15,30 @@ async function init() {
  */
 function initializeStorage() {
   console.log("Initializing recipes object");
-  const userRecipes = localStorage.getItem("userRecipes");
+  let userRecipes = localStorage.getItem("userRecipes");
   // const APIRecipes = localStorage.getItem("APIRecipes");
   const storedRecipes = localStorage.getItem("storedRecipes");
   if (storedRecipes === null) {
     localStorage.setItem("storedRecipes", JSON.stringify({}));
   }
   if (userRecipes === null) {
+    userRecipes = {};
     console.log("Recipes not initialized in localStorage cache");
     // Good practice to use brackets to ensure proper type
-    recipes["currID"] = 1;
-    localStorage.setItem("userRecipes", JSON.stringify(recipes));
+    userRecipes["currID"] = 1;
+    localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
     return true;
   }
   return false;
 }
 
-/** Checks if ID is in localStorage */
-function checkID() {
-  const queryString = window.location.search;
-  console.log(queryString);
-  const urlParams = new URLSearchParams(queryString);
-  const id = urlParams.get("id");
-  if (id === null) {
-    console.log("No id parameter");
-    return;
-  }
-  console.log(`id: ${id}`);
-  populateForm(id);
-}
 /**
  * I will add 2 recipe object to our local storge to help backend debug cook book and read recipe
  * if we do not want to save this example, we can commet out addExamples in init()
  */
 function addExamples() {
+  let userRecipes = localStorage.getItem("userRecipes");
+  userRecipes = JSON.parse(userRecipes);
   console.log("add examples");
   const ex1 = {
     "img-url": "https://spoonacular.com/recipeImages/75081-312x231.jpg",
