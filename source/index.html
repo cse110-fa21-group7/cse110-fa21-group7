@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/home-page.css" />
+  <link rel="stylesheet" href="css/read-recipe.css" />
   <!-- load & create recipe card to cook book -->
   <!-- <script src="js/init.js" type="module"></script> -->
   <script src="js/search-recipe.js" type="module"></script>
@@ -46,7 +47,7 @@
     <div id="page-title">ASAP Recipe</div>
     <p class="search-introduction">Search and save your favorite recipes.</p>
   </div>
-  <section class="recipe-card-container">
+  <section class="recipe-card-container shown">
 
     <!-- Search bar-->
     <section class="search">
@@ -212,6 +213,42 @@
       </div>
       -->
     </section>
+  </section>
+  <section class="recipe-read-container">
+    <div class="box">
+    <article id="recipeDetails">
+      <div class="recipe-card-header-container">
+        <h1 id="recipeTitle">Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs</h1>
+        <p id="recipeDescription">The recipe Beef Wellington</p>
+        <button type="button" class="btn btn-primary" id="Edit">Edit</button>
+        <button type="button" class="btn btn-danger" id="Delete">Delete</button>
+      </div>
+      <div class="recipe-details-container">
+        <div class="flex-container">
+          <div class="flex-child img">
+            <div class="flex-child img"><img width="300" height="300" src="https://i.imgur.com/oDNCfFS.png" id="recipeImg" alt="Image"></div>
+          </div>
+          <div class="flex-child detail">
+            <div class="detail-item serving">
+              <span>&#127859</span><span>Servings: 1</span>
+            </div>
+            <div class="detail-item cost">
+              <span>&#128176</span><span>Cost: $5</span>
+            </div>
+            <div class="detail-item time">
+              <span>&#9200</span><span>ReadyInMinutes: 30 </span>
+            </div>
+          </div>
+        </div>
+        <h2 id="ingredient">Ingredient</h2>
+        <div id="ingredient-list"></div>
+        <h2 id="steps">Steps</h2>
+        <!-- back end should make each steps list like this model -->
+        <div id="steps-list"></div>
+      </div>
+    </article>
+    </div>
+
   </section>
 </body>
 
