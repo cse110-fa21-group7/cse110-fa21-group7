@@ -59,7 +59,7 @@ function populateHTML() {
   const servingDiv = detailDiv.querySelector(".serving");
   const servingSpan = servingDiv.getElementsByTagName("span")[1];
   if ("servings" in recipe) {
-    servingSpan.innerText = recipe["servings"];
+    servingSpan.innerText = `Servings: ${recipe["servings"]}`;
   } else {
     servingSpan.innerText = "Servings: 1";
   }
@@ -68,11 +68,7 @@ function populateHTML() {
   const costSpan = costDiv.getElementsByTagName("span")[1];
   if ("totalCost" in recipe) {
     // appends dollar sign and either does division to get cents -> dollars if spoonacular or just appends price
-    if (recipe["image"].includes("https://spoonacular.com")) {
-      costSpan.innerText = `Cost: $${(recipe["totalCost"] / 100).toFixed(2)}`;
-    } else {
-      costSpan.innerText = `Cost: $${recipe["totalCost"]}`;
-    }
+    costSpan.innerText = `Cost: $${recipe["totalCost"]}`;
   } else {
     costSpan.innerText = "Cost: Bout tree fiddy";
   }
@@ -80,7 +76,7 @@ function populateHTML() {
   const timeDiv = detailDiv.querySelector(".time");
   const timeSpan = timeDiv.getElementsByTagName("span")[1];
   if ("time" in recipe) {
-    timeSpan.innerText = recipe["time"];
+    timeSpan.innerText = recipe["time"] + " minutes";
   } else {
     timeSpan.innerText = "Ready before you know it";
   }
@@ -88,14 +84,14 @@ function populateHTML() {
   // add image
   const img = document.getElementById("recipeImg");
 
-  const url = recipe["img-url"];
-  if (!("img-url" in recipe)) {
+  const url = recipe["image"];
+  if (!("image" in recipe)) {
     // No image uploaded, set default
     img.src = "../img/default.png";
   } else if (url.includes("https://i.imgur.com")) {
     // Tell imgur to resize image to medium (max 320x320) in case of large src image
     // Saves bandwidth
-    const imgUrl = recipe["img-url"].split(".");
+    const imgUrl = recipe["image"].split(".");
     imgUrl[imgUrl.length - 2] = imgUrl.at(-2) + "m";
     const imgUrlM = imgUrl.join(".");
     img.src = imgUrlM;
