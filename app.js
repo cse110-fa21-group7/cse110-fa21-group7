@@ -33,7 +33,11 @@ app.use(
 );
 // app.use("/read", express.static(path.join(__dirname, "source")));
 app.use(
-  "/read",
+  "/read/bookID",
+  express.static(path.join(__dirname, "source/html/read-recipe.html"))
+);
+app.use(
+  "/read/fetchID",
   express.static(path.join(__dirname, "source/html/read-recipe.html"))
 );
 app.use(

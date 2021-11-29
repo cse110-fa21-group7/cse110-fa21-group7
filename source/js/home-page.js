@@ -76,8 +76,14 @@ function recipeCards() {
  */
 function readRecipe(recipeCard, id) {
   recipeCard.addEventListener("click", (e) => {
-    console.log(`readRecipe: ${id} clicked`);
-    if (page === "results") {
+    let url = `/read/fetchID?id=${id}`;
+    if (page === "curatedList") {
+      console.log("curatedList click");
+      alert("readRecipe curatedList preview");
+
+    } else if (page === "cookbook") {
+      url = `/read/bookID?id=${id}`;
+    } else if (page === "results") {
       // export preview-recipe.js fetchFullRecipe function
       // after function back, recipe info should saved in storedRecipes
       // then we can use read-recipe.js to read recipe details
@@ -87,15 +93,8 @@ function readRecipe(recipeCard, id) {
       // console.log(recipeCard);
       console.log(id);
       alert('readRecipe results page');
-
-    } else if (page === "curatedList") {
-      console.log("curatedList click");
-      alert("readRecipe curatedList preview");
-    } else if (page === "cookbook") {
-      console.log("cookbook click");
-      alert("readRecipe cookbook page");
     }
-    const url = `/read?${id}`;
+
     window.location.href = url;
   });
 }
