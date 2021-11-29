@@ -2,28 +2,31 @@
 
 let userRecipes = {};
 let recipeID;
+let page;
 window.addEventListener("DOMContentLoaded", init);
+const editButton = document.getElementById("Edit");
+const deleteButton = document.getElementById("Delete");
 
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
-  getRecipes();
+  userRecipes = localStorage.getItem("userRecipes");
+  userRecipes = JSON.parse(userRecipes);
   getID();
   populateHTML();
   setButtonListener();
 }
 
 /**
- * Populates recipes object from localStorage
- */
-function getRecipes() {
-  userRecipes = localStorage.getItem("userRecipes");
-  userRecipes = JSON.parse(userRecipes);
-}
-
-/**
  * Checks if ID is in localStorage,return it back
  */
 function getID() {
+  const url = window.location.href;
+  if (url.includes("rid")) {
+    console.log("hello");
+    editButton.innerHTML = "add";
+    deleteButton.style.display = "none";
+    page = "result";
+  }
   const queryString = window.location.search;
   // console.log(queryString);
   const urlParams = new URLSearchParams(queryString);
@@ -123,21 +126,26 @@ function populateHTML() {
   }
   stepList.appendChild(ul);
 }
-
-/** Sets event listeners */
-function setButtonListener() {
-  const editButton = document.getElementById("Edit");
-  editButton.addEventListener("click", (e) => {
-    location.href = `/create?id=${recipeID}`;
-  });
-
-  const deleteButton = document.getElementById("Delete");
-  deleteButton.addEventListener("click", (e) => {
-    delete userRecipes[recipeID];
-    localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
-    window.alert("successfully deleted the recipe!");
-    window.location.href = "/cookbook";
-  });
-
-  return;
+/**
+ * Populates recipes object from localStorage
+ */
+function addRecipe() {
+  const storedRecipes = JSON.parse(localStorage.getItem("storedRecipes"));
+  userRecipes[recipeID] = storedRecipes[recipeID];
+  localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
 }
+/** Sets event listeners */
+editButton.addEventListener("click", () => {
+  if (page === "result") {
+    // add current recipe to cookbook
+    addRecipe();
+  }
+  location.href = `/update?id=${recipeID}`;
+});
+
+deleteButton.addEventListener("click", (e) => {
+  delete userRecipes[recipeID];
+  localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
+  window.alert("successfully deleted the recipe!");
+  window.location.href = "/cookbook";
+});
