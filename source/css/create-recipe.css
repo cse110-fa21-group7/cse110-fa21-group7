@@ -15,8 +15,8 @@ label {
 
 h2 {
   text-align: center;
-  font-size: 36px;
-  display: block;
+  font-size: 44px;
+  font-weight: bold;
 }
 
 input {
@@ -64,7 +64,7 @@ span {
   height: 35px;
   border-radius: 5px;
   color: #fff;
-  background: #57abf2;
+  background: #9ed1fc;
 }
 
 .btn-remove {
@@ -73,7 +73,7 @@ span {
   height: 35px;
   border-radius: 5px;
   color: #fff;
-  background: crimson;
+  background: rgb(211, 93, 116);
 }
 
 .btn-submit {
@@ -81,14 +81,20 @@ span {
   height: 35px;
   border-radius: 5px;
   color: #fff;
-  background: #86c7a7;
+  background: #a5d4bd;
 }
 
-.btn-add:hover,
-.btn-submit:hover,
+.btn-add:hover{
+  cursor: pointer;
+  background: #3c9eee;
+}
+.btn-submit:hover{
+  cursor: pointer;
+  background: #28d17c;
+}
 .btn-remove:hover {
   cursor: pointer;
-  background: rgb(243, 150, 154);
+  background: crimson;
 }
 
 .invalid-feedback {
