@@ -88,7 +88,7 @@ function setSearchListener() {
     */
 }
 
-let cardTemplate = null;
+// let cardTemplate = null;
 
 /**
  * Populates index.html results section with recipe card elements
