@@ -1,11 +1,13 @@
 window.addEventListener("DOMContentLoaded", init);
-const recipeData = {};
+// const recipeData = {};
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
+  await init.init();
+  console.log('home-page init');
   const queryString = window.location.href;
   console.log(queryString);
-  // default is home page and curatedRecipes
-  let page = "home";
+  // default is home page with search and curated recipes
+  let page = "curatedList";
   // switch recipeObject depends on which page we want to show
   let recipeObject = JSON.parse(localStorage.getItem("curatedRecipes"));
   // if we want to show cookbook, the recipeObject should be userRecipes which saved in localStorge
@@ -30,17 +32,17 @@ function makePage(page) {
   // all sections we need to deal with
   // const secitonList = ["search", "cookbook", "results", "curatedList"];
   // only cookbook page need to hide this section
-  document.querySelector(".recipe-card-containe").classList.add("shown");
+  document.querySelector(".recipe-card-container").classList.add("shown");
 
   let showList;
   let hideList;
-  if (page === "home") {
+  if (page === "curatedList") {
     showList = ["search", "curatedList"];
     hideList = ["cookbook", "results"];
-    // document.querySelector(".recipe-card-containe").classList.add("shown");
+    // document.querySelector(".recipe-card-container").classList.add("shown");
   } else if (page === "cookbook") {
     showList = ["cookbook"];
-    // only cookbook need to hide the whole recipe-card-containe
+    // only cookbook need to hide the whole recipe-card-container
     hideList = ["search", "results", "curatedList"];
   } else if (page === "results") {
     showList = ["search", "results"];
@@ -62,6 +64,7 @@ function makePage(page) {
  * @param {JSON} recipeObject
  */
 function recipeCards(page, recipeObject) {
+  console.log(`recipeCards: ${page}`);
   const section = document.querySelector(`.${page}`);
   // loop whole local storge
   console.log(recipeObject);
