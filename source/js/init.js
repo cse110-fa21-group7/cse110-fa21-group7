@@ -10,7 +10,7 @@ export async function init() {
     localStorage.setItem("currID", 0);
   if (localStorage.getItem("query") === null) localStorage.setItem("query", "");
   if (localStorage.getItem("curatedRecipes") === null) await addCurated();
-  const recipeObj = ["storedRecipes", "userRecipes", "resultRecipes"];
+  const recipeObj = ["userRecipes", "resultRecipes"];
   // let exampleFlag = false;
   for (const obj of recipeObj) {
     if (localStorage.getItem(obj) === null) {
@@ -119,5 +119,6 @@ async function addCurated() {
     })
     .then((json) => {
       localStorage.setItem("curatedRecipes", JSON.stringify(json));
+      localStorage.setItem("storedRecipes", JSON.stringify(json));
     });
 }
