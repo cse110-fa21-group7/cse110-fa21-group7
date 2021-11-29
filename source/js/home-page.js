@@ -1,11 +1,13 @@
 import { init } from "./init.js";
+// import { populateRead } from "./read-recipe.js";
 window.addEventListener("DOMContentLoaded", currInit);
 let recipeObject;
 let page;
 /** Initialize function, begins all of the JS code in this file */
 async function currInit() {
   await init(); // wait for init local storage
-  makePage(); // make html page for current page
+  makePage();
+  recipeCards();
 }
 
 /**
@@ -13,17 +15,6 @@ async function currInit() {
  */
 function makePage() {
   const queryString = window.location.href;
-  // this is recipe read page, need to convert to SPA
-  if (queryString.includes("read")) {
-    const cardContainer = document.querySelector(".recipe-card-container");
-    if (cardContainer.classList.contains("shown"))
-      cardContainer.classList.remove("shown");
-    // recipe read need to hide recipe-read-container
-    const readContainer = document.querySelector(".recipe-read-container");
-    if (!readContainer.classList.contains("shown"))
-      readContainer.classList.add("shown");
-    return;
-  }
   console.log(queryString);
   // default is home page is the curated recipes section
   page = "curatedList";
@@ -48,16 +39,8 @@ function makePage() {
     console.log("result");
     recipeObject = JSON.parse(localStorage.getItem("resultRecipes"));
   }
-  // all cards need to show recipe-card-container
-  const cardContainer = document.querySelector(".recipe-card-container");
-  if (!cardContainer.classList.contains("shown"))
-    cardContainer.classList.add("shown");
-  // recipe read need to hide recipe-read-container
-  const readContainer = document.querySelector(".recipe-read-container");
-  if (readContainer.classList.contains("shown"))
-    readContainer.classList.remove("shown");
+  // all cards need to show this container
   document.querySelector(".recipe-card-container").classList.add("shown");
-  document.querySelector(".recipe-read-container").classList.remove("shown");
   for (const show of showList) {
     const ele = document.querySelector(`.${show}`);
     if (!ele.classList.contains("shown")) ele.classList.add("shown");
@@ -66,7 +49,6 @@ function makePage() {
     const ele = document.querySelector(`.${hide}`);
     if (ele.classList.contains("shown")) ele.classList.remove("shown");
   }
-  recipeCards(); // create recipe card
 }
 
 /**
@@ -94,8 +76,30 @@ function recipeCards() {
  */
 function readRecipe(recipeCard, id) {
   recipeCard.addEventListener("click", (e) => {
-    let url = `/read?fetchID=${id}`;
-    if (page === "cookbook") url = `/read?bookID=${id}`;
+    const url = `/read?${id}`;
     window.location.href = url;
   });
 }
+
+// this is recipe read page, need to convert to SPA
+// if (queryString.includes("read")) {
+//   const cardContainer = document.querySelector(".recipe-card-container");
+//   if (cardContainer.classList.contains("shown"))
+//     cardContainer.classList.remove("shown");
+//   // recipe read need to hide recipe-read-container
+//   const readContainer = document.querySelector(".recipe-read-container");
+//   if (!readContainer.classList.contains("shown"))
+//     readContainer.classList.add("shown");
+//     populateRead();
+//   return;
+// }
+
+// hide sections
+// const cardContainer = document.querySelector(".recipe-card-container");
+// cardContainer.classList.add("shown");
+// if (!cardContainer.classList.contains("shown"))
+// cardContainer.classList.add("shown");
+// // recipe read need to hide recipe-read-container
+// const readContainer = document.querySelector(".recipe-read-container");
+// if (readContainer.classList.contains("shown"))
+// readContainer.classList.remove("shown");

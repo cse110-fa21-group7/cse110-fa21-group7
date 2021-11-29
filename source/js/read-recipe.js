@@ -21,7 +21,7 @@ async function init() {
  */
 function getID() {
   const url = window.location.href;
-  if (url.includes("fetchID")) {
+  if (url.includes("rid")) {
     console.log("hello");
     editButton.innerHTML = "add";
     deleteButton.style.display = "none";
