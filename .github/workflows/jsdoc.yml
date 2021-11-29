@@ -1,37 +1,28 @@
 name: JSdoc
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
-          fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
-
-      - name: Run Jest
-        uses: stefanoeb/jest-action@1.0.3
 
       - name: Build
         uses: andstor/jsdoc-action@v1
         with:
-          source_dir: ./source/test
-          recurse: true
+          source_dir: ./source
           output_dir: ./out
+          config_file: conf.json
+          template: minami
+          front_page: README.md
 
-      - name: Commit files
-        run: |
-          git config --local user.email "jid001@ucsd.edu"
-          git config --local user.name "Jiayan Dong"
-          git add out
-          git commit -m "JSDOC"
-
-    #- name: Push changes
-    #  uses: ad-m/github-push-action@master
-    #  with:
-    #    github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-    #    branch: ${{ github.ref }}
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./out
