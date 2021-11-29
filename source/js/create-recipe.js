@@ -24,7 +24,7 @@ async function populateForm() {
   document.getElementById("recipeDescription").value = recipe["description"];
   document.getElementById("recipeCost").value = recipe["totalCost"];
   const img = document.createElement("img");
-  img.src = recipe["img-url"];
+  img.src = recipe["image"];
   img.height = "200";
   document.getElementById("img-spot").append(img);
 
@@ -92,7 +92,6 @@ function checkID() {
   updateFlag = true;
   recipeID = id;
   recipe = userRecipes[id];
-  updateFlag = true;
   console.log(`Found recipe: ${recipe["title"]}`);
   populateForm();
 }
@@ -130,7 +129,7 @@ file.addEventListener("change", (e) => {
       img.src = data.link;
       img.height = "200";
       img.referrerPolicy = "no-referrer";
-      recipe["img-url"] = data.link;
+      recipe["image"] = data.link;
     });
 });
 
@@ -331,8 +330,8 @@ function checkValid() {
   recipe["totalCost"] = cost;
 
   // Set to default if no image uploaded
-  if (!("img-url" in recipe)) {
-    recipe["img-url"] = "../img/default.png";
+  if (!("image" in recipe)) {
+    recipe["image"] = "../img/default.png";
   }
 
   const ingredients = [];

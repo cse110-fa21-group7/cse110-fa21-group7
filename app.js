@@ -31,6 +31,15 @@ app.use(
   // express.static(path.join(__dirname, "source/html/cook-book.html"))
   express.static(path.join(__dirname, "source"))
 );
+// app.use("/read", express.static(path.join(__dirname, "source")));
+app.use(
+  "/read/bookID",
+  express.static(path.join(__dirname, "source/html/read-recipe.html"))
+);
+app.use(
+  "/read/fetchID",
+  express.static(path.join(__dirname, "source/html/read-recipe.html"))
+);
 app.use(
   "/create",
   express.static(path.join(__dirname, "source/html/create-recipe.html"))
@@ -39,10 +48,7 @@ app.use(
   "/update",
   express.static(path.join(__dirname, "source/html/create-recipe.html"))
 );
-app.use(
-  "/recipeDetails",
-  express.static(path.join(__dirname, "source/html/read-recipe.html"))
-);
+
 app.use(
   "/previewRecipe",
   express.static(path.join(__dirname, "source/html/preview-recipe.html"))
@@ -59,5 +65,5 @@ app.use("/create", require("./routes/create"));
 // app.use(errorHandler);
 
 app.listen(PORT, () =>
-  console.log(`Server running on :http://localhost:${PORT}/`)
+  console.log(`Server running on: http://localhost:${PORT}/`)
 );

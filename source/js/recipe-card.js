@@ -130,11 +130,7 @@ class RecipeCard extends HTMLElement {
 
     // add img
     const img = document.createElement("img");
-    if (this.page == "results") {
-      img.setAttribute("src", data["image"]);
-    } else {
-      img.setAttribute("src", data["img-url"]);
-    }
+    img.setAttribute("src", data["image"]);
     img.setAttribute("alt", data["title"]);
     img.classList.add("card__image");
     cardBody.appendChild(img);
@@ -145,7 +141,7 @@ class RecipeCard extends HTMLElement {
     title.classList.add("card__title");
     cardBody.appendChild(title);
 
-    if (this.page == "home" || this.page == "cookbook") {
+    if (this.page == "curatedList" || this.page == "cookbook") {
       // add info list
       const ul = document.createElement("ul");
       ul.classList.add("info-row");
@@ -158,7 +154,7 @@ class RecipeCard extends HTMLElement {
       // add total cost
       let price;
       // assume the user enters in terms of dollars - append a dollar sign to front
-      if (data["img-url"].includes("https://spoonacular.com")) {
+      if (data["image"].includes("https://spoonacular.com")) {
         price = "$" + (data["totalCost"] / 100).toFixed(2);
       } else {
         price = "$" + data["totalCost"];

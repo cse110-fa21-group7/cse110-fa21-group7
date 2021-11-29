@@ -12,8 +12,9 @@
 
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/home-page.css" />
+  <!-- <link rel="stylesheet" href="css/read-recipe.css" /> -->
   <!-- load & create recipe card to cook book -->
-  <script src="js/init.js" type="module"></script>
+  <!-- <script src="js/init.js" type="module"></script> -->
   <script src="js/search-recipe.js" type="module"></script>
   <script src="js/home-page.js" type="module"></script>
   <script src="../js/recipe-card.js" type="module"></script>
@@ -46,14 +47,14 @@
     <div id="page-title">ASAP Recipe</div>
     <p class="search-introduction">Search and save your favorite recipes.</p>
   </div>
-  <section class="recipe-card-containe">
+  <section class="recipe-card-container shown">
 
     <!-- Search bar-->
     <section class="search">
       <div class="search-container">
         <form id="form">
           <input type="text" id="query" name="q" 
-          placeholder="Enter your favorite ingredient...">
+          placeholder="Please enter recipe you want to search...">
           <button id="search-button" type="submit">
             <i class="fa fa-search icon" aria-hidden="true"></i>
           </button>
@@ -71,6 +72,7 @@
 
     <!-- Curated list -->
     <section class="wrapper curatedList"> 
+      <!-- 
       <div class="card">
         <div class="card__body">
           <img
@@ -209,8 +211,46 @@
           </ul>
         </div>
       </div>
+      -->
     </section>
   </section>
+
+  <!-- want to combine read to home page, and implement SPA, but still need some time -->
+  <!-- <section class="recipe-read-container">
+    <div class="box">
+    <article id="recipeDetails">
+      <div class="recipe-card-header-container">
+        <h1 id="recipeTitle">Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs</h1>
+        <p id="recipeDescription">The recipe Beef Wellington</p>
+        <button type="button" class="btn btn-primary" id="Edit">Edit</button>
+        <button type="button" class="btn btn-danger" id="Delete">Delete</button>
+      </div>
+      <div class="recipe-details-container">
+        <div class="flex-container">
+          <div class="flex-child img">
+            <div class="flex-child img"><img width="300" height="300" src="https://i.imgur.com/oDNCfFS.png" id="recipeImg" alt="Image"></div>
+          </div>
+          <div class="flex-child detail">
+            <div class="detail-item serving">
+              <span>&#127859</span><span>Servings: 1</span>
+            </div>
+            <div class="detail-item cost">
+              <span>&#128176</span><span>Cost: $5</span>
+            </div>
+            <div class="detail-item time">
+              <span>&#9200</span><span>ReadyInMinutes: 30 </span>
+            </div>
+          </div>
+        </div>
+        <h2 id="ingredient">Ingredient</h2>
+        <div id="ingredient-list"></div>
+        <h2 id="steps">Steps</h2>
+        <div id="steps-list"></div>
+      </div>
+    </article>
+    </div>
+
+  </section> -->
 </body>
 
 </html>
