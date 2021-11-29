@@ -76,6 +76,11 @@ function recipeCards() {
  */
 function readRecipe(recipeCard, id) {
   recipeCard.addEventListener("click", (e) => {
+    if (page === "results") {
+      // export preview-recipe.js fetchFullRecipe function
+      // after function back, recipe info should saved in storedRecipes
+      // then we can use read-recipe.js to read recipe details
+    }
     const url = `/read?${id}`;
     window.location.href = url;
   });
