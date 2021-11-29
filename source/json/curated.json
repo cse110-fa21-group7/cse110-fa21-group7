@@ -6,32 +6,32 @@
     "totalCost": 691.54,
     "time": 15,
     "ingredients": [
-        {
-            "name": "duck",
-            "amount": "0.5 lb"
-        },
-        {
-            "name": "egg",
-            "amount": "1 "
-        },
-        {
-            "name": "milk",
-            "amount": "2 tsps"
-        },
-        {
-            "name": "mushrooms",
-            "amount": "8 oz"
-        }
+      {
+        "name": "duck",
+        "amount": "0.5 lb"
+      },
+      {
+        "name": "egg",
+        "amount": "1 "
+      },
+      {
+        "name": "milk",
+        "amount": "2 tsps"
+      },
+      {
+        "name": "mushrooms",
+        "amount": "8 oz"
+      }
     ],
     "steps": [
-        "In a large saucepan, heat the oil over medium-high heat. Once your oil is hot, brown the beef. Do it in 2 batches if you need to, to allow an even browning on all pieces. Set aside.",
-        "In the same pan, fry the onion, garlic, carrots and celery, about 3-5 minutes, before adding the meat back.",
-        "Pour in the stock, Guinness, and bay leaf and season to taste.",
-        "Add the chocolate if you find it too bitter.",
-        "Bring to a boil then lower the heat and simmer for about 1 hours, or until the liquid has reduced. If the sauce isnt thick enough, remove the meat and carrots from the pan using a slotted spoon. In a small bowl, mix a few tablespoons of sauce with 1 tbsp corn flour, whisk until well combined and pour back into the sauce.",
-        "Let boil for about 10-15 minutes, until the sauce has thickened, then tip back the meat.",
-        "Serve with mashed potatoes.",
-        "Find more recipes on my blog http://alalemon.com"
+      "In a large saucepan, heat the oil over medium-high heat. Once your oil is hot, brown the beef. Do it in 2 batches if you need to, to allow an even browning on all pieces. Set aside.",
+      "In the same pan, fry the onion, garlic, carrots and celery, about 3-5 minutes, before adding the meat back.",
+      "Pour in the stock, Guinness, and bay leaf and season to taste.",
+      "Add the chocolate if you find it too bitter.",
+      "Bring to a boil then lower the heat and simmer for about 1 hours, or until the liquid has reduced. If the sauce isnt thick enough, remove the meat and carrots from the pan using a slotted spoon. In a small bowl, mix a few tablespoons of sauce with 1 tbsp corn flour, whisk until well combined and pour back into the sauce.",
+      "Let boil for about 10-15 minutes, until the sauce has thickened, then tip back the meat.",
+      "Serve with mashed potatoes.",
+      "Find more recipes on my blog http://alalemon.com"
     ]
   },
   "2": {
@@ -41,36 +41,36 @@
     "totalCost": 276,
     "time": 120,
     "ingredients": [
-        {
-            "name": "boneless chuck steak",
-            "amount": "3 pounds"
-        },
-        {
-            "name": "bay leaf",
-            "amount": "1 piece"
-        },
-        {
-            "name": "thyme",
-            "amount": "0.5 teaspoon"
-        },
-        {
-            "name": "peppercorns",
-            "amount": "1 teaspoon"
-        },
-        {
-            "name": "butter",
-            "amount": "2 tablespoons"
-        }
+      {
+        "name": "boneless chuck steak",
+        "amount": "3 pounds"
+      },
+      {
+        "name": "bay leaf",
+        "amount": "1 piece"
+      },
+      {
+        "name": "thyme",
+        "amount": "0.5 teaspoon"
+      },
+      {
+        "name": "peppercorns",
+        "amount": "1 teaspoon"
+      },
+      {
+        "name": "butter",
+        "amount": "2 tablespoons"
+      }
     ],
     "steps": [
-        "Trim off all beef fat and cut meat into 1 inch cubes. Fry bacon to render fat, drain, set aside. Brown beef in bacon fat, few pieces at a time.",
-        "Transfer bacon and beef to casserole and put on moderate heat.",
-        "Add brandy and flame. Stir in onions, garlic, flour and coat beef.",
-        "Add wine and broth and bring to a simmer.",
-        "Tie parsley sprigs, bay, thyme and peppercorns in cheesecloth and add to casserole. Season with salt and pepper and cook in preheated 350 degree oven for 1 1/2 hours.",
-        "Cool and refrigerate casserole at least 4 hours or overnight. To reheat, place casserole in preheated 350 degree oven for 20 minutes. In small pan, heat the butter and saute mushrooms until lightly browned.",
-        "Add mushrooms to casserole and garnish with chopped parsley.",
-        "Serves 8."
+      "Trim off all beef fat and cut meat into 1 inch cubes. Fry bacon to render fat, drain, set aside. Brown beef in bacon fat, few pieces at a time.",
+      "Transfer bacon and beef to casserole and put on moderate heat.",
+      "Add brandy and flame. Stir in onions, garlic, flour and coat beef.",
+      "Add wine and broth and bring to a simmer.",
+      "Tie parsley sprigs, bay, thyme and peppercorns in cheesecloth and add to casserole. Season with salt and pepper and cook in preheated 350 degree oven for 1 1/2 hours.",
+      "Cool and refrigerate casserole at least 4 hours or overnight. To reheat, place casserole in preheated 350 degree oven for 20 minutes. In small pan, heat the butter and saute mushrooms until lightly browned.",
+      "Add mushrooms to casserole and garnish with chopped parsley.",
+      "Serves 8."
     ]
   },
   "3": {
@@ -80,142 +80,140 @@
     "totalCost": 1000,
     "time": 35,
     "ingredients": [
-        {
-            "name": "olive oil",
-            "amount": "1 tbsp"
-        },
-        {
-            "name": "onion, finely chopped",
-            "amount": "1"
-        },
-        {
-            "name": "garlic cloves , crushed",
-            "amount": "1"
-        },
-        {
-            "name": "chorizo , diced",
-            "amount": "120g"
-        },
-        {
-            "name": "400g can chopped tomatoes",
-            "amount": "2"
-        },
-        {
-            "name": "caster sugar",
-            "amount": "1 tsp"
-        },
-        {
-            "name": "fresh gnocchi",
-            "amount": "600g"
-        },
-        {
-            "name": "mozzarella ball, cut into chunks",
-            "amount": "125g"
-        },
-        {
-            "name": "basil , torn",
-            "amount": "small bunch"
-        },
-        {
-            "name": "green salad",
-            "amount": "to serve"
-        }
-        ],
-        "steps": [
-            "Heat the oil in a medium pan over a medium heat. Fry the onion and garlic for 8-10 mins until soft. Add the chorizo and fry for 5 mins more. Tip in the tomatoes and sugar, and season. Bring to a simmer, then add the gnocchi and cook for 8 mins, stirring often, until soft. Heat the grill to high.",
-            "Stir ¾ of the mozzarella and most of the basil through the gnocchi. Divide the mixture between six ovenproof ramekins, or put in one baking dish. Top with the remaining mozzarella, then grill for 3 mins, or until the cheese is melted and golden. Season, scatter over the remaining basil and serve with green salad."
-        ]
-    },
-    "4": {
-        "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/butter-chicken-cf6f9e2.jpg?quality=90&webp=true&resize=300,272",
-        "title": "Easy butter chicken",
-        "description": "Fancy a healthy version of your favourite Friday night chicken curry? The chicken can be marinaded the day before so you can get ahead on your prep",
-        "totalCost": 1000,
-        "time": 50,
-        "ingredients": [
-            {
-                "name": "skinless boneless chicken thighs",
-                "amount": "500g"
-            },
-            {
-                "name": "lemon, juiced",
-                "amount": "1"
-            },
-            {
-                "name": "ground cumin",
-                "amount": "2 tsp"
-            },
-            {
-                "name": "paprika",
-                "amount": "2 tsp"
-            },
-            {
-                "name": "hot chilli powder",
-                "amount": "1-2 tsp"
-            },
-            {
-                "name": "natural yogurt",
-                "amount": "200g"
-            },
-            {
-                "name": "vegetable oil",
-                "amount": "2 tbsp"
-            },
-            {
-                "name": "onion, chopped",
-                "amount": "1 large"
-            },
-            {
-                "name": "green chilli, deseeded and finely chopped",
-                "amount": "1"
-            },
-            {
-                "name": "piece ginger, grated",
-                "amount": "thumb-sized"
-            }
-            ,
-            {
-                "name": "garam masala",
-                "amount": "1 tsp"
-            },
-            {
-                "name": "ground fenugreek",
-                "amount": "2 tsp"
-            },
-            {
-                "name": "tomato purée",
-                "amount": "3 tbsp"
-            },
-            {
-                "name": "chicken stock",
-                "amount": "300ml"
-            },
-            {
-                "name": "cooked basmati rice",
-                "amount": "50g"
-            },
-            {
-                "name": "naan bread",
-                "amount": ""
-            },
-            {
-                "name": "mango chutney or lime pickle",
-                "amount": ""
-            },
-            {
-                "name": "fresh coriander",
-                "amount": ""
-            },
-            {
-                "name": "lime wedges",
-                "amount": ""
-            }
-            ],
-            "steps": [
-                "In a medium bowl, mix all the marinade ingredients with some seasoning. Chop the chicken into bite-sized pieces and toss with the marinade. Cover and chill in the fridge for 1 hr or overnight.",
-                "In a large, heavy saucepan, heat the oil. Add the onion, garlic, green chilli, ginger and some seasoning. Fry on a medium heat for 10 mins or until soft.",
-                "Add the spices with the tomato purée, cook for a further 2 mins until fragrant, then add the stock and marinated chicken. Cook for 15 mins, then add any remaining marinade left in the bowl. Simmer for 5 mins, then sprinkle with the toasted almonds. Serve with rice, naan bread, chutney, coriander and lime wedges, if you like."
-            ]
-        }
-
+      {
+        "name": "olive oil",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "onion, finely chopped",
+        "amount": "1"
+      },
+      {
+        "name": "garlic cloves , crushed",
+        "amount": "1"
+      },
+      {
+        "name": "chorizo , diced",
+        "amount": "120g"
+      },
+      {
+        "name": "400g can chopped tomatoes",
+        "amount": "2"
+      },
+      {
+        "name": "caster sugar",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "fresh gnocchi",
+        "amount": "600g"
+      },
+      {
+        "name": "mozzarella ball, cut into chunks",
+        "amount": "125g"
+      },
+      {
+        "name": "basil , torn",
+        "amount": "small bunch"
+      },
+      {
+        "name": "green salad",
+        "amount": "to serve"
+      }
+    ],
+    "steps": [
+      "Heat the oil in a medium pan over a medium heat. Fry the onion and garlic for 8-10 mins until soft. Add the chorizo and fry for 5 mins more. Tip in the tomatoes and sugar, and season. Bring to a simmer, then add the gnocchi and cook for 8 mins, stirring often, until soft. Heat the grill to high.",
+      "Stir ¾ of the mozzarella and most of the basil through the gnocchi. Divide the mixture between six ovenproof ramekins, or put in one baking dish. Top with the remaining mozzarella, then grill for 3 mins, or until the cheese is melted and golden. Season, scatter over the remaining basil and serve with green salad."
+    ]
+  },
+  "4": {
+    "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/butter-chicken-cf6f9e2.jpg?quality=90&webp=true&resize=300,272",
+    "title": "Easy butter chicken",
+    "description": "Fancy a healthy version of your favourite Friday night chicken curry? The chicken can be marinaded the day before so you can get ahead on your prep",
+    "totalCost": 1000,
+    "time": 50,
+    "ingredients": [
+      {
+        "name": "skinless boneless chicken thighs",
+        "amount": "500g"
+      },
+      {
+        "name": "lemon, juiced",
+        "amount": "1"
+      },
+      {
+        "name": "ground cumin",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "paprika",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "hot chilli powder",
+        "amount": "1-2 tsp"
+      },
+      {
+        "name": "natural yogurt",
+        "amount": "200g"
+      },
+      {
+        "name": "vegetable oil",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "onion, chopped",
+        "amount": "1 large"
+      },
+      {
+        "name": "green chilli, deseeded and finely chopped",
+        "amount": "1"
+      },
+      {
+        "name": "piece ginger, grated",
+        "amount": "thumb-sized"
+      },
+      {
+        "name": "garam masala",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "ground fenugreek",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "tomato purée",
+        "amount": "3 tbsp"
+      },
+      {
+        "name": "chicken stock",
+        "amount": "300ml"
+      },
+      {
+        "name": "cooked basmati rice",
+        "amount": "50g"
+      },
+      {
+        "name": "naan bread",
+        "amount": ""
+      },
+      {
+        "name": "mango chutney or lime pickle",
+        "amount": ""
+      },
+      {
+        "name": "fresh coriander",
+        "amount": ""
+      },
+      {
+        "name": "lime wedges",
+        "amount": ""
+      }
+    ],
+    "steps": [
+      "In a medium bowl, mix all the marinade ingredients with some seasoning. Chop the chicken into bite-sized pieces and toss with the marinade. Cover and chill in the fridge for 1 hr or overnight.",
+      "In a large, heavy saucepan, heat the oil. Add the onion, garlic, green chilli, ginger and some seasoning. Fry on a medium heat for 10 mins or until soft.",
+      "Add the spices with the tomato purée, cook for a further 2 mins until fragrant, then add the stock and marinated chicken. Cook for 15 mins, then add any remaining marinade left in the bowl. Simmer for 5 mins, then sprinkle with the toasted almonds. Serve with rice, naan bread, chutney, coriander and lime wedges, if you like."
+    ]
+  }
 }

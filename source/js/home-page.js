@@ -1,29 +1,53 @@
-window.addEventListener("DOMContentLoaded", init);
+import { init } from "./init.js";
+window.addEventListener("DOMContentLoaded", currInit);
 // const recipeData = {};
+let recipeObject;
 /** Initialize function, begins all of the JS code in this file */
-async function init() {
-  await init.init();
-  console.log('home-page init');
+async function currInit() {
+  // await init.init();
+  await init();
+  console.log("home-page init");
   const queryString = window.location.href;
   console.log(queryString);
   // default is home page with search and curated recipes
   let page = "curatedList";
+  let objString = "curatedRecipes";
   // switch recipeObject depends on which page we want to show
-  let recipeObject = JSON.parse(localStorage.getItem("curatedRecipes"));
+  // recipeObject = JSON.parse(localStorage.getItem("curatedRecipes"));
   // if we want to show cookbook, the recipeObject should be userRecipes which saved in localStorge
   if (queryString.includes("cookbook")) {
     page = "cookbook";
-    console.log("cook book!!!");
-    recipeObject = JSON.parse(localStorage.getItem("userRecipes"));
+    objString = "userRecipes";
+    // getRecipeObj("userRecipes");
+    // recipeObject = JSON.parse(localStorage.getItem("userRecipes"));
   } else if (queryString.includes("result")) {
     page = "results";
     console.log("result");
-    recipeObject = JSON.parse(localStorage.getItem("resultRecipes"));
+    objString = "resultRecipes";
+    // recipeObject = JSON.parse(localStorage.getItem("resultRecipes"));
   }
+  try {
+    await getRecipeObj(objString);
+  } catch (err) {
+    console.log(`Error fetching recipes: ${err}`);
+    return;
+  }
+  console.log(recipeObject);
   makePage(page);
   recipeCards(page, recipeObject);
 }
-
+/**
+ * make page depends on what page you want to show
+ * @param {String} objString
+ */
+async function getRecipeObj(objString) {
+  return new Promise((resolve, reject) => {
+    console.log("in this function");
+    recipeObject = JSON.parse(localStorage.getItem(objString));
+    if (recipeObject !== null) resolve();
+    else reject(err);
+  });
+}
 /**
  * make page depends on what page you want to show
  * @param {string} page

@@ -1,19 +1,21 @@
 window.addEventListener("DOMContentLoaded", init);
-const loaded = false;
+
 /**
  * Entry point for initialization scripts
  */
-async function init() {
-  console.log('init.js');
-  initializeStorage();
-}
+export async function init() {
+  await addCurated();
 
+  if (initializeStorage()) {
+    addExamples();
+  }
+}
 /** Initializes recipes object from localStorage cache */
 /**
  * Represents a book.
  * @constructor
  */
-async function initializeStorage() {
+function initializeStorage() {
   if (localStorage.getItem("currID") === null)
     localStorage.setItem("currID", 0);
   if (localStorage.getItem("query") === null) localStorage.setItem("query", "");
@@ -28,11 +30,9 @@ async function initializeStorage() {
     if (localStorage.getItem(obj) === null) {
       exampleFlag = true;
       localStorage.setItem(obj, JSON.stringify({}));
-      if (obj === "curatedRecipes") addCurated();
-      // if (obj === "userRecipes") addExamples();
     }
   }
-  if (exampleFlag) console.log("Initialized recipes");
+  console.log("Initializing recipes object");
   return exampleFlag;
 }
 
@@ -46,7 +46,7 @@ function addExamples() {
   console.log("add examples");
   console.log(userRecipes);
   const ex1 = {
-    "image": "https://spoonacular.com/recipeImages/75081-312x231.jpg",
+    image: "https://spoonacular.com/recipeImages/75081-312x231.jpg",
     title: "Beef Wellington",
     description: "The recipe Beef Wellington could satisfy your Scottish",
     totalCost: 691.54,
@@ -80,7 +80,7 @@ function addExamples() {
     ],
   };
   const ex2 = {
-    "image": "https://spoonacular.com/recipeImages/634593-312x231.jpg",
+    image: "https://spoonacular.com/recipeImages/634593-312x231.jpg",
     title: "Beef Bourguignon",
     description: "Beef Bourguignon takes about about 45 minutes",
     totalCost: 276,
@@ -129,12 +129,9 @@ function addExamples() {
  * Load curate recipes into localStorage from JSON file
  */
 async function addCurated() {
-  
-  const curated = await fetch("../json/curated.json")
-    .then(response => {
-      return response.json();
-    });
-  console.log('addCurated');
-  localStorage.setItem("curatedRecipes", JSON.stringify(curated));
+  const curated = await fetch("../json/curated.json").then((response) => {
+    return response.json();
+  });
 
+  localStorage.setItem("curatedRecipes", JSON.stringify(curated));
 }
