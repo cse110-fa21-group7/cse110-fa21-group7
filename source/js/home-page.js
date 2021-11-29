@@ -71,22 +71,18 @@ function recipeCards(page, recipeObject) {
     card.setPage(page);
     card.data = value;
     section.appendChild(card);
-    readRecipe(page, card, key);
+    readRecipe(card, key);
   }
 }
 
 /**
  * Add event listeners to recipe card elements
- * @param {String} page
  * @param {HTMLElement} recipeCard
  * @param {String} id
  */
-function readRecipe(page, recipeCard, id) {
+function readRecipe(recipeCard, id) {
   recipeCard.addEventListener("click", (e) => {
-    let url = `/recipeDetails?uid=${id}`;
-    if (page === "results") {
-      url = `/recipeDetails?rid=${id}`;
-    }
+    const url = `/recipeDetails?id=${id}`;
     window.location.href = url;
   });
 }

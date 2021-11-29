@@ -14,12 +14,11 @@ class RecipeCard extends HTMLElement {
 
   /**
    * Set the page name of the recipe card
-   * @param {string} page 
+   * @param {string} page
    */
   setPage(page) {
     this.page = page;
   }
-
 
   /**
    * Get recipes from localStorage
@@ -29,7 +28,6 @@ class RecipeCard extends HTMLElement {
     // console.log(data);
     const styleElem = document.createElement("style");
     const styles = `
-
     .card {
       overflow: hidden;
       box-shadow: 0px 2px 20px #cfd8dc;
@@ -134,8 +132,7 @@ class RecipeCard extends HTMLElement {
     const img = document.createElement("img");
     if (this.page == "results") {
       img.setAttribute("src", data["image"]);
-    }
-    else {
+    } else {
       img.setAttribute("src", data["img-url"]);
     }
     img.setAttribute("alt", data["title"]);
@@ -169,7 +166,6 @@ class RecipeCard extends HTMLElement {
       ul.appendChild(addList(price));
       cardBody.appendChild(ul);
     }
-
   }
 }
 customElements.define("recipe-card", RecipeCard);
