@@ -9,6 +9,12 @@ html {
   margin: 0;
   padding: 0;
 }
+
+header{
+  margin: 8px;
+  margin-top:16px;
+}
+
 section:not(.shown) {
   display: none;
 }
@@ -185,9 +191,3 @@ svg {
   padding-left: 20px;  
 }
 */
-
-#page-title {
-  text-align: center;
-  padding-top: 30px;
-  font-size: 44px;
-}

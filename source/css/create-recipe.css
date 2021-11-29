@@ -1,16 +1,12 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 label {
   float: left;
   font-size: 18px;
-  margin-left: 20px;
-  color: rgba(235, 16, 16, 0.6);
+  margin-left: 15px;
   width: 180px;
   clear: left;
   text-align: right;
   padding-right: 10px;
+  font-family: Oxygen, sans-serif;
 }
 
 .section--create-recipe {
@@ -18,13 +14,8 @@ label {
 }
 
 h2 {
-  color: rgba(235, 16, 16, 0.6);
-  text-decoration: underline;
   text-align: center;
-
-  font-size: 150%;
-  margin: 10px;
-
+  font-size: 36px;
   display: block;
 }
 
@@ -40,10 +31,11 @@ textarea {
 }
 
 legend {
-  font-size: 20px;
-  color: #666;
+  font-size: 18px;
+  text-transform: uppercase;
   text-align: left;
-  padding-right: 10px;
+  margin-bottom: 10px;
+  margin-top:10px;
 }
 
 #ingredient1cost {
@@ -72,7 +64,7 @@ span {
   height: 35px;
   border-radius: 5px;
   color: #fff;
-  background: rgb(243, 150, 154);
+  background: #57abf2;
 }
 
 .btn-remove {
@@ -81,7 +73,7 @@ span {
   height: 35px;
   border-radius: 5px;
   color: #fff;
-  background: rgb(243, 150, 154);
+  background: crimson;
 }
 
 .btn-submit {
@@ -89,14 +81,14 @@ span {
   height: 35px;
   border-radius: 5px;
   color: #fff;
-  background: rgb(243, 150, 154);
+  background: #86c7a7;
 }
 
 .btn-add:hover,
 .btn-submit:hover,
 .btn-remove:hover {
   cursor: pointer;
-  background: rgb(231, 16, 27);
+  background: rgb(243, 150, 154);
 }
 
 .invalid-feedback {
