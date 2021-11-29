@@ -88,8 +88,8 @@ function populateHTML() {
   // add image
   const img = document.getElementById("recipeImg");
 
-  const url = recipe["img-url"];
-  if (!("img-url" in recipe)) {
+  const url = recipe["image"];
+  if (!("image" in recipe)) {
     // No image uploaded, set default
     img.src = "../img/default.png";
   } else if (url.includes("https://i.imgur.com")) {
