@@ -1,3 +1,9 @@
+.page-header{
+  text-align: center;
+  font-size: 30px;
+  display: block;
+}
+
 .box {
   display: flex;
   justify-content: center;
@@ -17,28 +23,48 @@ div {
 .recipe-card-header-container {
   position: relative;
   text-align: center;
-  padding: 32px;
+  padding: 10px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   background-color: #86c7a7;
   color: #fff;
 }
 #Delete {
-  background-color: #c62122;
+  background-color:rgb(211, 93, 116);
   color: #fff !important;
   cursor: pointer;
   border-radius: 4px;
+  width: 70px;
+  height: 35px;
+  border-radius: 5px;
 }
+
+#Delete:hover{
+  cursor: pointer;
+  background: crimson;
+}
+
 #Edit {
-  background-color: #222 !important;
-  color: #fff !important;
+  background-color: rgb(117, 112, 112);
+  color: #fff;
   cursor: pointer;
   border-radius: 4px;
+  width: 70px;
+  height: 35px;
+  border-radius: 5px;
 }
+
+#Edit:hover{
+  cursor: pointer;
+  background: #222;
+}
+
 #recipeImg {
   border-radius: 20px;
-  border: 10px solid #fff;
+  border: 20px solid #fff;
   object-fit: cover;
+  margin-left: 25px;
+  width: 400px; 
 }
 
 .recipe-details-container {
@@ -56,6 +82,7 @@ div {
 }
 .detail-item {
   padding: 30px 1.5%;
+  font-size: 25px;
 }
 
 /* ingredient CSS start */
@@ -141,5 +168,15 @@ label {
 }
 
 h2 {
-  color: #86c7a7;
+  color: #666;
+}
+
+h1{
+  font-size: 36px;
+  text-align: center;
+}
+
+p{
+  font-size: 25px;
+  text-align: center;
 }
