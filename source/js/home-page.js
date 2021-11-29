@@ -77,15 +77,59 @@ function recipeCards() {
 function readRecipe(recipeCard, id) {
   recipeCard.addEventListener("click", (e) => {
     let url = `/read/fetchID?id=${id}`;
-    if (page === "cookbook") {
+    if (page === "curatedList") {
+      console.log("curatedList click");
+      alert("readRecipe curatedList preview");
+
+    } else if (page === "cookbook") {
       url = `/read/bookID?id=${id}`;
+    } else if (page === "results") {
       // export preview-recipe.js fetchFullRecipe function
       // after function back, recipe info should saved in storedRecipes
       // then we can use read-recipe.js to read recipe details
+      const recipe = JSON.parse(localStorage.getItem("resultRecipes"))[id];
+      recipeCard.data = recipe;
+      recipeCard.setPage("")
+      // console.log(recipeCard);
+      console.log(id);
+      alert('readRecipe results page');
     }
 
     window.location.href = url;
   });
+}
+
+
+/**
+ * Gets full recipe from Spoonacular API based on ID
+ * @param {String} id
+ * @return {null}
+ */
+ async function fetchFullRecipe(id) {
+  const storedRecipes = JSON.parse(localStorage.getItem("storedRecipes"));
+  if (id in storedRecipes) {
+    recipe = storedRecipes[id];
+  } else {
+    console.log("Fetching full recipe");
+    const url = `/search/recipeId?id=${id}`;
+    // Return the recipe object from spoonacular
+    const res = await fetch(url); 
+    console.log(res);
+    const data = await res.json();
+    if (data.cod === "404") {
+      alert("Recipe not found");
+      return;
+    }
+    if (data.cod === 401) {
+      alert("Invalid API Key");
+      return;
+    }
+    console.log(`Recipe:\n${data}`);
+    recipe = data;
+    storedRecipes[id] = spoonToASAP(data);
+    localStorage.setItem("storedRecipes", JSON.stringify(storedRecipes));
+  }
+  populateHTML();
 }
 
 // this is recipe read page, need to convert to SPA

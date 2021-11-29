@@ -25,11 +25,10 @@ async function fetchRecipes(query) {
   }
   // --- we should use recipes ID to fetch all recipe's info, need other team member implement this part------
   const storage = window.localStorage;
-  const resultRecipes = JSON.parse(storage.getItem("resultRecipes"));
-  // if (Object.keys(recipeID).length !== 0) {
+  // const resultRecipes = JSON.parse(storage.getItem("resultRecipes"));
+  // Overwrite resultRecipes on each search.
+  const resultRecipes = {};
 
-  // }
-  // /*
   for (const recipe of data["results"]) {
     resultRecipes[recipe["id"]] = recipe;
   }
@@ -37,7 +36,6 @@ async function fetchRecipes(query) {
   // update
   // Store full recipes in searchedRecipes
   localStorage.setItem("resultRecipes", JSON.stringify(resultRecipes));
-  // */
 
   // displaySearchResults(data["results"]);
 
