@@ -13,7 +13,7 @@ async function init() {
  * Represents a book.
  * @constructor
  */
-function initializeStorage() {
+async function initializeStorage() {
   if (localStorage.getItem("currID") === null)
     localStorage.setItem("currID", 0);
   if (localStorage.getItem("query") === null) localStorage.setItem("query", "");
@@ -30,6 +30,7 @@ function initializeStorage() {
       localStorage.setItem(obj, JSON.stringify({}));
     }
   }
+  addCurated();
   console.log("Initializing recipes object");
   return exampleFlag;
 }
@@ -121,4 +122,17 @@ function addExamples() {
   localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
   localStorage.setItem("currID", 2);
   // after this line there should be 2 recipes examples saved in local storage
+}
+
+/**
+ * Load curate recipes into localStorage from JSON file
+ */
+async function addCurated() {
+  const curated = await fetch("../json/curated.json")
+    .then(response => {
+      return response.json();
+    });
+  
+  localStorage.setItem("curatedRecipes", JSON.stringify(curated));
+
 }
