@@ -1,36 +1,38 @@
 // read-recipe.js
 
-let userRecipes = {};
+let recipeObject;
 let recipeID;
-let page;
 window.addEventListener("DOMContentLoaded", init);
 const editButton = document.getElementById("Edit");
 const deleteButton = document.getElementById("Delete");
 
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
-  userRecipes = localStorage.getItem("userRecipes");
-  userRecipes = JSON.parse(userRecipes);
-  getID();
+  getPage();
   populateHTML();
-  setButtonListener();
 }
 
 /**
  * Checks if ID is in localStorage,return it back
  */
-function getID() {
+function getPage() {
   const url = window.location.href;
-  if (url.includes("rid")) {
-    console.log("hello");
+  const queryString = window.location.search;
+  console.log(queryString);
+
+  const urlParams = new URLSearchParams(queryString);
+  // default is reading cookbook
+  if (url.includes("bookID")) {
+    recipeObject = JSON.parse(localStorage.getItem("userRecipes"));
+  }
+  if (url.includes("fetchID")) {
+    console.log("fetch");
     editButton.innerHTML = "add";
     deleteButton.style.display = "none";
-    page = "result";
+    recipeObject = JSON.parse(localStorage.getItem("storedRecipes"));
   }
-  const queryString = window.location.search;
-  // console.log(queryString);
-  const urlParams = new URLSearchParams(queryString);
   const id = urlParams.get("id");
+  // console.log(queryString);
   console.log(`id: ${id}`);
   if (id) recipeID = id;
   else console.error("open recipe page incorrectly!!");
@@ -40,7 +42,8 @@ function getID() {
  * @param {int} id
  */
 function populateHTML() {
-  const recipe = userRecipes[recipeID];
+  const recipe = recipeObject[recipeID];
+  console.log(recipeObject);
   console.log(`Recipe: ${recipe["title"]}`);
   // get article element, so we can append elements
   // const article = document.getElementById("recipeTitle");
@@ -65,7 +68,7 @@ function populateHTML() {
   const costSpan = costDiv.getElementsByTagName("span")[1];
   if ("totalCost" in recipe) {
     // appends dollar sign and either does division to get cents -> dollars if spoonacular or just appends price
-    if (recipe["img-url"].includes("https://spoonacular.com")) {
+    if (recipe["image"].includes("https://spoonacular.com")) {
       costSpan.innerText = `Cost: $${(recipe["totalCost"] / 100).toFixed(2)}`;
     } else {
       costSpan.innerText = `Cost: $${recipe["totalCost"]}`;
@@ -129,23 +132,24 @@ function populateHTML() {
 /**
  * Populates recipes object from localStorage
  */
-function addRecipe() {
-  const storedRecipes = JSON.parse(localStorage.getItem("storedRecipes"));
-  userRecipes[recipeID] = storedRecipes[recipeID];
-  localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
-}
+// function addRecipe() {
+//   const storedRecipes = JSON.parse(localStorage.getItem("storedRecipes"));
+//   userRecipes[recipeID] = storedRecipes[recipeID];
+//   localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
+// }
 /** Sets event listeners */
 editButton.addEventListener("click", () => {
-  if (page === "result") {
-    // add current recipe to cookbook
-    addRecipe();
+  if (editButton.innerHTML === "add") {
+    // add current recipe to cook book
+    // addRecipe();
+  } else {
+    location.href = `/update?id=${recipeID}`;
   }
-  location.href = `/update?id=${recipeID}`;
 });
 
 deleteButton.addEventListener("click", (e) => {
-  delete userRecipes[recipeID];
-  localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
+  delete recipeObject[recipeID];
+  localStorage.setItem("userRecipes", JSON.stringify(recipeObject));
   window.alert("successfully deleted the recipe!");
   window.location.href = "/cookbook";
 });

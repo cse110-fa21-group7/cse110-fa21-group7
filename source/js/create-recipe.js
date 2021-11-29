@@ -92,7 +92,6 @@ function checkID() {
   updateFlag = true;
   recipeID = id;
   recipe = userRecipes[id];
-  updateFlag = true;
   console.log(`Found recipe: ${recipe["title"]}`);
   populateForm();
 }
