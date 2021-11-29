@@ -35,7 +35,7 @@ function makePage() {
   } else if (queryString.includes("result")) {
     page = "results";
     showList = ["search", "results"];
-    hideList = ["search", "curatedList"];
+    hideList = ["curatedList"];
     console.log("result");
     recipeObject = JSON.parse(localStorage.getItem("resultRecipes"));
   }
