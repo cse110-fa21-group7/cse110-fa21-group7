@@ -79,16 +79,19 @@ function readRecipe(recipeCard, id) {
     let url = `/read/fetchID?id=${id}`;
     if (page === "curatedList") {
       // alert("readRecipe curatedList preview");
+      window.location.href = url;
     } else if (page === "cookbook") {
       url = `/read/bookID?id=${id}`;
+      window.location.href = url;
     } else if (page === "results") {
       // export preview-recipe.js fetchFullRecipe function
       // after function back, recipe info should saved in storedRecipes
       // then we can use read-recipe.js to read recipe details
-      fetchFullRecipe(id);
+      fetchFullRecipe(id).then(()=>{
+        window.location.href = url;
+      });
       // alert('readRecipe results page');
     }
-    window.location.href = url;
   });
 }
 
