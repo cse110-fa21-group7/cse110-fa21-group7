@@ -11,6 +11,12 @@ class RecipeCard extends HTMLElement {
     super();
     this.attachShadow({ mode: "open" });
   }
+
+  setPage(page) {
+    this.page = page;
+  }
+
+
   /**
    * Get recipes from localStorage
    * @param {HTMLElement} data
@@ -122,7 +128,12 @@ class RecipeCard extends HTMLElement {
 
     // add img
     const img = document.createElement("img");
-    img.setAttribute("src", data["img-url"]);
+    if (this.page == "results") {
+      img.setAttribute("src", data["image"]);
+    }
+    else {
+      img.setAttribute("src", data["img-url"]);
+    }
     img.setAttribute("alt", data["title"]);
     img.classList.add("card__image");
     cardBody.appendChild(img);
@@ -133,25 +144,28 @@ class RecipeCard extends HTMLElement {
     title.classList.add("card__title");
     cardBody.appendChild(title);
 
-    // add info list
-    const ul = document.createElement("ul");
-    ul.classList.add("info-row");
-    //
+    if (this.page == "home" || this.page == "cookbook") {
+      // add info list
+      const ul = document.createElement("ul");
+      ul.classList.add("info-row");
+      //
 
-    // li.append(i, span)
-    ul.appendChild(addList("38 min"));
-    // add kcal
-    ul.appendChild(addList("318 kcal"));
-    // add total cost
-    let price;
-    // assume the user enters in terms of dollars - append a dollar sign to front
-    if (data["img-url"].includes("https://spoonacular.com")) {
-      price = "$" + (data["totalCost"] / 100).toFixed(2);
-    } else {
-      price = "$" + data["totalCost"];
+      // li.append(i, span)
+      ul.appendChild(addList("38 min"));
+      // add kcal
+      ul.appendChild(addList("318 kcal"));
+      // add total cost
+      let price;
+      // assume the user enters in terms of dollars - append a dollar sign to front
+      if (data["img-url"].includes("https://spoonacular.com")) {
+        price = "$" + (data["totalCost"] / 100).toFixed(2);
+      } else {
+        price = "$" + data["totalCost"];
+      }
+      ul.appendChild(addList(price));
+      cardBody.appendChild(ul);
     }
-    ul.appendChild(addList(price));
-    cardBody.appendChild(ul);
+
   }
 }
 customElements.define("recipe-card", RecipeCard);

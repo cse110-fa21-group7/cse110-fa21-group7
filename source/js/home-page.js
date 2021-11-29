@@ -14,7 +14,7 @@ async function init() {
     console.log("cook book!!!");
     recipeObject = JSON.parse(localStorage.getItem("userRecipes"));
   } else if (queryString.includes("result")) {
-    page = "result";
+    page = "results";
     console.log("result");
     recipeObject = JSON.parse(localStorage.getItem("resultRecipes"));
   }
@@ -42,7 +42,7 @@ function makePage(page) {
     showList = ["cookbook"];
     // only cookbook need to hide the whole recipe-card-containe
     hideList = ["search", "results", "curatedList"];
-  } else if (page === "result") {
+  } else if (page === "results") {
     showList = ["search", "results"];
     hideList = ["search", "curatedList"];
   }
@@ -68,6 +68,7 @@ function recipeCards(page, recipeObject) {
   for (const [key, value] of Object.entries(recipeObject)) {
     if (key === "currID") continue;
     const card = document.createElement("recipe-card");
+    card.setPage(page);
     card.data = value;
     section.appendChild(card);
     readRecipe(card, key);
