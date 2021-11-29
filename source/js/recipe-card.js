@@ -12,6 +12,10 @@ class RecipeCard extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
 
+  /**
+   * Set the page name of the recipe card
+   * @param {string} page 
+   */
   setPage(page) {
     this.page = page;
   }
