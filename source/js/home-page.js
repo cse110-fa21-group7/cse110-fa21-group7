@@ -1,77 +1,45 @@
 import { init } from "./init.js";
 window.addEventListener("DOMContentLoaded", currInit);
-// const recipeData = {};
 let recipeObject;
+let page;
 /** Initialize function, begins all of the JS code in this file */
 async function currInit() {
-  // await init.init();
-  await init();
-  console.log("home-page init");
+  await init(); // wait for init local storage
+  makePage();
+  recipeCards();
+}
+
+/**
+ * make page depends on what page you want to show
+ */
+function makePage() {
   const queryString = window.location.href;
   console.log(queryString);
-  // default is home page with search and curated recipes
-  let page = "curatedList";
-  let objString = "curatedRecipes";
+  // default is home page is the curated recipes section
+  page = "curatedList";
+  // all sections we need to deal with
+  // const secitonList = ["search", "cookbook", "results", "curatedList"];
+  let showList = ["search", "curatedList"]; // seciton list we want to show
+  let hideList = ["cookbook", "results"]; // section lsit we want to hide
   // switch recipeObject depends on which page we want to show
-  // recipeObject = JSON.parse(localStorage.getItem("curatedRecipes"));
+  recipeObject = JSON.parse(localStorage.getItem("curatedRecipes"));
+  // change all variables depends on current page
   // if we want to show cookbook, the recipeObject should be userRecipes which saved in localStorge
   if (queryString.includes("cookbook")) {
     page = "cookbook";
-    objString = "userRecipes";
-    // getRecipeObj("userRecipes");
-    // recipeObject = JSON.parse(localStorage.getItem("userRecipes"));
-  } else if (queryString.includes("result")) {
-    page = "results";
-    console.log("result");
-    objString = "resultRecipes";
-    // recipeObject = JSON.parse(localStorage.getItem("resultRecipes"));
-  }
-  try {
-    await getRecipeObj(objString);
-  } catch (err) {
-    console.log(`Error fetching recipes: ${err}`);
-    return;
-  }
-  console.log(recipeObject);
-  makePage(page);
-  recipeCards(page, recipeObject);
-}
-/**
- * make page depends on what page you want to show
- * @param {String} objString
- */
-async function getRecipeObj(objString) {
-  return new Promise((resolve, reject) => {
-    console.log("in this function");
-    recipeObject = JSON.parse(localStorage.getItem(objString));
-    if (recipeObject !== null) resolve();
-    else reject(err);
-  });
-}
-/**
- * make page depends on what page you want to show
- * @param {string} page
- */
-function makePage(page) {
-  // all sections we need to deal with
-  // const secitonList = ["search", "cookbook", "results", "curatedList"];
-  // only cookbook page need to hide this section
-  document.querySelector(".recipe-card-container").classList.add("shown");
-
-  let showList;
-  let hideList;
-  if (page === "curatedList") {
-    showList = ["search", "curatedList"];
-    hideList = ["cookbook", "results"];
-    // document.querySelector(".recipe-card-container").classList.add("shown");
-  } else if (page === "cookbook") {
     showList = ["cookbook"];
     // only cookbook need to hide the whole recipe-card-container
     hideList = ["search", "results", "curatedList"];
-  } else if (page === "results") {
+    recipeObject = JSON.parse(localStorage.getItem("userRecipes"));
+  } else if (queryString.includes("result")) {
+    page = "results";
     showList = ["search", "results"];
     hideList = ["search", "curatedList"];
+    console.log("result");
+    recipeObject = JSON.parse(localStorage.getItem("resultRecipes"));
   }
+  // all cards need to show this container
+  document.querySelector(".recipe-card-container").classList.add("shown");
   for (const show of showList) {
     const ele = document.querySelector(`.${show}`);
     if (!ele.classList.contains("shown")) ele.classList.add("shown");
@@ -84,10 +52,8 @@ function makePage(page) {
 
 /**
  * Use recipeObject to create recipe cards
- * @param {string} page want to know which page we're working on
- * @param {JSON} recipeObject
  */
-function recipeCards(page, recipeObject) {
+function recipeCards() {
   console.log(`recipeCards: ${page}`);
   const section = document.querySelector(`.${page}`);
   // loop whole local storge

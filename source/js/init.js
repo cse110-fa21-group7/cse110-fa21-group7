@@ -1,39 +1,23 @@
+// import { json } from "express";
+
 window.addEventListener("DOMContentLoaded", init);
 
 /**
  * Entry point for initialization scripts
  */
 export async function init() {
-  await addCurated();
-
-  if (initializeStorage()) {
-    addExamples();
-  }
-}
-/** Initializes recipes object from localStorage cache */
-/**
- * Represents a book.
- * @constructor
- */
-function initializeStorage() {
   if (localStorage.getItem("currID") === null)
     localStorage.setItem("currID", 0);
   if (localStorage.getItem("query") === null) localStorage.setItem("query", "");
-  const recipeObj = [
-    "storedRecipes",
-    "userRecipes",
-    "curatedRecipes",
-    "resultRecipes",
-  ];
-  let exampleFlag = false;
+  if (localStorage.getItem("curatedRecipes") === null) await addCurated();
+  const recipeObj = ["storedRecipes", "userRecipes", "resultRecipes"];
+  // let exampleFlag = false;
   for (const obj of recipeObj) {
     if (localStorage.getItem(obj) === null) {
-      exampleFlag = true;
       localStorage.setItem(obj, JSON.stringify({}));
+      if (obj === "userRecipes") addExamples();
     }
   }
-  console.log("Initializing recipes object");
-  return exampleFlag;
 }
 
 /**
@@ -129,9 +113,11 @@ function addExamples() {
  * Load curate recipes into localStorage from JSON file
  */
 async function addCurated() {
-  const curated = await fetch("../json/curated.json").then((response) => {
-    return response.json();
-  });
-
-  localStorage.setItem("curatedRecipes", JSON.stringify(curated));
+  await fetch("../json/curated.json")
+    .then((response) => {
+      return response.json();
+    })
+    .then((json) => {
+      localStorage.setItem("curatedRecipes", JSON.stringify(json));
+    });
 }
