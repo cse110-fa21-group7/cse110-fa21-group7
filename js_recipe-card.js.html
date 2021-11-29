@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>js/recipe-card.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="RecipeCard.html">RecipeCard</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="RecipeCard.html#setPage">setPage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="RecipeCard.html#setPage">setPage</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#addCurated">addCurated</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#addExamples">addExamples</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#addList">addList</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#bindEscKey">bindEscKey</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#bindNavbarLinks">bindNavbarLinks</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#checkID">checkID</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#checkValid">checkValid</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#createSections">createSections</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#currInit">currInit</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#fetchFullRecipe">fetchFullRecipe</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#fetchRecipes">fetchRecipes</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#file">file</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getID">getID</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getPage">getPage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getRecipesFromCache">getRecipesFromCache</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#hasFloat">hasFloat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#hasValue">hasValue</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#init">init</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#makePage">makePage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#populateForm">populateForm</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#populateHTML">populateHTML</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#readRecipe">readRecipe</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#recipeCards">recipeCards</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#removeTags">removeTags</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#setButtonListener">setButtonListener</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#setSearchListener">setSearchListener</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#showError">showError</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#showMessage">showMessage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#showSuccess">showSuccess</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#spoonToASAP">spoonToASAP</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">js/recipe-card.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Get recipes from localStorage
+ *
+ */
+class RecipeCard extends HTMLElement {
+  /**
+   * Get recipes from localStorage
+   *
+   */
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+  }
+
+  /**
+   * Set the page name of the recipe card
+   * @param {string} page
+   */
+  setPage(page) {
+    this.page = page;
+  }
+
+  /**
+   * Get recipes from localStorage
+   * @param {HTMLElement} data
+   */
+  set data(data) {
+    // console.log(data);
+    const styleElem = document.createElement("style");
+    const styles = `
+    .card {
+      overflow: hidden;
+      box-shadow: 0px 2px 20px #cfd8dc;
+      border-radius: 0.3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: transform 200ms ease-in;
+      background-color: #fff;
+      position: relative;
+      
+    
+    
+      /* // &amp;__btn {
+      //   padding: 1rem;
+      //   font-family: inherit;
+      //   font-weight: bold;
+      //   font-size: 1rem;
+      //   margin: 1rem;
+      //   border: 2px solid var(--clr-primary);
+      //   background: transparent;
+      //   color: var(--clr-primary);
+      //   border-radius: var(--radius);
+      //   transition: background 200ms ease-in, color 200ms ease-in;
+      // }
+    
+      // &amp;:hover &amp;__btn {
+      //   background: var(--clr-primary);
+      //   color: white;
+      // } */
+    }
+    
+    .card__image {
+        height: 12rem;
+        width: 100%;
+        object-fit: cover;
+      }
+    
+    .card__title {
+        padding: 1rem;
+      }
+    
+    .card__description {
+        padding: 1rem 1rem;
+      }
+    
+    .card:hover {
+        transform: scale(1.02);
+     }
+    
+     .card__body {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+     }
+    
+    ul.info-row {
+        list-style: none;
+        margin: 0.5em auto;
+        padding: 0;
+        vertical-align: bottom;
+    }
+    
+    .info-row li {
+            display: inline-block;
+            margin-left: 1em;
+            line-height: 1em; }
+    
+    .info-row li span {
+      margin-left: 0.5em;
+              font-weight: 300;
+              vertical-align: middle;
+              color: #838689;
+    }
+    
+    .add-to-cookbook a .fa-plus {
+          background: #57abf2;
+          border-radius: 50%;
+          position: absolute;
+          top: 10.75rem;
+          right: 10%;
+          width: 2.5rem;
+          height: 2.5rem;
+          text-align: center;
+          color: white;
+          font-size: 1.3rem;
+          padding: 0.6rem 0.52rem;
+    }`;
+
+    styleElem.innerHTML = styles;
+    const cardDiv = document.createElement("div");
+    cardDiv.classList.add("card");
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card_body");
+
+    this.shadowRoot.append(styleElem, cardDiv);
+    cardDiv.appendChild(cardBody);
+
+    // add img
+    const img = document.createElement("img");
+    img.setAttribute("src", data["image"]);
+    img.setAttribute("alt", data["title"]);
+    img.classList.add("card__image");
+    cardBody.appendChild(img);
+
+    // add title
+    const title = document.createElement("h2");
+    title.textContent = data["title"];
+    title.classList.add("card__title");
+    cardBody.appendChild(title);
+
+    if (this.page == "curatedList" || this.page == "cookbook") {
+      // add info list
+      const ul = document.createElement("ul");
+      ul.classList.add("info-row");
+      //
+
+      // li.append(i, span)
+      ul.appendChild(addList("38 min"));
+      // add kcal
+      ul.appendChild(addList("318 kcal"));
+      // add total cost
+      let price;
+      // assume the user enters in terms of dollars - append a dollar sign to front
+      if (data["image"].includes("https://spoonacular.com")) {
+        price = "$" + (data["totalCost"] / 100).toFixed(2);
+      } else {
+        price = "$" + data["totalCost"];
+      }
+      ul.appendChild(addList(price));
+      cardBody.appendChild(ul);
+    }
+  }
+}
+customElements.define("recipe-card", RecipeCard);
+/**
+ * Get recipes from localStorage
+ * @param {string} value
+ * @return {HTMLElement}
+ */
+function addList(value) {
+  // symbol does not work need to ask Kunal how to fix
+  // const i = document.createElement('i');
+  // const span = document.createElement('span');
+  // span.innerHTML = '38 min'
+
+  const li = document.createElement("li");
+  const i = document.createElement("i");
+
+  i.classList.add("fa");
+  i.classList.add("fa-clock-o");
+  i.ariaHidden = "true";
+
+  const span = document.createElement("span");
+  span.innerHTML = value;
+
+  li.appendChild(i);
+  li.appendChild(span);
+  return li;
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Mon Nov 29 2021 19:58:01 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

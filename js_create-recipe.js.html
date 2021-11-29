@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>js/create-recipe.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="RecipeCard.html">RecipeCard</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="RecipeCard.html#setPage">setPage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="RecipeCard.html#setPage">setPage</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#addCurated">addCurated</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#addExamples">addExamples</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#addList">addList</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#bindEscKey">bindEscKey</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#bindNavbarLinks">bindNavbarLinks</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#checkID">checkID</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#checkValid">checkValid</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#createSections">createSections</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#currInit">currInit</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#fetchFullRecipe">fetchFullRecipe</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#fetchRecipes">fetchRecipes</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#file">file</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getID">getID</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getPage">getPage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getRecipesFromCache">getRecipesFromCache</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#hasFloat">hasFloat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#hasValue">hasValue</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#init">init</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#makePage">makePage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#populateForm">populateForm</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#populateHTML">populateHTML</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#readRecipe">readRecipe</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#recipeCards">recipeCards</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#removeTags">removeTags</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#setButtonListener">setButtonListener</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#setSearchListener">setSearchListener</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#showError">showError</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#showMessage">showMessage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#showSuccess">showSuccess</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#spoonToASAP">spoonToASAP</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">js/create-recipe.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// create-recipe.js
+const MAX_INGREDIENTS = 20;
+const MAX_STEPS = 10;
+let updateFlag = false;
+let recipe = {};
+let userRecipes; // save local storage recipes
+let currID;
+let recipeID;
+let formdata = new FormData();
+window.addEventListener("DOMContentLoaded", init);
+
+/** Initialize function, begins all of the JS code in this file */
+async function init() {
+  userRecipes = localStorage.getItem("userRecipes");
+  userRecipes = JSON.parse(userRecipes);
+  currID = parseInt(localStorage.getItem("currID"));
+  checkID();
+}
+
+/** Populate forms by ID this is for update recipe form
+ */
+async function populateForm() {
+  document.getElementById("recipeTitle").value = recipe["title"];
+  document.getElementById("recipeDescription").value = recipe["description"];
+  document.getElementById("recipeCost").value = recipe["totalCost"];
+  const img = document.createElement("img");
+  img.src = recipe["image"];
+  img.height = "200";
+  document.getElementById("img-spot").append(img);
+
+  const ingredients = recipe["ingredients"];
+  const ingredientsDiv = document.getElementById("ingredients");
+
+  // Get template ingredient element
+  const ingElemTemplate = ingredientsDiv
+    .getElementsByClassName("ingredient")[0]
+    .cloneNode(true);
+
+  // Clear unfilled elements
+  const ingredientElems = ingredientsDiv.getElementsByClassName("ingredient");
+  while (ingredientElems.length > 0) {
+    ingredientElems[0].remove();
+  }
+
+  // Populate ingredientsDiv with ingredient elements using recipe data
+  for (let i = 0; i &lt; ingredients.length; i++) {
+    const ingElem = ingElemTemplate.cloneNode(true);
+    ingElem.querySelector(
+      ".ingredient-name > .name-label"
+    ).innerText = `Ingredient ${i + 1}`;
+    ingElem.querySelector(".ingredient-name > input").value =
+      ingredients[i].name;
+    ingElem.querySelector(".ingredient-amount > input").value =
+      ingredients[i].amount;
+    ingredientsDiv.appendChild(ingElem);
+  }
+
+  const steps = recipe["steps"];
+  const stepsDiv = document.getElementById("steps");
+
+  // Get template step element
+  const stepElemTemplate = stepsDiv.getElementsByClassName("step-sec")[0];
+
+  // Clear unfilled elements
+  const stepsElems = stepsDiv.getElementsByClassName("step-sec");
+  while (stepsElems.length > 0) {
+    stepsElems[0].remove();
+  }
+
+  // Populate stepsDiv with step elements using recipe data
+  for (let i = 0; i &lt; steps.length; i++) {
+    const stepElem = stepElemTemplate.cloneNode(true);
+    stepElem.querySelector(".recipeStep-label").innerText = `Step ${i + 1}`;
+    stepElem.querySelector("textarea").value = steps[i];
+    stepsDiv.appendChild(stepElem);
+  }
+}
+
+/** Checks if ID is in url or not, if yes means we need to update current recipe */
+function checkID() {
+  const queryString = window.location.search;
+  // console.log(queryString);
+  const urlParams = new URLSearchParams(queryString);
+  const id = urlParams.get("id");
+  if (id === null) return;
+  // means we are in update page, but the id not found in user cookbook
+  if (!id in userRecipes) {
+    console.log("invalid ID");
+    return;
+  }
+  // rn ID is correct and in update page
+  updateFlag = true;
+  recipeID = id;
+  recipe = userRecipes[id];
+  console.log(`Found recipe: ${recipe["title"]}`);
+  populateForm();
+}
+
+// *********  All event listener list here ************* //
+const form = document.getElementById("recipeForm");
+/**
+ * when user want to upload the image, we will upload it to imgur.
+ * Also, create a url for us.
+ * @param {FormData} dataform
+ */
+// Image upload, saves URL to recipe object
+const file = document.getElementById("recipeImage");
+file.addEventListener("change", (e) => {
+  formdata = new FormData();
+  // if user did not upload image, just return this back
+  if (e.target.files[0] === undefined) return;
+  formdata.append("image", e.target.files[0]);
+  fetch("create/image", {
+    method: "post",
+    body: formdata,
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      const divImg = document.getElementById("img-spot");
+      const childImgs = divImg.getElementsByTagName("img");
+      let img;
+      if (childImgs.length == 0) {
+        img = document.createElement("img");
+        divImg.append(img);
+      } else {
+        img = childImgs[0];
+      }
+      console.log(`URL: ${data.link}`);
+      img.src = data.link;
+      img.height = "200";
+      img.referrerPolicy = "no-referrer";
+      recipe["image"] = data.link;
+    });
+});
+
+// Create additional ingredient element
+const addIng = form.querySelector("#add-ingredient");
+addIng.addEventListener("click", function (event) {
+  console.log("Add ingredient");
+  const ingsDiv = document.getElementById("ingredients");
+  const ingElems = ingsDiv.querySelectorAll(".ingredient");
+  const numIngs = ingElems.length;
+
+  // Setting hard upper bound per ADR
+  if (numIngs >= MAX_INGREDIENTS) {
+    console.log("Maximum amount of ingredients");
+    return;
+  }
+
+  const ingAdded = ingElems[0].cloneNode(true);
+  console.log(`numIngs: ${numIngs}`);
+  ingAdded.querySelector(
+    ".ingredient-name > .name-label"
+  ).innerText = `Ingredient ${numIngs + 1}`;
+  ingAdded.querySelector(".ingredient-name > .form-control").value = "";
+  ingAdded.querySelector(".ingredient-amount > .form-control").value = "";
+  ingsDiv.appendChild(ingAdded);
+});
+
+// Create additional step element
+const addStep = form.querySelector("#add-step");
+addStep.addEventListener("click", function (event) {
+  console.log("Add step");
+  const stepsDiv = document.getElementById("steps");
+  const stepElems = stepsDiv.querySelectorAll(".step-sec");
+  const numSteps = stepElems.length;
+
+  // Setting hard upper bound per ADR
+  if (numSteps >= MAX_STEPS) {
+    console.log("Maximum amount of steps");
+    return;
+  }
+
+  const stepAdded = stepElems[0].cloneNode(true);
+  console.log(`numSteps: ${numSteps}`);
+  stepAdded.querySelector(".recipeStep-label").innerText = `Step ${
+    numSteps + 1
+  }`;
+  stepAdded.querySelector(".step-sec > .form-control").value = "";
+  stepsDiv.appendChild(stepAdded);
+});
+
+// remove ingredient
+const removeIng = form.querySelector("#remove-ingredient");
+removeIng.addEventListener("click", function (event) {
+  console.log("Remove ingredient");
+  const ingsDiv = document.getElementById("ingredients");
+  const ingElems = ingsDiv.querySelectorAll(".ingredient");
+  if (ingElems.length > 1) {
+    ingElems[ingElems.length - 1].remove();
+  }
+});
+// remove steps
+const removeStep = form.querySelector("#remove-step");
+removeStep.addEventListener("click", function (event) {
+  console.log("Remove step");
+  const stepsDiv = document.getElementById("steps");
+  const stepElems = stepsDiv.querySelectorAll(".step-sec");
+  if (stepElems.length > 1) {
+    stepElems[stepElems.length - 1].remove();
+  }
+});
+
+// Form submission, saves recipe to localStorage
+form.addEventListener("submit", function (event) {
+  // Stop form submission
+  event.preventDefault();
+  console.log("Submit button clicked");
+  const allValid = checkValid();
+  if (!allValid) return;
+  // dupdate means
+  if (updateFlag) {
+    userRecipes[recipeID] = recipe;
+  }
+  // we add new recipe to user cookbook
+  else {
+    currID += 1;
+    userRecipes[currID] = recipe;
+  }
+  // save all of object to local storage
+  localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
+  localStorage.setItem("currID", currID);
+  // back to cookbook page
+  window.alert("successfully created a recipe!");
+  location.href = "/cookbook";
+});
+
+/**  Show a message in the invalid-feedback div below the input element
+ * @param {HTMLElement} input
+ * @param {String} message
+ * @param {Boolean} type
+ * @return {Boolean}
+ */
+function showMessage(input, message, type) {
+  // get the small element and set the message
+  const msg = input.parentNode.querySelector("div.invalid-feedback");
+  // console.log(msg);
+  msg.innerText = message;
+  // update the class for the input
+  if (type) {
+    // Valid
+    input.classList.remove("is-invalid");
+    input.classList.add("is-valid");
+  } else {
+    // Invalid
+    input.classList.remove("is-valid");
+    input.classList.add("is-invalid");
+  }
+  return type;
+}
+
+/** Shows error message
+ * @param {HTMLElement} input
+ * @param {String} message
+ * @return {Function}
+ */
+function showError(input, message) {
+  return showMessage(input, message, false);
+}
+
+/**
+ * Shows success message
+ * @param {HTMLElement} input
+ * @return {Function}
+ */
+function showSuccess(input) {
+  return showMessage(input, "", true);
+}
+
+/**
+ * Checks if an element has a non-empty value
+ * @param {HTMLElement} input
+ * @param {String} message
+ * @return {Function}
+ */
+function hasValue(input, message) {
+  if (input.value.trim() === "") {
+    return showError(input, message);
+  }
+  return showSuccess(input);
+}
+
+/**
+ * Checks if an element has a float value
+ * @param {HTMLElement} input
+ * @param {String} message
+ * @return {Function}
+ */
+function hasFloat(input, message) {
+  if (isNaN(parseFloat(input.value.trim()))) {
+    return showError(input, message);
+  }
+  return showSuccess(input);
+}
+/**
+ * check user's input is valid or not
+ * @return {boolean} valid bool
+ */
+function checkValid() {
+  const TITLE_REQUIRED = "Please enter your recipe title";
+  const INGREDIENT_NAME_REQUIRED = "Please enter your ingredient name";
+  const INGREDIENT_AMOUNT_REQUIRED = "Please enter your ingredient amount";
+  const STEP_REQUIRED = "Please enter your recipe instructions";
+  let allValid = true;
+
+  // Validate form
+  const titleValid = hasValue(
+    document.getElementById("recipeTitle"),
+    TITLE_REQUIRED
+  );
+  if (titleValid) {
+    recipe["title"] = document.getElementById("recipeTitle").value.trim();
+  } else {
+    allValid = false;
+  }
+
+  recipe["description"] = document
+    .getElementById("recipeDescription")
+    .value.trim();
+
+  const totalCost = document.getElementById("recipeCost").value.trim();
+  let cost = null;
+  if (totalCost.length > 0) {
+    if (hasFloat(document.getElementById("recipeCost"))) {
+      cost = parseFloat(totalCost);
+    } else {
+      allValid = false;
+    }
+  }
+  recipe["totalCost"] = cost;
+
+  // Set to default if no image uploaded
+  if (!("image" in recipe)) {
+    recipe["image"] = "../img/default.png";
+  }
+
+  const ingredients = [];
+  const ingredientElems = document
+    .getElementById("ingredients")
+    .getElementsByClassName("ingredient");
+  for (let i = 0; i &lt; ingredientElems.length; i++) {
+    const ingElem = ingredientElems[i];
+    const recipeIng = {};
+    const ingredientNameValid = hasValue(
+      ingElem.querySelector(".ingredient-name > input"),
+      INGREDIENT_NAME_REQUIRED
+    );
+    const ingredientAmountValid = hasValue(
+      ingElem.querySelector(".ingredient-amount > input"),
+      INGREDIENT_AMOUNT_REQUIRED
+    );
+    recipeIng["name"] = ingElem
+      .querySelector(".ingredient-name > input")
+      .value.trim();
+    recipeIng["amount"] = ingElem
+      .querySelector(".ingredient-amount > input")
+      .value.trim();
+
+    if (ingredientNameValid &amp;&amp; ingredientAmountValid) {
+      ingredients.push(recipeIng);
+    } else {
+      allValid = false;
+    }
+  }
+
+  recipe["ingredients"] = ingredients;
+
+  const steps = [];
+  const stepElems = document
+    .getElementById("steps")
+    .getElementsByClassName("step-sec");
+  for (let i = 0; i &lt; stepElems.length; i++) {
+    const stepElem = stepElems[i];
+    console.log(`stepElem: ${stepElem}`);
+    const stepValid = hasValue(
+      stepElem.querySelector(".form-control"),
+      STEP_REQUIRED
+    );
+    if (stepValid) {
+      const step = stepElem.querySelector(".form-control").value.trim();
+      steps.push(step);
+    } else {
+      allValid = false;
+    }
+  }
+  recipe["steps"] = steps;
+  return allValid;
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Mon Nov 29 2021 19:58:01 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

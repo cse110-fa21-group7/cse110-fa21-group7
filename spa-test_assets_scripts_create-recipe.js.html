@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>spa-test/assets/scripts/create-recipe.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="RecipeCard.html">RecipeCard</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="RecipeCard.html#setPage">setPage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="RecipeCard.html#setPage">setPage</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#addCurated">addCurated</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#addExamples">addExamples</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#addList">addList</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#bindEscKey">bindEscKey</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#bindNavbarLinks">bindNavbarLinks</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#checkID">checkID</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#checkValid">checkValid</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#createSections">createSections</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#currInit">currInit</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#fetchFullRecipe">fetchFullRecipe</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#fetchRecipes">fetchRecipes</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#file">file</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getID">getID</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getPage">getPage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getRecipesFromCache">getRecipesFromCache</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#hasFloat">hasFloat</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#hasValue">hasValue</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#init">init</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#makePage">makePage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#populateForm">populateForm</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#populateHTML">populateHTML</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#readRecipe">readRecipe</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#recipeCards">recipeCards</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#removeTags">removeTags</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#setButtonListener">setButtonListener</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#setSearchListener">setSearchListener</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#showError">showError</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#showMessage">showMessage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#showSuccess">showSuccess</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#spoonToASAP">spoonToASAP</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">spa-test/assets/scripts/create-recipe.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**  Show a message in the invalid-feedback div below the input element
+ * @param {HTMLElement} input
+ * @param {String} message
+ * @param {Boolean} type
+ * @return {Boolean}
+ */
+function showMessage(input, message, type) {
+  // get the small element and set the message
+  const msg = input.parentNode.querySelector("div.invalid-feedback");
+  console.log(msg);
+  msg.innerText = message;
+  // update the class for the input
+  if (type) {
+    // Valid
+    input.classList.remove("is-invalid");
+    input.classList.add("is-valid");
+  } else {
+    // Invalid
+    input.classList.remove("is-valid");
+    input.classList.add("is-invalid");
+  }
+  return type;
+}
+
+/** Shows error message
+ * @param {HTMLElement} input
+ * @param {String} message
+ * @return {Function}
+ */
+function showError(input, message) {
+  return showMessage(input, message, false);
+}
+
+/**
+ * Shows success message
+ * @param {HTMLElement} input
+ * @return {Function}
+ */
+function showSuccess(input) {
+  return showMessage(input, "", true);
+}
+
+/**
+ * Checks if an element has a non-empty value
+ * @param {HTMLElement} input
+ * @param {String} message
+ * @return {Function}
+ */
+function hasValue(input, message) {
+  if (input.value.trim() === "") {
+    return showError(input, message);
+  }
+  return showSuccess(input);
+}
+
+/*
+function getElementIfExists(elem) {
+  if (elem != null &amp;&amp; elem.value.trim() === '') {
+    return ''
+  }
+  return elem.value.trim()
+}
+*/
+
+const form = document.getElementById("recipeForm");
+
+const TITLE_REQUIRED = "Please enter your recipe title";
+const INGREDIENT_NAME_REQUIRED = "Please enter your ingredient name";
+const INGREDIENT_AMOUNT_REQUIRED = "Please enter your ingredient amount";
+const STEP_REQUIRED = "Please enter your recipe instructions";
+
+form.addEventListener("submit", function (event) {
+  // stop form submission
+  event.preventDefault();
+
+  // validate form
+  const titleValid = hasValue(
+    document.getElementById("recipeTitle"),
+    TITLE_REQUIRED
+  );
+  const ingredient1NameValid = hasValue(
+    document.getElementById("ingredient1name"),
+    INGREDIENT_NAME_REQUIRED
+  );
+  const ingredient1AmountValid = hasValue(
+    document.getElementById("ingredient1amount"),
+    INGREDIENT_AMOUNT_REQUIRED
+  );
+  const step1Valid = hasValue(document.getElementById("step1"), STEP_REQUIRED);
+
+  // if valid, submit the form.
+  if (
+    titleValid &amp;&amp;
+    ingredient1NameValid &amp;&amp;
+    ingredient1AmountValid &amp;&amp;
+    step1Valid
+  ) {
+    const recipe = {};
+    recipe.title = document.getElementById("recipeTitle").value.trim();
+    const ingredients = [];
+    recipe.ingredients = ingredients;
+    const ingredient1 = {};
+    ingredient1.name = document.getElementById("ingredient1name").value.trim();
+    ingredient1.amount = document
+      .getElementById("ingredient1amount")
+      .value.trim();
+    ingredients.push(ingredient1);
+    const steps = [];
+    recipe.steps = steps;
+    steps.push(document.getElementById("step1").value.trim());
+    console.log(document.getElementById("step2").value.trim());
+    localStorage.setItem("recipe", JSON.stringify(recipe));
+  }
+});
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Mon Nov 29 2021 19:58:01 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
