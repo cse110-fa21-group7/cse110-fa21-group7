@@ -4,3 +4,7 @@ secrets.yml
 .vscode
 .DS_Store
 out/
+
+# for scss preprocessing
+source/scss/*.map
+source/scss/*.css
