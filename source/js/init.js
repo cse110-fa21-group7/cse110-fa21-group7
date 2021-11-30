@@ -1,5 +1,5 @@
 // import { json } from "express";
-
+let hello;
 window.addEventListener("DOMContentLoaded", init);
 
 /**
