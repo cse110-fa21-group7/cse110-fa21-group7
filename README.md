@@ -1,3 +1,4 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/a420bf5aee4643208df56c92df8d91fe)](https://www.codacy.com/gh/cse110-fa21-group7/cse110-fa21-group7/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cse110-fa21-group7/cse110-fa21-group7&amp;utm_campaign=Badge_Grade)
 # Group 7
 
 [Team Page](https://github.com/cse110-fa21-group7/cse110-fa21-group7/blob/main/admin/team.md)
