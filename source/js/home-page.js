@@ -18,6 +18,8 @@ function makePage() {
   console.log(queryString);
   // default is home page is the curated recipes section
   page = "curatedList";
+  let intro = document.querySelector(".search-introduction");
+  intro.innerHTML = "Search and save your favorite recipes.";
   // all sections we need to deal with
   // const secitonList = ["search", "cookbook", "results", "curatedList"];
   let showList = ["search", "curatedList"]; // seciton list we want to show
@@ -28,6 +30,8 @@ function makePage() {
   // if we want to show cookbook, the recipeObject should be userRecipes which saved in localStorge
   if (queryString.includes("cookbook")) {
     page = "cookbook";
+    intro.innerHTML = "Here are your recipes.";
+
     showList = ["cookbook"];
     // only cookbook need to hide the whole recipe-card-container
     hideList = ["search", "results", "curatedList"];
