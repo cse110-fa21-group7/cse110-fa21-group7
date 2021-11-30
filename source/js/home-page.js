@@ -106,7 +106,7 @@ function readRecipe(recipeCard, id) {
  async function fetchFullRecipe(id) {
   const storedRecipes = JSON.parse(localStorage.getItem("storedRecipes"));
   if (id in storedRecipes) {
-    recipe = storedRecipes[id];
+    return;
   } else {
     console.log("Fetching full recipe");
     const url = `/search/recipeId?id=${id}`;
