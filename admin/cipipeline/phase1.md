@@ -39,7 +39,7 @@ Based on the report in Codacy, we have improved our code grade from C to A and k
 
 ## Pipeline Diagram
 
-<img src="./pipeline_diagram.png" alt="diagram">
+<img src="./phase1.png" alt="diagram">
 
 ## Pipeline Demo Video
 Pipeline demo video [here](./phase1.mp4)
