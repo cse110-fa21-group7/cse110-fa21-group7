@@ -152,14 +152,7 @@ class RecipeCard extends HTMLElement {
       // add kcal
       ul.appendChild(addList("318 kcal"));
       // add total cost
-      let price;
-      // assume the user enters in terms of dollars - append a dollar sign to front
-      if (data["image"].includes("https://spoonacular.com")) {
-        price = "$" + (data["totalCost"] / 100).toFixed(2);
-      } else {
-        price = "$" + data["totalCost"];
-      }
-      ul.appendChild(addList(price));
+      ul.appendChild(addList(`$ ${data["totalCost"]}`));
       cardBody.appendChild(ul);
     }
   }
