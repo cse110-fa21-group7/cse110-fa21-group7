@@ -138,6 +138,10 @@ editButton.addEventListener("click", () => {
   if (editButton.innerHTML === "add") {
     // add current recipe to cook book
     // addRecipe();
+    const userRecipe = JSON.parse(localStorage.getItem("userRecipes"));
+    userRecipe[recipeID] = recipeObject[recipeID];
+    localStorage.setItem("userRecipes", JSON.stringify(userRecipe));
+    window.alert("successfully added to your own cookbook!");
   } else {
     location.href = `/update?id=${recipeID}`;
   }
