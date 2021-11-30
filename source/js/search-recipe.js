@@ -24,7 +24,7 @@ async function fetchRecipes(query) {
     return;
   }
   // --- we should use recipes ID to fetch all recipe's info, need other team member implement this part------
-  const storage = window.localStorage;
+  // const storage = window.localStorage;
   // const resultRecipes = JSON.parse(storage.getItem("resultRecipes"));
   // Overwrite resultRecipes on each search.
   const resultRecipes = {};
@@ -86,7 +86,7 @@ function setSearchListener() {
     */
 }
 
-let cardTemplate = null;
+// let cardTemplate = null;
 
 /**
  * Populates index.html results section with recipe card elements
