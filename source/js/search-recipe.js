@@ -1,10 +1,3 @@
-window.addEventListener("DOMContentLoaded", init);
-
-/** Initialize function, begins all of the JS code in this file */
-async function init() {
-  setSearchListener();
-}
-
 /**
  * Fetches search results and populates index.html
  * @param {String} query
@@ -23,116 +16,111 @@ async function fetchRecipes(query) {
     alert("Invalid API Key");
     return;
   }
-  // --- we should use recipes ID to fetch all recipe's info, need other team member implement this part------
-  // const storage = window.localStorage;
-  // const resultRecipes = JSON.parse(storage.getItem("resultRecipes"));
-  // Overwrite resultRecipes on each search.
   const resultRecipes = {};
-
   for (const recipe of data["results"]) {
     resultRecipes[recipe["id"]] = recipe;
   }
-
   // update
   // Store full recipes in searchedRecipes
   localStorage.setItem("resultRecipes", JSON.stringify(resultRecipes));
-
-  // displaySearchResults(data["results"]);
-
-  // log the result
-  setTimeout(() => {
-    console.log(data["results"]);
-  }, 10);
   const urlchange = `/result?query=${query}`;
   window.location.href = urlchange;
-  // for (const [key, value] of Object.entries(recipes)) {
-  //   if (key !== "currID") {
-  //     recipeData[key] = value;
-  //   }
-  // }
-  // console.log(recipeData);
-  // return true;
 }
 
 /**
  * Set up event listener for search
  */
-function setSearchListener() {
-  // const searchForm = document.getElementById("search-form");
-  const searchbtn = document.getElementById("search-button");
-  searchbtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    const searchField = document.getElementById("query");
+const searchbtn = document.getElementById("search-button");
+searchbtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  const searchField = document.getElementById("query");
 
-    const queryText = searchField.value;
-    console.log(`Search query: ${queryText}`);
-    if (queryText.value === "") {
-      alert("Please enter recipe you want to search");
-    } else {
-      fetchRecipes(queryText);
+  const queryText = searchField.value;
+  console.log(`Search query: ${queryText}`);
+  if (queryText.value === "") {
+    alert("Please enter recipe you want to search");
+  } else {
+    fetchRecipes(queryText);
+  }
+});
+/**
+ * Gets full recipe from Spoonacular API based on ID
+ * @param {String} id
+ * @return {Object}
+ */
+export async function fetchFullRecipe(id) {
+  const storedRecipes = JSON.parse(localStorage.getItem("storedRecipes"));
+  if (id in storedRecipes) {
+    return;
+  } else {
+    console.log("Fetching full recipe");
+    const url = `/search/recipeId?id=${id}`;
+    // Return the recipe object from spoonacular
+    const res = await fetch(url);
+    console.log(res);
+    const data = await res.json();
+    if (data.cod === "404") {
+      alert("Recipe not found");
+      return null;
     }
-  });
+    if (data.cod === 401) {
+      alert("Invalid API Key");
+      return null;
+    }
+    console.log(`Recipe:\n${data}`);
+    storedRecipes[id] = spoonToASAP(data);
+    localStorage.setItem("storedRecipes", JSON.stringify(storedRecipes));
+  }
+}
+/**
+ * Converts Spoonacular recipe object into ASAP recipe object
+ * @param {Object} data
+ * @return {Object}
+ */
+function spoonToASAP(data) {
+  console.log("SpoonToASAP");
+  console.log(data);
+  const asap = {};
+  asap["title"] = data["title"];
+  asap["description"] = removeTags(data["summary"]).substring(0, 300) + "...";
+  asap["servings"] = data["servings"];
+  asap["totalCost"] = (parseFloat(data["pricePerServing"]) / 100).toFixed(2);
+  asap["time"] = data["readyInMinutes"];
+  asap["image"] = data["image"];
 
-  /*
-    // fetch the recipes and wait for them to load
-    const fetchSuccessful = await fetchRecipes();
-    // if they didn't successfully load, quit the function
-    if (!fetchSuccessful) {
-      console.log("Recipe fetch unsuccessful");
-      return;
-    }
-    // Add the first three recipe cards to the page
-    createRecipeCards();
-    */
+  const ingredients = [];
+  for (const dataIng of data["extendedIngredients"]) {
+    const ingredient = {};
+    ingredient["name"] = dataIng["name"];
+    ingredient["amount"] =
+      dataIng["measures"]["us"]["amount"] +
+      " " +
+      dataIng["measures"]["us"]["unitShort"];
+    ingredients.push(ingredient);
+  }
+  asap["ingredients"] = ingredients;
+
+  const steps = [];
+  for (const dataStep of data["analyzedInstructions"][0]["steps"]) {
+    const step = dataStep["step"];
+    steps.push(step);
+  }
+  asap["steps"] = steps;
+
+  return asap;
 }
 
-// let cardTemplate = null;
-
 /**
- * Populates index.html results section with recipe card elements
- * @param {Object} searchedRecipeIDs
+ * Helper function, removes HTML tags from recipe summary
+ * @param {String} str
+ * @return {String}
  */
-// function displaySearchResults(searchedRecipeIDs) {
-//   const curatedList = document.getElementById("curated-list");
-//   curatedList.style.visibility = "hidden";
-//   let recipeCardDiv;
-//   if (cardTemplate == null) {
-//     recipeCardDiv = curatedList.querySelector(".card");
-//     recipeCardDiv.querySelector(".info-row").remove();
-//     console.log(recipeCardDiv);
-//     cardTemplate = recipeCardDiv;
-//   } else {
-//     recipeCardDiv = cardTemplate;
-//   }
+function removeTags(str) {
+  if (str === null || str === "") return false;
+  else str = str.toString();
 
-//   const results = document.getElementById("results");
-
-//   // Clear results
-//   const cards = results.querySelectorAll(".card");
-//   for (const card of cards) {
-//     card.remove();
-//   }
-
-//   for (const recipe of searchedRecipeIDs) {
-//     const card = recipeCardDiv.cloneNode(true);
-//     card.setAttribute("recipeID", recipe["id"]);
-//     card.setAttribute("Added", false);
-//     const img = card.querySelector("img");
-//     img.src = recipe["image"];
-//     const title = card.querySelector(".card__title");
-//     title.innerText = recipe["title"];
-//     card.addEventListener("click", (e) => {
-//       if (card.getAttribute("Added") == "false") {
-//         // alert(`Main body click, Added: ${card.getAttribute('Added')}`);
-//         window.location.href = `/previewRecipe?id=${recipe["id"]}`;
-//       }
-//     });
-//     card.querySelector(".add-to-cookbook").addEventListener("click", (e) => {
-//       card.setAttribute("Added", "true");
-//       window.location.href = `/previewRecipe?id=${recipe["id"]}`;
-//       // alert(`recipeID: ${recipe['id']}, Title: ${recipe['title']}`);
-//     });
-
-//     results.appendChild(card);
-//   }
-// }
+  // Regular expression to identify HTML tags in
+  // the input string. Replacing the identified
+  // HTML tag with a null string.
+  return str.replace(/(<([^>]+)>)/gi, "");
+}
