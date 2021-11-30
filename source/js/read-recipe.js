@@ -142,7 +142,6 @@ editButton.addEventListener("click", () => {
     userRecipe[recipeID] = recipeObject[recipeID];
     localStorage.setItem("userRecipes", JSON.stringify(userRecipe));
     window.alert("successfully added to your own cookbook!");
-    window.location.href = "/cookbook";
   } else {
     location.href = `/update?id=${recipeID}`;
   }
