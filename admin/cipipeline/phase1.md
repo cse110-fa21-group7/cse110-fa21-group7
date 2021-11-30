@@ -11,10 +11,9 @@ Our Super Lint includes three types languages checking:
 3. ESLint is for JavaScript
 
 ### Code Quality via Codacy
-
-- run on GitHub actions
-- checking code security
-- checking whether the code is error prone
+We set up the code quality check, including checking code security and checking whether the code is error prone, by using Codacy.  
+It is set up on the Github actions, so basically it will run after each push to the repository and see the results in [codacy](https://app.codacy.com/gh/cse110-fa21-group7/cse110-fa21-group7/dashboard).   
+Based on the report in Codacy, we have improved our code grade from C to A and keep the duplication of the code around 10%.
 
 ### Automated Jest unit tests
 
