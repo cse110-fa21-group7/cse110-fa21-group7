@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import { checkRecipeExist } from "./cook-book.spec.js";
+// import { checkRecipeExist } from "./cook-book.spec.js";
 describe("Tests for create recipe", () => {
   before(() => {
     cy.visit("/create");
