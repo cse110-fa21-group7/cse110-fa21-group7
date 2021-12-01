@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 // import { checkRecipeExist } from "./cook-book.spec.js";
-describe("Tests for create recipe", () => {
+describe("Tests for create recipe form", () => {
   before(() => {
     cy.visit("/create");
     cy.wait(500);
@@ -21,20 +21,6 @@ describe("Tests for create recipe", () => {
     cy.get("#recipeTitle").type("e2e Apple");
     cy.get("#recipeDescription").type("This is an apple recipe");
     cy.get("#recipeCost").type("10 dollars");
-
-    // cy.get("recipe-card").eq(2).click();
-    // cy.get("#recipeTitle").contains("Apple");
-    // cy.get("#recipeDescription").contains("This is an apple recipe");
-    // cy.get(".cost > :nth-child(2)").contains("Cost: $10");
-    // cy.get(":nth-child(1) > .container").contains("First Ingredient 1g");
-    // cy.get(":nth-child(2) > .container").contains("Second Ingredient 2g");
-    // cy.get(":nth-child(3) > .container").contains("Third Ingredient 3g");
-    // cy.get(":nth-child(4) > .container").contains("Fourth Ingredient 4g");
-
-    // cy.get(".orderList > :nth-child(1)").contains("First Step");
-    // cy.get(".orderList > :nth-child(2)").contains("Second Step");
-    // cy.get(".orderList > :nth-child(3)").contains("Third Step");
-    // cy.get(".orderList > :nth-child(4)").contains("Fourth Step");
   });
   // it("check image uplad or not", () => {
   //   const filepath = "default.png";
@@ -88,10 +74,10 @@ describe("Tests for create recipe", () => {
     expect(recipe["title"]).to.eq("e2e Apple");
   });
   it("check recipe in our cookbook or not", () => {
-    cy.get("recipe-card")
-      .eq(2)
-      .shadow()
-      .find(".card .card_body .card__title")
-      .contains("e2e Apple");
+    cy.get("recipe-card").shadow().contains("e2e Apple");
+    // .eq(2)
+    // .shadow()
+    // .find(".card .card_body .card__title")
+    // .contains("e2e Apple");
   });
 });

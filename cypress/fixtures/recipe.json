@@ -1,0 +1,31 @@
+{
+  "0": {
+    "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/gnocchi-1d16725.jpg?quality=90&webp=true&resize=300,272",
+    "title": "This is for e2e test gnocchi bake",
+    "description": "Upgrade cheesy tomato pasta with gnocchi, chorizo and mozzarella for a comforting bake that makes an excellent midweek meal",
+    "totalCost": 10,
+    "time": 35,
+    "ingredients": [
+      {
+        "name": "olive oil",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "onion, finely chopped",
+        "amount": "1"
+      },
+      {
+        "name": "garlic cloves , crushed",
+        "amount": "1"
+      },
+      {
+        "name": "chorizo , diced",
+        "amount": "120g"
+      }
+    ],
+    "steps": [
+      "Heat the oil in a medium pan over a medium heat. Fry the onion and garlic for 8-10 mins until soft. Add the chorizo and fry for 5 mins more. Tip in the tomatoes and sugar, and season. Bring to a simmer, then add the gnocchi and cook for 8 mins, stirring often, until soft. Heat the grill to high.",
+      "Stir ¾ of the mozzarella and most of the basil through the gnocchi. Divide the mixture between six ovenproof ramekins, or put in one baking dish. Top with the remaining mozzarella, then grill for 3 mins, or until the cheese is melted and golden. Season, scatter over the remaining basil and serve with green salad."
+    ]
+  }
+}
