@@ -2,7 +2,7 @@
 import { checkRecipeExist } from "./cook-book.spec.js";
 describe("Tests for create recipe", () => {
   before(() => {
-    cy.visit("http://localhost:7777/create");
+    cy.visit("/create");
     cy.wait(500);
     cy.saveLocalStorage();
   });
