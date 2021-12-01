@@ -1,5 +1,5 @@
 // read-recipe.js
-
+import { asapInit } from "./init.js";
 let recipeObject;
 let recipeID;
 window.addEventListener("DOMContentLoaded", init);
@@ -8,6 +8,7 @@ const deleteButton = document.getElementById("Delete");
 
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
+  await asapInit();
   getPage();
   populateHTML();
 }
