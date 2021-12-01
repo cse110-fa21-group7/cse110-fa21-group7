@@ -3,30 +3,24 @@ import { checkRecipeExist } from "./cook-book.spec.js";
 describe("Tests for create recipe", () => {
   before(() => {
     cy.visit("/create");
+    cy.wait(500);
+    cy.saveLocalStorage();
   });
-
+  beforeEach(() => {
+    cy.restoreLocalStorage();
+  });
+  afterEach(() => {
+    cy.saveLocalStorage();
+  });
   it("enter create recipe page", () => {
     cy.get("#forms").contains("Create Recipe Form");
   });
 
   it("check basic input", () => {
     // create a recipe
-    cy.get("#recipeTitle").type("Apple");
+    cy.get("#recipeTitle").type("e2e Apple");
     cy.get("#recipeDescription").type("This is an apple recipe");
     cy.get("#recipeCost").type("10 dollars");
-
-    // submit
-
-    // cy.get(".btn-submit").click();
-
-    // // Check wheter create recipe successfully
-
-    // cy.visit("/source/html/cook-book.html");
-    // cy.get("recipe-card")
-    //   .eq(2)
-    //   .shadow()
-    //   .find(".card .card_body .card__title")
-    //   .contains("Apple");
 
     // cy.get("recipe-card").eq(2).click();
     // cy.get("#recipeTitle").contains("Apple");
@@ -82,15 +76,22 @@ describe("Tests for create recipe", () => {
     cy.get("#remove-step").click();
     cy.get("#steps").find(".step-sec").should("have.length", 3);
   });
-  it("check after submit, recipe save into local storage or not", () => {
+  it("submit user recipe", () => {
     // submit
-
     cy.get(".btn-submit").click();
+  });
+  it("check recipe save in local storage or not", () => {
+    cy.wait(2000);
     const currID = parseInt(localStorage.getItem("currID"));
     const userRecipes = JSON.parse(localStorage.getItem("userRecipes"));
     const recipe = userRecipes[currID];
-    expect(recipe[title]).to.eq("Apple");
-
-    checkRecipeExist("hello");
+    expect(recipe["title"]).to.eq("e2e Apple");
+  });
+  it("check recipe in our cookbook or not", () => {
+    cy.get("recipe-card")
+      .eq(2)
+      .shadow()
+      .find(".card .card_body .card__title")
+      .contains("e2e Apple");
   });
 });

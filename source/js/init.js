@@ -4,8 +4,6 @@
 export async function asapInit() {
   if (localStorage.getItem("currID") === null)
     localStorage.setItem("currID", 0);
-  if (localStorage.getItem("query") === null) localStorage.setItem("query", "");
-  if (localStorage.getItem("curatedRecipes") === null) await addCurated();
   const recipeObj = ["userRecipes", "resultRecipes"];
   // let exampleFlag = false;
   for (const obj of recipeObj) {
@@ -14,8 +12,9 @@ export async function asapInit() {
       if (obj === "userRecipes") addExamples();
     }
   }
+  if (localStorage.getItem("query") === null) localStorage.setItem("query", "");
+  if (localStorage.getItem("curatedRecipes") === null) await addCurated();
 }
-
 /**
  * I will add 2 recipe object to our local storge to help backend debug cook book and read recipe
  * if we do not want to save this example, we can commet out addExamples in init()
