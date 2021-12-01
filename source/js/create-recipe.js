@@ -1,3 +1,4 @@
+import { asapInit } from "./init.js";
 // create-recipe.js
 const MAX_INGREDIENTS = 20;
 const MAX_STEPS = 10;
@@ -11,6 +12,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
+  await asapInit(); // wait for init local storage
   userRecipes = localStorage.getItem("userRecipes");
   userRecipes = JSON.parse(userRecipes);
   currID = parseInt(localStorage.getItem("currID"));

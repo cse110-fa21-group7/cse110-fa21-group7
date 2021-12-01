@@ -1,11 +1,11 @@
-import { init } from "./init.js";
+import { asapInit } from "./init.js";
 import { fetchFullRecipe } from "./search-recipe.js";
-window.addEventListener("DOMContentLoaded", currInit);
+window.addEventListener("DOMContentLoaded", init);
 let recipeObject;
 let page;
 /** Initialize function, begins all of the JS code in this file */
-async function currInit() {
-  await init(); // wait for init local storage
+async function init() {
+  await asapInit(); // wait for init local storage
   makePage();
   recipeCards();
 }

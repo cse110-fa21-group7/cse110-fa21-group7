@@ -1,11 +1,7 @@
-// import { json } from "express";
-
-window.addEventListener("DOMContentLoaded", init);
-
 /**
  * Entry point for initialization scripts
  */
-export async function init() {
+export async function asapInit() {
   if (localStorage.getItem("currID") === null)
     localStorage.setItem("currID", 0);
   if (localStorage.getItem("query") === null) localStorage.setItem("query", "");
