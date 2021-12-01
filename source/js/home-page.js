@@ -1,5 +1,4 @@
 window.addEventListener("DOMContentLoaded", init);
-const recipeData = {};
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
   const queryString = window.location.href;
