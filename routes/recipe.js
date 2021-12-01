@@ -29,7 +29,7 @@ router.get("/recipe", async (req, res) => {
 
 router.get("/recipeId", async (req, res) => {
   try {
-    console.log(url.parse(req.url, true));
+    // console.log(url.parse(req.url, true));
     const id = url.parse(req.url, true).query.id;
     const params = new URLSearchParams({
       [API_RECIPE_NAME]: API_RECIPE_VALUE,

@@ -18,22 +18,17 @@ async function init() {
 function getPage() {
   const url = window.location.href;
   const queryString = window.location.search;
-  console.log(queryString);
-
   const urlParams = new URLSearchParams(queryString);
   // default is reading cookbook
   if (url.includes("bookID")) {
     recipeObject = JSON.parse(localStorage.getItem("userRecipes"));
   }
   if (url.includes("fetchID")) {
-    console.log("fetch");
     editButton.innerHTML = "add";
     deleteButton.style.display = "none";
     recipeObject = JSON.parse(localStorage.getItem("storedRecipes"));
   }
   const id = urlParams.get("id");
-  // console.log(queryString);
-  console.log(`id: ${id}`);
   if (id) recipeID = id;
   else console.error("open recipe page incorrectly!!");
 }
@@ -43,7 +38,6 @@ function getPage() {
  */
 function populateHTML() {
   const recipe = recipeObject[recipeID];
-  console.log(recipeObject);
   console.log(`Recipe: ${recipe["title"]}`);
   // get article element, so we can append elements
   // const article = document.getElementById("recipeTitle");
