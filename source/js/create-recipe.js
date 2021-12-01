@@ -15,6 +15,7 @@ async function init() {
   await asapInit(); // wait for init local storage
   userRecipes = localStorage.getItem("userRecipes");
   userRecipes = JSON.parse(userRecipes);
+  console.log(userRecipes);
   currID = parseInt(localStorage.getItem("currID"));
   checkID();
 }

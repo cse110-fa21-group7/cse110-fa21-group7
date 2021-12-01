@@ -4,3 +4,5 @@ secrets.yml
 .vscode
 .DS_Store
 out/
+cypress/screenshots
+cypress/videos
