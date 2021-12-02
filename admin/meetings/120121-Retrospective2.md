@@ -4,13 +4,13 @@ Catch up timeline
 
 ### location: zoom
 
-Note Taker:
+Note Taker: Yalong Tian
 
 ## Attendance
 
 - [x] Yalong Tian
 - [x] Jingwen Liu
-- [x] Christopher Harness
+- [ ] Christopher Harness
 - [x] Jiayan Dong
 - [x] Vince Rothenberg
 - [x] Nidhin Madhu
@@ -25,26 +25,21 @@ Note Taker:
 
 ## Discussion Items
 
-### Retrium Top 5 voted
+![Mad/Sad/Glas](retrospectives/r2-Restrium.png)
+
+### Retrium Top voted
+
+- Good progress
+- Good back-end
 
 ## Action items
 
-### Yalong Tian:
+![Mad/Sad/Glas](retrospectives/r2-Addon-features.png)
 
-### Jingwen Liu:
+- UI CSS : Kunal
 
-### Christopher Harness:
+- Modal popup: Kimberly
 
-### Jiayan Dong:
+- Filter and sort: Vince and Yalong
 
-### Vince Rothenberg:
-
-### Nidhin Madhu:
-
-### Youjia Weng:
-
-### Jianfan Huo:
-
-### Yifan Lu:
-
-### Kunal Arora
+- Recipe card add and delete: Yalong
