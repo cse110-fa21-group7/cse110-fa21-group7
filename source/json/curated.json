@@ -4,6 +4,7 @@
     "title": "Shaved Brussels Sprout Salad",
     "description": "Shaved Brussels Sprout Salad is full of crunch, color, and flavor. It highlights all the best fall flavors and is definitely holiday worthy.",
     "totalCost": 10,
+    "servings": 4,
     "time": 15,
     "ingredients": [
       {
@@ -43,6 +44,7 @@
     "title": "Easy Overnight Oats Recipe",
     "description": "Easy and creamy overnight oats is our favorite make-ahead breakfast. There is no cooking required, just stir and refrigerate overnight for a creamy and enjoyable bowl of oatmeal. It's perfect for weekly meal prep, just add your preferred toppings ahead or when you’re ready to enjoy them.",
     "totalCost": 0.5,
+    "servings": 1,
     "time": 5,
     "ingredients": [
       {
@@ -75,8 +77,9 @@
     "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/gnocchi-1d16725.jpg?quality=90&webp=true&resize=300,272",
     "title": "Chorizo & mozzarella gnocchi bake",
     "description": "Upgrade cheesy tomato pasta with gnocchi, chorizo and mozzarella for a comforting bake that makes an excellent midweek meal",
-    "totalCost": 10,
-    "time": 35,
+    "totalCost": 11,
+    "servings": 6,
+    "time": 25,
     "ingredients": [
       {
         "name": "olive oil",
@@ -129,7 +132,8 @@
     "title": "Easy butter chicken",
     "description": "Fancy a healthy version of your favourite Friday night chicken curry? The chicken can be marinaded the day before so you can get ahead on your prep",
     "totalCost": 10,
-    "time": 50,
+    "servings": 4,
+    "time": 35,
     "ingredients": [
       {
         "name": "skinless boneless chicken thighs",

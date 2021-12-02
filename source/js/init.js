@@ -29,6 +29,8 @@ function addExamples() {
     title: "Beef Wellington",
     description: "The recipe Beef Wellington could satisfy your Scottish",
     totalCost: 6.9,
+    time: 45,
+    servings: 4,
     ingredients: [
       {
         name: "duck",
@@ -63,6 +65,8 @@ function addExamples() {
     title: "Beef Bourguignon",
     description: "Beef Bourguignon takes about about 45 minutes",
     totalCost: 2.7,
+    time: 55,
+    servings: 5,
     ingredients: [
       {
         name: "boneless chuck steak",

@@ -61,6 +61,7 @@ function makePage() {
 function recipeCards() {
   console.log(`recipeCards: ${page}`);
   const section = document.querySelector(`.${page}`);
+  console.log(section.classList);
   // loop whole local storge
   console.log(recipeObject);
   for (const [key, value] of Object.entries(recipeObject)) {
