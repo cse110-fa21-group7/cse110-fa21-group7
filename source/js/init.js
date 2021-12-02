@@ -28,7 +28,7 @@ function addExamples() {
     image: "https://spoonacular.com/recipeImages/75081-312x231.jpg",
     title: "Beef Wellington",
     description: "The recipe Beef Wellington could satisfy your Scottish",
-    totalCost: 691.54,
+    totalCost: 6.9,
     ingredients: [
       {
         name: "duck",
@@ -62,7 +62,7 @@ function addExamples() {
     image: "https://spoonacular.com/recipeImages/634593-312x231.jpg",
     title: "Beef Bourguignon",
     description: "Beef Bourguignon takes about about 45 minutes",
-    totalCost: 276,
+    totalCost: 2.7,
     ingredients: [
       {
         name: "boneless chuck steak",

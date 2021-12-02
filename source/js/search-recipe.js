@@ -1,17 +1,25 @@
+let query;
+let diet;
+let meal;
+let intoler;
 /**
  * Fetches search results and populates index.html
  * @param {String} query
  * @return {null}
  */
-async function fetchRecipes(query) {
-  const url = `/search/recipe?query=${query}`;
+async function fetchRecipes() {
+  // define fetch url
+  let url = `/search/recipe?query=${query}`;
+  if (diet !== "") url += `&diet=${diet}`;
+  if (meal !== "") url += `&type=${meal}`;
+  if (intoler !== "") url += `&intolerances=${intoler}`;
   const res = await fetch(url); // return back the reicpes object from spoonacular
   const data = await res.json();
-  if (data.cod === "404") {
+  if (data.code === "404") {
     alert("Recipe not found");
     return;
   }
-  if (data.cod === 401) {
+  if (data.code === 401) {
     alert("Invalid API Key");
     return;
   }
@@ -33,13 +41,23 @@ const searchbtn = document.getElementById("search-button");
 searchbtn.addEventListener("click", (e) => {
   e.preventDefault();
   const searchField = document.getElementById("query");
-
-  const queryText = searchField.value;
-  console.log(`Search query: ${queryText}`);
-  if (queryText.value === "") {
+  // get select
+  const dietSele = document.getElementById("diet");
+  const mealSele = document.getElementById("meal-type");
+  const intolSele = document.getElementById("Intolerances");
+  // save select result
+  query = searchField.value;
+  diet = dietSele.value;
+  meal = mealSele.value;
+  intoler = intolSele.value;
+  console.log(`Search query: ${query}`);
+  console.log(`diet query: ${diet}`);
+  console.log(`meal query: ${meal}`);
+  console.log(`intoler query: ${intoler}`);
+  if (query.value === "") {
     alert("Please enter recipe you want to search");
   } else {
-    fetchRecipes(queryText);
+    fetchRecipes();
   }
 });
 /**
@@ -57,11 +75,11 @@ export async function fetchFullRecipe(id) {
     // Return the recipe object from spoonacular
     const res = await fetch(url);
     const data = await res.json();
-    if (data.cod === "404") {
+    if (data.code === "404") {
       alert("Recipe not found");
       return null;
     }
-    if (data.cod === 401) {
+    if (data.code === 401) {
       alert("Invalid API Key");
       return null;
     }
