@@ -1,6 +1,6 @@
 Catch up timeline
 
-### Date: Tuesday, Nov 15 @ 7PM -
+### Date: Dec 1 @ 7PM -
 
 ### location: zoom
 
