@@ -9,7 +9,10 @@ class RecipeCard extends HTMLElement {
    */
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({
+      mode: "open",
+    });
+    // .innerHTML = `<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">`;
   }
 
   /**
@@ -134,7 +137,20 @@ class RecipeCard extends HTMLElement {
     img.setAttribute("alt", data["title"]);
     img.classList.add("card__image");
     cardBody.appendChild(img);
-
+    // test add btn
+    // const addBtn = document.createElement("div");
+    // addBtn.classList.add("add-to-cookbook");
+    // const ai = document.createElement("a");
+    // ai.href = "#";
+    // const ii = document.createElement("i");
+    // ii.classList.add("fa");
+    // ii.classList.add("fa-plus");
+    // ai.appendChild(ii);
+    // addBtn.appendChild(ai);
+    // cardBody.appendChild(addBtn);
+    //   <div class="add-to-cookbook">
+    //   <a href="#"><i class="fa fa-plus"></i></a>
+    // </div>
     // add title
     const title = document.createElement("h2");
     title.textContent = data["title"];

@@ -100,6 +100,7 @@ function populateHTML() {
     eachIng.classList.add("each-ingredient");
     const label = document.createElement("label");
     label.innerText = `${ingredient["name"]} ${ingredient["amount"]}`;
+    console.log(`${ingredient["name"]} ${ingredient["amount"]}`);
     label.classList.add("container");
     const input = document.createElement("input");
     input.type = "checkbox";
