@@ -79,7 +79,7 @@ class RecipeCard extends HTMLElement {
       color: #838689;
     }
     
-    .fa-plus {
+    #card-btn {
       display: inline-block;
       background: #57abf2;
       border-radius: 50%;
@@ -119,12 +119,13 @@ class RecipeCard extends HTMLElement {
     addBtn.classList.add("add-to-cookbook");
 
     const ii = document.createElement("i");
+    ii.id = "card-btn";
     ii.classList.add("fa");
     ii.ariaHidden = "true";
     if (this.page === "cookbook") {
-      ii.classList.add("fa-trash");
+      ii.classList.add("fa-trash-o");
     } else {
-      ii.classList.add("fa-plus");
+      ii.classList.add("fa-bookmark-o");
     }
     addBtn.appendChild(ii);
     cardBody.appendChild(addBtn);
