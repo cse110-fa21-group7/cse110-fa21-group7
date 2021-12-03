@@ -78,7 +78,20 @@ class RecipeCard extends HTMLElement {
       vertical-align: middle;
       color: #838689;
     }
-    
+    .recipe-btn {
+      text-decoration: none;
+      text-align: center;
+      color: #fff;
+      background: #f25555;
+      font-weight: 500;
+      font-size: 1.1rem;
+      padding: 0.75rem 0;
+      display: block;
+      width: 175px;
+      margin: 1rem auto;
+      border-radius: 2rem;
+      -webkit-border-radius: 2rem;
+  }
     #card-btn {
       display: inline-block;
       background: #57abf2;
@@ -95,6 +108,9 @@ class RecipeCard extends HTMLElement {
       margin:0 auto;
       padding-top: 5px;
       // padding: 0.6rem 0.52rem;
+    }
+    #card-btn:hover{
+      background: #f25555;
     }`;
 
     styleElem.innerHTML = styles;
@@ -129,12 +145,21 @@ class RecipeCard extends HTMLElement {
     }
     addBtn.appendChild(ii);
     cardBody.appendChild(addBtn);
-
+    ii.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href = "/cookbook";
+    });
     // add title
-    const title = document.createElement("h2");
+    const title = document.createElement("h3");
     title.textContent = data["title"];
     title.classList.add("card-title");
     cardBody.appendChild(title);
+    // add a button
+    const getBtn = document.createElement("a");
+    getBtn.href = "#";
+    getBtn.classList.add("recipe-btn");
+    getBtn.innerText = "Get Recipe";
+    cardBody.appendChild(getBtn);
 
     if (this.page == "curatedList" || this.page == "cookbook") {
       // add info list
