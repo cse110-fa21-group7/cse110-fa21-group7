@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASAP Recipe</title>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.png" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/alt-read-recipe.css" />
+    <!-- load & create recipe card to cook book -->
+    <script src="../js/read-recipe.js" type="module"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/" id="ASAP-logo-home">ASAP Recipe</a>
+                <button class="navbar-toggler" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cookbook" id="link-cookbook">Cookbook</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/create" id="link-create-recipe">Create</a>
+                    </li>
+                </ul>
+                <form class="nav-form">
+                    <input class="form-control" type="text" placeholder="&ensp;Search">
+                    <button class="btn" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Read Recipe -->
+    <div class="container">
+        <section style="background:url(https://www.veganricha.com/wp-content/uploads/2019/06/Spaghetti-with-toasted-breadcrumbs-and-blistered-cauliflower-veganricha-9884.jpg) no-repeat 50%
+        50%; background-size:cover; height: 600px; width: 600px">
+        </section>
+        <section id="recipeDetails">
+
+            <div class="recipe-body">
+                <h1 id="recipe-title">Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs</h1>
+                <p id="recipe-desc">pasta with Garlic, Scallions, Cauliflower & Breadcrumbs might be
+                    just the main
+                    course you are searching for.</p>
+                <button type="button" class="btn btn-primary" id="Edit">Edit</button>
+                <button type="button" class="btn btn-danger" id="Delete">Delete</button>
+
+                <ul class="info-row">
+                    <li>
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        <span>75 min</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-fire" aria-hidden="true"></i>
+                        <span>844 kcal </span>
+                    </li>
+                    <li><span class="dollar-rating">$</span></li>
+                </ul>
+
+                <ul class="recipe-nav">
+                    <li>
+                        <h3 class="active">Ingredients</h3>
+                    </li>
+                    <li>
+                        <h3>Steps</h3>
+                    </li>
+                </ul>
+
+                <div id="nav-content">
+                    <ul class="ingredient-list">
+                        <li>4 ounces of unsalted butter</li>
+                        <li>2 tablespoons of olive oil</li>
+                        <li>1 head of trimmed cauliflower</li>
+                        <li>3 finely minced cloves of garlic</li>
+                        <li>2 cups of packed baby spinach</li>
+                        <li>1 pound raw of cooked linguine pasta</li>
+                        <li>1 cup of vegetable stock or water</li>
+                        <li>1/2 teaspoon salt</li>
+                        <li>2 tablespoons of chopped fresh parsley</li>
+                        <li>1 teaspoons of chopped fresh thyme</li>
+                        <li>1/2 teaspoon of crushed red pepper flakes</li>
+                        <li>1/2 cup of panko bread crumbs</li>
+                        <li>1/4 of shredded parmesan cheese</li>
+                        <li>Kosher salt and fresh cracked pepper to taste</li>
+                    </ul>
+                </div>
+                <div id="steps-list">
+                    <!-- <ol class="orderList">
+                                <li>In a large saucepan, heat the oil over medium-high heat. Once your oil is hot, brown the beef. Do it in 2 
+                                  batches if you need to, to allow an even browning on all pieces. Set aside.</li>
+                                <li>In the same pan, fry the onion, garlic, carrots and celery, about 3-5 minutes, before adding the meat back.</li>
+                              </ol> -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>
