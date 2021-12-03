@@ -8,6 +8,7 @@ async function init() {
   await asapInit(); // wait for init local storage
   makePage();
   recipeCards();
+  addSortListener();
 }
 
 /**
@@ -23,7 +24,7 @@ function makePage() {
   // all sections we need to deal with
   // const secitonList = ["search", "cookbook", "results", "curatedList"];
   let showList = ["search", "curatedList"]; // seciton list we want to show
-  let hideList = ["cookbook", "results"]; // section lsit we want to hide
+  let hideList = ["cookbook", "cookbook-sort", "results"]; // section lsit we want to hide
   // switch recipeObject depends on which page we want to show
   recipeObject = JSON.parse(localStorage.getItem("curatedRecipes"));
   // change all variables depends on current page
@@ -32,7 +33,7 @@ function makePage() {
     page = "cookbook";
     intro.innerHTML = "Here are your recipes.";
 
-    showList = ["cookbook"];
+    showList = ["cookbook", "cookbook-sort"];
     // only cookbook need to hide the whole recipe-card-container
     hideList = ["search", "results", "curatedList"];
     recipeObject = JSON.parse(localStorage.getItem("userRecipes"));
@@ -94,4 +95,31 @@ function toReadRecipe(recipeCard, id) {
       });
     }
   });
+}
+
+/**
+ * Sorts recipes 
+ * @param {Boolean} ascending 
+ * @return {null}
+ */
+function sortRecipes(ascending) {
+  if (ascending) {
+
+  } else {
+
+  }
+  return;
+}
+
+/**
+ * Sort listener
+ */
+function addSortListener() {
+  const sortSelect = document.getElementById("sort-direction");
+  sortSelect.addEventListener("change", (e) => {
+    const ascending = sortSelect.value == 'Ascending';
+    // console.log(`Sorting by ascending: ${ascending}`);
+    sortRecipes(ascending);
+  });
+
 }
