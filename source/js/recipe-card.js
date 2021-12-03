@@ -115,20 +115,20 @@ class RecipeCard extends HTMLElement {
     img.classList.add("card-image");
     cardBody.appendChild(img);
     // test add btn
-    const addBtn = document.createElement("div");
-    addBtn.classList.add("add-to-cookbook");
+    // const addBtn = document.createElement("div");
+    // addBtn.classList.add("add-to-cookbook");
 
-    const ii = document.createElement("i");
-    ii.id = "card-btn";
-    ii.classList.add("fa");
-    ii.ariaHidden = "true";
-    if (this.page === "cookbook") {
-      ii.classList.add("fa-trash-o");
-    } else {
-      ii.classList.add("fa-bookmark-o");
-    }
-    addBtn.appendChild(ii);
-    cardBody.appendChild(addBtn);
+    // const ii = document.createElement("i");
+    // ii.id = "card-btn";
+    // ii.classList.add("fa");
+    // ii.ariaHidden = "true";
+    // if (this.page === "cookbook") {
+    //   ii.classList.add("fa-trash-o");
+    // } else {
+    //   ii.classList.add("fa-bookmark-o");
+    // }
+    // addBtn.appendChild(ii);
+    // cardBody.appendChild(addBtn);
 
     // add title
     const title = document.createElement("h2");
