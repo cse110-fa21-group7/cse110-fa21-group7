@@ -1,6 +1,6 @@
 /**
  * Get recipes from localStorage
- *
+ * Then create recipe card based on these recipes
  */
 class RecipeCard extends HTMLElement {
   /**
@@ -9,6 +9,7 @@ class RecipeCard extends HTMLElement {
    */
   constructor() {
     super();
+    this.flag = false;
     this.attachShadow({
       mode: "open",
     }).innerHTML = `<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">`;
@@ -21,7 +22,20 @@ class RecipeCard extends HTMLElement {
   setPage(page) {
     this.page = page;
   }
-
+  /**
+   * save current recipe object which we get from local storage
+   * @param {JSON} recipeObject
+   */
+  setRecipes(recipes) {
+    this.recipes = recipes;
+  }
+  /**
+   * save id to recipe card class
+   * @param {string} id
+   */
+  setID(id) {
+    this.id = id;
+  }
   /**
    * Get recipes from localStorage
    * @param {HTMLElement} data
@@ -78,20 +92,20 @@ class RecipeCard extends HTMLElement {
       vertical-align: middle;
       color: #838689;
     }
-    .recipe-btn {
-      text-decoration: none;
-      text-align: center;
-      color: #fff;
-      background: #f25555;
-      font-weight: 500;
-      font-size: 1.1rem;
-      padding: 0.75rem 0;
-      display: block;
-      width: 175px;
-      margin: 1rem auto;
-      border-radius: 2rem;
-      -webkit-border-radius: 2rem;
-  }
+  //   .recipe-btn {
+  //     text-decoration: none;
+  //     text-align: center;
+  //     color: #fff;
+  //     background: #f25555;
+  //     font-weight: 500;
+  //     font-size: 1.1rem;
+  //     padding: 0.75rem 0;
+  //     display: block;
+  //     width: 175px;
+  //     margin: 1rem auto;
+  //     border-radius: 2rem;
+  //     -webkit-border-radius: 2rem;
+  // }
     #card-btn {
       display: inline-block;
       background: #57abf2;
@@ -111,7 +125,8 @@ class RecipeCard extends HTMLElement {
     }
     #card-btn:hover{
       background: #f25555;
-    }`;
+    }
+    `;
 
     styleElem.innerHTML = styles;
     // const cardDiv = document.createElement("div");
@@ -137,17 +152,17 @@ class RecipeCard extends HTMLElement {
     const ii = document.createElement("i");
     ii.id = "card-btn";
     ii.classList.add("fa");
+    ii.classList.add("fa-plus");
     ii.ariaHidden = "true";
-    if (this.page === "cookbook") {
-      ii.classList.add("fa-trash-o");
-    } else {
-      ii.classList.add("fa-bookmark-o");
-    }
     addBtn.appendChild(ii);
     cardBody.appendChild(addBtn);
+    if (this.id in this.recipes) cardBody.removeChild(addBtn);
     ii.addEventListener("click", (e) => {
       e.preventDefault();
-      window.location.href = "/cookbook";
+      this.flag = true;
+      cardBody.removeChild(addBtn);
+      // ii.style.display = "hidden";
+      // window.location.href = "/cookbook";
     });
     // add title
     const title = document.createElement("h3");
@@ -155,11 +170,11 @@ class RecipeCard extends HTMLElement {
     title.classList.add("card-title");
     cardBody.appendChild(title);
     // add a button
-    const getBtn = document.createElement("a");
-    getBtn.href = "#";
-    getBtn.classList.add("recipe-btn");
-    getBtn.innerText = "Get Recipe";
-    cardBody.appendChild(getBtn);
+    // const getBtn = document.createElement("a");
+    // getBtn.href = "#";
+    // getBtn.classList.add("recipe-btn");
+    // getBtn.innerText = "Add to cookbook";
+    // cardBody.appendChild(getBtn);
 
     if (this.page == "curatedList" || this.page == "cookbook") {
       // add info list

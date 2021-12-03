@@ -3,6 +3,8 @@ import { fetchFullRecipe } from "./search-recipe.js";
 window.addEventListener("DOMContentLoaded", init);
 let recipeObject;
 let page;
+const userRecipe = JSON.parse(localStorage.getItem("userRecipes"));
+
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
   await asapInit(); // wait for init local storage
@@ -35,7 +37,7 @@ function makePage() {
     showList = ["cookbook"];
     // only cookbook need to hide the whole recipe-card-container
     hideList = ["search", "results", "curatedList"];
-    recipeObject = JSON.parse(localStorage.getItem("userRecipes"));
+    recipeObject = userRecipe;
   } else if (queryString.includes("result")) {
     page = "results";
     showList = ["search", "results"];
@@ -68,6 +70,8 @@ function recipeCards() {
     if (key === "currID") continue;
     const card = document.createElement("recipe-card");
     card.setPage(page);
+    card.setRecipes(userRecipe);
+    card.setID(key);
     card.data = value;
     section.appendChild(card);
     toReadRecipe(card, key);
@@ -83,15 +87,28 @@ function toReadRecipe(recipeCard, id) {
   recipeCard.addEventListener("click", (e) => {
     let url = `/read/fetchID?id=${id}`;
     if (page === "curatedList") {
-      // alert("readRecipe curatedList preview");
-      window.location.href = url;
+      if (recipeCard.flag) addToCookbook(recipeCard, id);
+      else window.location.href = url;
     } else if (page === "cookbook") {
       url = `/read/bookID?id=${id}`;
       window.location.href = url;
     } else if (page === "results") {
       fetchFullRecipe(id).then(() => {
-        window.location.href = url;
+        // when user want to add current recipe to cookbook by using add btn on recipe card
+        if (recipeCard.flag) addToCookbook(recipeCard, id);
+        else window.location.href = url;
       });
     }
   });
+}
+/**
+ * Add event listeners to recipe card elements
+ * @param {HTMLElement} recipeCard
+ * @param {String} id
+ */
+function addToCookbook(recipeCard, id) {
+  const storedRecipes = JSON.parse(localStorage.getItem("storedRecipes"));
+  userRecipe[id] = storedRecipes[id];
+  localStorage.setItem("userRecipes", JSON.stringify(userRecipe));
+  recipeCard.flag = false;
 }
