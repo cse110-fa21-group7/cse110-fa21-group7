@@ -26,6 +26,8 @@ async function populateForm() {
   document.getElementById("recipeTitle").value = recipe["title"];
   document.getElementById("recipeDescription").value = recipe["description"];
   document.getElementById("recipeCost").value = recipe["totalCost"];
+  document.getElementById("recipeTime").value = recipe["time"];
+  document.getElementById("recipeServings").value = recipe["servings"];
   const img = document.createElement("img");
   img.src = recipe["image"];
   img.height = "200";
@@ -224,7 +226,11 @@ form.addEventListener("submit", function (event) {
   localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
   localStorage.setItem("currID", currID);
   // back to cookbook page
-  window.alert("successfully created a recipe!");
+  if (updateFlag) {
+    window.alert("successfully updated a recipe!");
+  } else {
+    window.alert("successfully created a recipe!");
+  }
   location.href = "/cookbook";
 });
 
@@ -331,6 +337,28 @@ function checkValid() {
     }
   }
   recipe["totalCost"] = cost;
+
+  const timeCost = document.getElementById("recipeTime").value.trim();
+  let time = null;
+  if (timeCost.length > 0) {
+    if (hasFloat(document.getElementById("recipeTime"))) {
+      time = parseFloat(timeCost);
+    } else {
+      allValid = false;
+    }
+  }
+  recipe["time"] = time;
+
+  const recipeServings = document.getElementById("recipeServings").value.trim();
+  let servings = null;
+  if (recipeServings.length > 0) {
+    if (hasFloat(document.getElementById("recipeServings"))) {
+      servings = parseFloat(recipeServings);
+    } else {
+      allValid = false;
+    }
+  }
+  recipe["servings"] = servings;
 
   // Set to default if no image uploaded
   if (!("image" in recipe)) {
