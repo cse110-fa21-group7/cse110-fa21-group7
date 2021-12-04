@@ -28,6 +28,10 @@ body {
   }
 }
 
+#recipeDetails {
+  width:50%;
+}
+
 @media screen and (max-width: 800px) {
   .container {
     width: 90%;
@@ -38,26 +42,29 @@ body {
     border-radius: 0.5rem;
   }
 
+  #recipeDetails {
+  width:100%;
+}
+
   .recipe-image {
   width: 100%;
   height: 87.5vw;
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0.5rem 0.5rem 0rem 0rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0.5rem 0.5rem 0rem 0rem;
+    }
   }
 }
-}
-
-
 
 
 
 .recipe-body {    
     padding: 20px;
 }
+
 .recipe-title {
   padding: 0;
   margin: 0 0 0;
@@ -123,7 +130,7 @@ ul.info-row {
   margin: 0;
   padding: 0;
   margin-left: 10px;
-  column-count: 1;
+  column-count: 2;
   li {
     margin-bottom: 5px;
   }
@@ -133,4 +140,10 @@ ul.info-row {
     margin-right: 5px;
   }
 }
+
+#step-list {
+  display: none;
+}
+
+
 

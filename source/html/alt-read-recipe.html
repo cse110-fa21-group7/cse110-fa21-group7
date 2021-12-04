@@ -70,15 +70,15 @@
 
                 <ul class="recipe-nav">
                     <li>
-                        <h3 class="active">Ingredients</h3>
+                        <h3 class="nav-tab active" onclick="openTab(event, 'ingredient-list')">Ingredients</h3>
                     </li>
                     <li>
-                        <h3>Steps</h3>
+                        <h3 class="nav-tab" onclick="openTab(event, 'step-list')">Steps</h3>
                     </li>
                 </ul>
 
                 <div id="nav-content">
-                    <ul class="ingredient-list">
+                    <ul id="ingredient-list" class="tab-content">
                         <li>4 ounces of unsalted butter</li>
                         <li>2 tablespoons of olive oil</li>
                         <li>1 head of trimmed cauliflower</li>
@@ -94,29 +94,35 @@
                         <li>1/4 of shredded parmesan cheese</li>
                         <li>Kosher salt and fresh cracked pepper to taste</li>
                     </ul>
+                    <div id="step-list" class="tab-content">
+                        <ol class="orderList">
+                            <li>In a large saucepan, heat the oil over medium-high heat. Once your oil is hot, brown the
+                                beef. Do it in 2
+                                batches if you need to, to allow an even browning on all pieces. Set aside.</li>
+                            <li>In the same pan, fry the onion, garlic, carrots and celery, about 3-5 minutes, before
+                                adding the meat back.</li>
+                        </ol>
+                    </div>
                 </div>
-                <div id="steps-list">
-                    <!-- <ol class="orderList">
-                                <li>In a large saucepan, heat the oil over medium-high heat. Once your oil is hot, brown the beef. Do it in 2 
-                                  batches if you need to, to allow an even browning on all pieces. Set aside.</li>
-                                <li>In the same pan, fry the onion, garlic, carrots and celery, about 3-5 minutes, before adding the meat back.</li>
-                              </ol> -->
-                </div>
+
             </div>
         </section>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 
 </html>
+
+<script>
+    function openTab(e, tab) {
+        const tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        const tabs = document.getElementsByClassName("nav-tab");
+        for (i = 0; i < tabs.length; i++) {
+            tabs[i].className = tabs[i].className.replace(" active", "");
+        }
+        document.getElementById(tab).style.display = "block";
+        e.currentTarget.className += " active";
+    }
+</script>

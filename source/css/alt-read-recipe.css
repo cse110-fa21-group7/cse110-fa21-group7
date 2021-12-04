@@ -33,6 +33,10 @@ body {
   border-radius: 0.5rem 0rem 0rem 0.5rem;
 }
 
+#recipeDetails {
+  width: 50%;
+}
+
 @media screen and (max-width: 800px) {
   .container {
     width: 90%;
@@ -46,6 +50,9 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
     border-radius: 0.5rem;
+  }
+  #recipeDetails {
+    width: 100%;
   }
   .recipe-image {
     width: 100%;
@@ -135,8 +142,8 @@ ul.info-row {
   margin: 0;
   padding: 0;
   margin-left: 10px;
-  -webkit-column-count: 1;
-          column-count: 1;
+  -webkit-column-count: 2;
+          column-count: 2;
 }
 
 #ingredient-list li {
@@ -147,5 +154,9 @@ ul.info-row {
   content: '\2022';
   color: #f7882f;
   margin-right: 5px;
+}
+
+#step-list {
+  display: none;
 }
 /*# sourceMappingURL=alt-read-recipe.css.map */
