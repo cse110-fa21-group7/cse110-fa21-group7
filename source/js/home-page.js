@@ -3,11 +3,12 @@ import { fetchFullRecipe } from "./search-recipe.js";
 window.addEventListener("DOMContentLoaded", init);
 let recipeObject;
 let page;
-const userRecipe = JSON.parse(localStorage.getItem("userRecipes"));
+let userRecipe;
 
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
   await asapInit(); // wait for init local storage
+  userRecipe = JSON.parse(localStorage.getItem("userRecipes"));
   makePage();
   recipeCards(recipeObject);
   addSortListener();
@@ -29,16 +30,11 @@ function makePage() {
   let hideList = ["cookbook", "cookbook-sort", "results"]; // section lsit we want to hide
   // switch recipeObject depends on which page we want to show
   recipeObject = JSON.parse(localStorage.getItem("curatedRecipes"));
-  console.log("recipeOjbect:");
-  console.log(recipeObject);
-  recipeObject = dictToArr(recipeObject);
-  console.log(recipeObject);
   // change all variables depends on current page
   // if we want to show cookbook, the recipeObject should be userRecipes which saved in localStorge
   if (queryString.includes("cookbook")) {
     page = "cookbook";
     intro.innerHTML = "Here are your recipes.";
-
     showList = ["cookbook", "cookbook-sort"];
     // only cookbook need to hide the whole recipe-card-container
     hideList = ["search", "results", "curatedList"];
@@ -48,8 +44,9 @@ function makePage() {
     showList = ["search", "results"];
     hideList = ["curatedList"];
     console.log("result");
-    recipeObject = dictToArr(JSON.parse(localStorage.getItem("resultRecipes")));
+    recipeObject = JSON.parse(localStorage.getItem("resultRecipes"));
   }
+  recipeObject = dictToArr(recipeObject);
   // all cards need to show this container
   document.querySelector(".recipe-card-container").classList.add("shown");
   for (const show of showList) {
@@ -67,27 +64,12 @@ function makePage() {
  * @param {Array} recipeObject
  */
 function recipeCards(recipeObject) {
-  console.log(`recipeCards: ${page}`);
   const section = document.querySelector(`.${page}`);
-  console.log(section.classList);
   // Loop through recipeObject array
-
-  console.log(recipeObject);
-
   recipeObject.forEach((e) => {
-    console.log(`recipeObject: ${e} type: ${typeof [e]}`);
     const key = e[0];
     const value = e[1];
     if (key === "currID") return;
-    const card = document.createElement("recipe-card");
-    card.setPage(page);
-    card.data = value;
-    section.appendChild(card);
-    toReadRecipe(card, key);
-  });
-  /*
-  for (const [key, value] of Object.entries(recipeObject)) {
-    if (key === "currID") continue;
     const card = document.createElement("recipe-card");
     card.setPage(page);
     card.setRecipes(userRecipe);
@@ -95,8 +77,7 @@ function recipeCards(recipeObject) {
     card.data = value;
     section.appendChild(card);
     toReadRecipe(card, key);
-  }
-  */
+  });
 }
 
 /**
@@ -122,7 +103,17 @@ function toReadRecipe(recipeCard, id) {
     }
   });
 }
-
+/**
+ * Add current recipe to cookbook
+ * @param {HTMLElement} recipeCard
+ * @param {String} id
+ */
+function addToCookbook(recipeCard, id) {
+  const storedRecipes = JSON.parse(localStorage.getItem("storedRecipes"));
+  userRecipe[id] = storedRecipes[id];
+  localStorage.setItem("userRecipes", JSON.stringify(userRecipe));
+  recipeCard.flag = false;
+}
 /**
  * Sorts recipes in localStorageKey
  * Sorts on recipeValue (e.g. totalCost)
