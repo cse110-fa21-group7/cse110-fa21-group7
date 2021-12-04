@@ -48,12 +48,6 @@ app.use(
   "/update",
   express.static(path.join(__dirname, "source/html/create-recipe.html"))
 );
-
-app.use(
-  "/recipeDetails",
-  express.static(path.join(__dirname, "source/html/read-recipe.html"))
-);
-
 app.use(
   "/previewRecipe",
   express.static(path.join(__dirname, "source/html/preview-recipe.html"))
