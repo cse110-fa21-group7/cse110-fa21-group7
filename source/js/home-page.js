@@ -9,7 +9,8 @@ const userRecipe = JSON.parse(localStorage.getItem("userRecipes"));
 async function init() {
   await asapInit(); // wait for init local storage
   makePage();
-  recipeCards();
+  recipeCards(recipeObject);
+  addSortListener();
 }
 
 /**
@@ -25,16 +26,20 @@ function makePage() {
   // all sections we need to deal with
   // const secitonList = ["search", "cookbook", "results", "curatedList"];
   let showList = ["search", "curatedList"]; // seciton list we want to show
-  let hideList = ["cookbook", "results"]; // section lsit we want to hide
+  let hideList = ["cookbook", "cookbook-sort", "results"]; // section lsit we want to hide
   // switch recipeObject depends on which page we want to show
   recipeObject = JSON.parse(localStorage.getItem("curatedRecipes"));
+  console.log("recipeOjbect:");
+  console.log(recipeObject);
+  recipeObject = dictToArr(recipeObject);
+  console.log(recipeObject);
   // change all variables depends on current page
   // if we want to show cookbook, the recipeObject should be userRecipes which saved in localStorge
   if (queryString.includes("cookbook")) {
     page = "cookbook";
     intro.innerHTML = "Here are your recipes.";
 
-    showList = ["cookbook"];
+    showList = ["cookbook", "cookbook-sort"];
     // only cookbook need to hide the whole recipe-card-container
     hideList = ["search", "results", "curatedList"];
     recipeObject = userRecipe;
@@ -43,7 +48,7 @@ function makePage() {
     showList = ["search", "results"];
     hideList = ["curatedList"];
     console.log("result");
-    recipeObject = JSON.parse(localStorage.getItem("resultRecipes"));
+    recipeObject = dictToArr(JSON.parse(localStorage.getItem("resultRecipes")));
   }
   // all cards need to show this container
   document.querySelector(".recipe-card-container").classList.add("shown");
@@ -59,13 +64,28 @@ function makePage() {
 
 /**
  * Use recipeObject to create recipe cards
+ * @param {Array} recipeObject
  */
-function recipeCards() {
+function recipeCards(recipeObject) {
   console.log(`recipeCards: ${page}`);
   const section = document.querySelector(`.${page}`);
   console.log(section.classList);
-  // loop whole local storge
+  // Loop through recipeObject array
+
   console.log(recipeObject);
+
+  recipeObject.forEach((e) => {
+    console.log(`recipeObject: ${e} type: ${typeof [e]}`);
+    const key = e[0];
+    const value = e[1];
+    if (key === "currID") return;
+    const card = document.createElement("recipe-card");
+    card.setPage(page);
+    card.data = value;
+    section.appendChild(card);
+    toReadRecipe(card, key);
+  });
+  /*
   for (const [key, value] of Object.entries(recipeObject)) {
     if (key === "currID") continue;
     const card = document.createElement("recipe-card");
@@ -76,6 +96,7 @@ function recipeCards() {
     section.appendChild(card);
     toReadRecipe(card, key);
   }
+  */
 }
 
 /**
@@ -101,14 +122,91 @@ function toReadRecipe(recipeCard, id) {
     }
   });
 }
+
 /**
- * Add event listeners to recipe card elements
- * @param {HTMLElement} recipeCard
- * @param {String} id
+ * Sorts recipes in localStorageKey
+ * Sorts on recipeValue (e.g. totalCost)
+ * ascending or descending
+ * @param {Boolean} ascending
+ * @param {String} localStorageKey
+ * @param {String} recipeValue
+ * @return {Array}
  */
-function addToCookbook(recipeCard, id) {
-  const storedRecipes = JSON.parse(localStorage.getItem("storedRecipes"));
-  userRecipe[id] = storedRecipes[id];
-  localStorage.setItem("userRecipes", JSON.stringify(userRecipe));
-  recipeCard.flag = false;
+function sortRecipes(ascending, localStorageKey, recipeValue) {
+  console.log("sortRecipes");
+  const userRecipes = JSON.parse(localStorage.getItem(localStorageKey));
+  // console.log(userRecipes);
+  // Create array of recipe objects
+  const recipes = Object.keys(userRecipes).map(function (key) {
+    return [key, userRecipes[key]];
+  });
+
+  console.log("before sort");
+  recipes.forEach(function (element) {
+    console.log(`${element[0]} ${element[1][recipeValue]}`);
+  });
+
+  // Sort based on second element's totalCost value
+  if (ascending) {
+    recipes.sort(function (first, second) {
+      const firstCost = parseFloat(first[1][recipeValue]);
+      const secondCost = parseFloat(second[1][recipeValue]);
+      console.log(`first: ${firstCost}, second: ${secondCost}`);
+      return firstCost - secondCost;
+    });
+  } else {
+    recipes.sort(function (first, second) {
+      const firstCost = parseFloat(first[1][recipeValue]);
+      const secondCost = parseFloat(second[1][recipeValue]);
+      console.log(`first: ${firstCost}, second: ${secondCost}`);
+      return secondCost - firstCost;
+    });
+  }
+
+  console.log("after sort");
+  recipes.forEach(function (element) {
+    console.log(`${element[0]} ${element[1][recipeValue]}`);
+  });
+
+  return recipes;
+}
+
+/**
+ * Sort listener
+ */
+function addSortListener() {
+  const sortSelect = document.getElementById("sort-direction");
+  sortSelect.addEventListener("change", (e) => {
+    const ascending = sortSelect.value == "Ascending";
+    // console.log(`Sorting by ascending: ${ascending}`);
+    recipeObject = sortRecipes(ascending, "userRecipes", "totalCost");
+    clearRecipeCards("cookbook");
+    recipeCards(recipeObject);
+  });
+}
+
+/**
+ * Helper function, deletes recipeCards from page section for refresh
+ * @param {String} page
+ */
+function clearRecipeCards(page) {
+  const section = document.querySelector(`.${page}`);
+
+  // Clear unfilled elements
+  const sectionRecipeCards = section.getElementsByTagName("recipe-card");
+  while (sectionRecipeCards.length > 0) {
+    sectionRecipeCards[0].remove();
+  }
+}
+
+/**
+ * Helper function, converts dictionary to array of [key, value] pairs
+ * @param {Object} dict
+ * @return {Array}
+ */
+function dictToArr(dict) {
+  const arr = Object.keys(dict).map(function (key) {
+    return [key, dict[key]];
+  });
+  return arr;
 }
