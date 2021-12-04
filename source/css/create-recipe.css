@@ -21,7 +21,7 @@ header a {
 }
 :root.dark {
   --bg-color: #121212;
-  --text-color: #45ADFE;
+  --text-color: #86c7a7;
   --hover-color:#fff;
   --item-color:rgb(175, 174, 174);
 }
