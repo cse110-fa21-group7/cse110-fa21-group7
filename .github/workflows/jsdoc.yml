@@ -12,11 +12,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: npm
+        run: |
+          npm install -g npm@6  
+
       - name: Build
-        uses: andstor/jsdoc-action@v1
+        uses: andstor/jsdoc-action@v1.2.0
         with:
           source_dir: ./source
-          output_dir: ./out
+          output_dir: ./jsdocout
           config_file: conf.json
           template: minami
           front_page: README.md
@@ -25,4 +29,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./out
+          publish_dir: ./jsdocout
