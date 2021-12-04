@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,15 +29,14 @@
                   <a class="nav-link" href="/create" id="link-create-recipe">Create</a>
                 </li>
               </ul>
-                  <script>const setTheme = theme => document.documentElement.className = theme;</script>
-                  <div class="themes">
-                    <button class="theme-btn light" onclick="setTheme('light')" title="Light mode">
-                      <img src="./img/sun.png" alt = "light">
-                    </button>
-                    <button class="theme-btn dark" onclick="setTheme('dark')" title="Dark mode">
-                      <img src="./img/moon.png" alt="dark">
-                    </button>
-                </div>
+              <div class="themes">
+                <button class="theme-btn light" id="lightMode">
+                  <img src="/img/sun.png" alt = "light">
+                </button>
+                <button class="theme-btn dark" id="darkMode">
+                  <img src="/img/moon.png" alt="dark">
+                </button>
+              </div>
             </div>
           </nav>
   </header>
