@@ -24,7 +24,7 @@ class RecipeCard extends HTMLElement {
   }
   /**
    * save current recipe object which we get from local storage
-   * @param {JSON} recipeObject
+   * @param {JSON} recipes
    */
   setRecipes(recipes) {
     this.recipes = recipes;
@@ -146,8 +146,8 @@ class RecipeCard extends HTMLElement {
     img.classList.add("card-image");
     cardBody.appendChild(img);
     // test add btn
-    // const addBtn = document.createElement("div");
-    // addBtn.classList.add("add-to-cookbook");
+    const addBtn = document.createElement("div");
+    addBtn.classList.add("add-to-cookbook");
 
     const ii = document.createElement("i");
     ii.id = "card-btn";
