@@ -62,12 +62,15 @@ body{
 .toggle-container {
   position: relative;
 }
+/*
 .themes button{
- margin-left:auto;
+  margin-left:auto;
 }
+*/
 .theme-btn img {
-  height: 50%;
-  width: 50%;
+  max-height: 50%;
+  max-width: 50%;
+  
   object-fit: contain;
 }
 
