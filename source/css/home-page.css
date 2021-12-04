@@ -1,7 +1,53 @@
-html {
-  background-color: #fff;
+
+:root,
+:root.light {
+  --bg-color: #fff;
+  --text-color: #123;
+  --hover-color:rgb(48, 46, 46);
+  --item-color:#666;
 }
 
+:root.dark {
+  --bg-color: #121212;
+  --text-color: #45ADFE;
+  --hover-color:#fff;
+  --item-color:rgb(175, 174, 174);
+}
+
+body{
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.theme-btn {
+  width: 6em;
+  height: 6em;
+  padding: 0px 0px 0px 0px;
+  border-radius: 20%;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+.toggle-container {
+  position: relative;
+}
+
+.theme-btn img {
+  height: 50%;
+  width: 50%;
+  object-fit: contain;
+}
+
+.theme-btn.light {
+  display: none;
+}
+
+.dark .theme-btn.dark {
+  display: none;
+}
+
+.dark .theme-btn.light {
+  display: block;
+}
 /* *,
 *::before,
 *::after {
