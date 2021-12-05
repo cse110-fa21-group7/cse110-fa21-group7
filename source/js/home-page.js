@@ -82,15 +82,15 @@ function recipeCards(recipeObject) {
     }
     console.log(randomArray);
     randomArray.forEach((e) => {
-      const key = e;
-      const value = recipeObject[key][1];
+      const key = recipeObject[e][0];
+      const value = recipeObject[e][1];
       const card = document.createElement("recipe-card");
       card.setPage(page);
       card.setRecipes(userRecipe);
-      card.setID(recipeObject[key][0]);
+      card.setID(key);
       card.data = value;
       section.appendChild(card);
-      toReadRecipe(card, recipeObject[key][0]);
+      toReadRecipe(card, key);
     });
 
   } else {
