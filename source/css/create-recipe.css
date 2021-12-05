@@ -8,60 +8,8 @@ label {
   padding-right: 10px;
   font-family: Oxygen, sans-serif;
 }
-
-:root.light {
-  --bg-color: #fff;
-  --text-color: #123;
-  --hover-color:rgb(48, 46, 46);
-  --item-color:#666;
-}
-header a {
-  color:var(--item-color);
-  text-decoration: none;
-}
-:root.dark {
-  --bg-color: #121212;
-  --text-color: #86c7a7;
-  --hover-color:#fff;
-  --item-color:rgb(175, 174, 174);
-}
-
-body{
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-.theme-btn {
-  width: 6em;
-  height: 6em;
-  padding: 0px 0px 0px 0px;
-  border-radius: 20%;
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-}
-.toggle-container {
-  position: relative;
-}
-
-.theme-btn img {
-  height: 50%;
-  width: 50%;
-  object-fit: contain;
-}
-
-.theme-btn.light {
-  display: none;
-}
-
-.dark .theme-btn.dark {
-  display: none;
-}
-
-.dark .theme-btn.light {
-  display: block;
-}
 .section--create-recipe {
-  background-color: #ffffff;
+  background-color: transparent;
 }
 
 h2 {
@@ -86,7 +34,7 @@ legend {
   text-transform: uppercase;
   text-align: left;
   margin-bottom: 10px;
-  margin-top:10px;
+  margin-top: 10px;
 }
 
 #ingredient1cost {
@@ -135,11 +83,11 @@ span {
   background: #a5d4bd;
 }
 
-.btn-add:hover{
+.btn-add:hover {
   cursor: pointer;
   background: #3c9eee;
 }
-.btn-submit:hover{
+.btn-submit:hover {
   cursor: pointer;
   background: #28d17c;
 }

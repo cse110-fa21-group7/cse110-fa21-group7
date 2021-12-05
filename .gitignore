@@ -6,3 +6,7 @@ secrets.yml
 out/
 cypress/screenshots
 cypress/videos
+
+# for scss preprocessing
+source/scss/*.map
+source/scss/*.css

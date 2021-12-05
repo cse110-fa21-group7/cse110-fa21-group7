@@ -33,20 +33,16 @@ describe("Tests for cookbook page", () => {
       .shadow()
       .contains("This is for e2e test gnocchi bake")
       .click();
-    cy.get("#recipeTitle").contains("This is for e2e test gnocchi bake");
-    cy.get("#recipeDescription").contains(
-      "Upgrade cheesy tomato pasta with gnocchi"
-    );
-    cy.get(".cost > :nth-child(2)").contains("Cost: $10");
-    cy.get(":nth-child(1) > .container").contains("olive oil");
-    cy.get(":nth-child(2) > .container").contains("onion, finely chopped");
-    cy.get(":nth-child(3) > .container").contains("garlic cloves , crushed");
-    cy.get(":nth-child(4) > .container").contains("chorizo , diced");
+    cy.get("#recipe-title").contains("This is for e2e test gnocchi bake");
+    cy.get("#recipe-desc").contains("Upgrade cheesy tomato pasta with gnocchi");
+    cy.contains("Cost: $10");
+    cy.contains("olive oil");
+    cy.contains("onion, finely chopped");
+    cy.contains("garlic cloves , crushed");
+    cy.contains("chorizo , diced");
 
-    cy.get(".orderList > :nth-child(1)").contains(
-      "Heat the oil in a medium pan over a medium heat. Fry "
-    );
-    cy.get(".orderList > :nth-child(2)").contains(
+    cy.contains("Heat the oil in a medium pan over a medium heat. Fry ");
+    cy.contains(
       "Stir ¾ of the mozzarella and most of the basil through the gnocchi. "
     );
   });
