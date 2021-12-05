@@ -15,10 +15,7 @@ label {
   --hover-color:rgb(48, 46, 46);
   --item-color:#666;
 }
-header a {
-  color:var(--item-color);
-  text-decoration: none;
-}
+
 :root.dark {
   --bg-color: #121212;
   --text-color: #86c7a7;
@@ -61,7 +58,7 @@ body{
   display: block;
 }
 .section--create-recipe {
-  background-color: #ffffff;
+  background-color: transparent;
 }
 
 h2 {
