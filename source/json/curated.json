@@ -74,148 +74,123 @@
     ]
   },
   "3": {
-    "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/gnocchi-1d16725.jpg?quality=90&webp=true&resize=300,272",
-    "title": "Chorizo & mozzarella gnocchi bake",
-    "description": "Upgrade cheesy tomato pasta with gnocchi, chorizo and mozzarella for a comforting bake that makes an excellent midweek meal",
-    "totalCost": 11,
-    "servings": 6,
-    "time": 25,
+    "image": "https://natashaskitchen.com/wp-content/uploads/2020/11/Easy-Scalloped-Potatoes-6.jpg",
+    "title": "Easy Scalloped Potatoes Recipe",
+    "description": "The easiest scalloped potatoes recipe! This potato side dish has just a few ingredients and comes together quickly. It's perfect for a busy weeknight but is also great for special occasions.",
+    "totalCost": 8,
+    "servings": 8,
+    "time": 20,
     "ingredients": [
       {
-        "name": "olive oil",
-        "amount": "1 tbsp"
+        "name": "ranch dressing",
+        "amount": "1/2 cup"
       },
       {
-        "name": "onion, finely chopped",
-        "amount": "1"
+        "name": "mayonnaise",
+        "amount": "1/2 cup"
       },
       {
-        "name": "garlic cloves , crushed",
-        "amount": "1"
+        "name": "whole milk",
+        "amount": "1/2 cup"
       },
       {
-        "name": "chorizo , diced",
-        "amount": "120g"
+        "name": "garlic cloves",
+        "amount": "3"
       },
       {
-        "name": "400g can chopped tomatoes",
-        "amount": "2"
+        "name": "medium cheddar cheese",
+        "amount": "2 cups"
       },
       {
-        "name": "caster sugar",
-        "amount": "1 tsp"
+        "name": "russet potatoes",
+        "amount": "3 lbs"
       },
       {
-        "name": "fresh gnocchi",
-        "amount": "600g"
-      },
-      {
-        "name": "mozzarella ball, cut into chunks",
-        "amount": "125g"
-      },
-      {
-        "name": "basil , torn",
-        "amount": "small bunch"
-      },
-      {
-        "name": "green salad",
-        "amount": "to serve"
+        "name": "chives",
+        "amount": "1/4 cup"
       }
     ],
     "steps": [
-      "Heat the oil in a medium pan over a medium heat. Fry the onion and garlic for 8-10 mins until soft. Add the chorizo and fry for 5 mins more. Tip in the tomatoes and sugar, and season. Bring to a simmer, then add the gnocchi and cook for 8 mins, stirring often, until soft. Heat the grill to high.",
-      "Stir ¾ of the mozzarella and most of the basil through the gnocchi. Divide the mixture between six ovenproof ramekins, or put in one baking dish. Top with the remaining mozzarella, then grill for 3 mins, or until the cheese is melted and golden. Season, scatter over the remaining basil and serve with green salad."
+      "Preheat oven to 375˚F with the rack in the center of your oven. You'll need a buttered 9×13 casserole dish.",
+      "In a large mixing bowl, stir together ranch, mayonnaise, milk, minced garlic and 1 cup cheddar cheese. Add thinly sliced potatoes and stir until every slice is coated in the creamy sauce.",
+      "Spread the potatoes evenly into the casserole dish, patting them evenly into the dish, then sprinkle on remaining 1 cup cheddar cheese.",
+      "Cover tightly with foil and bake at 375˚F for 65-75 minutes or until tender when pierced with a knife. then remove foil and bake an additional 5 minutes. Broil on high heat for about 2-3 minutes at the end to lightly brown the cheese crust. Rest for 10-15 minutes then garnish with chives to serve."
     ]
   },
   "4": {
-    "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/butter-chicken-cf6f9e2.jpg?quality=90&webp=true&resize=300,272",
-    "title": "Easy butter chicken",
-    "description": "Fancy a healthy version of your favourite Friday night chicken curry? The chicken can be marinaded the day before so you can get ahead on your prep",
+    "image": "https://natashaskitchen.com/wp-content/uploads/2019/12/Shrimp-Cocktail-6.jpg",
+    "title": "Shrimp Cocktail Recipe",
+    "description": "Impress your guests with this homemade Shrimp Cocktail Recipe. Learn how to make the best oven-baked shrimp and zesty cocktail sauce in just 15 minutes. This is so much better than a store-bought shrimp ring.",
     "totalCost": 10,
-    "servings": 4,
-    "time": 35,
+    "servings": 10,
+    "time": 30,
     "ingredients": [
       {
-        "name": "skinless boneless chicken thighs",
-        "amount": "500g"
+        "name": "raw shrimp",
+        "amount": "2 lbs"
       },
       {
-        "name": "lemon, juiced",
+        "name": "olive oil",
+        "amount": "1 1/2"
+      },
+      {
+        "name": "sea salt",
+        "amount": "1/2 tsp"
+      },
+      {
+        "name": "black pepper",
+        "amount": "1/2 tsp"
+      },
+      {
+        "name": "lemon",
         "amount": "1"
-      },
-      {
-        "name": "ground cumin",
-        "amount": "2 tsp"
-      },
-      {
-        "name": "paprika",
-        "amount": "2 tsp"
-      },
-      {
-        "name": "hot chilli powder",
-        "amount": "1-2 tsp"
-      },
-      {
-        "name": "natural yogurt",
-        "amount": "200g"
-      },
-      {
-        "name": "vegetable oil",
-        "amount": "2 tbsp"
-      },
-      {
-        "name": "onion, chopped",
-        "amount": "1 large"
-      },
-      {
-        "name": "green chilli, deseeded and finely chopped",
-        "amount": "1"
-      },
-      {
-        "name": "piece ginger, grated",
-        "amount": "thumb-sized"
-      },
-      {
-        "name": "garam masala",
-        "amount": "1 tsp"
-      },
-      {
-        "name": "ground fenugreek",
-        "amount": "2 tsp"
-      },
-      {
-        "name": "tomato purée",
-        "amount": "3 tbsp"
-      },
-      {
-        "name": "chicken stock",
-        "amount": "300ml"
-      },
-      {
-        "name": "cooked basmati rice",
-        "amount": "50g"
-      },
-      {
-        "name": "naan bread",
-        "amount": ""
-      },
-      {
-        "name": "mango chutney or lime pickle",
-        "amount": ""
-      },
-      {
-        "name": "fresh coriander",
-        "amount": ""
-      },
-      {
-        "name": "lime wedges",
-        "amount": ""
       }
     ],
     "steps": [
-      "In a medium bowl, mix all the marinade ingredients with some seasoning. Chop the chicken into bite-sized pieces and toss with the marinade. Cover and chill in the fridge for 1 hr or overnight.",
-      "In a large, heavy saucepan, heat the oil. Add the onion, garlic, green chilli, ginger and some seasoning. Fry on a medium heat for 10 mins or until soft.",
-      "Add the spices with the tomato purée, cook for a further 2 mins until fragrant, then add the stock and marinated chicken. Cook for 15 mins, then add any remaining marinade left in the bowl. Simmer for 5 mins, then sprinkle with the toasted almonds. Serve with rice, naan bread, chutney, coriander and lime wedges, if you like."
+      "Thaw shrimp according to package instructions, then rinse under cold water and thoroughly pat dry with paper towels. Place shrimp on a large rimmed baking sheet, drizzle with 1 1/2 Tbsp olive oil and sprinkle on 1/2 tsp salt and 1/2 tsp black pepper. Stir to combine then arrange shrimp in a single layer.",
+      "Bake at 450˚F for 8-10 min or until shrimp turn pink and are just cooked through.* As soon as they come out of the oven, test a shrimp for doneness then transfer all shrimp to a serving platter. If they stay on the hot baking sheet, they can get overcooked.",
+      "Combine all of the Cocktail Sauce ingredients, adding horseradish and hot sauce to taste (Add more if you love cocktail sauce with a spicy kick and less if you prefer a mild sauce). Cover and refrigerate sauce and shrimp for at least an hour or overnight. Serve chilled."
+    ]
+  },
+  "5": {
+    "image": "https://natashaskitchen.com/wp-content/uploads/2021/02/Roasted-Cauliflower-3.jpg",
+    "title": "Oven Roasted Cauliflower Recipe",
+    "description": "The most delicious oven-roasted cauliflower recipe that will become your go-to side dish. Cauliflower florets drizzled in oil and butter and seasoned to perfection.",
+    "totalCost": 4,
+    "servings": 6,
+    "time": 30,
+    "ingredients": [
+      {
+        "name": "medium cauliflower",
+        "amount": "1"
+      },
+      {
+        "name": "olive oil",
+        "amount": "2 Tbsp"
+      },
+      {
+        "name": "unsalted butter",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "garlic powder",
+        "amount": "½ tsp"
+      },
+      {
+        "name": "salt",
+        "amount": "½ tsp"
+      },
+      {
+        "name": "ground paprika",
+        "amount": "¼ tsp"
+      }
+    ],
+    "steps": [
+      "Preheat the oven to 425˚F and line a baking sheet with parchment paper.",
+      "Slice the head of cauliflower into 1/2 thick steaks, breaking up wedges into even, bite-sized pieces.",
+      "Add the cauliflower to the center of the baking sheet. Drizzle with the oil and melted butter and toss to combine.",
+      "In a small bowl, combine garlic powder, salt, paprika, and pepper for the seasoning. Sprinkle onto caulliflower and toss to evenly coat",
+      "Spread the cauliflower evenly on the baking sheet and bake at 425˚F for 15-20 minutes, until cauliflower reaches desired crispiness."
     ]
   }
 }
