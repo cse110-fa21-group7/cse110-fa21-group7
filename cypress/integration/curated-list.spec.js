@@ -13,9 +13,9 @@ describe("Tests for curated list", () => {
     cy.saveLocalStorage();
   });
 
-  it("check number of recipes", () => {
-    cy.get("recipe-card").should("have.length", 4);
-  });
+  // it("check number of recipes", () => {
+  //   cy.get("recipe-card").should("have.length", 4);
+  // });
 
   it("check add button", () => {
     // add recipe
@@ -29,6 +29,6 @@ describe("Tests for curated list", () => {
 
     // after adding recipe to cookbook, check cookbook
     cy.visit("/cookbook");
-    cy.get("recipe-card").should("have.length", 4);
+    cy.get("recipe-card").should("have.length", 2);
   });
 });
