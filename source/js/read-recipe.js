@@ -44,38 +44,31 @@ function populateHTML() {
   // const article = document.getElementById("recipeTitle");
 
   // add title
-  document.getElementById("recipeTitle").innerText = recipe["title"];
-
+  document.getElementById("recipe-title").innerText = recipe["title"];
   // add Description
-  document.getElementById("recipeDescription").innerText =
-    recipe["description"];
-
-  const detailDiv = document.querySelector(".detail");
-  const servingDiv = detailDiv.querySelector(".serving");
-  const servingSpan = servingDiv.getElementsByTagName("span")[1];
-  if ("servings" in recipe) {
-    servingSpan.innerText = `Servings: ${recipe["servings"]}`;
-  } else {
-    servingSpan.innerText = "Servings: 1";
-  }
-
-  const costDiv = detailDiv.querySelector(".cost");
-  const costSpan = costDiv.getElementsByTagName("span")[1];
-  if ("totalCost" in recipe) {
-    // appends dollar sign and either does division to get cents -> dollars if spoonacular or just appends price
-    costSpan.innerText = `Cost: $${recipe["totalCost"]}`;
-  } else {
-    costSpan.innerText = "Cost: Bout tree fiddy";
-  }
-
-  const timeDiv = detailDiv.querySelector(".time");
-  const timeSpan = timeDiv.getElementsByTagName("span")[1];
+  document.getElementById("recipe-desc").innerText = recipe["description"];
+  // add time
+  const timeSpan = document.getElementById("time");
   if ("time" in recipe) {
     timeSpan.innerText = recipe["time"] + " minutes";
   } else {
     timeSpan.innerText = "Ready before you know it";
   }
-
+  // add severings
+  const servingSpan = document.getElementById("servings");
+  if ("servings" in recipe) {
+    servingSpan.innerText = `Servings: ${recipe["servings"]}`;
+  } else {
+    servingSpan.innerText = "Servings: 1";
+  }
+  // add cost
+  const costSpan = document.getElementById("cost");
+  if ("totalCost" in recipe) {
+    // appends dollar sign and either does division to get cents -> dollars if spoonacular or just appends price
+    costSpan.innerText = `Cost: $ ${recipe["totalCost"]}`;
+  } else {
+    costSpan.innerText = "Cost: Bout tree fiddy";
+  }
   // add image
   const img = document.getElementById("recipeImg");
 
@@ -96,39 +89,19 @@ function populateHTML() {
   }
   const ingList = document.getElementById("ingredient-list");
   for (const ingredient of recipe["ingredients"]) {
-    const eachIng = document.createElement("div");
-    eachIng.classList.add("each-ingredient");
-    const label = document.createElement("label");
-    label.innerText = `${ingredient["name"]} ${ingredient["amount"]}`;
-    console.log(`${ingredient["name"]} ${ingredient["amount"]}`);
-    label.classList.add("container");
-    const input = document.createElement("input");
-    input.type = "checkbox";
-    const span = document.createElement("span");
-    span.classList.add("checkmark");
-    label.append(input, span);
-    eachIng.appendChild(label);
+    const eachIng = document.createElement("li");
+    eachIng.innerText = `${ingredient["name"]} ${ingredient["amount"]}`;
     ingList.appendChild(eachIng);
   }
+
   // add step list
-  const stepList = document.getElementById("steps-list");
-  const ul = document.createElement("ol");
+  const stepList = document.getElementById("step-list");
   for (const step of recipe["steps"]) {
-    ul.classList.add("orderList");
-    const li = document.createElement("li");
-    li.innerHTML = step;
-    ul.appendChild(li);
+    const eachStep = document.createElement("li");
+    eachStep.innerText = step;
+    stepList.appendChild(eachStep);
   }
-  stepList.appendChild(ul);
 }
-/**
- * Populates recipes object from localStorage
- */
-// function addRecipe() {
-//   const storedRecipes = JSON.parse(localStorage.getItem("storedRecipes"));
-//   userRecipes[recipeID] = storedRecipes[recipeID];
-//   localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
-// }
 /** Sets event listeners */
 editButton.addEventListener("click", () => {
   if (editButton.innerHTML === "add") {

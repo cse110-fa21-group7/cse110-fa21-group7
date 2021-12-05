@@ -1,0 +1,140 @@
+@import 'variables';
+
+body {
+    background-color: $bg-color;
+}
+
+.box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+}
+div {
+	display: block;
+}
+#recipeDetails {
+	width: auto;
+	height: auto;
+	width: 90%;
+	height: 90%;
+}
+.recipe-card-header-container {
+	position: relative;
+	text-align: center;
+	padding: 32px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	background-color: #86c7a7;
+	color: white;
+}
+#Delete {
+	background-color: #c62122;
+	color: #fff !important;
+	cursor: pointer;
+	border-radius: 4px;
+}
+#Edit {
+	background-color: #222 !important;
+	color: #fff !important;
+	cursor: pointer;
+	border-radius: 4px;
+}
+#recipeImg {
+	border-radius: 20px;
+	border: 10px solid #fff;
+	object-fit: cover;
+}
+.recipe-details-container {
+	border-left: 1px solid rgba(0, 0, 0, 0.1);
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 10px 20px 0;
+	background-color: #fff;
+}
+.flex-container {
+	display: flex;
+}
+.flex-child {
+	flex: 1;
+}
+.detail-item {
+	padding: 30px 1.5%;
+}
+label {
+	font-weight: 400;
+	display: block;
+	width: 150px;
+	float: center;
+	font-size: 16px;
+	font-family: "Inter", sans-serif;
+}
+.each-ingredient {
+	line-height: 2;
+}
+.container {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+		&:checked {
+			~ {
+				.checkmark {
+					background-color: #86c7a7;
+					&:after {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+	&:hover {
+		input {
+			~ {
+				.checkmark {
+					background-color: #ccc;
+				}
+			}
+		}
+	}
+	.checkmark {
+		&:after {
+			top: 9px;
+			left: 9px;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: white;
+		}
+	}
+}
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #eee;
+	border-radius: 50%;
+	&:after {
+		content: "";
+		position: absolute;
+		display: none;
+	}
+}
+.orderList {
+	font-weight: 400;
+	display: block;
+	float: center;
+	font-size: 16px;
+	line-height: 2;
+}
+h2 {
+	color: $highlight-color;
+}

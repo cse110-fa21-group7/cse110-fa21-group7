@@ -1,76 +1,17 @@
-
-:root,
-:root.light {
-  --bg-color: #fff;
-  --text-color: #123;
-  --hover-color:rgb(48, 46, 46);
-  --item-color:#666;
-}
-
-:root.dark {
-  --bg-color: #121212;
-  --text-color: #86c7a7;
-  --hover-color:#fff;
-  --item-color:rgb(175, 174, 174);
-}
-
-body{
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-.theme-btn {
-  width: 10em;
-  height: 10em;
-  padding: 0px 0px 10px 10px;
-  border-radius: 20%;
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-}
-.toggle-container {
-  position: relative;
-}
-
-.theme-btn img {
-  max-height:50%;
-  max-width:50%;
-  /*
-  height: 50%;
-  width: 50%;
-  */
-  object-fit: contain;
-}
-
-.theme-btn.light {
-  display: none;
-}
-
-.dark .theme-btn.dark {
-  display: none;
-}
-
-.dark .theme-btn.light {
-  display: block;
-}
-/* *,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-} */
-
-
-
 section:not(.shown) {
   display: none;
 }
+
 .wrapper {
-  font-family: Oxygen, sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 2rem;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: (minmax(12rem, 16rem)) [auto-fit];
   grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));
   grid-gap: 2rem;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   min-width: 350px;
 }
@@ -94,6 +35,7 @@ section.search {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -106,13 +48,20 @@ section.search {
 }
 
 form {
-  background-color: hsl(0, 0%, 92%);
+  background-color: #ebebeb;
   min-width: 300px;
   max-width: 700px;
   height: 50px;
   border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin: auto;
 }
@@ -128,13 +77,6 @@ input {
   padding-bottom: 5px;
   margin: auto;
 }
-
-/*
-::placeholder {
-  color: #666;
-  opacity: 0.7; 
-}
-*/
 
 #search-button {
   all: unset;
@@ -154,13 +96,4 @@ input {
   padding-left: 23px;
   color: white;
 }
-
-/*
-svg {
-  color: #fff;
-  fill: #fff;
-  width: 26px;
-  height: 26px;
-  padding-left: 20px;  
-}
-*/
+/*# sourceMappingURL=home-page.css.map */

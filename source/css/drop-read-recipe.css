@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,900;1,300&display=swap");
+body {
+  background-color: #dcc7aa;
+}
+
+.box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+div {
+  display: block;
+}
+
+#recipeDetails {
+  width: auto;
+  height: auto;
+  width: 90%;
+  height: 90%;
+}
+
+.recipe-card-header-container {
+  position: relative;
+  text-align: center;
+  padding: 32px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: #86c7a7;
+  color: white;
+}
+
+#Delete {
+  background-color: #c62122;
+  color: #fff !important;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#Edit {
+  background-color: #222 !important;
+  color: #fff !important;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#recipeImg {
+  border-radius: 20px;
+  border: 10px solid #fff;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.recipe-details-container {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px 20px 0;
+  background-color: #fff;
+}
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-child {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.detail-item {
+  padding: 30px 1.5%;
+}
+
+label {
+  font-weight: 400;
+  display: block;
+  width: 150px;
+  float: center;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+}
+
+.each-ingredient {
+  line-height: 2;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #86c7a7;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.orderList {
+  font-weight: 400;
+  display: block;
+  float: center;
+  font-size: 16px;
+  line-height: 2;
+}
+
+h2 {
+  color: #6b7abf;
+}
+/*# sourceMappingURL=read-recipe.css.map */
