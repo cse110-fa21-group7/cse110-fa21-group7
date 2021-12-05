@@ -86,10 +86,10 @@ function recipeCards(recipeObject) {
       const card = document.createElement("recipe-card");
       card.setPage(page);
       card.setRecipes(userRecipe);
-      card.setID(key);
+      card.setID(recipeObject[key][0]);
       card.data = value;
       section.appendChild(card);
-      toReadRecipe(card, key);
+      toReadRecipe(card, recipeObject[key][0]);
     });
   } else {
     // Loop through recipeObject array
