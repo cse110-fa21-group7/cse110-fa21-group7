@@ -11,9 +11,8 @@ router.get("/recipe", async (req, res) => {
   try {
     const params = new URLSearchParams({
       ...url.parse(req.url, true).query,
-      ...url.parse(req.url, true).number,
+      number: 12,
       [API_RECIPE_NAME]: API_RECIPE_VALUE,
-      // number: 12,
     });
     // Log the request to the public API
     if (process.env.NODE_ENV !== "production") {
