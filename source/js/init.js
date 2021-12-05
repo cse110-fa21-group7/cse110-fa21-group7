@@ -14,7 +14,7 @@ export async function asapInit() {
   }
 
   if (localStorage.getItem("currID") === null)
-    localStorage.setItem("currID", 0);
+    localStorage.setItem("currID", 50);
   const recipeObj = ["userRecipes", "resultRecipes"];
   // let exampleFlag = false;
   for (const obj of recipeObj) {

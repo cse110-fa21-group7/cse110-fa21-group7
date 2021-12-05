@@ -65,19 +65,47 @@ function makePage() {
  */
 function recipeCards(recipeObject) {
   const section = document.querySelector(`.${page}`);
-  // Loop through recipeObject array
-  recipeObject.forEach((e) => {
-    const key = e[0];
-    const value = e[1];
-    if (key === "currID") return;
-    const card = document.createElement("recipe-card");
-    card.setPage(page);
-    card.setRecipes(userRecipe);
-    card.setID(key);
-    card.data = value;
-    section.appendChild(card);
-    toReadRecipe(card, key);
-  });
+
+  // generate 8 random recipe cards
+  if (page == "curatedList") {
+    const total = Object.keys(recipeObject).length;
+    const exists = [];
+    const randomArray = [];
+    let randomNumber;
+    for (let i = 0; i < 8; i++) {
+      do {
+        randomNumber = Math.floor(Math.random() * total);
+      } while (exists[randomNumber]);
+      exists[randomNumber] = true;
+      randomArray.push(randomNumber);
+    }
+    console.log(randomArray);
+    randomArray.forEach((e) => {
+      const key = e;
+      const value = recipeObject[key][1];
+      const card = document.createElement("recipe-card");
+      card.setPage(page);
+      card.setRecipes(userRecipe);
+      card.setID(key);
+      card.data = value;
+      section.appendChild(card);
+      toReadRecipe(card, key);
+    });
+  } else {
+    // Loop through recipeObject array
+    recipeObject.forEach((e) => {
+      const key = e[0];
+      const value = e[1];
+      if (key === "currID") return;
+      const card = document.createElement("recipe-card");
+      card.setPage(page);
+      card.setRecipes(userRecipe);
+      card.setID(key);
+      card.data = value;
+      section.appendChild(card);
+      toReadRecipe(card, key);
+    });
+  }
 }
 
 /**
