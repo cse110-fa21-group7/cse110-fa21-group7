@@ -74,6 +74,126 @@
     ]
   },
   "3": {
+    "image": "https://natashaskitchen.com/wp-content/uploads/2020/11/Easy-Scalloped-Potatoes-6.jpg",
+    "title": "Easy Scalloped Potatoes Recipe",
+    "description": "The easiest scalloped potatoes recipe! This potato side dish has just a few ingredients and comes together quickly. It's perfect for a busy weeknight but is also great for special occasions.",
+    "totalCost": 8,
+    "servings": 8,
+    "time": 20,
+    "ingredients": [
+      {
+        "name": "ranch dressing",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "mayonnaise",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "whole milk",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "garlic cloves",
+        "amount": "3"
+      },
+      {
+        "name": "medium cheddar cheese",
+        "amount": "2 cups"
+      },
+      {
+        "name": "russet potatoes",
+        "amount": "3 lbs"
+      },
+      {
+        "name": "chives",
+        "amount": "1/4 cup"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 375˚F with the rack in the center of your oven. You'll need a buttered 9×13 casserole dish.",
+      "In a large mixing bowl, stir together ranch, mayonnaise, milk, minced garlic and 1 cup cheddar cheese. Add thinly sliced potatoes and stir until every slice is coated in the creamy sauce.",
+      "Spread the potatoes evenly into the casserole dish, patting them evenly into the dish, then sprinkle on remaining 1 cup cheddar cheese.",
+      "Cover tightly with foil and bake at 375˚F for 65-75 minutes or until tender when pierced with a knife. then remove foil and bake an additional 5 minutes. Broil on high heat for about 2-3 minutes at the end to lightly brown the cheese crust. Rest for 10-15 minutes then garnish with chives to serve."
+    ]
+  },
+  "4": {
+    "image": "https://natashaskitchen.com/wp-content/uploads/2019/12/Shrimp-Cocktail-6.jpg",
+    "title": "Shrimp Cocktail Recipe",
+    "description": "Impress your guests with this homemade Shrimp Cocktail Recipe. Learn how to make the best oven-baked shrimp and zesty cocktail sauce in just 15 minutes. This is so much better than a store-bought shrimp ring.",
+    "totalCost": 10,
+    "servings": 10,
+    "time": 30,
+    "ingredients": [
+      {
+        "name": "raw shrimp",
+        "amount": "2 lbs"
+      },
+      {
+        "name": "olive oil",
+        "amount": "1 1/2"
+      },
+      {
+        "name": "sea salt",
+        "amount": "1/2 tsp"
+      },
+      {
+        "name": "black pepper",
+        "amount": "1/2 tsp"
+      },
+      {
+        "name": "lemon",
+        "amount": "1"
+      }
+    ],
+    "steps": [
+      "Thaw shrimp according to package instructions, then rinse under cold water and thoroughly pat dry with paper towels. Place shrimp on a large rimmed baking sheet, drizzle with 1 1/2 Tbsp olive oil and sprinkle on 1/2 tsp salt and 1/2 tsp black pepper. Stir to combine then arrange shrimp in a single layer.",
+      "Bake at 450˚F for 8-10 min or until shrimp turn pink and are just cooked through.* As soon as they come out of the oven, test a shrimp for doneness then transfer all shrimp to a serving platter. If they stay on the hot baking sheet, they can get overcooked.",
+      "Combine all of the Cocktail Sauce ingredients, adding horseradish and hot sauce to taste (Add more if you love cocktail sauce with a spicy kick and less if you prefer a mild sauce). Cover and refrigerate sauce and shrimp for at least an hour or overnight. Serve chilled."
+    ]
+  },
+  "5": {
+    "image": "https://natashaskitchen.com/wp-content/uploads/2021/02/Roasted-Cauliflower-3.jpg",
+    "title": "Oven Roasted Cauliflower Recipe",
+    "description": "The most delicious oven-roasted cauliflower recipe that will become your go-to side dish. Cauliflower florets drizzled in oil and butter and seasoned to perfection.",
+    "totalCost": 4,
+    "servings": 6,
+    "time": 30,
+    "ingredients": [
+      {
+        "name": "medium cauliflower",
+        "amount": "1"
+      },
+      {
+        "name": "olive oil",
+        "amount": "2 Tbsp"
+      },
+      {
+        "name": "unsalted butter",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "garlic powder",
+        "amount": "½ tsp"
+      },
+      {
+        "name": "salt",
+        "amount": "½ tsp"
+      },
+      {
+        "name": "ground paprika",
+        "amount": "¼ tsp"
+      }
+    ],
+    "steps": [
+      "Preheat the oven to 425˚F and line a baking sheet with parchment paper.",
+      "Slice the head of cauliflower into 1/2 thick steaks, breaking up wedges into even, bite-sized pieces.",
+      "Add the cauliflower to the center of the baking sheet. Drizzle with the oil and melted butter and toss to combine.",
+      "In a small bowl, combine garlic powder, salt, paprika, and pepper for the seasoning. Sprinkle onto caulliflower and toss to evenly coat",
+      "Spread the cauliflower evenly on the baking sheet and bake at 425˚F for 15-20 minutes, until cauliflower reaches desired crispiness."
+    ]
+  },
+  "6": {
     "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/gnocchi-1d16725.jpg?quality=90&webp=true&resize=300,272",
     "title": "Chorizo & mozzarella gnocchi bake",
     "description": "Upgrade cheesy tomato pasta with gnocchi, chorizo and mozzarella for a comforting bake that makes an excellent midweek meal",
@@ -127,7 +247,7 @@
       "Stir ¾ of the mozzarella and most of the basil through the gnocchi. Divide the mixture between six ovenproof ramekins, or put in one baking dish. Top with the remaining mozzarella, then grill for 3 mins, or until the cheese is melted and golden. Season, scatter over the remaining basil and serve with green salad."
     ]
   },
-  "4": {
+  "7": {
     "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/butter-chicken-cf6f9e2.jpg?quality=90&webp=true&resize=300,272",
     "title": "Easy butter chicken",
     "description": "Fancy a healthy version of your favourite Friday night chicken curry? The chicken can be marinaded the day before so you can get ahead on your prep",
@@ -216,6 +336,140 @@
       "In a medium bowl, mix all the marinade ingredients with some seasoning. Chop the chicken into bite-sized pieces and toss with the marinade. Cover and chill in the fridge for 1 hr or overnight.",
       "In a large, heavy saucepan, heat the oil. Add the onion, garlic, green chilli, ginger and some seasoning. Fry on a medium heat for 10 mins or until soft.",
       "Add the spices with the tomato purée, cook for a further 2 mins until fragrant, then add the stock and marinated chicken. Cook for 15 mins, then add any remaining marinade left in the bowl. Simmer for 5 mins, then sprinkle with the toasted almonds. Serve with rice, naan bread, chutney, coriander and lime wedges, if you like."
+    ]
+  },
+  "8": {
+    "image": "https://celebratingsweets.com/wp-content/uploads/2019/04/Fruit-Salad-1-2.jpg",
+    "title": "Fruit Salad",
+    "description": "Layers of fresh fruit topped with homemade vanilla pudding and whipped cream.",
+    "totalCost": 10,
+    "servings": 5,
+    "time": 40,
+    "ingredients": [
+      {
+        "name": "granulated sugar",
+        "amount": "1/3 cup"
+      },
+      {
+        "name": "cornstarch",
+        "amount": "2 tablespoons"
+      },
+      {
+        "name": "salt",
+        "amount": "1/8 teaspoons"
+      },
+      {
+        "name": "milk",
+        "amount": "2 1/4 cups"
+      },
+      {
+        "name": "egg yolks",
+        "amount": "2"
+      },
+      {
+        "name": "unsalted butter",
+        "amount": "1 tablespoon"
+      },
+      {
+        "name": "pure vanilla extract",
+        "amount": "1 1/2 teaspoons"
+      },
+      {
+        "name": "heavy whipping cream chilled",
+        "amount": "1 cup"
+      },
+      {
+        "name": "powdered sugar",
+        "amount": "2 tablespoons"
+      },
+      {
+        "name": "pure vanilla extract",
+        "amount": "1/2 teaspoon"
+      },
+      {
+        "name": "fruit",
+        "amount": "12 cups"
+      }
+      
+    ],
+    "steps": [
+      "In a medium saucepan whisk together sugar, cornstarch, salt, milk, and egg yolks. Cook over medium-low heat, whisking frequently, until the mixture is bubbling and thickened, about 8-10 minutes. Note: It will thicken a little more as it cools, but we want it on the thinner side so that it can be poured over the fruit. ",
+      "Remove from heat and whisk in butter and vanilla extract. Optional:Place a fine mesh strainer over a large heatproof bowl. Pour the mixture through the strainer and into the bowl (Optional step to remove lumps. If you have no lumps, you can skip this step and just pour the pudding directly into a bowl). Place the bowl of pudding in the fridge (I like to place plastic wrap directly on it to prevent a skin from forming). Chill completely. ",
+      "Place all ingredients in a large bowl. Using a hand mixer or stand mixer fitted with the whisk attachment, beat on medium-high speed for several minutes until soft peaks form. Cover and chill until assembly. ",
+      "Layer fruit in a trifle dish or large bowl. Remove the pudding from fridge and whisk it vigorously until smooth. Pour the pudding evenly over the fruit, then spread the whipped cream on top. If desired, top with additional fruit. Best if served immediately, or within an hour or two. "
+    ]
+  },
+
+  "9": {
+    "image": "https://www.crunchycreamysweet.com/wp-content/uploads/2019/04/one-bowl-vanilla-cake-2.jpg",
+    "title": "One-Bowl Vanilla Cake recipe",
+    "description": "Layers of fresh fruit topped with homemade vanilla pudding and whipped cream.",
+    "totalCost": 20,
+    "servings": 6,
+    "time": 35,
+    "ingredients": [
+      {
+        "name": "all-purpose flour",
+        "amount": "1.25 cup"
+      },
+      {
+        "name": "granulated sugar",
+        "amount": "3/4 cup"
+      },
+      {
+        "name": "baking soda",
+        "amount": "1/2 teaspoon"
+      },
+      {
+        "name": "baking powder",
+        "amount": "1 teaspoon"
+      },
+      {
+        "name": "salt",
+        "amount": "1/4 teaspoon"
+      },
+      {
+        "name": "large egg",
+        "amount": "1"
+      },
+      {
+        "name": "vegetable oil",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "buttermilk see note",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "hot water",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "pure vanilla extract",
+        "amount": "2 teaspoons"
+      },
+      {
+        "name": "unsalted butter softened",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "powdered sugar sifted",
+        "amount": "1.5 cup"
+      },
+      {
+        "name": "heavy cream",
+        "amount": "1 tablespoon"
+      }
+      
+    ],
+    "steps": [
+      "Preheat oven to 350 degrees F. Grease and flour or line with parchment paper, an 8 square or round pan. Set aside.",
+      "In a large mixing bowl, whisk together flour, sugar, baking soda, baking powder and salt.",
+      "Add egg, buttermilk, vanilla and oil. Whisk together. Add hot water and whisk well until the batter is smooth. It will be runny but that's okay.",
+      "Pour batter into prepared pan. Tap the pan gently against the counter to release any air bubbles.",
+      "Bake cake for 25 to 28 minutes or until golden on top and a toothpick inserted in a few places comes out clean.",
+      "Cool cake completely before frosting.",
+      "To make frosting: place butter in a medium mixing bowl and beat for 7 minutes. Add powdered sugar, 1/2 cup at a time and beat in well. Add heavy cream and beat in for 1 minute. Add vanilla and mix in. The frosting should be very fluffy. Spread over cooled cake. Decorate with sprinkles."
     ]
   }
 }
