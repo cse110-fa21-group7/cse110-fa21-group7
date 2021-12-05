@@ -14,7 +14,7 @@ export async function asapInit() {
   }
 
   if (localStorage.getItem("currID") === null)
-    localStorage.setItem("currID", 0);
+    localStorage.setItem("currID", 50);
   const recipeObj = ["userRecipes", "resultRecipes"];
   // let exampleFlag = false;
   for (const obj of recipeObj) {
@@ -110,11 +110,11 @@ function addExamples() {
       "Serves 8.",
     ],
   };
-  userRecipes["1"] = ex1;
-  userRecipes["2"] = ex2;
+  userRecipes["51"] = ex1;
+  userRecipes["52"] = ex2;
   // update
   localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
-  localStorage.setItem("currID", 2);
+  localStorage.setItem("currID", 52);
   // after this line there should be 2 recipes examples saved in local storage
 }
 
