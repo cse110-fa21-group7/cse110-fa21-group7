@@ -65,7 +65,7 @@ function populateHTML() {
   const costSpan = document.getElementById("cost");
   if ("totalCost" in recipe) {
     // appends dollar sign and either does division to get cents -> dollars if spoonacular or just appends price
-    costSpan.innerText = `Cost: $ ${recipe["totalCost"]}`;
+    costSpan.innerText = `Cost: $${recipe["totalCost"]}`;
   } else {
     costSpan.innerText = "Cost: Bout tree fiddy";
   }
