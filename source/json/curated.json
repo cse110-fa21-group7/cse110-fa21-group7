@@ -192,5 +192,282 @@
       "In a small bowl, combine garlic powder, salt, paprika, and pepper for the seasoning. Sprinkle onto caulliflower and toss to evenly coat",
       "Spread the cauliflower evenly on the baking sheet and bake at 425˚F for 15-20 minutes, until cauliflower reaches desired crispiness."
     ]
+  },
+  "6": {
+    "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/gnocchi-1d16725.jpg?quality=90&webp=true&resize=300,272",
+    "title": "Chorizo & mozzarella gnocchi bake",
+    "description": "Upgrade cheesy tomato pasta with gnocchi, chorizo and mozzarella for a comforting bake that makes an excellent midweek meal",
+    "totalCost": 11,
+    "servings": 6,
+    "time": 25,
+    "ingredients": [
+      {
+        "name": "olive oil",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "onion, finely chopped",
+        "amount": "1"
+      },
+      {
+        "name": "garlic cloves , crushed",
+        "amount": "1"
+      },
+      {
+        "name": "chorizo , diced",
+        "amount": "120g"
+      },
+      {
+        "name": "400g can chopped tomatoes",
+        "amount": "2"
+      },
+      {
+        "name": "caster sugar",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "fresh gnocchi",
+        "amount": "600g"
+      },
+      {
+        "name": "mozzarella ball, cut into chunks",
+        "amount": "125g"
+      },
+      {
+        "name": "basil , torn",
+        "amount": "small bunch"
+      },
+      {
+        "name": "green salad",
+        "amount": "to serve"
+      }
+    ],
+    "steps": [
+      "Heat the oil in a medium pan over a medium heat. Fry the onion and garlic for 8-10 mins until soft. Add the chorizo and fry for 5 mins more. Tip in the tomatoes and sugar, and season. Bring to a simmer, then add the gnocchi and cook for 8 mins, stirring often, until soft. Heat the grill to high.",
+      "Stir ¾ of the mozzarella and most of the basil through the gnocchi. Divide the mixture between six ovenproof ramekins, or put in one baking dish. Top with the remaining mozzarella, then grill for 3 mins, or until the cheese is melted and golden. Season, scatter over the remaining basil and serve with green salad."
+    ]
+  },
+  "7": {
+    "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/butter-chicken-cf6f9e2.jpg?quality=90&webp=true&resize=300,272",
+    "title": "Easy butter chicken",
+    "description": "Fancy a healthy version of your favourite Friday night chicken curry? The chicken can be marinaded the day before so you can get ahead on your prep",
+    "totalCost": 10,
+    "servings": 4,
+    "time": 35,
+    "ingredients": [
+      {
+        "name": "skinless boneless chicken thighs",
+        "amount": "500g"
+      },
+      {
+        "name": "lemon, juiced",
+        "amount": "1"
+      },
+      {
+        "name": "ground cumin",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "paprika",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "hot chilli powder",
+        "amount": "1-2 tsp"
+      },
+      {
+        "name": "natural yogurt",
+        "amount": "200g"
+      },
+      {
+        "name": "vegetable oil",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "onion, chopped",
+        "amount": "1 large"
+      },
+      {
+        "name": "green chilli, deseeded and finely chopped",
+        "amount": "1"
+      },
+      {
+        "name": "piece ginger, grated",
+        "amount": "thumb-sized"
+      },
+      {
+        "name": "garam masala",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "ground fenugreek",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "tomato purée",
+        "amount": "3 tbsp"
+      },
+      {
+        "name": "chicken stock",
+        "amount": "300ml"
+      },
+      {
+        "name": "cooked basmati rice",
+        "amount": "50g"
+      },
+      {
+        "name": "naan bread",
+        "amount": ""
+      },
+      {
+        "name": "mango chutney or lime pickle",
+        "amount": ""
+      },
+      {
+        "name": "fresh coriander",
+        "amount": ""
+      },
+      {
+        "name": "lime wedges",
+        "amount": ""
+      }
+    ],
+    "steps": [
+      "In a medium bowl, mix all the marinade ingredients with some seasoning. Chop the chicken into bite-sized pieces and toss with the marinade. Cover and chill in the fridge for 1 hr or overnight.",
+      "In a large, heavy saucepan, heat the oil. Add the onion, garlic, green chilli, ginger and some seasoning. Fry on a medium heat for 10 mins or until soft.",
+      "Add the spices with the tomato purée, cook for a further 2 mins until fragrant, then add the stock and marinated chicken. Cook for 15 mins, then add any remaining marinade left in the bowl. Simmer for 5 mins, then sprinkle with the toasted almonds. Serve with rice, naan bread, chutney, coriander and lime wedges, if you like."
+    ]
+  },
+  "8": {
+    "image": "https://celebratingsweets.com/wp-content/uploads/2019/04/Fruit-Salad-1-2.jpg",
+    "title": "Fruit Salad",
+    "description": "Layers of fresh fruit topped with homemade vanilla pudding and whipped cream.",
+    "totalCost": 10,
+    "servings": 5,
+    "time": 40,
+    "ingredients": [
+      {
+        "name": "granulated sugar",
+        "amount": "1/3 cup"
+      },
+      {
+        "name": "cornstarch",
+        "amount": "2 tablespoons"
+      },
+      {
+        "name": "salt",
+        "amount": "1/8 teaspoons"
+      },
+      {
+        "name": "milk",
+        "amount": "2 1/4 cups"
+      },
+      {
+        "name": "egg yolks",
+        "amount": "2"
+      },
+      {
+        "name": "unsalted butter",
+        "amount": "1 tablespoon"
+      },
+      {
+        "name": "pure vanilla extract",
+        "amount": "1 1/2 teaspoons"
+      },
+      {
+        "name": "heavy whipping cream chilled",
+        "amount": "1 cup"
+      },
+      {
+        "name": "powdered sugar",
+        "amount": "2 tablespoons"
+      },
+      {
+        "name": "pure vanilla extract",
+        "amount": "1/2 teaspoon"
+      },
+      {
+        "name": "fruit",
+        "amount": "12 cups"
+      }
+    ],
+    "steps": [
+      "In a medium saucepan whisk together sugar, cornstarch, salt, milk, and egg yolks. Cook over medium-low heat, whisking frequently, until the mixture is bubbling and thickened, about 8-10 minutes. Note: It will thicken a little more as it cools, but we want it on the thinner side so that it can be poured over the fruit. ",
+      "Remove from heat and whisk in butter and vanilla extract. Optional:Place a fine mesh strainer over a large heatproof bowl. Pour the mixture through the strainer and into the bowl (Optional step to remove lumps. If you have no lumps, you can skip this step and just pour the pudding directly into a bowl). Place the bowl of pudding in the fridge (I like to place plastic wrap directly on it to prevent a skin from forming). Chill completely. ",
+      "Place all ingredients in a large bowl. Using a hand mixer or stand mixer fitted with the whisk attachment, beat on medium-high speed for several minutes until soft peaks form. Cover and chill until assembly. ",
+      "Layer fruit in a trifle dish or large bowl. Remove the pudding from fridge and whisk it vigorously until smooth. Pour the pudding evenly over the fruit, then spread the whipped cream on top. If desired, top with additional fruit. Best if served immediately, or within an hour or two. "
+    ]
+  },
+
+  "9": {
+    "image": "https://www.crunchycreamysweet.com/wp-content/uploads/2019/04/one-bowl-vanilla-cake-2.jpg",
+    "title": "One-Bowl Vanilla Cake recipe",
+    "description": "Layers of fresh fruit topped with homemade vanilla pudding and whipped cream.",
+    "totalCost": 20,
+    "servings": 6,
+    "time": 35,
+    "ingredients": [
+      {
+        "name": "all-purpose flour",
+        "amount": "1.25 cup"
+      },
+      {
+        "name": "granulated sugar",
+        "amount": "3/4 cup"
+      },
+      {
+        "name": "baking soda",
+        "amount": "1/2 teaspoon"
+      },
+      {
+        "name": "baking powder",
+        "amount": "1 teaspoon"
+      },
+      {
+        "name": "salt",
+        "amount": "1/4 teaspoon"
+      },
+      {
+        "name": "large egg",
+        "amount": "1"
+      },
+      {
+        "name": "vegetable oil",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "buttermilk see note",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "hot water",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "pure vanilla extract",
+        "amount": "2 teaspoons"
+      },
+      {
+        "name": "unsalted butter softened",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "powdered sugar sifted",
+        "amount": "1.5 cup"
+      },
+      {
+        "name": "heavy cream",
+        "amount": "1 tablespoon"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 350 degrees F. Grease and flour or line with parchment paper, an 8 square or round pan. Set aside.",
+      "In a large mixing bowl, whisk together flour, sugar, baking soda, baking powder and salt.",
+      "Add egg, buttermilk, vanilla and oil. Whisk together. Add hot water and whisk well until the batter is smooth. It will be runny but that's okay.",
+      "Pour batter into prepared pan. Tap the pan gently against the counter to release any air bubbles.",
+      "Bake cake for 25 to 28 minutes or until golden on top and a toothpick inserted in a few places comes out clean.",
+      "Cool cake completely before frosting.",
+      "To make frosting: place butter in a medium mixing bowl and beat for 7 minutes. Add powdered sugar, 1/2 cup at a time and beat in well. Add heavy cream and beat in for 1 minute. Add vanilla and mix in. The frosting should be very fluffy. Spread over cooled cake. Decorate with sprinkles."
+    ]
   }
 }
