@@ -5,4 +5,11 @@ describe("Tests for curated list", () => {
 
     cy.saveLocalStorage();
   });
+  it("check add button", () => {
+    cy.get(".card")
+      .eq(2)
+      .shadow()
+      .find(".card-body .add-to-cookbook i")
+      .click();
+  });
 });
