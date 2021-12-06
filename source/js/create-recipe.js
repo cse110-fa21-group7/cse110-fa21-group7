@@ -225,13 +225,25 @@ form.addEventListener("submit", function (event) {
   // save all of object to local storage
   localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
   localStorage.setItem("currID", currID);
+
   // back to cookbook page
   if (updateFlag) {
-    window.alert("successfully updated a recipe!");
+    modal.classList.add('active');
+    modalBody.innerHTML = "You have successfully updated a recipe!";
   } else {
-    window.alert("successfully created a recipe!");
+    modal.classList.add('active');
+    modalBody.innerHTML = "You have successfully created a recipe!";
   }
-  location.href = "/cookbook";
+  // location.href = "/cookbook";
+});
+
+const closeModalButtons = document.querySelectorAll('[data-close-button]');
+
+closeModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    modal.classList.remove('active');
+    location.href = "/cookbook";
+  });
 });
 
 /**  Show a message in the invalid-feedback div below the input element

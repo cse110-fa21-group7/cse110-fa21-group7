@@ -66,17 +66,17 @@ function makePage() {
 function recipeCards(recipeObject) {
   const section = document.querySelector(`.${page}`);
 
-  // generate 8 random recipe cards
-  const randomArray = [];
+  //generate 8 random recipe cards
+  let randomArray = [];
   if (page == "curatedList") {
     const total = Object.keys(recipeObject).length;
-    const array = [];
+    let array = [];
     for (let i = 0; i < total; i++) {
       array.push(i);
     }
     for (let i = 0; i < 8; i++) {
-      const randomIndex = Math.floor(Math.random() * (array.length - 1));
-      const randomNumber = array[randomIndex];
+      let randomIndex = Math.floor(Math.random() * (array.length - 1));
+      let randomNumber = array[randomIndex];
       array.splice(randomIndex, 1);
       randomArray.push(randomNumber);
     }

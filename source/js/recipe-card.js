@@ -92,16 +92,29 @@ class RecipeCard extends HTMLElement {
       vertical-align: middle;
       color: #838689;
     }
+  //   .recipe-btn {
+  //     text-decoration: none;
+  //     text-align: center;
+  //     color: #fff;
+  //     background: #f25555;
+  //     font-weight: 500;
+  //     font-size: 1.1rem;
+  //     padding: 0.75rem 0;
+  //     display: block;
+  //     width: 175px;
+  //     margin: 1rem auto;
+  //     border-radius: 2rem;
+  //     -webkit-border-radius: 2rem;
+  // }
     #card-btn {
       display: inline-block;
-      line-height: 35px;
       background: #57abf2;
       border-radius: 50%;
       position: absolute;
       top: 10.75rem;
       right: 5%;
-      width: 1.8em;
-      height: 1.8em;
+      width: 2.3rem;
+      height: 2.3rem;
       text-align: center;
       padding: 0px;
       color: white;
@@ -111,7 +124,7 @@ class RecipeCard extends HTMLElement {
       // padding: 0.6rem 0.52rem;
     }
     #card-btn:hover{
-      background: rgb(226, 100, 125);
+      background: #f25555;
     }
     `;
 
@@ -148,9 +161,21 @@ class RecipeCard extends HTMLElement {
       e.preventDefault();
       this.flag = true;
       cardBody.removeChild(addBtn);
+
+      //Display pop-up boxes
+      modal.classList.add('active');
       // ii.style.display = "hidden";
-      // window.location.href = "/cookbook";
     });
+
+    const closeModalButtons = document.querySelectorAll('.close-button');
+
+    closeModalButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        modal.classList.remove('active');
+        location.href = "/cookbook";
+      });
+    });
+
     // add title
     const title = document.createElement("h3");
     title.textContent = data["title"];

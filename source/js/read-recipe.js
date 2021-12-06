@@ -117,8 +117,30 @@ editButton.addEventListener("click", () => {
 });
 
 deleteButton.addEventListener("click", (e) => {
-  delete recipeObject[recipeID];
-  localStorage.setItem("userRecipes", JSON.stringify(recipeObject));
-  window.alert("successfully deleted the recipe!");
-  window.location.href = "/cookbook";
+  //Display pop-up boxes
+  modal.classList.add('active');
+
+  const closeModalButtons = document.querySelectorAll('[data-close-button]');
+
+  closeModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+  });
+
+  const confirmModalButtons = document.querySelectorAll('[data-confirm-button]');
+
+  confirmModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      modal.classList.remove('active');
+      delete recipeObject[recipeID];
+      localStorage.setItem("userRecipes", JSON.stringify(recipeObject));
+      location.href = "/cookbook";
+    });
+  });
+
+  // delete recipeObject[recipeID];
+  // localStorage.setItem("userRecipes", JSON.stringify(recipeObject));
+  // window.alert("successfully deleted the recipe!");
+  // window.location.href = "/cookbook";
 });

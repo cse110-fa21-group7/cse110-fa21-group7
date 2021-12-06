@@ -23,6 +23,15 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
+.theme-btn {
+  width: 10em;
+  height: 10em;
+  padding: 0px 0px 10px 10px;
+  border-radius: 20%;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
 .toggle-container {
   position: relative;
 }
@@ -164,4 +173,50 @@ header button {
   padding-top: 30px;
   font-size: 44px;
   font-weight: bold;
+}
+
+.modal{
+  position: fixed;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 500px;
+  max-width: 80%;
+}
+
+.modal.active{
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header{
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.modal-header title{
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-body .close-button{
+  background-color:rgb(211, 93, 116);
+  color: #fff !important;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 70px;
+  height: 35px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.modal-body{
+  padding: 10px 15px;
 }
