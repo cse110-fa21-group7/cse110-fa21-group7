@@ -229,10 +229,10 @@ form.addEventListener("submit", function (event) {
   // back to cookbook page
   if (updateFlag) {
     modal.classList.add('active');
-    modalBody.innerHTML = "You have successfully updated a recipe!";
+    message.innerHTML = "You have successfully updated a recipe!";
   } else {
     modal.classList.add('active');
-    modalBody.innerHTML = "You have successfully created a recipe!";
+    message.innerHTML = "You have successfully created a recipe!";
   }
   // location.href = "/cookbook";
 });
