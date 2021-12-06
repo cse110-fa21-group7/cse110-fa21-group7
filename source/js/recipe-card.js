@@ -128,10 +128,9 @@ class RecipeCard extends HTMLElement {
     img.setAttribute("alt", data["title"]);
     img.classList.add("card-image");
     cardBody.appendChild(img);
-    // test add btn
+    // add btn, so we can add current recipe to user cookbook
     const addBtn = document.createElement("div");
     addBtn.classList.add("add-to-cookbook");
-
     const ii = document.createElement("i");
     ii.id = "card-btn";
     ii.classList.add("fa");
@@ -139,7 +138,9 @@ class RecipeCard extends HTMLElement {
     ii.ariaHidden = "true";
     addBtn.appendChild(ii);
     cardBody.appendChild(addBtn);
+    // if the id in user's cookbook, we do not need to show the button
     if (this.id in this.recipes) cardBody.removeChild(addBtn);
+    // if user click btn
     ii.addEventListener("click", (e) => {
       e.preventDefault();
       this.flag = true;
@@ -149,12 +150,9 @@ class RecipeCard extends HTMLElement {
       // ii.style.display = "hidden";
     });
 
-    const closeModalButtons = document.querySelectorAll(".close-button");
-
-    closeModalButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        modal.classList.remove("active");
-      });
+    const closeBtn = document.querySelector("#confirm-button");
+    closeBtn.addEventListener("click", () => {
+      modal.classList.remove("active");
     });
 
     // add title
@@ -162,12 +160,6 @@ class RecipeCard extends HTMLElement {
     title.textContent = data["title"];
     title.classList.add("card-title");
     cardBody.appendChild(title);
-    // add a button
-    // const getBtn = document.createElement("a");
-    // getBtn.href = "#";
-    // getBtn.classList.add("recipe-btn");
-    // getBtn.innerText = "Add to cookbook";
-    // cardBody.appendChild(getBtn);
 
     if (this.page == "curatedList" || this.page == "cookbook") {
       // add info list

@@ -15,8 +15,8 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   border-radius: 0.5rem;
 }
 
@@ -29,7 +29,7 @@ body {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 0.5rem 0rem 0rem 0.5rem;
 }
 
@@ -47,8 +47,8 @@ body {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     border-radius: 0.5rem;
   }
   #recipeDetails {
@@ -62,7 +62,7 @@ body {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     border-radius: 0.5rem 0.5rem 0rem 0rem;
   }
 }
@@ -119,7 +119,7 @@ ul.info-row {
 }
 
 .recipe-nav h3:after {
-  content: '';
+  content: "";
   display: block;
   width: 0%;
   padding-top: 10px;
@@ -133,7 +133,8 @@ ul.info-row {
   cursor: pointer;
 }
 
-.recipe-nav h3:hover:after, .recipe-nav h3.active:after {
+.recipe-nav h3:hover:after,
+.recipe-nav h3.active:after {
   width: 100%;
 }
 
@@ -143,7 +144,7 @@ ul.info-row {
   padding: 0;
   margin-left: 10px;
   -webkit-column-count: 2;
-          column-count: 2;
+  column-count: 2;
 }
 
 #ingredient-list li {
@@ -151,71 +152,11 @@ ul.info-row {
 }
 
 #ingredient-list li:before {
-  content: '\2022';
+  content: "\2022";
   color: #f7882f;
   margin-right: 5px;
 }
 
 #step-list {
   display: none;
-}
-/*# sourceMappingURL=alt-read-recipe.css.map */
-
-
-.modal{
-  position: fixed;
-  top: 50%;
-  left:50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: 200ms ease-in-out;
-  border: 1px solid black;
-  border-radius: 10px;
-  z-index: 10;
-  background-color: white;
-  width: 500px;
-  max-width: 80%;
-}
-
-.modal.active{
-  transform: translate(-50%, -50%) scale(1);
-}
-
-.modal-header{
-  padding: 10px 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid black;
-}
-
-.modal-header title{
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-.modal-body{
-  padding: 10px 15px;
-}
-
-.modal-body .confirm-button{
-  background-color:rgb(211, 93, 116);
-  color: #fff !important;
-  cursor: pointer;
-  border-radius: 4px;
-  width: 70px;
-  height: 35px;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-.modal-body .close-button{
-  background-color:rgb(117, 112, 112);
-  color: #fff !important;
-  cursor: pointer;
-  border-radius: 4px;
-  width: 70px;
-  height: 35px;
-  border-radius: 5px;
-  margin-top: 10px;
-  margin-left: 10px;
 }

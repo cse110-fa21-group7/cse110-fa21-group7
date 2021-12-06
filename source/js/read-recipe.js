@@ -106,41 +106,37 @@ function populateHTML() {
 editButton.addEventListener("click", () => {
   if (editButton.innerHTML === "add") {
     // add current recipe to cook book
-    // addRecipe();
     const userRecipe = JSON.parse(localStorage.getItem("userRecipes"));
     userRecipe[recipeID] = recipeObject[recipeID];
     localStorage.setItem("userRecipes", JSON.stringify(userRecipe));
-    window.alert("successfully added to your own cookbook!");
+    modalAdd.classList.add("active");
+    const addConfirm = document.querySelector("#add-confirm");
+    addConfirm.addEventListener("click", () => {
+      modalAdd.classList.remove("active");
+    });
   } else {
     location.href = `/update?id=${recipeID}`;
   }
 });
+const closeModalButtons = document.querySelectorAll(".close-button");
+closeModalButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    modal.classList.remove("active");
+  });
+});
 
 deleteButton.addEventListener("click", (e) => {
-  //Display pop-up boxes
-  modal.classList.add('active');
-
-  const closeModalButtons = document.querySelectorAll('[data-close-button]');
-
-  closeModalButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      modal.classList.remove('active');
-    });
+  // Display pop-up boxes
+  modal.classList.add("active");
+  const closeBtn = document.querySelector("#close-button");
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
   });
-
-  const confirmModalButtons = document.querySelectorAll('[data-confirm-button]');
-
-  confirmModalButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      modal.classList.remove('active');
-      delete recipeObject[recipeID];
-      localStorage.setItem("userRecipes", JSON.stringify(recipeObject));
-      location.href = "/cookbook";
-    });
+  const confirmBtn = document.querySelector("#confirm-button");
+  confirmBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
+    delete recipeObject[recipeID];
+    localStorage.setItem("userRecipes", JSON.stringify(recipeObject));
+    location.href = "/cookbook";
   });
-
-  // delete recipeObject[recipeID];
-  // localStorage.setItem("userRecipes", JSON.stringify(recipeObject));
-  // window.alert("successfully deleted the recipe!");
-  // window.location.href = "/cookbook";
 });
