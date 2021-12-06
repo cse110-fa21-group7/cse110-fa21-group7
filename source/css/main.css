@@ -23,15 +23,6 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
-.theme-btn {
-  width: 10em;
-  height: 10em;
-  padding: 0px 0px 10px 10px;
-  border-radius: 20%;
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-}
 .toggle-container {
   position: relative;
 }
