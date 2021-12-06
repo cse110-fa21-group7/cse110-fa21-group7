@@ -172,7 +172,6 @@ class RecipeCard extends HTMLElement {
     closeModalButtons.forEach(button => {
       button.addEventListener('click', () => {
         modal.classList.remove('active');
-        location.href = "/cookbook";
       });
     });
 
