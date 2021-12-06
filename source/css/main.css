@@ -23,15 +23,6 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
-.theme-btn {
-  width: 10em;
-  height: 10em;
-  padding: 0px 0px 10px 10px;
-  border-radius: 20%;
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-}
 .toggle-container {
   position: relative;
 }
@@ -175,10 +166,10 @@ header button {
   font-weight: bold;
 }
 
-.modal{
+.modal {
   position: fixed;
   top: 50%;
-  left:50%;
+  left: 50%;
   transform: translate(-50%, -50%) scale(0);
   transition: 200ms ease-in-out;
   border: 1px solid black;
@@ -189,11 +180,11 @@ header button {
   max-width: 80%;
 }
 
-.modal.active{
+.modal.active {
   transform: translate(-50%, -50%) scale(1);
 }
 
-.modal-header{
+.modal-header {
   padding: 10px 15px;
   display: flex;
   justify-content: space-between;
@@ -201,13 +192,13 @@ header button {
   border-bottom: 1px solid black;
 }
 
-.modal-header title{
+.modal-header title {
   font-size: 1.25rem;
   font-weight: bold;
 }
 
-.modal-body .close-button{
-  background-color:rgb(211, 93, 116);
+.modal-body .close-button {
+  background-color: rgb(211, 93, 116);
   color: #fff !important;
   cursor: pointer;
   border-radius: 4px;
@@ -217,6 +208,6 @@ header button {
   margin-top: 10px;
 }
 
-.modal-body{
+.modal-body {
   padding: 10px 15px;
 }
