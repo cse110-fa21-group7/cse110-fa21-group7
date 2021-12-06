@@ -75,7 +75,7 @@ function recipeCards(recipeObject) {
       array.push(i);
     }
     for (let i = 0; i < 8; i++) {
-      const randomIndex = Math.floor(Math.random() * (array.length - 1));
+      const randomIndex = Math.floor(Math.random() * array.length);
       const randomNumber = array[randomIndex];
       array.splice(randomIndex, 1);
       randomArray.push(randomNumber);

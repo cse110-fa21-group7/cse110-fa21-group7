@@ -469,5 +469,1120 @@
       "Cool cake completely before frosting.",
       "To make frosting: place butter in a medium mixing bowl and beat for 7 minutes. Add powdered sugar, 1/2 cup at a time and beat in well. Add heavy cream and beat in for 1 minute. Add vanilla and mix in. The frosting should be very fluffy. Spread over cooled cake. Decorate with sprinkles."
     ]
+  },
+  "10" : {
+    "image":"https://static01.nyt.com/images/2019/01/17/dining/as-3-cup-roots/as-3-cup-roots-articleLarge.jpg",
+    "title":"Three-Cup Vegetables",
+    "description":"This vegan dish is inspired by three-cup chicken, a deeply savory Taiwanese specialty that can be traced back to the 13th century, to the execution of Wen Tianxiang, a scholar-general of the Song dynasty who resisted Kublai Khan’s invasion. The night before Wen’s death, a guard is said to have made him the surprisingly pungent chicken dish with the prison’s limited resources. It has many variations, but usually calls for braising chicken in rice wine, soy sauce and sesame oil with plenty of ginger, garlic and basil. Here, root vegetables like carrots, parsnips, sweet potatoes and turnips take the place of the chicken, but feel free to also add tofu and quick-cooking vegetables like broccoli or snap peas with the roots. Serve over rice or ramen noodles to soak up sauce.",
+    "totalCost": 20,
+    "servings": 4,
+    "time": 30,
+    "ingredients":[
+      {
+        "name": "canola or other neutral oil",
+        "amount": "2 tablespoons"
+      },
+      {
+        "name": "root vegetables, such as carrots, parsnips, sweet potatoes and-or turnips",
+        "amount": "6 cups"
+      },
+      {
+        "name": "ginger, peeled and thinly sliced",
+        "amount": "1 (1-inch) piece"
+      },
+      {
+        "name": "garlic cloves, smashed and peeled",
+        "amount": "10"
+      },
+      {
+        "name": "Chinese rice wine",
+        "amount": "3/4 cup"
+      },
+      {
+        "name": "low-sodium soy sauce",
+        "amount": "6 tablespoons"
+      },
+      {
+        "name": "toasted sesame oil",
+        "amount": "3 tablespoons"
+      },
+      {
+        "name": "dark brown sugar",
+        "amount": "2 tablespoons"
+      },
+      {
+        "name": "dried chiles",
+        "amount": "2"
+      },
+      {
+        "name": "fresh basil leaves",
+        "amount": "2 cups"
+      }
+
+    ],
+    "steps":[
+      "In a large skillet, heat oil over medium-high heat until it shimmers. Add the vegetables, ginger and garlic, and cook, stirring occasionally, until vegetables are crisp-tender and browned in spots, 7 to 10 minutes.",
+      "Lower the heat to medium and stir in the rice wine, soy sauce, sesame oil, brown sugar and red-pepper flakes. Cook, stirring occasionally, until the vegetables are tender and the sauce has reduced, 10 to 15 minutes. Remove from heat, and stir in the basil."
+    ]
+  },
+  "11": {
+    "image": "https://natashaskitchen.com/wp-content/uploads/2020/01/Philly-Cheesesteak-Quesedilla-5.jpg",
+    "title": "Philly Cheesesteak Quesadilla",
+    "description": "Philly Cheesesteak Quesadillas are filled with beef and melted cheese in a toasted tortilla. An easy, make-ahead quesadilla recipe done in under 30 minutes.",
+    "totalCost": 8,
+    "servings": 2,
+    "time": 30,
+    "ingredients": [
+      {
+        "name": "flour tortillas (medium/ burrito-sized)",
+        "amount": "2"
+      },
+      {
+        "name": "beef",
+        "amount": "1/2 pound"
+      },
+      {
+        "name": "medium onion (chopped)",
+        "amount": "1/2"
+      },
+      {
+        "name": "red pepper (diced)",
+        "amount": "1/2"
+      },
+      {
+        "name": "green pepper (diced)",
+        "amount": "1/2"
+      },
+      {
+        "name": "light olive oil",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "mushrooms (diced)",
+        "amount": "6 oz"
+      }
+    ],
+    "steps": [
+      "In a large skillet, heat 2 tsp oil, once hot add the chopped meat. Season with salt and pepper and cook until meat is fully cooked. Remove from skillet and cover to keep warm.",
+      "Meanwhile, finely chop the onion, dice the mushrooms, and peppers. Sautee vegetables in the same skillet until tender, adding another teaspoon of oil if needed.",
+      "Add the beef back to the skillet with minced garlic, stir and cook until meat is reheated.",
+      "Spread mayo (if using) on the tortillas. Divide the filling between the tortillas, adding them to one side of the tortilla. Top the filling with sliced cheese and close the tortilla.",
+      "Heat a skillet over med heat. For a crisper tortilla, add a little oil to the pan. Place the tortilla in the hot pan and sautee until the cheese is melted and the outside is golden and crisp, flipping once. Slice and serve."
+    ]
+  },
+"12": {
+    "image": "https://natashaskitchen.com/wp-content/uploads/2021/04/Tostadas-3.jpg",
+    "title": "Easy Tostada Recipe",
+    "description": "Homemade Tostadas are so satisfying and easy to make. These are loaded with refried beans, beef, and all of the best tostada toppings.",
+    "totalCost": 20,
+    "servings": 10,
+    "time": 30,
+    "ingredients": [
+      {
+        "name": "corn tortillas",
+        "amount": "10"
+      },
+      {
+        "name": "lean ground beef",
+        "amount": "16 oz"
+      },
+      {
+        "name": "yellow onion (diced)",
+        "amount": "1/2"
+      },
+      {
+        "name": "taco seasoning",
+        "amount": "1 Tbsp"
+      },
+      {
+        "name": "garlic powder",
+        "amount": "1/2 tsp"
+      },
+      {
+        "name": "refried beans",
+        "amount": "10 oz"
+      },
+      {
+        "name": "cotija cheese",
+        "amount": "1/2 cups"
+      },
+      {
+        "name": "avocado",
+        "amount": "1"
+      },
+      {
+        "name": "pico de gallo",
+        "amount": "1 cup"
+      },
+      {
+        "name": "iceberg lettuce",
+        "amount": "2 cups"
+      }
+    ],
+    "steps": [
+      "Preheat the oven to 415. Spray the corn tortillas on both sides with oil. Lay them flat on a baking sheet. Bake in the preheated oven for 4 minutes and flip them over and bake for another 5 minutes or until the tortillas are crispy and golden.",
+      "Cook the ground beef in a skillet over medium-high heat and break it apart with your spatula. Season with garlic powder, salt and taco seasoning. Add the diced onion and cook until the onion is translucent and the beef is fully cooked.",
+      "To assemble, top each tostada with refried beans, ground beef, lettuce, tomatoes, avocado and pico de gallo or salsa. Sprinkle some cheese and cilantro on top. Serve right away."
+    ]
+  },
+"13": {
+    "image": "https://natashaskitchen.com/wp-content/uploads/2019/03/Easy-Shrimp-Scampi-Recipe.jpg",
+    "title": "Shrimp Scampi Recipe",
+    "description": "Shrimp Scampi Recipe with the most delicious garlic butter and wine sauce drizzled with fresh lemon juice. This easy shrimp scampi takes just 10 minutes!",
+    "totalCost": 14,
+    "servings": 4,
+    "time": 8,
+    "ingredients": [
+      {
+        "name": "large shrimp (raw, peeled, deveined)",
+        "amount": "1 lb"
+      },
+      {
+        "name": "unsalted butter",
+        "amount": "6 Tbsp"
+      },
+      {
+        "name": "dry white wine",
+        "amount": "3 Tbsp"
+      },
+      {
+        "name": "chicken broth",
+        "amount": "3 Tbsp"
+      },
+      {
+        "name": "parsley",
+        "amount": "3 Tbsp"
+      },
+      {
+        "name": "lemon",
+        "amount": "1/2"
+      },
+      {
+        "name": "ground paprika",
+        "amount": "1/4 tsp"
+      }
+    ],
+    "steps": [
+      "Combine the salt, pepper and paprika then sprinkle it over the shrimp and toss to combine.",
+      "In a large skillet, heat oil over med/high heat. Once hot, add shrimp and cook 1-2 minutes per side just until cooked through.",
+      "In the same skillet, add the garlic and butter, saute over medium heat for 1 minute until fragrant, stirring frequently so the garlic doesn't burn.",
+      "Pour in the wine and broth then cook for 3-4 minutes.",
+      "Add the shrimp back to the pan. Add fresh parsley and cook another 1-2 minutes.",
+      "Squeeze fresh lemon juice over the shrimp to taste. Toss lightly to combine and serve shrimp scampi right away."
+    ]
+  },
+"14": {
+    "image": "https://natashaskitchen.com/wp-content/uploads/2019/02/Roasted-Pepper-Bruschetta-3.jpg",
+    "title": "Roasted Pepper Bruschetta",
+    "description": "Roasted Pepper Bruschetta is the ultimate appetizer. The combination of balsamic marinated sweet peppers and goat cheese is perfect for bruschetta!",
+    "totalCost": 10,
+    "servings": 25,
+    "time": 45,
+    "ingredients": [
+      {
+        "name": "large bell peppers",
+        "amount": "3"
+      },
+      {
+        "name": "extra virgin olive oil",
+        "amount": "1.5 Tbsp"
+      },
+      {
+        "name": "basalmic vinegar",
+        "amount": "2 tsp"
+      },
+      {
+        "name": "garlic gloves",
+        "amount": "2"
+      },
+      {
+        "name": "french baguette (25 slices)",
+        "amount": "1"
+      },
+      {
+        "name": "garlic montrachet,plain goat cheese, or cream cheese",
+        "amount": "4 oz"
+      },
+      {
+        "name": "basil leaves",
+        "amount": "2 oz"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 500. Place whole bell peppers on a rimmed baking sheet lined with foil and roast 30-40 min until skins are completely wrinkled and peppers are charred, turning a couple times while roasting. Remove from oven, cover tightly with aluminum foil and let rest 30 min until cool enough to handle.",
+      "Remove stems and cut the bell pepper into quarters. Remove and discard peels and seeds. Slice peppers into wide slices and transfer to a medium bowl.",
+      "Add 1 1/2 Tbsp olive oil, 2 tsp balsamic vinegar, 2 pressed garlic cloves, 1 tsp sea salt and 1/2 tsp black pepper. Stir to combine, cover and refrigerate 1 hour (or overnight) for the flavors to meld.",
+      "Brush both sides with olive oil and bake at 350 for 5 minutes, just until edges are crisp and centers are still soft. Remove form oven and cool to room temperature.",
+      "Spread a thin layer of goat cheese over the top of toasts then divide the marinated roasted peppers evenly between 25 toasts and garnish with fresh basil."
+    ]
+  },
+"15": {
+    "image": "https://natashaskitchen.com/wp-content/uploads/2017/08/Spicy-Sausage-Skewers-2.jpg",
+    "title": "Grilled Brunch Skewers with Maple Glaze",
+    "description": "Grilled pineapple sausage skewers that are sweet, spicy, smoky and so flavorful! You won't believe the easy glaze. Easy, excellent brunch skewers recipe.",
+    "totalCost": 14,
+    "servings": 6,
+    "time": 30,
+    "ingredients": [
+      {
+        "name": "pineapple (cut in 18 count pieces)",
+        "amount": "1/2"
+      },
+      {
+        "name": "bell pepper (cut in 18 count pieces)",
+        "amount": "1 red or orange"
+      },
+      {
+        "name": "red onion (cut in 18 count pieces)",
+        "amount": "1"
+      },
+      {
+        "name": "large turkey sausages or keilbasa (cut in 18 count pieces)",
+        "amount": "1 lb"
+      },
+      {
+        "name": "original BBQ sauce",
+        "amount": "1/4 cup"
+      },
+      {
+        "name": "maple syrup",
+        "amount": "1/4 cup"
+      },
+      {
+        "name": "tabasco sauce",
+        "amount": "2 tsp"
+      }
+    ],
+    "steps": [
+      "In a small bowl, combine 1/4 cup BBQ sauce, 1/4 cup maple syrup and 2 tsp TABASCO Sauce. Stir together and set aside.",
+      "Thread sausage, pineapple pieces, red bell pepper and red onion onto the skewer, alternating the ingredients as you add them.",
+      "Brush skewers with marinade then place on the preheated bbq, cover and grill on the first side 3 minutes then turn, brush with more marinade and grill about 2-minutes per side, brushing with more marinade as you turn the skewers. Grill until vegetables are cooked to desired doneness (total grilling time 10-12 minutes)."
+    ]
+  },
+  "16": {
+    "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F401958.jpg&q=85",
+    "title": "Pan-Fried Chinese Pancakes",
+    "description": "A delicious brunch snack that can be found in many Chinese breakfast shops.",
+    "totalCost": 20,
+    "servings": 8,
+    "time": 65,
+    "ingredients": [
+      {
+        "name": "salt",
+        "amount": "1/4 teaspoon"
+      },
+      {
+        "name": "warm water",
+        "amount": "3/4 cup"
+      },
+      {
+        "name": "all-purpose flour",
+        "amount": "5/4 cup"
+      },
+      {
+        "name": "vegetable oil",
+        "amount": "2 tablespoon"
+      },
+      {
+        "name": "finely chopped green onion",
+        "amount": "1/2 cup"
+      }
+    ],
+    "steps": [
+      "Dissolve salt in warm water, and mix in 1 cup of flour to make a soft dough. Turn the dough out onto a well-floured work surface, and knead until slightly springy, about 5 minutes. If the dough is sticky, knead in 1/4 teaspoon of vegetable oil. Divide the dough into 8 equal-size pieces, and keep the pieces covered with a cloth.",
+      "In a bowl, mix 1/4 cup of flour with 1 tablespoon vegetable oil to make a mixture like fine crumbs.",
+      "On a floured work surface, roll a piece of dough out into a thin square about 5x7 inches in size, brush the dough with toasted sesame oil, and sprinkle lightly with about 1 1/2 teaspoon of the flour-oil mixture. Sprinkle about 1 tablespoon of chopped green onion onto the dough, and spread the onion out evenly. Starting with a long end, roll the dough up into a rope shape, and pinch the seam and the ends closed. Roll the rope shape into a flat spiral, and press lightly with your hands to compact the spiral and keep it from unrolling.",
+      "Place the spiral down onto the floured work surface, and gently roll it out into a pancake with the onions folded inside, turning the pancake over often as you roll it out. Roll gently and turn often to avoid making holes in the pancakes. Finished pancakes should be about 5 inches in diameter. Repeat with the rest of the dough pieces, making 8 onion pancakes.",
+      "Heat a non-stick skillet over medium heat, and brush with vegetable oil. Pan-fry each pancake in the hot skillet until golden brown on both sides, about 5 minutes per side. Cut into wedges and serve warm."
+    ]
+  },
+  "17": {
+      "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F3644857.jpg&w=596&h=399&c=sc&poi=face&q=85",
+      "title": "Spicy Szechuan Green Beans",
+      "description": "I modified this recipe to be less oily. It is almost as good as take-out Chinese green beans. It tastes wonderful with ham and a baked yam.",
+      "totalCost": 10,
+      "servings": 2,
+      "time": 23,
+      "ingredients": [
+        {
+          "name": "green beans",
+          "amount": "1/2 pound"
+        },
+        {
+          "name": "water",
+          "amount": "1/4 cup"
+        },
+        {
+          "name": "cloves garlic, minced",
+          "amount": "1 tablespoon"
+        },
+        {
+          "name": "vegetable oil",
+          "amount": "2"
+        },
+        {
+          "name": "sesame oil",
+          "amount": "1 teaspoon"
+        },
+        {
+          "name": "soy sauce",
+          "amount": "2 tablespoons"
+        },
+        {
+          "name": "rice vinegar",
+          "amount": "1 tablespoon"
+        },
+        {
+          "name": "white sugar",
+          "amount": "1/2 teaspoo"
+        },
+        {
+          "name": "red pepper flakes",
+          "amount": "1/4 teaspoo"
+        }
+      ],
+      "steps": [
+        "Combine green beans and water in a skillet over medium-high heat. Cover and cook, stirring occasionally, until beans are tender crisp, 4 to 5 minutes. Add ginger, garlic, and sesame oil; cook, stirring frequently, until garlic is lightly browned, 1 to 2 minutes.",
+        "Mix soy sauce, rice vinegar, sugar, and red pepper flakes together in a small bowl. Pour over beans and cook until sauce thickens enough to coat beans, 3 to 5 minutes."
+      ]
+  },
+  "18": {
+      "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F7554653.jpg&q=85",
+      "title": "Chinese Steamed Buns",
+      "description": "Here's some yummy, Chinese dim sum you can make, either plain without meat fillings, or with meat fillings.",
+      "totalCost": 30,
+      "servings": 24,
+      "time": 240,
+      "ingredients": [
+        {
+          "name": "active dry yeast",
+          "amount": "1 tablespoon"
+        },
+        {
+          "name": "white sugar",
+          "amount": "3 teaspoon"
+        },
+        {
+          "name": "all-purpose flour",
+          "amount": "2 cup"
+        },
+        {
+          "name": "water",
+          "amount": "1 cup"
+        },
+        {
+          "name": "teaspoon salt",
+          "amount": "1/4 teaspoon"
+        },
+        {
+          "name": "vegetable oil",
+          "amount": "1 tablespoon"
+        },
+        {
+          "name": "baking powder",
+          "amount": "1/2 teaspoon"
+        }
+      ],
+      "steps": [
+        "Mix together yeast, 1 teaspoon sugar, 1/4 cup flour, and 1/4 cup warm water. Allow to stand for 30 minutes.",
+        "Mix in 1/2 cup warm water, flour, salt, 2 tablespoons sugar, and vegetable oil. Knead until dough surface is smooth and elastic. Roll over in a greased bowl, and let stand until triple in size, about 2 1/2 to 3 hours.",
+        "Punch down dough, and spread out on a floured board. Sprinkle baking powder evenly on surface, and knead for 5 minutes. Divide dough into 2 parts, and place the piece you are not working with in a covered bowl. Divide each half into 12 parts. Shape each part into a ball with smooth surface up. Put each ball on a wax paper square. Let stand covered until double, about 30 minutes.",
+        "Bring water to a boil in wok, and reduce heat to medium; the water should still be boiling. Place steam-plate on a small wire rack in the middle of the wok. Transfer as many buns on wax paper as will comfortably fit onto steam-plate leaving 1 to 2 inches between the buns. At least 2 inches space should be left between steam-plate and the wok. Cover wok with lid. Steam buns over boiling water for 15 minutes.",
+        "REMOVE LID BEFORE you turn off heat, or else water will drip back onto bun surface and produce yellowish blisters on bun surfaces. Continue steaming batches of buns until all are cooked."
+      ]
+    },
+    "19": {
+        "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F8866063.jpg&q=85",
+        "title": "California Roll Sushi",
+        "description": "California Roll - it's really good. Serve with soy sauce and wasabi.",
+        "totalCost": 20,
+        "servings": 8,
+        "time": 90,
+        "ingredients": [
+          {
+            "name": "uncooked short-grain white rice",
+            "amount": "1 cup"
+          },
+          {
+            "name": "water",
+            "amount": "1 cup"
+          },
+          {
+            "name": "rice vinegar",
+            "amount": "1/4 cup"
+          },
+          {
+            "name": "white sugar",
+            "amount": "1 tablespoon"
+          },
+          {
+            "name": "imitation crabmeat, finely chopped",
+            "amount": "1/2 cup"
+          },
+          {
+            "name": "mayonnaise",
+            "amount": "1/4 cup"
+          },
+          {
+            "name": "nori (dry seaweed)",
+            "amount": "8 sheets"
+          },
+          {
+            "name": "sesame seeds",
+            "amount": "3 tablespoons"
+          },
+          {
+            "name": "cucumber",
+            "amount": "1"
+          },
+          {
+            "name": "avocados",
+            "amount": "2"
+          }
+        ],
+        "steps": [
+          "Wash the rice in several changes of water until the rinse water is no longer cloudy, drain well, and place in a covered pan or rice cooker with 1 cup water. Bring to a boil, reduce heat to a simmer, and cover the pan. Allow the rice to simmer until the top looks dry, about 15 minutes. Turn off the heat, and let stand for 10 minutes to absorb the rest of the water.",
+          "Mix the rice vinegar and sugar in a small bowl until the sugar has dissolved, and stir the mixture into the cooked rice until well combined. Allow the rice to cool, and set aside.",
+          "Mix the imitation crabmeat with mayonnaise in a bowl, and set aside. To roll the sushi, cover a bamboo rolling mat with plastic wrap. Lay a sheet of nori, shiny side down, on the plastic wrap. With wet fingers, firmly pat a thin, even layer of prepared rice over the nori, leaving 1/4 inch uncovered at the bottom edge of the sheet. Sprinkle the rice with about 1/2 teaspoon of sesame seeds, and gently press them into the rice. Carefully flip the nori sheet over so the seaweed side is up.",
+          "Place 2 or 3 long cucumber spears, 2 or 3 slices of avocado, and about 1 tablespoon of imitation crab mixture in a line across the nori sheet, about 1/4 from the uncovered edge. Pick up the edge of the bamboo rolling sheet, fold the bottom edge of the sheet up, enclosing the filling, and tightly roll the sushi into a cylinder about 1 1/2 inch in diameter. Once the sushi is rolled, wrap it in the mat and gently squeeze to compact it tightly.",
+          "Cut each roll into 1 inch pieces with a very sharp knife dipped in water."
+        ]
+    },
+    "20": {
+      "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F7651989.jpg&q=85",
+      "title": "Easy Mochi",
+      "description": "A lovely Chinese New Year's snack; soft, slightly sweet, and chewy, this is a wonderful traditional dessert. Ready in only minutes.",
+      "totalCost": 20,
+      "servings": 8,
+      "time": 200,
+      "ingredients": [
+        {
+          "name": "sweetened red bean paste",
+          "amount": "1 cup"
+        },
+        {
+          "name": "sweet rice flour (mochiko)",
+          "amount": "1 cup"
+        },
+        {
+          "name": "green tea powder (matcha)",
+          "amount": "1 teaspoon"
+        },
+        {
+          "name": "water",
+          "amount": "1 cup"
+        },
+        {
+          "name": "white sugar",
+          "amount": "1/4 cup"
+        },
+        {
+          "name": "cornstarch",
+          "amount": "1/2 cup"
+        }
+      ],
+      "steps": [
+        "Wrap red bean paste in aluminum foil and place in the freezer for at least 3 hours. Mix sweet rice flour and green tea powder thoroughly in a microwave-safe glass or ceramic bowl. Stir in water, then sugar. Mix until smooth. Cover bowl with plastic wrap.",
+        "Cook the rice flour mixture in the microwave for 3 minutes and 30 seconds. Meanwhile, remove red bean paste from the freezer and divide paste into 8 equal balls. Set aside. Stir rice flour mixture and heat for another 15 to 30 seconds.",
+        "Dust work surface with cornstarch. While the mochi is still hot from the microwave, begin rolling balls the size of about 2 tablespoons. Flatten the mochi ball and place 1 frozen red bean paste ball in the center. Pinch the mochi over the red bean paste until the paste is completely covered. Sprinkle with additional cornstarch and place mochi seam side down in a paper muffin liner to prevent sticking. Repeat until all the mochi and red bean paste is used."
+      ]
+  },
+  "21": {
+    "title": "Chinese Veg Fried rice",
+    "description": "Chinese Veg Fried rice might be just the side dish you are searching for. This recipe serves 4 and costs $1.08 per serving. One serving contains 428 calories, 7g of protein, and 8g of fat. This recipe is liked by 1 foodies and cooks. From preparation to the plate, this recipe takes around 45 minutes...",
+    "servings": 4,
+    "totalCost": "1.09",
+    "time": 45,
+    "image": "https://spoonacular.com/recipeImages/638729-556x370.jpg",
+    "ingredients": [
+        {
+            "name": "basmati rice",
+            "amount": "2 cups"
+        },
+        {
+            "name": "garlic",
+            "amount": "0.5 Tbsps"
+        },
+        {
+            "name": "green chillis",
+            "amount": "2 small"
+        },
+        {
+            "name": "olive oil",
+            "amount": "2 Tbsps"
+        },
+        {
+            "name": "red pepper flakes",
+            "amount": "0.25 tsps"
+        },
+        {
+            "name": "red pepper powder",
+            "amount": "1 tsp"
+        },
+        {
+            "name": "salt",
+            "amount": "2 Tbsps"
+        },
+        {
+            "name": "soy sauce",
+            "amount": "1 Tbsp"
+        },
+        {
+            "name": "spring onions",
+            "amount": "1 Tbsp"
+        },
+        {
+            "name": "spring onions",
+            "amount": "2 Tbsps"
+        },
+        {
+            "name": "sweet chilli sauce",
+            "amount": "2 Tbsps"
+        }
+    ],
+    "steps": [
+        "Cook the Basmati rice with 2 1/2 cups of water and add a tsp of oil too before pressure cooking. After one whistle , take it off and keep the rice cool by fluffing it out with a fork.Chop all vegetables uniformly like long strips. I used red and yellow bell peppers and cut them into strips.I also used fresh corn kernels,French beans,Spring onions.Take a large wok which works best for a good stir fry.",
+        "Heat the wok well , and add some oil and start by seasoning with chopped green chillies, minced garlic. Stir fry the spring onions,",
+        "Add the bell peppers and stir briskly on a high flame as we want the vegetables to cook lightly and retain the crunch.",
+        "Add the pre cooked corn kernels and remaining vegetables.",
+        "Add the cold fluffed out Basmati rice and mix well with the vegetables, keep stirring and add the soy sauce, green chilli sauce, red pepper flakes, white pepper,salt and add little sesame oil .When the fried rice is still hot lastly add the greens of the spring onions as it will retain the nice crunch and the colour after the rice is done.",
+        "Serve hot ."
+    ]
+  },
+  "22": {
+    "title": "Pan Fried Rainbow Trout",
+    "description": "You can never have too many main course recipes, so give Pan Fried Rainbow Trout a try. This gluten free, primal, fodmap friendly, and pescatarian recipe serves 4 and costs $4.88 per serving. One serving contains 386 calories, 37g of protein, and 24g of fat. 1 person has tried and liked this recipe....",
+    "servings": 4,
+    "totalCost": "5.25",
+    "time": 45,
+    "image": "https://spoonacular.com/recipeImages/654409-556x370.jpg",
+    "ingredients": [
+        {
+            "name": "bell pepper",
+            "amount": "4 servings"
+        },
+        {
+            "name": "butter",
+            "amount": "2 Tbsps"
+        },
+        {
+            "name": "butterflied trout",
+            "amount": "4 servings"
+        },
+        {
+            "name": "cherry tomatoes",
+            "amount": "0.5 pts"
+        },
+        {
+            "name": "fresh tarragon",
+            "amount": "2 Tbsps"
+        },
+        {
+            "name": "olive oil",
+            "amount": "2 Tbsps"
+        },
+        {
+            "name": "rainbow trout",
+            "amount": "4 "
+        },
+        {
+            "name": "salt",
+            "amount": "4 servings"
+        },
+        {
+            "name": "inch through the center two",
+            "amount": "1 inch"
+        }
+    ],
+    "steps": [
+        "Wash the trout in cold water and pat dry to remove any tiny stray bones. Season the trout with salt and pepper, heat the olive oil in a large saute pan over medium heat and cook the fish skin-side down. Cook the trout in batches of 1 or 2 at a time. Cook the skin side for 2 to 3 minutes before turning with a spatula to cook the flesh side. Cook for an additional 2 to 3 minutes or until fully cooked but be careful of overcooking as the fish are thin and cook quickly.As the trout are finishing, add the butter to the pan and allow to bubble before adding the tomatoes. Cook for 2 minutes, add the tarragon and remove from the heat.",
+        "Serve immediately with fiddlehead ferns.This recipe yields 4 servings."
+    ]
+  },
+  "23": {
+    "title": "Apple Pie Bars",
+    "description": "Apple Pie Bars might be just the dessert you are searching for. Watching your figure? This dairy free recipe has 124 calories, 2g of protein, and 2g of fat per serving. This recipe serves 24 and costs 25 cents per serving. This recipe from Foodista has 78 fans. This recipe is typical of American cui...",
+    "servings": 24,
+    "totalCost": "0.26",
+    "time": 75,
+    "image": "https://spoonacular.com/recipeImages/632573-556x370.jpg",
+    "ingredients": [
+        {
+            "name": "apples",
+            "amount": "3 large"
+        },
+        {
+            "name": "baking powder",
+            "amount": "2 tsps"
+        },
+        {
+            "name": "baking soda",
+            "amount": "1 tsp"
+        },
+        {
+            "name": "butterscotch chips",
+            "amount": "6 oz"
+        },
+        {
+            "name": "eggs",
+            "amount": "2 "
+        },
+        {
+            "name": "flour",
+            "amount": "2 cups"
+        },
+        {
+            "name": "ground cinnamon",
+            "amount": "1 tsp"
+        },
+        {
+            "name": "ground nutmeg",
+            "amount": "1 tsp"
+        },
+        {
+            "name": "salt",
+            "amount": "0.5 tsps"
+        },
+        {
+            "name": "sugar",
+            "amount": "1 cup"
+        },
+        {
+            "name": "vegetable oil",
+            "amount": "1 cup"
+        }
+    ],
+    "steps": [
+        "Preheat the oven to 350 degrees F.  Spray a 9 by 13 inch baking dish with cooking spray.In the bowl of an electric mixer, thoroughly combine the oil, eggs, and sugar.  Sift the flour, baking powder, salt, soda, and spices together in a bowl, then add to the oil mixture in the mixer, beating until thoroughly mixed.  The batter will be thick.Use a sturdy spoon to stir in the apple pieces.  Scrape the mixture into the prepared pan, spreading it out evenly.",
+        "Sprinkle the butterscotch chips over the top, pressing them into the batter lightly.",
+        "Bake for 45 minutes to 1 hour, until golden and pulling away from the sides of the pan slightly.Cool thoroughly and cut into squares."
+    ]
+  },
+  "24": {
+    "title": "Coconut Curry Ramen Noodles",
+    "description": "Coconut Curry Ramen Noodles might be a good recipe to expand your main course collection. This recipe makes 4 servings with 580 calories, 15g of protein, and 30g of fat each. For $4.85 per serving, this recipe covers 23% of your daily requirements of vitamins and minerals. This recipe from Foodista ...",
+    "servings": 4,
+    "totalCost": "4.85",
+    "time": 100,
+    "image": "https://spoonacular.com/recipeImages/1095743-556x370.jpg",
+    "ingredients": [
+        {
+            "name": "mushrooms",
+            "amount": "1.102 lb"
+        },
+        {
+            "name": "soy sauce",
+            "amount": "2.705 fl. oz"
+        },
+        {
+            "name": "ginger",
+            "amount": "1 tsp"
+        },
+        {
+            "name": "curry powder",
+            "amount": "0.5 tsps"
+        },
+        {
+            "name": "chili sauce",
+            "amount": "0.5 tsps"
+        },
+        {
+            "name": "maple syrup",
+            "amount": "1 tsp"
+        },
+        {
+            "name": "vegetable stock",
+            "amount": "1.4 litres"
+        },
+        {
+            "name": "curry paste",
+            "amount": "4 Tbsps"
+        },
+        {
+            "name": "tin coconut milk",
+            "amount": "14.11 oz"
+        },
+        {
+            "name": "onion",
+            "amount": "1 "
+        },
+        {
+            "name": "block tofu",
+            "amount": "7.055 oz"
+        },
+        {
+            "name": "rice noodles",
+            "amount": "4 servings"
+        },
+        {
+            "name": "coriander",
+            "amount": "4 servings"
+        },
+        {
+            "name": "spring onions",
+            "amount": "4 servings"
+        },
+        {
+            "name": "sesame seeds",
+            "amount": "4 servings"
+        }
+    ],
+    "steps": [
+        "Chop the mushrooms in half and place into a large bowl with all the ingredients for the marinade. Stir so everything is coated, then cover and place in the fridge for 1 hour, or up to overnight.",
+        "Remove from the fridge once marinated and set aside as you prepare the rest of the curry.Finely dice the red onion and heat 1 tbsp oil in the bottom of a large stockpot. Fry the onion for 2-3 minutes on a medium/high heat until it starts to soften. Then add the curry paste and stir to coat the onion. Fry for another minute to release some of the flavour.",
+        "Add the vegetable stock and coconut milk to the pan and bring everything to a gentle simmer.",
+        "Drain the mushrooms from the marinade, and grill them on a griddle pan on a medium/high heat until they are cooked through. Slice the tofu into slices and grill this too until the outside is crispy.Cook the noodles (variety of your choice, I used rice noodles) and place in the bottom of your serving bowls. Divide the soup between four then top with some mushrooms and tofu.",
+        "Add a sprinkle of sesame seeds, some fresh coriander and some sliced spring onions."
+    ]
+  },
+  "25": {
+    "title": "Seared Scallop With Asparagus Cream",
+    "description": "Seared Scallop With Asparagus Cream might be a good recipe to expand your main course recipe box. This recipe serves 1. One serving contains 370 calories, 13g of protein, and 24g of fat. For $3.08 per serving, this recipe covers 16% of your daily requirements of vitamins and minerals. This recipe is...",
+    "servings": 1,
+    "totalCost": "3.08",
+    "time": 45,
+    "image": "https://spoonacular.com/recipeImages/659677-556x370.jpg",
+    "ingredients": [
+        {
+            "name": "cooking oil",
+            "amount": "1 Tbsp"
+        },
+        {
+            "name": "scallops",
+            "amount": "3 "
+        },
+        {
+            "name": "tomato",
+            "amount": "1 "
+        },
+        {
+            "name": "asparagus",
+            "amount": "50 gm"
+        },
+        {
+            "name": "whipping cream",
+            "amount": "20 gm"
+        },
+        {
+            "name": "chicken stock",
+            "amount": "200 ml"
+        },
+        {
+            "name": "white wine",
+            "amount": "50 ml"
+        },
+        {
+            "name": "salt",
+            "amount": "0.5 "
+        },
+        {
+            "name": "ground pepper",
+            "amount": "1 dash"
+        },
+        {
+            "name": "nori",
+            "amount": "1 sheet"
+        }
+    ],
+    "steps": [
+        "Combine asparagus, cream sauce ingredients and bring to boil for 1 hour until sauce is reduced.  Process in a blender and strain.",
+        "Heat oil and sear scallops on both sides until golden brown.",
+        "Pour some of the asparagus cream sauce on a serving plate.  Arrange the seared scallops on top and sprinkle diced tomato over.",
+        "Garnish with ground nori."
+    ]
+  },
+  "26": {
+    "image": "https://www.harighotra.co.uk/images/recipes/hero/chicken-pakora-hero.webp",
+    "title": "Chicken Pakora",
+    "description": "Hot spicy chicken marinated with zing of lemon then deep fried in a batter for a crispy shell.",
+    "totalCost": 7.31,
+    "servings": 1,
+    "time": 30,
+    "ingredients": [
+      {
+        "name": "chicken thigh fillets, chopped into bite-sized pieces",
+        "amount": "5"
+      },
+      {
+        "name": "garlic",
+        "amount": "2 cloves"
+      },
+      {
+        "name": "green chillies, chopped",
+        "amount": "2"
+      },
+      {
+        "name": "salt",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "cumin seeds(crushed)",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "garam masala",
+        "amount": "2 tsp"
+      },
+	 {
+        "name": "flour",
+        "amount": "100 grams"
+      },
+	 {
+        "name": "chopped coriander",
+        "amount": "handful"
+      },
+	 {
+        "name": "oil",
+        "amount": "as needed"
+      }
+
+    ],
+    "steps": [
+      "Place the garlic, ginger, green chillies, lemon juice, garam masala, cumin seeds, chilli powder, dried fenugreek leaves into a pestle and mortar and blend to a rough paste.",
+      "Place chicken in a bowl and add the paste, mix to marinade and leave for at least 20 minutes - the longer the better.",
+      "Heat up the oil in a karahi or wok to a medium heat.",
+	 "Into the marinated chicken sprinkle in the freshly chopped coriander and then sieve in the gram flour. Mix together using your hand.",
+      "Add a small amount of water if required to ensure the chicken is coated in a thick batter.",
+      "Test your oil is hot enough by dropping in a little batter into the oil. If it browns and rises immediately then it is ready. Very carefully place the pieces of chicken into the oil one at a time and fry until crisp and golden brown.",
+	 "Using a slotted spoon move the pakora around, be careful not to overcrowd the karahi.",
+	 "Once golden brown and crisp remove from the oil and set on some kitchen paper."
+    ]
+  },
+  "27": {
+    "image": "https://www.harighotra.co.uk/images/recipes/hero/sooke_mung_dhal_hero.png",
+    "title": "Sooke Moong Dhal",
+    "description": "A dry moong bean dhal that is easy to make finished with lemon juice",
+    "totalCost": 5,
+    "servings": 4,
+    "time": 20,
+    "ingredients": [
+      {
+        "name": "moong dhal",
+        "amount": "200 grams"
+      },
+      {
+        "name": "oil",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "mustard seeds",
+        "amount": "1/4 tsp"
+      },
+      {
+        "name": "cumin seeds",
+        "amount": "1/4 tsp"
+      },
+      {
+        "name": "asafetida",
+        "amount": "1/4 tsp"
+      },
+      {
+        "name": "turmeric",
+        "amount": "1/4 tsp"
+      },
+	 {
+        "name": "chilli powder",
+        "amount": "1 tsp"
+      },
+	 {
+        "name": "coriander seeds, crushed",
+        "amount": "1 tsp"
+      },
+	 {
+        "name": "lemon juice",
+        "amount": "2 tsp"
+      },
+	 {
+        "name": "salt",
+        "amount": "1 tsp"
+      },
+	 {
+        "name": "fresh coriander, chopped",
+        "amount": "10 grams"
+      }
+    ],
+    "steps": [
+      "Soak the moong dhal for about 15 minutes.",
+      "Put the soaked moong dhal and 350ml water into your pressure cooker.",
+      "Place the lid on and cook at high pressure for 10 minutes then turn off and leave for the pressure to be released.",
+	 "In a pan heat oil add mustard seeds, cumin and asafetida until they sizzle.",
+      "Pour in the moong dhal and add the turmeric, chilli powder, coriander, lemon juice, sugar (if using) and salt.",
+      "Stir together and garnish with fresh coriander. Mix and serve hot."
+    ]
+  },
+  "28": {
+    "image": "https://californiaavocado.com/wp-content/uploads/2020/07/Fresh-California-Avocado-and-Turkey-Sandwich-1.jpeg",
+    "title": "Avocado Sandwich",
+    "description": "A lunchtime favorite, delicious avocado sandwich",
+    "totalCost": 2,
+    "servings": 1,
+    "time": 20,
+    "ingredients": [
+      {
+        "name": "bread",
+        "amount": "2 slices"
+      },
+      {
+        "name": "provolone cheese",
+        "amount":  "2 slices"
+      },
+      {
+        "name": "avocado, thinly sliced",
+        "amount": "1/4"
+      },
+      {
+        "name": "tomato, sliced",
+        "amount": "1/2"
+      },
+      {
+        "name": "balsamic vinegar",
+        "amount": "1 1/2 tsp"
+      }
+    ],
+    "steps": [
+      "Lay 1 slice bread on a plate. Place provolone cheese on bread and top with avocado and tomato slices, respectively.",
+      "Drizzle balsamic vinegar over tomato and top with remaining slice of bread."
+    ]
+  },
+  "29": {
+    "image": "https://i.imgur.com/s8m255x.png",
+    "title": "Sriracha Scrambled Eggs",
+    "description": "This is an excellent, spicy, quick-and-easy breakfast. Serve with toast and hash brown potatoes for a complete meal. Add cheese if you wish.",
+    "totalCost": 2,
+    "servings": 1,
+    "time": 5,
+    "ingredients": [
+      {
+        "name": "eggs",
+        "amount": "2"
+      },
+      {
+        "name": "half-and-half",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "sriracha sauce",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "salt",
+        "amount": "pinch"
+      },
+      {
+        "name": "ground pepper",
+        "amount": "pinch"
+      },
+      {
+        "name": "butter",
+        "amount": "2 tbsp"
+      }
+    ],
+    "steps": [
+      "Beat eggs in a bowl with half-and-half, sriracha, salt, and pepper until smooth.",
+      "Melt butter in nonstick pan over medium-low heat, tilting the pan to cover surface entirely with butter. Cook egg mixture in pan, stirring to slowly scramble eggs, until the eggs are fully set, 3 to 5 minutes."
+    ]
+  },
+  "30": {
+    "image": "https://valentinascorner.com/wp-content/uploads/2020/06/Beef-Stroganoff-1.jpg",
+    "title": "Simple Beef Stroganoff",
+    "description": "This is a very simple and quick beef stroganoff that can be made after a busy day at work. It uses ground beef and mushroom soup!",
+    "totalCost": 11,
+    "servings": 4,
+    "time": 30,
+    "ingredients": [
+      {
+        "name": "package egg noodles",
+        "amount": "8 oz"
+      },
+      {
+        "name": "ground beef",
+        "amount": "1 lb"
+      },
+      {
+        "name": "condensed cream of mushroom soup",
+        "amount": "10.75 oz"
+      },
+      {
+        "name": "garlic powder",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "sour cream",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "salt",
+        "amount": "1 tsp"
+      },
+	 {
+        "name": "pepper",
+        "amount": "1 tsp"
+      }
+    ],
+    "steps": [
+      "Prepare the egg noodles according to package directions and set aside.",
+      "In a separate large skillet over medium heat, saute the ground beef over medium heat for 5 to 10 minutes, or until browned.",
+	 "Drain the fat and add the soup and garlic powder. Simmer for 10 minutes, stirring occasionally.",
+      "Remove from heat and combine the meat mixture with the egg noodles.",
+      "Add the sour cream, stirring well, and season with salt and pepper to taste."
+    ]
+  },
+  "31": {
+    "image":"https://assets.bonappetit.com/photos/5e399f27349af3000848eb73/1:1/w_1125,h_1125,c_limit/0320-DutchOven-One-Pot-Gingery-Chicken.jpg",
+    "title":"One-Pot Chicken and Rice",
+    "description":"We took loose inspiration from Hainanese chicken rice to create this weeknight-friendly dish that retains the comforting and fragrant qualities of the beloved original. Seek out the highest-quality basmati rice you can find (we recommend Daawat brand)—it will make a world of difference in yielding supremely fluffy, evenly cooked rice.",
+    "totalCost": 15,
+    "servings": 6,
+    "time": 35,
+    "ingredients":[
+      {
+        "name": "small skin-on, bone-in chicken thighs",
+        "amount": "6"
+      },
+      {
+        "name": "kosher salt",
+        "amount": "3/4 tsp"
+      },
+      {
+        "name": "large shallots, finely chopped",
+        "amount": "2"
+      },
+      {
+        "name": "garlic cloves, finely chopped",
+        "amount": "8"
+      },
+      {
+        "name": "ginger, peeled, finely chopped",
+        "amount": "2"
+      },
+      {
+        "name": "high-quality basmati rice, rinsed",
+        "amount": "2 cups"
+      },
+      {
+        "name": "whole star anise",
+        "amount": "2"
+      },
+      {
+        "name": "soy sauce",
+        "amount": "1 Tbsp"
+      },
+      {
+        "name": "creamy peanut butter",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "unseasoned rice vinegar",
+        "amount": "2 Tbsp"
+      }
+
+    ],
+    "steps":[
+      "Pat chicken dry and season all over with salt. Arrange, skin side down, in a cold, dry medium Dutch oven and set over medium heat. Cook, undisturbed, until skin is golden brown and crisp and easily releases from pot, 8–10 minutes. Slide thighs around to different spots (this will ensure even browning) and continue to cook until deeply browned, 3–5 minutes longer. Transfer chicken to a plate. Let pot cool 2 minutes.",
+      "Set pot over medium-low heat; add shallots, garlic, and ginger and cook, stirring constantly, until very fragrant but not browned, about 2 minutes. Stir in rice and star anise and cook, stirring constantly, 1 minute. Stir in soy sauce, ¾ tsp. salt, and 3 cups water. Nestle chicken back into rice mixture in pot, arranging skin side up. Increase heat to medium and bring liquid to a simmer. Immediately cover pot, reduce heat to low, and cook 25 minutes. Remove from heat and let chicken and rice sit 10 minutes.",
+      "While the chicken and rice are cooking, make the sauce. Whisk peanut butter, soy sauce, vinegar, Sriracha, ginger, honey, and ¼ cup warm water in a small bowl until smooth and pourable. If sauce still looks a little thick, continuing adding water until it reaches a drizzle-able consistency.",
+      "Remove lid from pot and fluff rice with a fork. Pluck out and discard star anise. Serve chicken and rice with peanut sauce, cucumber, and cilantro alongside.\nDo Ahead: Sauce can be made 3 days ahead. Cover and chill."
+    ]
   }
+
 }
