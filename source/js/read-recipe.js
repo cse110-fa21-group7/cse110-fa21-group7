@@ -2,6 +2,7 @@
 import { asapInit } from "./init.js";
 let recipeObject;
 let recipeID;
+let userRecipe;
 window.addEventListener("DOMContentLoaded", init);
 const editButton = document.getElementById("Edit");
 const deleteButton = document.getElementById("Delete");
@@ -9,6 +10,7 @@ const deleteButton = document.getElementById("Delete");
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
   await asapInit();
+  userRecipe = JSON.parse(localStorage.getItem("userRecipes"));
   getPage();
   populateHTML();
 }
@@ -22,7 +24,7 @@ function getPage() {
   const urlParams = new URLSearchParams(queryString);
   // default is reading cookbook
   if (url.includes("bookID")) {
-    recipeObject = JSON.parse(localStorage.getItem("userRecipes"));
+    recipeObject = userRecipe;
   }
   if (url.includes("fetchID")) {
     editButton.innerHTML = "add";
@@ -106,13 +108,14 @@ function populateHTML() {
 editButton.addEventListener("click", () => {
   if (editButton.innerHTML === "add") {
     // add current recipe to cook book
-    const userRecipe = JSON.parse(localStorage.getItem("userRecipes"));
+
     userRecipe[recipeID] = recipeObject[recipeID];
     localStorage.setItem("userRecipes", JSON.stringify(userRecipe));
     modalAdd.classList.add("active");
     const addConfirm = document.querySelector("#add-confirm");
     addConfirm.addEventListener("click", () => {
       modalAdd.classList.remove("active");
+      window.location.replace(`/read/bookID?id=${recipeID}`);
     });
   } else {
     location.href = `/update?id=${recipeID}`;
