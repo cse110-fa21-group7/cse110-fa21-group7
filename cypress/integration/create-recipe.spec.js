@@ -65,6 +65,7 @@ describe("Tests for create recipe form", () => {
   it("submit user recipe", () => {
     // submit
     cy.get(".btn-submit").click();
+    cy.get("#confirm-button").click();
   });
   it("check recipe save in local storage or not", () => {
     cy.wait(2000);

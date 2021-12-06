@@ -145,14 +145,6 @@ header button {
   }
 }
 
-/* .navbar-brand:hover {
-  color: rgb(160, 157, 157);
-} */
-
-/* .navbar-nav li a {
-  color: gray;
-} */
-
 /* for all form-control */
 .form-control:focus {
   outline: none;

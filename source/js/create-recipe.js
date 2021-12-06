@@ -228,7 +228,6 @@ form.addEventListener("submit", function (event) {
 
   // back to cookbook page
   modal.classList.add("active");
-  message.innerHTML = "You have successfully updated a recipe!";
 });
 
 const confirmBtn = document.querySelector("#confirm-button");
