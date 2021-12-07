@@ -33,7 +33,6 @@ async function addCurated() {
       return response.json();
     })
     .then((json) => {
-      localStorage.setItem("curatedRecipes", JSON.stringify(json));
       localStorage.setItem("storedRecipes", JSON.stringify(json));
     });
 }

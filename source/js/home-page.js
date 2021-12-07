@@ -1,5 +1,5 @@
 import { asapInit } from "./init.js";
-import { fetchFullRecipe } from "./search-recipe.js";
+import { fetchRecipes, fetchFullRecipe } from "./search-recipe.js";
 window.addEventListener("DOMContentLoaded", init);
 let recipeObject;
 let page;
@@ -10,7 +10,6 @@ async function init() {
   await asapInit(); // wait for init local storage
   userRecipe = JSON.parse(localStorage.getItem("userRecipes"));
   makePage();
-  recipeCards(recipeObject);
   addSortListener();
 }
 
@@ -36,14 +35,13 @@ function makePage() {
     intro.innerHTML = "Here are your recipes.";
     showList = ["cookbook", "cookbook-sort"];
     // only cookbook need to hide the whole recipe-card-container
-    hideList = ["search", "results", "curatedList"];
+    hideList = ["search", "results", "curatedList", "more"];
     // if we want to show cookbook, the recipeObject should be userRecipes which saved in localStorge
     recipeObject = userRecipe;
   } else if (queryString.includes("result")) {
     page = "results";
-    showList = ["search", "results"];
+    showList = ["search", "results", "more"];
     hideList = ["curatedList"];
-    console.log("result");
     recipeObject = JSON.parse(localStorage.getItem("resultRecipes"));
   }
   // else means user in home page
@@ -51,11 +49,12 @@ function makePage() {
     intro.innerHTML = "Search and save your favorite recipes.";
     page = "curatedList";
     homeAvtive.classList.add("is-active"); // navbar show home-page in-active
-    showList = ["search", "curatedList"];
+    showList = ["search", "curatedList", "more"];
     hideList = ["cookbook", "cookbook-sort", "results"];
     // switch recipeObject depends on which page we want to show
     // recipeObject = JSON.parse(localStorage.getItem("curatedRecipes"));
-    recipeObject = createCaurtedList();
+    recipeObject = JSON.parse(localStorage.getItem("curatedRecipes"));
+    if (recipeObject === null) createCaurtedList();
   }
   recipeObject = dictToArr(recipeObject);
   // all cards need to show this container
@@ -69,13 +68,15 @@ function makePage() {
     const ele = document.querySelector(`.${hide}`);
     if (ele.classList.contains("shown")) ele.classList.remove("shown");
   }
+  recipeCards();
 }
 
 /**
  * Use recipeObject to create recipe cards
- * @param {Array} recipeObject
  */
-function recipeCards(recipeObject) {
+function recipeCards() {
+  console.log(`${page}`);
+  console.log(recipeObject);
   const section = document.querySelector(`.${page}`);
   // Loop through recipeObject array
   recipeObject.forEach((e) => {
@@ -247,5 +248,29 @@ function createCaurtedList() {
   randomArray.forEach((e) => {
     returnRecipes[e] = tempStored[e];
   });
-  return returnRecipes;
+  recipeObject = dictToArr(returnRecipes);
+  localStorage.setItem("curatedRecipes", JSON.stringify(returnRecipes));
+  // return returnRecipes;
 }
+
+const moreRcipes = document.querySelector("#more-recipes");
+moreRcipes.addEventListener("click", () => {
+  if (page === "curatedList") {
+    removeElements(document.querySelectorAll(".card"));
+    createCaurtedList();
+    recipeCards();
+  }
+  if (page === "results") {
+    const url = localStorage.getItem("query");
+    console.log(`${url}&offset=12`);
+    fetchRecipes(true, `${url}&offset=100`).then(() => {
+      removeElements(document.querySelectorAll(".card"));
+      recipeObject = JSON.parse(localStorage.getItem("resultRecipes"));
+      recipeObject = dictToArr(recipeObject);
+      recipeCards();
+    });
+  }
+});
+//  remove all elements have same class name
+const removeElements = (elms) => elms.forEach((el) => el.remove());
+// Use like:

@@ -1,18 +1,11 @@
 let query;
-let diet;
-let meal;
-let intoler;
 /**
  * Fetches search results and populates index.html
- * @param {String} query
+ * @param {Boolean} pageFlag search query
+ * @param {String} url fetch url
  * @return {null}
  */
-async function fetchRecipes() {
-  // define fetch url
-  let url = `/search/recipe?query=${query}`;
-  if (diet !== "") url += `&diet=${diet}`;
-  if (meal !== "") url += `&type=${meal}`;
-  if (intoler !== "") url += `&intolerances=${intoler}`;
+export async function fetchRecipes(pageFlag, url) {
   const res = await fetch(url); // return back the reicpes object from spoonacular
   const data = await res.json();
   if (data.code === "404") {
@@ -27,11 +20,15 @@ async function fetchRecipes() {
   for (const recipe of data["results"]) {
     resultRecipes[recipe["id"]] = recipe;
   }
+  console.log(resultRecipes);
   // update
   // Store full recipes in searchedRecipes
   localStorage.setItem("resultRecipes", JSON.stringify(resultRecipes));
-  const urlchange = `/result?query=${query}`;
-  window.location.href = urlchange;
+  if (!pageFlag) {
+    localStorage.setItem("query", url);
+    const urlchange = `/result?query=${query}`;
+    window.location.href = urlchange;
+  }
 }
 
 /**
@@ -47,18 +44,14 @@ searchbtn.addEventListener("click", (e) => {
   const intolSele = document.getElementById("Intolerances");
   // save select result
   query = searchField.value;
-  diet = dietSele.value;
-  meal = mealSele.value;
-  intoler = intolSele.value;
-  console.log(`Search query: ${query}`);
-  console.log(`diet query: ${diet}`);
-  console.log(`meal query: ${meal}`);
-  console.log(`intoler query: ${intoler}`);
-  if (query.value === "") {
-    alert("Please enter recipe you want to search");
-  } else {
-    fetchRecipes();
-  }
+  const diet = dietSele.value;
+  const meal = mealSele.value;
+  const intoler = intolSele.value;
+  let url = `/search/recipe?query=${query}`;
+  if (diet !== "") url += `&diet=${diet}`;
+  if (meal !== "") url += `&type=${meal}`;
+  if (intoler !== "") url += `&intolerances=${intoler}`;
+  fetchRecipes(false, url);
 });
 /**
  * Gets full recipe from Spoonacular API based on ID
