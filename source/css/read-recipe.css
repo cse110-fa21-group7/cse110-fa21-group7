@@ -6,6 +6,140 @@ body {
   min-width: 350px;
 }
 
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.toggle-container {
+  position: relative;
+}
+
+.theme-btn img {
+  max-height: 50%;
+  max-width: 50%;
+  /*
+  height: 50%;
+  width: 50%;
+  */
+  object-fit: contain;
+}
+
+.theme-btn.light {
+  display: none;
+}
+
+.dark .theme-btn.dark {
+  display: none;
+}
+
+.dark .theme-btn.light {
+  display: block;
+}
+:root,
+:root.light {
+  --bg-color: #fff;
+  --text-color: #123;
+  --hover-color: rgb(48, 46, 46);
+  --item-color: #666;
+  --card-bg-color:#fff;
+  --card-shadow-color:#939697;
+  --is-solid:solid;
+  --border-color:black;
+}
+
+:root.dark {
+  --card-shadow-color:#fff;
+  --bg-color: #121212;
+  --text-color: #123;
+  --hover-color: #fff;
+  --item-color: rgb(175, 174, 174);
+  --card-bg-color:#2c2929;
+  --is-solid:solid;
+  --border-color:rgb(175, 174, 174);
+
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.theme-btn {
+  width: 6em;
+  height: 6em;
+  padding: 0px 0px 0px 0px;
+  border-radius: 20%;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+.toggle-container {
+  position: relative;
+}
+/*
+.themes button{
+  margin-left:auto;
+}
+*/
+
+.theme-btn.light {
+  display: none;
+}
+
+.dark .theme-btn.dark {
+  display: none;
+}
+
+.dark .theme-btn.light {
+  display: block;
+}
+
+.navbar {
+  width: 100%;
+  background-color: transparent;
+  overflow: auto;
+}
+
+.navbar-link {
+  float: left;
+  /*padding: 12px;*/
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 50%; /* 4 links of equal widths */
+  text-align: center;
+}
+header a {
+  display: block;
+  float: left;
+}
+header button {
+  display: block;
+  float: right;
+}
+.navbar-link a {
+  color: var(--item-color);
+  text-decoration: none;
+  font-size: 32px;
+  text-align: center;
+}
+
+.navbar-link a:hover {
+  color: var(--hover-color);
+}
+
+@media screen and (max-width: 655px) {
+  .navbar .navbar-link {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  header header button {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
 .container {
   width: 90%;
   margin: 50px auto;
@@ -17,7 +151,9 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
+  border:solid;
+  border-color:var(--border-color);
 }
 
 .recipe-image {
