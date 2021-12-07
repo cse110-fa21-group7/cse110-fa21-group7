@@ -55,17 +55,14 @@ class RecipeCard extends HTMLElement {
     }
     
     .card-body {
-      font-family: Snell Roundhand;
-      font-size:20px;
       height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       overflow: hidden;
-      box-shadow: 0px 2px 20px var(card-shadow-color);
+      box-shadow: 0px 2px 15px;
       border-radius: 0.3rem;
-      border:var(--is-solid);
-      border-color:var(--border-color);
+      // border:var(--is-solid);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
