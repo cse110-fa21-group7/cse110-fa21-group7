@@ -1,8 +1,6 @@
 describe("Tests for cookbook page", () => {
   before(() => {
     cy.visit("/cookbook");
-    cy.wait(500);
-
     cy.saveLocalStorage();
   });
   beforeEach(() => {
@@ -33,17 +31,65 @@ describe("Tests for cookbook page", () => {
       .shadow()
       .contains("This is for e2e test gnocchi bake")
       .click();
-    cy.get("#recipe-title").contains("This is for e2e test gnocchi bake");
-    cy.get("#recipe-desc").contains("Upgrade cheesy tomato pasta with gnocchi");
-    cy.contains("Cost: $10");
-    cy.contains("olive oil");
-    cy.contains("onion, finely chopped");
-    cy.contains("garlic cloves , crushed");
-    cy.contains("chorizo , diced");
+    cy.get("#recipeTitle").contains("This is for e2e test gnocchi bake");
+    cy.get("#recipeDescription").contains(
+      "Upgrade cheesy tomato pasta with gnocchi"
+    );
+    cy.get(".cost > :nth-child(2)").contains("Cost: $10");
+    cy.get(":nth-child(1) > .container").contains("olive oil");
+    cy.get(":nth-child(2) > .container").contains("onion, finely chopped");
+    cy.get(":nth-child(3) > .container").contains("garlic cloves , crushed");
+    cy.get(":nth-child(4) > .container").contains("chorizo , diced");
 
-    cy.contains("Heat the oil in a medium pan over a medium heat. Fry ");
-    cy.contains(
+    cy.get(".orderList > :nth-child(1)").contains(
+      "Heat the oil in a medium pan over a medium heat. Fry "
+    );
+    cy.get(".orderList > :nth-child(2)").contains(
       "Stir ¾ of the mozzarella and most of the basil through the gnocchi. "
     );
   });
 });
+/// <reference types="Cypress" />
+describe('Tests for cookbook page2', function () {
+ before(() => {
+    cy.visit("/cookbook");
+    cy.saveLocalStorage();
+  });
+  beforeEach(() => {
+    cy.restoreLocalStorage();
+  });
+  afterEach(() => {
+    cy.saveLocalStorage();
+  });
+
+  it('Tests for  page click', () => {
+    cy.get('.dropdown').should('exist')
+    cy.get('#ASAP-logo-home').click()
+    cy.get('#link-cookbook').click()
+    cy.get('#link-create-recipe').click()
+    cy.get('#link-create-recipe').click({ force: true } )
+    cy.get('#link-cookbook').click({ force: true } )
+    cy.get('#ASAP-logo-home').click({ force: true } )
+    cy.get("#ASAP-logo-home").dblclick()
+    cy.get("#link-cookbook").dblclick()
+    cy.get("#link-create-recipe").dblclick()
+    cy.get("#ASAP-logo-home").rightclick()
+    cy.get("#link-cookbook").rightclick()
+    cy.get("#link-create-recipe").rightclick()
+    cy.get("#ASAP-logo-home").rightclick()
+    cy.get("#link-cookbook").rightclick()
+    cy.get("#link-create-recipe").rightclick()
+    cy.get('#link-create-recipe').click({multiple : true }  )
+    cy.get('#link-cookbook').click({multiple : true }  )
+    cy.get('#ASAP-logo-home').click({multiple : true }  )   
+  })
+  
+  it('test2',()=>{
+     cy.get('#link-cookbook').contains(
+      "Cookbook"
+    );
+    cy.get('#link-create-recipe').contains(
+      "Create"
+    );
+  })
+})
