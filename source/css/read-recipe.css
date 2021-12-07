@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,900;1,300&display=swap");
 body {
-  background: #dcc7aa;
+  /* background: #fff; */
+  background: #f8f8ff;
   font: "Montserrat", sans-serif;
   color: #353935;
   min-width: 350px;
@@ -143,7 +144,8 @@ header button {
 .container {
   width: 90%;
   margin: 50px auto;
-  background-color: white;
+  /* background-color: #eee; */
+  background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -241,7 +243,7 @@ ul.info-row {
 .recipe-nav {
   margin: 0 0 20px;
   padding: 0;
-  border-bottom: 1px solid #f7882f;
+  border-bottom: 1px solid #b9ebd2;
 }
 
 .recipe-nav li {
@@ -260,7 +262,7 @@ ul.info-row {
   width: 0%;
   padding-top: 10px;
   margin: 0 auto;
-  border-bottom: 5px solid #f7882f;
+  border-bottom: 5px solid #b9ebd2;
   -webkit-transition: width 250ms ease-in-out 0s;
   transition: width 250ms ease-in-out 0s;
 }
@@ -289,7 +291,7 @@ ul.info-row {
 
 #ingredient-list li:before {
   content: "\2022";
-  color: #f7882f;
+  color: #b9ebd2;
   margin-right: 5px;
 }
 

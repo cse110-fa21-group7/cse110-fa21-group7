@@ -119,7 +119,10 @@ function toReadRecipe(recipeCard, id) {
     let url = `/read/fetchID?id=${id}`;
     if (page === "curatedList") {
       if (recipeCard.flag) addToCookbook(recipeCard, id);
-      else window.location.href = url;
+      else {
+        if (id in userRecipe) url = `/read/bookID?id=${id}`;
+        window.location.href = url;
+      }
     } else if (page === "cookbook") {
       url = `/read/bookID?id=${id}`;
       window.location.href = url;

@@ -76,9 +76,5 @@ describe("Tests for create recipe form", () => {
   });
   it("check recipe in our cookbook or not", () => {
     cy.get("recipe-card").shadow().contains("e2e Apple");
-    // .eq(2)
-    // .shadow()
-    // .find(".card .card_body .card__title")
-    // .contains("e2e Apple");
   });
 });
