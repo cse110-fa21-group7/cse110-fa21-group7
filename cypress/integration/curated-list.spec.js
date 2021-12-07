@@ -13,13 +13,13 @@ describe("Tests for curated list", () => {
     cy.saveLocalStorage();
   });
 
-  // it("check number of recipes", () => {
-  //   cy.get("recipe-card").should("have.length", 4);
-  // });
+  it("check number of recipes", () => {
+    cy.get("recipe-card").should("have.length", 8);
+  });
 
   it("check add button", () => {
     // add recipe
-    for (let i = 2; i < 4; i++) {
+    for (let i = 0; i < 8; i++) {
       cy.get(".card")
         .eq(i)
         .shadow()
@@ -29,6 +29,6 @@ describe("Tests for curated list", () => {
 
     // after adding recipe to cookbook, check cookbook
     cy.visit("/cookbook");
-    cy.get("recipe-card").should("have.length", 2);
+    cy.get("recipe-card").should("have.length", 8);
   });
 });
