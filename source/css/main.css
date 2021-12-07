@@ -85,6 +85,10 @@ body {
   background-color: var(--primary);
 }
 
+.hamburger.is-active {
+  z-index: 99;
+}
+
 .hamburger.is-active span:nth-child(1) {
   transform: translate(-1.5px, -7.5px) rotate(45deg);
 }
@@ -292,7 +296,7 @@ header button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  transition: 200ms ease-in-out;
+  transition: 0ms ease-in-out;
   border: 1px solid black;
   border-radius: 10px;
   z-index: 10;

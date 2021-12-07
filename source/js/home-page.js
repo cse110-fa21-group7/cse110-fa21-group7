@@ -33,7 +33,7 @@ function makePage() {
     // navbar show cookBook in-active
     bookActive.classList.add("is-active");
     page = "cookbook";
-    intro.innerHTML = "Here are your recipes.";
+    intro.innerHTML = "Your favorite recipes";
     showList = ["cookbook", "cookbook-sort"];
     // only cookbook need to hide the whole recipe-card-container
     hideList = ["search", "results", "curatedList"];
@@ -48,7 +48,7 @@ function makePage() {
   }
   // else means user in home page
   else {
-    intro.innerHTML = "Search and save your favorite recipes.";
+    intro.innerHTML = "Search, save and savor your favorite recipes";
     page = "curatedList";
     homeAvtive.classList.add("is-active"); // navbar show home-page in-active
     showList = ["search", "curatedList"];
