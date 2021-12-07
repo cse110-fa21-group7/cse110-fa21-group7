@@ -65,6 +65,7 @@ describe("Tests for create recipe form", () => {
   it("submit user recipe", () => {
     // submit
     cy.get(".btn-submit").click();
+    cy.get("#confirm-button").click();
   });
   it("check recipe save in local storage or not", () => {
     cy.wait(2000);
@@ -75,9 +76,5 @@ describe("Tests for create recipe form", () => {
   });
   it("check recipe in our cookbook or not", () => {
     cy.get("recipe-card").shadow().contains("e2e Apple");
-    // .eq(2)
-    // .shadow()
-    // .find(".card .card_body .card__title")
-    // .contains("e2e Apple");
   });
 });

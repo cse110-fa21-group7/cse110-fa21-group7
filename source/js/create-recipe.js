@@ -225,12 +225,15 @@ form.addEventListener("submit", function (event) {
   // save all of object to local storage
   localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
   localStorage.setItem("currID", currID);
+
   // back to cookbook page
-  if (updateFlag) {
-    window.alert("successfully updated a recipe!");
-  } else {
-    window.alert("successfully created a recipe!");
-  }
+  modal.classList.add("active");
+});
+
+const confirmBtn = document.querySelector("#confirm-button");
+
+confirmBtn.addEventListener("click", () => {
+  modal.classList.remove("active");
   location.href = "/cookbook";
 });
 

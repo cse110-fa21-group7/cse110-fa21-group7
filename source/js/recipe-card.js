@@ -60,14 +60,15 @@ class RecipeCard extends HTMLElement {
       flex-direction: column;
       justify-content: space-between;
       overflow: hidden;
-      box-shadow: 0px 2px 20px #cfd8dc;
+      box-shadow: 0px 2px 15px;
       border-radius: 0.3rem;
+      // border:var(--is-solid);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       cursor: pointer;
       transition: transform 200ms ease-in;
-      background-color: #fff;
+      background-color: var(--card-bg-color);
       position: relative;
     }
     .card-body:hover {
@@ -100,15 +101,11 @@ class RecipeCard extends HTMLElement {
       position: absolute;
       top: 10.75rem;
       right: 5%;
-      width: 1.8em;
-      height: 1.8em;
+      width: 2.3em;
+      height: 2.3em;
       text-align: center;
       padding: 0px;
       color: white;
-      font-size: 1.5rem;
-      margin:0 auto;
-      padding-top: 5px;
-      // padding: 0.6rem 0.52rem;
     }
     #card-btn:hover{
       background: rgb(226, 100, 125);
@@ -132,10 +129,9 @@ class RecipeCard extends HTMLElement {
     img.setAttribute("alt", data["title"]);
     img.classList.add("card-image");
     cardBody.appendChild(img);
-    // test add btn
+    // add btn, so we can add current recipe to user cookbook
     const addBtn = document.createElement("div");
     addBtn.classList.add("add-to-cookbook");
-
     const ii = document.createElement("i");
     ii.id = "card-btn";
     ii.classList.add("fa");
@@ -143,25 +139,28 @@ class RecipeCard extends HTMLElement {
     ii.ariaHidden = "true";
     addBtn.appendChild(ii);
     cardBody.appendChild(addBtn);
+    // if the id in user's cookbook, we do not need to show the button
     if (this.id in this.recipes) cardBody.removeChild(addBtn);
+    // if user click btn
     ii.addEventListener("click", (e) => {
       e.preventDefault();
       this.flag = true;
       cardBody.removeChild(addBtn);
+      // Display pop-up boxes
+      modal.classList.add("active");
       // ii.style.display = "hidden";
-      // window.location.href = "/cookbook";
     });
+
+    const closeBtn = document.querySelector("#confirm-button");
+    closeBtn.addEventListener("click", () => {
+      modal.classList.remove("active");
+    });
+
     // add title
     const title = document.createElement("h3");
     title.textContent = data["title"];
     title.classList.add("card-title");
     cardBody.appendChild(title);
-    // add a button
-    // const getBtn = document.createElement("a");
-    // getBtn.href = "#";
-    // getBtn.classList.add("recipe-btn");
-    // getBtn.innerText = "Add to cookbook";
-    // cardBody.appendChild(getBtn);
 
     if (this.page == "curatedList" || this.page == "cookbook") {
       // add info list

@@ -75,7 +75,7 @@ function recipeCards(recipeObject) {
       array.push(i);
     }
     for (let i = 0; i < 8; i++) {
-      const randomIndex = Math.floor(Math.random() * (array.length - 1));
+      const randomIndex = Math.floor(Math.random() * array.length);
       const randomNumber = array[randomIndex];
       array.splice(randomIndex, 1);
       randomArray.push(randomNumber);
@@ -119,7 +119,10 @@ function toReadRecipe(recipeCard, id) {
     let url = `/read/fetchID?id=${id}`;
     if (page === "curatedList") {
       if (recipeCard.flag) addToCookbook(recipeCard, id);
-      else window.location.href = url;
+      else {
+        if (id in userRecipe) url = `/read/bookID?id=${id}`;
+        window.location.href = url;
+      }
     } else if (page === "cookbook") {
       url = `/read/bookID?id=${id}`;
       window.location.href = url;
