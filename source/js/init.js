@@ -49,3 +49,10 @@ darkMode.addEventListener("click", () => {
   document.documentElement.classList.replace("light", "dark");
   localStorage.setItem("theme", "dark");
 });
+
+const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.querySelector(".mobile-nav");
+hamburger.addEventListener("click", (e) => {
+  hamburger.classList.toggle("is-active");
+  mobileMenu.classList.toggle("is-active");
+});

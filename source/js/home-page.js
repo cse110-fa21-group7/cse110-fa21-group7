@@ -32,7 +32,12 @@ function makePage() {
   recipeObject = JSON.parse(localStorage.getItem("curatedRecipes"));
   // change all variables depends on current page
   // if we want to show cookbook, the recipeObject should be userRecipes which saved in localStorge
+  // change navbar in-active
+
+  const homeAvtive = document.querySelector("#home-active");
+  const bookActive = document.querySelector("#book-active");
   if (queryString.includes("cookbook")) {
+    bookActive.classList.add("is-active");
     page = "cookbook";
     intro.innerHTML = "Here are your recipes.";
     showList = ["cookbook", "cookbook-sort"];
@@ -45,7 +50,7 @@ function makePage() {
     hideList = ["curatedList"];
     console.log("result");
     recipeObject = JSON.parse(localStorage.getItem("resultRecipes"));
-  }
+  } else homeAvtive.classList.add("is-active");
   recipeObject = dictToArr(recipeObject);
   // all cards need to show this container
   document.querySelector(".recipe-card-container").classList.add("shown");
