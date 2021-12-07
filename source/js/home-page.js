@@ -20,29 +20,24 @@ async function init() {
 function makePage() {
   const queryString = window.location.href;
   console.log(queryString);
-  // default is home page is the curated recipes section
-  page = "curatedList";
   const intro = document.querySelector(".search-introduction");
-  intro.innerHTML = "Search and save your favorite recipes.";
   // all sections we need to deal with
   // const secitonList = ["search", "cookbook", "results", "curatedList"];
-  let showList = ["search", "curatedList"]; // seciton list we want to show
-  let hideList = ["cookbook", "cookbook-sort", "results"]; // section lsit we want to hide
-  // switch recipeObject depends on which page we want to show
-  recipeObject = JSON.parse(localStorage.getItem("curatedRecipes"));
+  let showList; // seciton list we want to show
+  let hideList; // section lsit we want to hide
   // change all variables depends on current page
-  // if we want to show cookbook, the recipeObject should be userRecipes which saved in localStorge
   // change navbar in-active
-
   const homeAvtive = document.querySelector("#home-active");
   const bookActive = document.querySelector("#book-active");
   if (queryString.includes("cookbook")) {
+    // navbar show cookBook in-active
     bookActive.classList.add("is-active");
     page = "cookbook";
     intro.innerHTML = "Here are your recipes.";
     showList = ["cookbook", "cookbook-sort"];
     // only cookbook need to hide the whole recipe-card-container
     hideList = ["search", "results", "curatedList"];
+    // if we want to show cookbook, the recipeObject should be userRecipes which saved in localStorge
     recipeObject = userRecipe;
   } else if (queryString.includes("result")) {
     page = "results";
@@ -50,10 +45,22 @@ function makePage() {
     hideList = ["curatedList"];
     console.log("result");
     recipeObject = JSON.parse(localStorage.getItem("resultRecipes"));
-  } else homeAvtive.classList.add("is-active");
+  }
+  // else means user in home page
+  else {
+    intro.innerHTML = "Search and save your favorite recipes.";
+    page = "curatedList";
+    homeAvtive.classList.add("is-active"); // navbar show home-page in-active
+    showList = ["search", "curatedList"];
+    hideList = ["cookbook", "cookbook-sort", "results"];
+    // switch recipeObject depends on which page we want to show
+    // recipeObject = JSON.parse(localStorage.getItem("curatedRecipes"));
+    recipeObject = createCaurtedList();
+  }
   recipeObject = dictToArr(recipeObject);
   // all cards need to show this container
   document.querySelector(".recipe-card-container").classList.add("shown");
+  // 2 for loops 1 is for show sections, and 1 is for hide some sections
   for (const show of showList) {
     const ele = document.querySelector(`.${show}`);
     if (!ele.classList.contains("shown")) ele.classList.add("shown");
@@ -70,48 +77,18 @@ function makePage() {
  */
 function recipeCards(recipeObject) {
   const section = document.querySelector(`.${page}`);
-
-  // generate 8 random recipe cards
-  const randomArray = [];
-  if (page == "curatedList") {
-    const total = Object.keys(recipeObject).length;
-    const array = [];
-    for (let i = 0; i < total; i++) {
-      array.push(i);
-    }
-    for (let i = 0; i < 8; i++) {
-      const randomIndex = Math.floor(Math.random() * array.length);
-      const randomNumber = array[randomIndex];
-      array.splice(randomIndex, 1);
-      randomArray.push(randomNumber);
-    }
-    console.log(randomArray);
-    randomArray.forEach((e) => {
-      const key = recipeObject[e][0];
-      const value = recipeObject[e][1];
-      const card = document.createElement("recipe-card");
-      card.setPage(page);
-      card.setRecipes(userRecipe);
-      card.setID(key);
-      card.data = value;
-      section.appendChild(card);
-      toReadRecipe(card, key);
-    });
-  } else {
-    // Loop through recipeObject array
-    recipeObject.forEach((e) => {
-      const key = e[0];
-      const value = e[1];
-      if (key === "currID") return;
-      const card = document.createElement("recipe-card");
-      card.setPage(page);
-      card.setRecipes(userRecipe);
-      card.setID(key);
-      card.data = value;
-      section.appendChild(card);
-      toReadRecipe(card, key);
-    });
-  }
+  // Loop through recipeObject array
+  recipeObject.forEach((e) => {
+    const key = e[0];
+    const value = e[1];
+    const card = document.createElement("recipe-card");
+    card.setPage(page);
+    card.setRecipes(userRecipe);
+    card.setID(key);
+    card.data = value;
+    section.appendChild(card);
+    toReadRecipe(card, key);
+  });
 }
 
 /**
@@ -237,4 +214,38 @@ function dictToArr(dict) {
     return [key, dict[key]];
   });
   return arr;
+}
+
+/**
+ * Helper function, gave back 8 random numbers from 30 numbers
+ * @param {Number} total
+ * @return {Array}
+ */
+function getRandom(total) {
+  const randomArray = [];
+  const array = [];
+  for (let i = 1; i <= total; i++) {
+    array.push(i);
+  }
+  for (let i = 0; i < 8; i++) {
+    const randomIndex = Math.floor(Math.random() * array.length);
+    const randomNumber = array[randomIndex];
+    array.splice(randomIndex, 1);
+    randomArray.push(randomNumber);
+  }
+  return randomArray;
+}
+/**
+ * Helper function, gave back 8 random numbers from 30 numbers
+ * @return {Dictionary}
+ */
+function createCaurtedList() {
+  const randomArray = getRandom(31);
+  console.log(randomArray);
+  const tempStored = JSON.parse(localStorage.getItem("storedRecipes"));
+  const returnRecipes = {};
+  randomArray.forEach((e) => {
+    returnRecipes[e] = tempStored[e];
+  });
+  return returnRecipes;
 }
