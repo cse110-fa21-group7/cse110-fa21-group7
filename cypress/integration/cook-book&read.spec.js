@@ -21,7 +21,7 @@ describe("Tests for cookbook page", () => {
     });
     cy.visit("/cookbook");
     cy.wait(500);
-    cy.get(".title-div").find("p").contains("Here are your recipes.");
+    cy.contains("Here are your recipes.");
   });
   it("check example recipe in our cookbook or not", () => {
     cy.get("recipe-card")

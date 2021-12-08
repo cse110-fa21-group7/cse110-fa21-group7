@@ -25,7 +25,6 @@ export async function fetchRecipes(pageFlag, url) {
   // Store full recipes in searchedRecipes
   localStorage.setItem("resultRecipes", JSON.stringify(resultRecipes));
   if (!pageFlag) {
-    localStorage.setItem("query", url);
     const urlchange = `/result?query=${query}`;
     window.location.href = urlchange;
   }
@@ -47,12 +46,16 @@ searchbtn.addEventListener("click", (e) => {
   const diet = dietSele.value;
   const meal = mealSele.value;
   const intoler = intolSele.value;
-  let url = `/search/recipe?query=${query}`;
-  if (diet !== "") url += `&diet=${diet}`;
-  if (meal !== "") url += `&type=${meal}`;
-  if (intoler !== "") url += `&intolerances=${intoler}`;
+  const params = new URLSearchParams({
+    query: query,
+    diet: diet,
+    meal: meal,
+    intoler: intoler,
+  });
+  // save query to local storage
+  localStorage.setItem("query", params);
   localStorage.setItem("offset", 0);
-  fetchRecipes(false, url);
+  fetchRecipes(false, `/search/recipe?${params}`);
 });
 /**
  * Gets full recipe from Spoonacular API based on ID

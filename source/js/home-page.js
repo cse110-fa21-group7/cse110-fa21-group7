@@ -29,6 +29,8 @@ function makePage() {
   // change navbar in-active
   const homeAvtive = document.querySelector("#home-active");
   const bookActive = document.querySelector("#book-active");
+  const baseInfo = document.querySelector("#base-info");
+  const moreInfo = document.querySelector("#more-info");
   if (queryString.includes("cookbook")) {
     // navbar show cookBook in-active
     bookActive.classList.add("is-active");
@@ -36,12 +38,27 @@ function makePage() {
     intro.innerHTML = "Here are your recipes.";
     showList = ["cookbook", "cookbook-sort"];
     // only cookbook need to hide the whole recipe-card-container
-    hideList = ["search", "results", "curatedList", "more"];
+    hideList = ["search", "results", "curatedList", "more", "wrapper-info"];
     // if we want to show cookbook, the recipeObject should be userRecipes which saved in localStorge
     recipeObject = userRecipe;
   } else if (queryString.includes("result")) {
     page = "results";
-    showList = ["search", "results", "more"];
+    // tell the user the result information
+    const query = localStorage.getItem("query");
+    const urlParams = new URLSearchParams(query);
+    baseInfo.innerHTML = `Recipes for ${urlParams.get("query")}`;
+    // search filter:
+    console.log(urlParams.get("diet"));
+    let filter = "Search filter: ";
+    if (urlParams.get("diet"))
+      filter += `< Diet: ${urlParams.get("diet")} >   `;
+    console.log(filter);
+    if (urlParams.get("meal"))
+      filter += `< Meal Type: ${urlParams.get("meal")} >   `;
+    if (urlParams.get("intoler") !== "")
+      filter += `< Intolerances: ${urlParams.get("intoler")} >   `;
+    moreInfo.innerHTML = `${filter}`;
+    showList = ["search", "results", "more", "wrapper-info"];
     hideList = ["curatedList"];
     recipeObject = JSON.parse(localStorage.getItem("resultRecipes"));
     const offset = parseInt(localStorage.getItem("offset"));
@@ -53,7 +70,7 @@ function makePage() {
     intro.innerHTML = "Search and save your favorite recipes.";
     page = "curatedList";
     homeAvtive.classList.add("is-active"); // navbar show home-page in-active
-    showList = ["search", "curatedList"];
+    showList = ["search", "curatedList", "wrapper-info"];
     hideList = ["cookbook", "cookbook-sort", "results", "more"];
     recipeObject = createCaurtedList();
     // switch recipeObject depends on which page we want to show
@@ -276,7 +293,7 @@ function fetchNewResult(nextFlag) {
   if (!nextFlag && offset === 12) previousPage.style.display = "none";
   if (nextFlag) offset += 12;
   else offset -= 12;
-  fetchRecipes(true, `${url}&offset=${offset}`).then(() => {
+  fetchRecipes(true, `/search/recipe?${url}&offset=${offset}`).then(() => {
     removeElements(document.querySelectorAll(".card"));
     recipeObject = JSON.parse(localStorage.getItem("resultRecipes"));
     recipeObject = dictToArr(recipeObject);
