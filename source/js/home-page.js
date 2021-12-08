@@ -49,12 +49,12 @@ function makePage() {
     intro.innerHTML = "Search and save your favorite recipes.";
     page = "curatedList";
     homeAvtive.classList.add("is-active"); // navbar show home-page in-active
-    showList = ["search", "curatedList", "more"];
-    hideList = ["cookbook", "cookbook-sort", "results"];
+    showList = ["search", "curatedList"];
+    hideList = ["cookbook", "cookbook-sort", "results", "more"];
+    recipeObject = createCaurtedList();
     // switch recipeObject depends on which page we want to show
     // recipeObject = JSON.parse(localStorage.getItem("curatedRecipes"));
-    recipeObject = JSON.parse(localStorage.getItem("curatedRecipes"));
-    if (recipeObject === null) createCaurtedList();
+    // recipeObject = JSON.parse(localStorage.getItem("curatedRecipes"));
   }
   recipeObject = dictToArr(recipeObject);
   // all cards need to show this container
@@ -248,29 +248,35 @@ function createCaurtedList() {
   randomArray.forEach((e) => {
     returnRecipes[e] = tempStored[e];
   });
-  recipeObject = dictToArr(returnRecipes);
-  localStorage.setItem("curatedRecipes", JSON.stringify(returnRecipes));
-  // return returnRecipes;
+  // recipeObject = dictToArr(returnRecipes);
+  // localStorage.setItem("curatedRecipes", JSON.stringify(returnRecipes));
+  return returnRecipes;
 }
 
-const moreRcipes = document.querySelector("#more-recipes");
-moreRcipes.addEventListener("click", () => {
-  if (page === "curatedList") {
-    removeElements(document.querySelectorAll(".card"));
-    createCaurtedList();
-    recipeCards();
-  }
-  if (page === "results") {
-    const url = localStorage.getItem("query");
-    console.log(`${url}&offset=12`);
-    fetchRecipes(true, `${url}&offset=100`).then(() => {
-      removeElements(document.querySelectorAll(".card"));
-      recipeObject = JSON.parse(localStorage.getItem("resultRecipes"));
-      recipeObject = dictToArr(recipeObject);
-      recipeCards();
-    });
-  }
+const previousPage = document.querySelector("#previous");
+const nextPage = document.querySelector("#next");
+previousPage.addEventListener("click", () => {
+  fetchNewResult(false);
+});
+nextPage.addEventListener("click", () => {
+  fetchNewResult(true);
 });
 //  remove all elements have same class name
 const removeElements = (elms) => elms.forEach((el) => el.remove());
-// Use like:
+/**
+ * Helper function, gave back 8 random numbers from 30 numbers
+ * @param {Boolean} nextFlag next page or previous page
+ */
+function fetchNewResult(nextFlag) {
+  const url = localStorage.getItem("query");
+  let offset = parseInt(localStorage.getItem("offset"));
+  if (nextFlag) offset += 12;
+  else offset -= 12;
+  fetchRecipes(true, `${url}&offset=${offset}`).then(() => {
+    removeElements(document.querySelectorAll(".card"));
+    recipeObject = JSON.parse(localStorage.getItem("resultRecipes"));
+    recipeObject = dictToArr(recipeObject);
+    recipeCards();
+  });
+  localStorage.setItem("offset", offset);
+}

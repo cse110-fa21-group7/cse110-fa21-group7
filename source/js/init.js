@@ -12,7 +12,8 @@ export async function asapInit() {
       localStorage.setItem("theme", "dark");
     }
   }
-
+  if (localStorage.getItem("offset") === null)
+    localStorage.setItem("offset", 0);
   if (localStorage.getItem("currID") === null)
     localStorage.setItem("currID", 50);
   const recipeObj = ["userRecipes", "resultRecipes"];
@@ -22,7 +23,7 @@ export async function asapInit() {
       localStorage.setItem(obj, JSON.stringify({}));
     }
   }
-  if (localStorage.getItem("curatedRecipes") === null) await addCurated();
+  if (localStorage.getItem("storedRecipes") === null) await addCurated();
 }
 /**
  * Load curate recipes into localStorage from JSON file
