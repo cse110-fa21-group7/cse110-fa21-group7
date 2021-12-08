@@ -51,6 +51,7 @@ searchbtn.addEventListener("click", (e) => {
   if (diet !== "") url += `&diet=${diet}`;
   if (meal !== "") url += `&type=${meal}`;
   if (intoler !== "") url += `&intolerances=${intoler}`;
+  localStorage.setItem("offset", 0);
   fetchRecipes(false, url);
 });
 /**
