@@ -47,7 +47,7 @@ describe("Tests for search&result page", () => {
     }
     
     cy.visit("/cookbook");
-    cy.get("recipe-card").should("have.length", 12);
+    cy.get("recipe-card").should("have.length", 24);
   });
 
   
