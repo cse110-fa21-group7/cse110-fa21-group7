@@ -96,11 +96,12 @@ input {
   padding-left: 23px;
   color: white;
 }
-/* .more {
+.more {
   display: flex;
   justify-content: right;
 }
-#more-recipes {
+#more-recipes,
+#less-recipes {
   margin-right: 120px;
   border-width: 0;
   color: black;
@@ -108,4 +109,7 @@ input {
   padding: 10px 20px;
   border-radius: 15px;
   font-weight: 600;
-} */
+}
+#more-recipes:hover {
+  cursor: pointer;
+}
