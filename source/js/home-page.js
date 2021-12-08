@@ -49,14 +49,21 @@ function makePage() {
     baseInfo.innerHTML = `Recipes for ${urlParams.get("query")}`;
     // search filter:
     console.log(urlParams.get("diet"));
-    let filter = "Search filter: ";
-    if (urlParams.get("diet"))
-      filter += `< Diet: ${urlParams.get("diet")} >   `;
+    let filter = `<i class="fa fa-filter fa-lg" aria-hidden="true"></i>`;
+    if (urlParams.get("diet") && urlParams.get("diet") !== "")
+      // filter += `< Diet: ${urlParams.get("diet")} >   `;
+      filter += `<button class="diet-filter filter-btn">${urlParams.get(
+        "diet"
+      )}</button>`;
     console.log(filter);
     if (urlParams.get("meal"))
-      filter += `< Meal Type: ${urlParams.get("meal")} >   `;
+      filter += `<button class="meal-filter filter-btn">${urlParams.get(
+        "meal"
+      )}</button>`;
     if (urlParams.get("intoler") !== "")
-      filter += `< Intolerances: ${urlParams.get("intoler")} >   `;
+      filter += `<button class="tol-filter filter-btn">${urlParams.get(
+        "intoler"
+      )}</button>`;
     moreInfo.innerHTML = `${filter}`;
     showList = ["search", "results", "more", "wrapper-info"];
     hideList = ["curatedList"];
