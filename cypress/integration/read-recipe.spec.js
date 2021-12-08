@@ -1,4 +1,4 @@
-describe("Tests for curated list", () => {
+describe("Tests for read recipe", () => {
     before(() => {
       cy.visit("/");
       cy.wait(500);
