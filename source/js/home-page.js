@@ -4,7 +4,8 @@ window.addEventListener("DOMContentLoaded", init);
 let recipeObject;
 let page;
 let userRecipe;
-
+const previousPage = document.querySelector("#previous");
+const nextPage = document.querySelector("#next");
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
   await asapInit(); // wait for init local storage
@@ -43,6 +44,9 @@ function makePage() {
     showList = ["search", "results", "more"];
     hideList = ["curatedList"];
     recipeObject = JSON.parse(localStorage.getItem("resultRecipes"));
+    const offset = parseInt(localStorage.getItem("offset"));
+    if (offset === 0) previousPage.style.display = "none";
+    else previousPage.style.display = "block";
   }
   // else means user in home page
   else {
@@ -253,8 +257,6 @@ function createCaurtedList() {
   return returnRecipes;
 }
 
-const previousPage = document.querySelector("#previous");
-const nextPage = document.querySelector("#next");
 previousPage.addEventListener("click", () => {
   fetchNewResult(false);
 });
@@ -270,6 +272,8 @@ const removeElements = (elms) => elms.forEach((el) => el.remove());
 function fetchNewResult(nextFlag) {
   const url = localStorage.getItem("query");
   let offset = parseInt(localStorage.getItem("offset"));
+  if (nextFlag && offset === 0) previousPage.style.display = "block";
+  if (!nextFlag && offset === 12) previousPage.style.display = "none";
   if (nextFlag) offset += 12;
   else offset -= 12;
   fetchRecipes(true, `${url}&offset=${offset}`).then(() => {
