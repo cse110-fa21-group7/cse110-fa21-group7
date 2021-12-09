@@ -74,7 +74,7 @@ function makePage() {
   }
   // else means user in home page
   else {
-    intro.innerHTML = "Search, save and savor your favorite recipes";
+    intro.innerHTML = "Search and save your favorite recipes";
     page = "curatedList";
     homeAvtive.classList.add("is-active"); // navbar show home-page in-active
     showList = ["search", "curatedList", "wrapper-info"];
