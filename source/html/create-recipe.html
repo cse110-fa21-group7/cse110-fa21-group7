@@ -46,9 +46,9 @@
             <div class = "modal-header">
                <div class="title">Great job!</div>
             </div>
-            <div class = "modal-body">
-               <div class="confirm">You have successfully added the recipe to your cookbook!</div>
-               <button id="confirm-button">OK</button>
+            <div class = "modal-body" id="modalBody">
+               <div class="message" id="message"></div>
+               <button data-close-button class="close-button">OK</button>
             </div>
          </div>
          <div class="component">
@@ -95,7 +95,7 @@
                         </div>
                         <div class="ingredient-amount">
                            <label class="amount-label">Amount</label>
-                           <input type="text" class="form-control" placeholder="100 g" aria-label="Amount (grams)">
+                           <input type="text" class="form-control" placeholder="100 g" aria-label="Amount (grams)" id="amount">
                            <div class="invalid-feedback"></div>
                         </div>
                      </div>
@@ -107,7 +107,7 @@
                         </div>
                         <div class="ingredient-amount">
                            <label class="amount-label">Amount</label>
-                           <input type="text" class="form-control" placeholder="100 g" aria-label="Amount (grams)">
+                           <input type="text" class="form-control" placeholder="100 g" aria-label="Amount (grams)" id="amount">
                            <div class="invalid-feedback"></div>
                         </div>
                      </div>
@@ -119,7 +119,7 @@
                         </div>
                         <div class="ingredient-amount">
                            <label class="amount-label">Amount</label>
-                           <input type="text" class="form-control" placeholder="100 g" aria-label="Amount (grams)">
+                           <input type="text" class="form-control" placeholder="100 g" aria-label="Amount (grams)" id="amount">
                            <div class="invalid-feedback"></div>
                         </div>
                      </div>

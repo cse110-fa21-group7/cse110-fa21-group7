@@ -1,10 +1,8 @@
 label {
   float: left;
   font-size: 18px;
-  margin-left: 15px;
-  width: 180px;
-  clear: left;
-  text-align: right;
+  margin-left: 30px;
+  /* width: 180px; */
   padding-right: 10px;
   font-family: Oxygen, sans-serif;
 }
@@ -26,8 +24,25 @@ input {
   margin-bottom: 10px;
 }
 
+#recipeCost, #recipeTime{
+  margin-left: 30px;
+}
+
+#recipeServings{
+  margin-left: 37px;
+}
+
+#amount{
+  margin-left: 42px;
+}
+
 textarea {
-  margin-left: 10px;
+  margin-left: 15px;
+  width: 148px;
+}
+
+.step-sec textarea{
+  margin-left: 55px;
 }
 
 legend {
@@ -106,8 +121,9 @@ span {
 }
 
 img{
-  margin-left: auto; 
+  margin-left: 50px; 
   margin-right: auto;
   display: block;
-  text-align: center;
+  height: 200px;
+  width: 220px;
 }
