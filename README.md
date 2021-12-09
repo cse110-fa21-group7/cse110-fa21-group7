@@ -50,4 +50,4 @@ The [source](source) directory contains the source code for our app.
 We have e2e tests and unit tests. It is broken up into these folders:
 
 - [e2e](cypress/integration/)
-- [unit-tests](sorce/test)
+- [unit-tests](source/test)
