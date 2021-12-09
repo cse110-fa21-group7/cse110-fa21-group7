@@ -253,7 +253,7 @@ function clearRecipeCards(page) {
  * @param {Object} dict
  * @return {Array}
  */
-function dictToArr(dict) {
+ export function dictToArr(dict) {
   const arr = Object.keys(dict).map(function (key) {
     return [key, dict[key]];
   });
@@ -261,7 +261,7 @@ function dictToArr(dict) {
 }
 
 /**
- * Helper function, gave back 8 random numbers from 30 numbers
+ * Helper function, gave back NUM_CURATED_RECIPES random numbers from total numbers
  * @param {Number} total
  * @return {Array}
  */
@@ -283,7 +283,7 @@ export function getRandom(total) {
  * Helper function, gave back 8 random numbers from 30 numbers
  * @return {Dictionary}
  */
-function createCaurtedList() {
+export function createCaurtedList() {
   const randomArray = getRandom(31);
   console.log(randomArray);
   const tempStored = JSON.parse(localStorage.getItem("storedRecipes"));
