@@ -19,7 +19,7 @@ describe("Tests for curated list", () => {
 
   it("check add button", () => {
     // add recipe
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 12; i++) {
       cy.get(".card")
         .eq(i)
         .shadow()
@@ -29,6 +29,6 @@ describe("Tests for curated list", () => {
 
     // after adding recipe to cookbook, check cookbook
     cy.visit("/cookbook");
-    cy.get("recipe-card").should("have.length", 8);
+    cy.get("recipe-card").should("have.length", 12);
   });
 });

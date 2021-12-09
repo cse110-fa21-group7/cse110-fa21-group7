@@ -1,4 +1,4 @@
-describe("Tests for read recipe", () => {
+describe("Tests for mobile version view", () => {
     before(() => {
       cy.visit("/");
       cy.wait(500);
