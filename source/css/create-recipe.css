@@ -106,8 +106,7 @@ span {
 }
 
 img{
-  margin-left: auto; 
+  margin-left: 150px; 
   margin-right: auto;
   display: block;
-  text-align: center;
 }
