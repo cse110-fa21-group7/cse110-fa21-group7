@@ -16,6 +16,13 @@ body {
   -ms-flex-direction: row;
   flex-direction: row;
   border-radius: 0.5rem;
+  border-color: var(--border-color);
+}
+:root.dark .container {
+  background-color: #2c2929;
+}
+:root.dark .info-row li span {
+  color: #86c7a7;
 }
 .recipe-image {
   height: 625px;
@@ -188,4 +195,3 @@ ul.info-row {
   outline: none;
   margin: 0.5rem;
 }
-/*# sourceMappingURL=read-recipe.css.map */
