@@ -1,4 +1,3 @@
-window.addEventListener("DOMContentLoaded", asapInit);
 /**
  * Entry point for initialization scripts
  */
@@ -26,6 +25,7 @@ export async function asapInit() {
   }
   if (localStorage.getItem("storedRecipes") === null) await addCurated();
   changeMode();
+  hamburgerMenu();
 }
 /**
  * Load curate recipes into localStorage from JSON file
@@ -54,10 +54,15 @@ function changeMode() {
     document.documentElement.classList.replace("light", "dark");
     localStorage.setItem("theme", "dark");
   });
-
+}
+/**
+ * change html mode
+ */
+function hamburgerMenu() {
+  console.log("herfe");
   const hamburger = document.querySelector(".hamburger");
   const mobileMenu = document.querySelector(".mobile-nav");
-  hamburger.addEventListener("click", (e) => {
+  hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("is-active");
     mobileMenu.classList.toggle("is-active");
   });
