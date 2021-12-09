@@ -1583,6 +1583,216 @@
       "While the chicken and rice are cooking, make the sauce. Whisk peanut butter, soy sauce, vinegar, Sriracha, ginger, honey, and ¼ cup warm water in a small bowl until smooth and pourable. If sauce still looks a little thick, continuing adding water until it reaches a drizzle-able consistency.",
       "Remove lid from pot and fluff rice with a fork. Pluck out and discard star anise. Serve chicken and rice with peanut sauce, cucumber, and cilantro alongside.\nDo Ahead: Sauce can be made 3 days ahead. Cover and chill."
     ]
+  },
+
+  "32": {
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Apples-n-Onion-Topped-Chops_EXPS_SDFM19_27495_C10_19_7b-1.jpg",
+    "title": "Apples ‘N’ Onion Topped Chops",
+    "description": "Sauteed apples and onion combine with pork chops for a tastiness that never disappoints.",
+    "totalCost": 10,
+    "servings": 4,
+    "time": 30,
+    "ingredients": [
+      {
+        "name": "canola oil, divided",
+        "amount": "4 teaspoons"
+      },
+      {
+        "name": "sweet onion slices",
+        "amount": "3 cups "
+      },
+      {
+        "name": "Granny Smith apples, peeled and sliced",
+        "amount": "2 medium"
+      },
+      {
+        "name": "Four boneless pork loin chops",
+        "amount": "5 ounces each"
+      },
+      {
+        "name": "dried rosemary, crushed",
+        "amount": "1/4 teaspoon"
+      },
+      {
+        "name": "garlic powder",
+        "amount": "1 teaspoon"
+      }
+    ],
+    "steps": [
+      "In a large nonstick skillet heat 2 teaspoons canola oil over medium-high heat; cook chops until browned, about 3 minutes on each side. Remove meat; set aside and keep warm.",
+      "In same skillet, cook and stir onion in remaining 2 teaspoons canola oil until golden brown, about 7 minutes. Add apple slices; cook and stir 3 minutes longer.",
+      "Combine the water, brown sugar, vinegar, garlic powder, salt, pepper and rosemary. Stir into skillet. Bring to a boil. Return meat to pan. Reduce heat; cover and cook until apples are crisp-tender, and a thermometer inserted in pork reads 145°, 6-8 minutes. Let stand 5 minutes before serving."  
+    ]
+  },
+
+  "33": {
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Vegetarian-Enchilada-Bake_EXPS_FT20_41796_F_0108_1-11.jpg",
+    "title": "Vegetarian Enchilada Bake",
+    "description": "I’ve had this vegetarian enchilada bake recipe for years. You’ll enjoy the delicious Tex-Mex flavors so much that you won't even miss the meat.",
+    "totalCost": 30,
+    "servings": 3,
+    "time": 20,
+    "ingredients": [
+      {
+        "name": "shredded zucchini",
+        "amount": "1 cup"
+      },
+      {
+        "name": "black beans, rinsed and drained",
+        "amount": "4 cups "
+      },
+      {
+        "name": "frozen corn",
+        "amount": "3/4 cup"
+      },
+      {
+        "name": "corn tortillas (6 inches)",
+        "amount": "3"
+      },
+      {
+        "name": "shredded cheddar cheese",
+        "amount": "3/4 cup"
+      },
+      {
+        "name": "minced fresh cilantro",
+        "amount": "2 tablespoons"
+      },
+      {
+        "name": "ground cumin",
+        "amount": "1/8 teaspoon"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 350°. In a large skillet, saute zucchini and pepper in oil until pepper is crisp-tender. Add garlic; cook 1 minute longer. Add the corn, beans, salt and cumin; saute 2-3 minutes longer. Stir in salsa and cilantro.",
+      "Place a tortilla in the bottom of a 1-1/2-qt. round baking dish coated with cooking spray. Spread with 2/3 cup vegetable mixture; sprinkle with 1/4 cup cheese. Repeat layers twice.",
+      "Bake, uncovered, until heated through and cheese is melted, 20-25 minutes. Let stand 10 minutes before serving. If desired, serve with sour cream."  
+    ]
+  },
+
+  "34": {
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Cobb-Salad-Wraps_EXPS_SDFM19_22736_C10_17_5b-1.jpg",
+    "title": "Cobb Salad Wraps",
+    "description": "A homemade dressing lightens up these refreshing tortilla wraps. The avocado, bacon, blue cheese and tomato deliver the flavors I enjoy most while keeping me on my healthy eating plan.",
+    "totalCost": 10,
+    "servings": 4,
+    "time": 15,
+    "ingredients": [
+      {
+        "name": "cubed cooked chicken breast",
+        "amount": "2 cups"
+      },
+      {
+        "name": "chopped avocado",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "bacon strips, cooked and crumbled",
+        "amount": "4"
+      },
+      {
+        "name": "crumbled blue cheese",
+        "amount": "2 tablespoons"
+      },
+      {
+        "name": "wheat tortillas (8 inches), warmed",
+        "amount": "4 whole"
+      },
+      {
+        "name": "tomato, chopped",
+        "amount": "1 medium"
+      },
+      {
+         "name": "honey",
+         "amount": "1 tablespoon"
+      },
+      {
+         "name": "chopped ripe olives",
+         "amount": "2 tablespoon"
+      }
+    ],
+    "steps": [
+      "In a small bowl, combine chicken, avocado, bacon, celery, onion, olives and cheese. In another small bowl, combine lemon juice, honey, mustard, garlic, dill weed, salt and pepper. Whisk in oil. Pour over the chicken mixture; toss to coat.",
+      "Place romaine on each tortilla; top with 2/3 cup chicken mixture. Sprinkle with tomato; roll up."
+    ]
+  },
+
+  "35": {
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Skillet-Roasted-Lemon-Chicken-with-Potatoes_EXPS_CIMZ17_98413_B07_14_5b-14.jpg",
+    "title": "Skillet-Roasted Lemon Chicken with Potatoes",
+    "description": "This is a meal I have my students make in our nutrition unit. It has a delicious lemon-herb flavor and is simple to make.",
+    "totalCost": 20,
+    "servings": 4,
+    "time": 25,
+    "ingredients": [
+      {
+        "name": "boneless skinless chicken thighs (4 ounces each)",
+        "amount": "8"
+      },
+      {
+        "name": "fingerling potatoes, halved lengthwise",
+        "amount": "1 pound"
+      },
+      {
+        "name": "cherry tomatoes",
+        "amount": "8"
+      },
+      {
+        "name": "dried rosemary, crushed",
+        "amount": "1/4 teaspoon"
+      },
+      {
+        "name": "garlic cloves, minced and divided",
+        "amount": "4"
+      },
+      {
+        "name": "olive oil, divided",
+        "amount": "1 tablespoon"
+      }
+    ],
+    "steps": [
+      "Preheat oven to 450°. Grease a 10-inch cast-iron or other ovenproof skillet with 1 teaspoon oil. Arrange lemon slices in a single layer in skillet.",
+      "Combine 1 teaspoon oil, 2 minced garlic cloves, lemon zest, 1/4 teaspoon salt and 1/8 teaspoon pepper; rub over chicken. Place over lemon.",
+      "In a large bowl, combine rosemary and the remaining oil, garlic, salt and pepper. Add potatoes and tomatoes; toss to coat. Arrange over chicken. Bake, uncovered, 25-30 minutes or until chicken is no longer pink and potatoes are tender. If desired, sprinkle with minced parsley before serving."
+    ]
+  },
+
+  "36": {
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/exps44898_SD163324B08_06_1b-4.jpg",
+    "title": "Cashew Turkey Salad Sandwiches",
+    "description": "One bite and you'll be hooked on this slightly sweet turkey salad sandwich. It's protein-packed so you can feel good while you munch!",
+    "totalCost": 10,
+    "servings": 2,
+    "time": 15,
+    "ingredients": [
+      {
+        "name": "reduced-fat mayonnaise",
+        "amount": "1/4 cup"
+      },
+      {
+        "name": "reduced-fat plain yogurt",
+        "amount": "2 tablespoons"
+      },
+      {
+        "name": "cubed cooked turkey breast",
+        "amount": "1-1/2 cups"
+      },
+      {
+        "name": "chopped dried apricots",
+        "amount": "2 tablespoons"
+      },
+      {
+        "name": "pumpernickel bread",
+        "amount": "8 slices"
+      },
+      {
+        "name": "lettuce leaves",
+        "amount": "4"
+      }
+    ],
+    "steps": [
+      "In a bowl, mix the first 5 ingredients. Stir in turkey, celery, apricots and cashews.",
+      "Line half of the bread slices with lettuce. Top with turkey mixture and remaining bread."
+    ]
   }
 
 }
