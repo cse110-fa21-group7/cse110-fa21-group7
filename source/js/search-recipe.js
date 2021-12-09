@@ -1,3 +1,9 @@
+window.addEventListener("DOMContentLoaded", init);
+
+/** Initialize function, begins all of the JS code in this file */
+async function init() {
+  searchBtn();
+}
 let query;
 /**
  * Fetches search results and populates index.html
@@ -33,30 +39,33 @@ export async function fetchRecipes(pageFlag, url) {
 /**
  * Set up event listener for search
  */
-const searchbtn = document.getElementById("search-button");
-searchbtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  const searchField = document.getElementById("query");
-  // get select
-  const dietSele = document.getElementById("diet");
-  const mealSele = document.getElementById("meal-type");
-  const intolSele = document.getElementById("Intolerances");
-  // save select result
-  query = searchField.value;
-  const diet = dietSele.value;
-  const meal = mealSele.value;
-  const intoler = intolSele.value;
-  const params = new URLSearchParams({
-    query: query,
-    diet: diet,
-    meal: meal,
-    intoler: intoler,
+function searchBtn() {
+  const searchbtn = document.getElementById("search-button");
+  searchbtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const searchField = document.getElementById("query");
+    // get select
+    const dietSele = document.getElementById("diet");
+    const mealSele = document.getElementById("meal-type");
+    const intolSele = document.getElementById("Intolerances");
+    // save select result
+    query = searchField.value;
+    const diet = dietSele.value;
+    const meal = mealSele.value;
+    const intoler = intolSele.value;
+    const params = new URLSearchParams({
+      query: query,
+      diet: diet,
+      meal: meal,
+      intoler: intoler,
+    });
+    // save query to local storage
+    localStorage.setItem("query", params);
+    localStorage.setItem("offset", 0);
+    fetchRecipes(false, `/search/recipe?${params}`);
   });
-  // save query to local storage
-  localStorage.setItem("query", params);
-  localStorage.setItem("offset", 0);
-  fetchRecipes(false, `/search/recipe?${params}`);
-});
+}
+
 /**
  * Gets full recipe from Spoonacular API based on ID
  * @param {String} id
