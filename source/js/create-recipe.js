@@ -227,7 +227,14 @@ form.addEventListener("submit", function (event) {
   localStorage.setItem("currID", currID);
 
   // back to cookbook page
-  modal.classList.add("active");
+  if (updateFlag) {
+    modal.classList.add('active');
+    message.innerHTML = "You have successfully updated a recipe!";
+  } else {
+    modal.classList.add('active');
+    message.innerHTML = "You have successfully created a recipe!";
+  }
+  // location.href = "/cookbook";
 });
 
 const confirmBtn = document.querySelector("#confirm-button");
