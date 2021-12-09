@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Home - Documentation</title>
+    <title>init.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,74 +29,88 @@
 
 <div id="main">
     
+    <h1 class="page-title">init.js</h1>
+    
 
     
 
 
 
     
-
-
-
-
-
-
-
-
-
-    
-
-
-    <section class="readme">
-        <article><p><a href="https://www.codacy.com/gh/cse110-fa21-group7/cse110-fa21-group7/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cse110-fa21-group7/cse110-fa21-group7&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/a420bf5aee4643208df56c92df8d91fe" alt="Codacy Badge"></a></p>
-<h1>Group 7</h1>
-<p><a href="https://github.com/cse110-fa21-group7/cse110-fa21-group7/blob/main/admin/team.md">Team Page</a></p>
-<h2>Product Introduction</h2>
-<p>ASAP-Recipe is a web application with mobile support, which allows users to create their own cookbook to manage recipes, search recipes online and add searched recipes to their cookbook. We also provide a curated list with carefully-selected healthy, cheap and delicous recipes. In user's cookbook, we build a system for our user to create, add, edit and delete their recipes easily.<br>
-Our aim is to create an easy-to-use recipe manage system and keep it As Simple As Possible. Feel free to check out our app
-<a href="https://asap-recipe-app.herokuapp.com/">ASAP-Recipe</a>.</p>
-<h2>Final project videos</h2>
-<ul>
-<li>Final public video</li>
-<li>Final private video</li>
-</ul>
-<h2>JSdocs page</h2>
-<p><a href="https://cse110-fa21-group7.github.io/cse110-fa21-group7/">JSdocs</a></p>
-<h2>Setup</h2>
-<p>Follow these steps to set up a local copy of this repo:</p>
-<ol>
-<li>Clone this repo to your local machine</li>
-<li>install Node.js and npm</li>
-<li>In your local run <code> npm install</code>run to install the dev dependencies</li>
-<li>More details in onboarding document.</li>
-</ol>
-<h2>Group materials</h2>
-<p>The <a href="https://github.com/cse110-fa21-group7/cse110-fa21-group7/tree/main/admin">admin</a> directory contains all the group stuffs:</p>
-<ul>
-<li><a href="https://github.com/cse110-fa21-group7/cse110-fa21-group7/tree/main/admin/cipipeline">Pipeline</a></li>
-<li><a href="https://github.com/cse110-fa21-group7/cse110-fa21-group7/tree/main/admin/meetings">Meetings</a></li>
-</ul>
-<h2>Source code</h2>
-<p>The <a href="source">source</a> directory contains the source code for our app.</p>
-<ul>
-<li>frontend
-<ul>
-<li><a href="source/html">html</a></li>
-<li><a href="source/css">css</a></li>
-</ul>
-</li>
-<li><a href="source/js">backend</a></li>
-<li><a href="source/img">image</a></li>
-</ul>
-<h2>Testing</h2>
-<p>We have e2e tests and unit tests. It is broken up into these folders:</p>
-<ul>
-<li><a href="cypress/integration/">e2e</a></li>
-<li><a href="source/test">unit-tests</a></li>
-</ul></article>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Entry point for initialization scripts
+ */
+export async function asapInit() {
+  const theme = localStorage.getItem("theme");
+  if (theme === null) {
+    localStorage.setItem("theme", "light");
+  } else {
+    if (theme === "dark") {
+      console.log("to be dark now!");
+      document.documentElement.classList.replace("light", "dark");
+      localStorage.setItem("theme", "dark");
+    }
+  }
+  if (localStorage.getItem("offset") === null)
+    localStorage.setItem("offset", 0);
+  if (localStorage.getItem("currID") === null)
+    localStorage.setItem("currID", 50);
+  const recipeObj = ["userRecipes", "resultRecipes"];
+  // let exampleFlag = false;
+  for (const obj of recipeObj) {
+    if (localStorage.getItem(obj) === null) {
+      localStorage.setItem(obj, JSON.stringify({}));
+    }
+  }
+  if (localStorage.getItem("storedRecipes") === null) await addCurated();
+  changeMode();
+  hamburgerMenu();
+}
+/**
+ * Load curate recipes into localStorage from JSON file
+ */
+async function addCurated() {
+  await fetch("../json/curated.json")
+    .then((response) => {
+      return response.json();
+    })
+    .then((json) => {
+      localStorage.setItem("storedRecipes", JSON.stringify(json));
+    });
+}
+/**
+ * change html mode
+ */
+function changeMode() {
+  const lightMode = document.querySelector("#lightMode");
+  const darkMode = document.querySelector("#darkMode");
+  lightMode.addEventListener("click", () => {
+    document.documentElement.classList.replace("dark", "light");
+    localStorage.setItem("theme", "light");
+  });
+  darkMode.addEventListener("click", () => {
+    console.log("go dark");
+    document.documentElement.classList.replace("light", "dark");
+    localStorage.setItem("theme", "dark");
+  });
+}
+/**
+ * change html mode
+ */
+function hamburgerMenu() {
+  console.log("herfe");
+  const hamburger = document.querySelector(".hamburger");
+  const mobileMenu = document.querySelector(".mobile-nav");
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("is-active");
+    mobileMenu.classList.toggle("is-active");
+  });
+}
+</code></pre>
+        </article>
     </section>
-
-
 
 
 

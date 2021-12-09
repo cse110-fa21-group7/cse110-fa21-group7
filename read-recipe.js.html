@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Home - Documentation</title>
+    <title>read-recipe.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,74 +29,165 @@
 
 <div id="main">
     
+    <h1 class="page-title">read-recipe.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// read-recipe.js
+import { asapInit } from "./init.js";
+let recipeObject;
+let recipeID;
+let userRecipe;
+window.addEventListener("DOMContentLoaded", init);
+const editButton = document.getElementById("Edit");
+const deleteButton = document.getElementById("Delete");
 
+/** Initialize function, begins all of the JS code in this file */
+async function init() {
+  await asapInit();
+  userRecipe = JSON.parse(localStorage.getItem("userRecipes"));
+  getPage();
+  populateHTML();
+}
 
+/**
+ * Checks if ID is in localStorage,return it back
+ */
+function getPage() {
+  const url = window.location.href;
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  // default is reading cookbook
+  if (url.includes("bookID")) {
+    recipeObject = userRecipe;
+  }
+  if (url.includes("fetchID")) {
+    const thei = editButton.querySelector("i");
+    thei.classList.replace("fa-pencil-square-o", "fa-plus-square-o");
+    deleteButton.style.display = "none";
+    recipeObject = JSON.parse(localStorage.getItem("storedRecipes"));
+  }
+  const id = urlParams.get("id");
+  if (id) recipeID = id;
+  else console.error("open recipe page incorrectly!!");
+}
 
+/** Populate forms by ID
+ * @param {int} id
+ */
+function populateHTML() {
+  const recipe = recipeObject[recipeID];
+  console.log(`Recipe: ${recipe["title"]}`);
+  // get article element, so we can append elements
+  // const article = document.getElementById("recipeTitle");
 
+  // add title
+  document.getElementById("recipe-title").innerText = recipe["title"];
+  // add Description
+  document.getElementById("recipe-desc").innerText = recipe["description"];
+  // add time
+  const timeSpan = document.getElementById("time");
+  if ("time" in recipe) {
+    timeSpan.innerText = recipe["time"] + " minutes";
+  } else {
+    timeSpan.innerText = "Ready before you know it";
+  }
+  // add severings
+  const servingSpan = document.getElementById("servings");
+  if ("servings" in recipe) {
+    servingSpan.innerText = `Servings: ${recipe["servings"]}`;
+  } else {
+    servingSpan.innerText = "Servings: 1";
+  }
+  // add cost
+  const costSpan = document.getElementById("cost");
+  if ("totalCost" in recipe) {
+    // appends dollar sign and either does division to get cents -> dollars if spoonacular or just appends price
+    costSpan.innerText = `Cost: $${recipe["totalCost"]}`;
+  } else {
+    costSpan.innerText = "Cost: Bout tree fiddy";
+  }
+  // add image
+  const img = document.getElementById("recipeImg");
 
+  const url = recipe["image"];
+  if (!("image" in recipe)) {
+    // No image uploaded, set default
+    img.src = "../img/default.png";
+  } else if (url.includes("https://i.imgur.com")) {
+    // Tell imgur to resize image to medium (max 320x320) in case of large src image
+    // Saves bandwidth
+    const imgUrl = recipe["image"].split(".");
+    imgUrl[imgUrl.length - 2] = imgUrl.at(-2) + "m";
+    const imgUrlM = imgUrl.join(".");
+    img.src = imgUrlM;
+  } else {
+    // Old img.src code
+    img.src = url;
+  }
+  const ingList = document.getElementById("ingredient-list");
+  for (const ingredient of recipe["ingredients"]) {
+    const eachIng = document.createElement("li");
+    eachIng.innerText = `${ingredient["name"]} ${ingredient["amount"]}`;
+    ingList.appendChild(eachIng);
+  }
 
+  // add step list
+  const stepList = document.getElementById("step-list");
+  for (const step of recipe["steps"]) {
+    const eachStep = document.createElement("li");
+    eachStep.innerText = step;
+    stepList.appendChild(eachStep);
+  }
+}
+/** Sets event listeners */
+editButton.addEventListener("click", () => {
+  // check current read recipe page is fetchId or bookID
+  if (editButton.querySelector("i").classList.contains("fa-plus-square-o")) {
+    // add current recipe to cook book
+    userRecipe[recipeID] = recipeObject[recipeID];
+    localStorage.setItem("userRecipes", JSON.stringify(userRecipe));
+    modalAdd.classList.add("active");
+    const addConfirm = document.querySelector("#add-confirm");
+    addConfirm.addEventListener("click", () => {
+      modalAdd.classList.remove("active");
+      window.location.replace(`/read/bookID?id=${recipeID}`);
+    });
+  } else {
+    location.href = `/update?id=${recipeID}`;
+  }
+});
+const closeModalButtons = document.querySelectorAll(".close-button");
+closeModalButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    modal.classList.remove("active");
+  });
+});
 
-
-
-    
-
-
-    <section class="readme">
-        <article><p><a href="https://www.codacy.com/gh/cse110-fa21-group7/cse110-fa21-group7/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cse110-fa21-group7/cse110-fa21-group7&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/a420bf5aee4643208df56c92df8d91fe" alt="Codacy Badge"></a></p>
-<h1>Group 7</h1>
-<p><a href="https://github.com/cse110-fa21-group7/cse110-fa21-group7/blob/main/admin/team.md">Team Page</a></p>
-<h2>Product Introduction</h2>
-<p>ASAP-Recipe is a web application with mobile support, which allows users to create their own cookbook to manage recipes, search recipes online and add searched recipes to their cookbook. We also provide a curated list with carefully-selected healthy, cheap and delicous recipes. In user's cookbook, we build a system for our user to create, add, edit and delete their recipes easily.<br>
-Our aim is to create an easy-to-use recipe manage system and keep it As Simple As Possible. Feel free to check out our app
-<a href="https://asap-recipe-app.herokuapp.com/">ASAP-Recipe</a>.</p>
-<h2>Final project videos</h2>
-<ul>
-<li>Final public video</li>
-<li>Final private video</li>
-</ul>
-<h2>JSdocs page</h2>
-<p><a href="https://cse110-fa21-group7.github.io/cse110-fa21-group7/">JSdocs</a></p>
-<h2>Setup</h2>
-<p>Follow these steps to set up a local copy of this repo:</p>
-<ol>
-<li>Clone this repo to your local machine</li>
-<li>install Node.js and npm</li>
-<li>In your local run <code> npm install</code>run to install the dev dependencies</li>
-<li>More details in onboarding document.</li>
-</ol>
-<h2>Group materials</h2>
-<p>The <a href="https://github.com/cse110-fa21-group7/cse110-fa21-group7/tree/main/admin">admin</a> directory contains all the group stuffs:</p>
-<ul>
-<li><a href="https://github.com/cse110-fa21-group7/cse110-fa21-group7/tree/main/admin/cipipeline">Pipeline</a></li>
-<li><a href="https://github.com/cse110-fa21-group7/cse110-fa21-group7/tree/main/admin/meetings">Meetings</a></li>
-</ul>
-<h2>Source code</h2>
-<p>The <a href="source">source</a> directory contains the source code for our app.</p>
-<ul>
-<li>frontend
-<ul>
-<li><a href="source/html">html</a></li>
-<li><a href="source/css">css</a></li>
-</ul>
-</li>
-<li><a href="source/js">backend</a></li>
-<li><a href="source/img">image</a></li>
-</ul>
-<h2>Testing</h2>
-<p>We have e2e tests and unit tests. It is broken up into these folders:</p>
-<ul>
-<li><a href="cypress/integration/">e2e</a></li>
-<li><a href="source/test">unit-tests</a></li>
-</ul></article>
+deleteButton.addEventListener("click", (e) => {
+  // Display pop-up boxes
+  modal.classList.add("active");
+  const closeBtn = document.querySelector("#close-button");
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
+  });
+  const confirmBtn = document.querySelector("#confirm-button");
+  confirmBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
+    delete recipeObject[recipeID];
+    localStorage.setItem("userRecipes", JSON.stringify(recipeObject));
+    location.href = "/cookbook";
+  });
+});
+</code></pre>
+        </article>
     </section>
-
-
 
 
 
