@@ -111,11 +111,12 @@ span {
 }
 
 #img-spot img{
-  margin-left: 50px; 
-  margin-right: auto;
-  display: block;
+  /* margin-left: 50px;  */
+  /* margin-right: auto; */
   height: 200px;
   width: 220px;
+  vertical-align: middle;
+  text-align: center;
 }
 
 fieldset > div{
