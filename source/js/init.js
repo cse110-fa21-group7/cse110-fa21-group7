@@ -1,3 +1,4 @@
+window.addEventListener("DOMContentLoaded", asapInit);
 /**
  * Entry point for initialization scripts
  */
@@ -24,6 +25,7 @@ export async function asapInit() {
     }
   }
   if (localStorage.getItem("storedRecipes") === null) await addCurated();
+  changeMode();
 }
 /**
  * Load curate recipes into localStorage from JSON file
@@ -37,22 +39,26 @@ async function addCurated() {
       localStorage.setItem("storedRecipes", JSON.stringify(json));
     });
 }
+/**
+ * change html mode
+ */
+function changeMode() {
+  const lightMode = document.querySelector("#lightMode");
+  const darkMode = document.querySelector("#darkMode");
+  lightMode.addEventListener("click", () => {
+    document.documentElement.classList.replace("dark", "light");
+    localStorage.setItem("theme", "light");
+  });
+  darkMode.addEventListener("click", () => {
+    console.log("go dark");
+    document.documentElement.classList.replace("light", "dark");
+    localStorage.setItem("theme", "dark");
+  });
 
-const lightMode = document.querySelector("#lightMode");
-const darkMode = document.querySelector("#darkMode");
-lightMode.addEventListener("click", () => {
-  document.documentElement.classList.replace("dark", "light");
-  localStorage.setItem("theme", "light");
-});
-darkMode.addEventListener("click", () => {
-  console.log("go dark");
-  document.documentElement.classList.replace("light", "dark");
-  localStorage.setItem("theme", "dark");
-});
-
-const hamburger = document.querySelector(".hamburger");
-const mobileMenu = document.querySelector(".mobile-nav");
-hamburger.addEventListener("click", (e) => {
-  hamburger.classList.toggle("is-active");
-  mobileMenu.classList.toggle("is-active");
-});
+  const hamburger = document.querySelector(".hamburger");
+  const mobileMenu = document.querySelector(".mobile-nav");
+  hamburger.addEventListener("click", (e) => {
+    hamburger.classList.toggle("is-active");
+    mobileMenu.classList.toggle("is-active");
+  });
+}

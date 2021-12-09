@@ -4,14 +4,13 @@ window.addEventListener("DOMContentLoaded", init);
 let recipeObject;
 let page;
 let userRecipe;
-const previousPage = document.querySelector("#previous");
-const nextPage = document.querySelector("#next");
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
   await asapInit(); // wait for init local storage
   userRecipe = JSON.parse(localStorage.getItem("userRecipes"));
   makePage();
   addSortListener();
+  pageBtn();
 }
 
 /**
@@ -259,7 +258,7 @@ function dictToArr(dict) {
  * @param {Number} total
  * @return {Array}
  */
-function getRandom(total) {
+export function getRandom(total) {
   const randomArray = [];
   const array = [];
   for (let i = 1; i <= total; i++) {
@@ -289,18 +288,25 @@ function createCaurtedList() {
   // localStorage.setItem("curatedRecipes", JSON.stringify(returnRecipes));
   return returnRecipes;
 }
+/**
+ * Result page next page and previous page
+ */
+function pageBtn() {
+  const previousPage = document.querySelector("#previous");
+  const nextPage = document.querySelector("#next");
+  previousPage.addEventListener("click", () => {
+    fetchNewResult(false);
+  });
+  nextPage.addEventListener("click", () => {
+    fetchNewResult(true);
+  });
+}
 
-previousPage.addEventListener("click", () => {
-  fetchNewResult(false);
-});
-nextPage.addEventListener("click", () => {
-  fetchNewResult(true);
-});
 //  remove all elements have same class name
 const removeElements = (elms) => elms.forEach((el) => el.remove());
 /**
- * Helper function, gave back 8 random numbers from 30 numbers
- * @param {Boolean} nextFlag next page or previous page
+ * Result page next page and previous page
+ * @param {Boolean} nextFlag next page flag
  */
 function fetchNewResult(nextFlag) {
   const url = localStorage.getItem("query");

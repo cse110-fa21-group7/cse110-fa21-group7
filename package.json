@@ -14,8 +14,13 @@
     "scss": "node-sass --watch scss -o css"
   },
   "jest": {
-    "preset": "jest-cypress",
-    "verbose": true
+    "preset": [
+      "jest-cypress"
+    ],
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    },
+    "testEnvironment": "jsdom"
   },
   "dependencies": {
     "connect-multiparty": "^2.2.0",
@@ -24,9 +29,12 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "form-data": "^4.0.0",
+    "jsdom": "^19.0.0",
     "node-sass": "^6.0.1"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.16.4",
+    "babel-jest": "^27.4.2",
     "cypress": "^9.0.0",
     "cypress-file-upload": "^5.0.8",
     "cypress-localstorage-commands": "^1.6.1",
