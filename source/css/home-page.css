@@ -199,8 +199,20 @@ input {
   margin: auto;
   text-align: center;
   padding-top:10px;
+  max-width: 90%;
 }
 
 #base-info {
   font-size: 30px;
+  
+}
+
+#page-title {
+  max-width: 90%;
+  margin: auto;
+}
+
+.search-introduction {
+  max-width: 90%;
+  margin: auto;
 }
