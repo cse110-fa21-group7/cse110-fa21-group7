@@ -27,8 +27,6 @@ Follow these steps to set up a local copy of this repo:
 2. install Node.js and npm
 3. In your local run ` npm install`run to install the dev dependencies
 4. More details in onboarding document.
-5. Use ` npm run dev` to develop our project on localhost
-6. Create .env at root directory
 
 ## Group materials
 
@@ -43,7 +41,7 @@ The [source](source) directory contains the source code for our app.
 
 - frontend
   - [html](source/html)
-  - [html](source/css)
+  - [css](source/css)
 - [backend](source/js)
 - [image](source/img)
 
