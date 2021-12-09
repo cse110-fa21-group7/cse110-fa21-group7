@@ -38,7 +38,7 @@ describe("Tests for search&result page", () => {
       cy.wait(500);
       cy.get("#confirm-button").click();
     }
-    cy.wait(500);
+    cy.wait(1500);
     cy.visit("/cookbook").then(() => {
       cy.get("recipe-card").should("have.length", 24);
     });
