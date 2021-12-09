@@ -27,7 +27,10 @@ function getPage() {
     recipeObject = userRecipe;
   }
   if (url.includes("fetchID")) {
-    editButton.innerHTML = "add";
+    editButton.innerHTML = `<button type="button" class="btn btn-primary" id="Edit" style="top: 1rem;
+  right: -1.5rem;">
+          <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+        </button>`;
     deleteButton.style.display = "none";
     recipeObject = JSON.parse(localStorage.getItem("storedRecipes"));
   }
