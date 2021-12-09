@@ -1,9 +1,14 @@
 import { asapInit } from "./init.js";
 import { fetchRecipes, fetchFullRecipe } from "./search-recipe.js";
+
 window.addEventListener("DOMContentLoaded", init);
+
+const NUM_CURATED_RECIPES = 12;
+
 let recipeObject;
 let page;
 let userRecipe;
+
 /** Initialize function, begins all of the JS code in this file */
 async function init() {
   await asapInit(); // wait for init local storage
@@ -266,7 +271,7 @@ export function getRandom(total) {
   for (let i = 1; i <= total; i++) {
     array.push(i);
   }
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < NUM_CURATED_RECIPES; i++) {
     const randomIndex = Math.floor(Math.random() * array.length);
     const randomNumber = array[randomIndex];
     array.splice(randomIndex, 1);
