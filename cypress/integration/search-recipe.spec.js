@@ -19,36 +19,28 @@ describe("Tests for search&result page", () => {
     cy.get(".results").find("recipe-card").should("have.length", 12);
   });
   it("add recipe to cookbook", () => {
-    
-    for(let i=0;i<12;i++){
+    for (let i = 0; i < 12; i++) {
       cy.get(".card")
-      .eq(i)
-      .shadow()
-      .find(".card-body .add-to-cookbook #card-btn")
-      .click();
-      
+        .eq(i)
+        .shadow()
+        .find(".card-body .add-to-cookbook #card-btn")
+        .click();
+      cy.wait(500);
       cy.get("#confirm-button").click();
     }
-    
   });
 
   it("click next page", () => {
     cy.get("#next").click();
-    cy.wait(1500);
-    for(let i=0;i<12;i++){
-      cy.get(".card")
-      .eq(i)
-      .shadow()
-      .find(".card-body .add-to-cookbook #card-btn")
-      .click();
+    cy.wait(1000);
+    for (let i = 0; i < 12; i++) {
+      cy.get(".card").eq(i).shadow().find("#card-btn").click();
       cy.wait(500);
       cy.get("#confirm-button").click();
-      cy.wait(500);
     }
-    
-    cy.visit("/cookbook");
-    cy.get("recipe-card").should("have.length", 24);
+    cy.wait(500);
+    cy.visit("/cookbook").then(() => {
+      cy.get("recipe-card").should("have.length", 24);
+    });
   });
-
-  
 });
