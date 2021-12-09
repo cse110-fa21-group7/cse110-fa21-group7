@@ -108,22 +108,29 @@ function spoonToASAP(data) {
   asap["image"] = data["image"];
 
   const ingredients = [];
-  for (const dataIng of data["extendedIngredients"]) {
-    const ingredient = {};
-    ingredient["name"] = dataIng["name"];
-    ingredient["amount"] =
-      dataIng["measures"]["us"]["amount"] +
-      " " +
-      dataIng["measures"]["us"]["unitShort"];
-    ingredients.push(ingredient);
+  if ((Object.keys(data["extendedIngredients"]).length !== 0) !== []) {
+    for (const dataIng of data["extendedIngredients"]) {
+      const ingredient = {};
+      ingredient["name"] = dataIng["name"];
+      ingredient["amount"] =
+        dataIng["measures"]["us"]["amount"] +
+        " " +
+        dataIng["measures"]["us"]["unitShort"];
+      ingredients.push(ingredient);
+    }
   }
+
   asap["ingredients"] = ingredients;
 
   const steps = [];
-  for (const dataStep of data["analyzedInstructions"][0]["steps"]) {
-    const step = dataStep["step"];
-    steps.push(step);
+  console.log(data["analyzedInstructions"]);
+  if (Object.keys(data["analyzedInstructions"]).length !== 0) {
+    for (const dataStep of data["analyzedInstructions"][0]["steps"]) {
+      const step = dataStep["step"];
+      steps.push(step);
+    }
   }
+
   asap["steps"] = steps;
 
   return asap;

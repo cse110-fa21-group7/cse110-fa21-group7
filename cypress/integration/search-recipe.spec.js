@@ -10,25 +10,36 @@ describe("Tests for search&result page", () => {
   afterEach(() => {
     cy.saveLocalStorage();
   });
-  // it("check search function", () => {
-  //   cy.get("#query").type("apple");
-  //   cy.get("#search-button").click();
-  //   cy.url().should("include", "/result");
-  // });
-  // it("check results", () => {
-  //   cy.get(".results").find("recipe-card").should("have.length", 12);
-  // });
+  it("check search function", () => {
+    cy.get("#query").type("apple");
+    cy.get("#search-button").click();
+    cy.url().should("include", "/result");
+  });
+  it("check results", () => {
+    cy.get(".results").find("recipe-card").should("have.length", 12);
+  });
   it("add recipe to cookbook", () => {
-    cy.get(".card").eq(2).shadow().find("#card-btn").click();
+    for (let i = 0; i < 12; i++) {
+      cy.get(".card").eq(i).shadow().find(".card-body .add-to-cookbook #card-btn").click();
+      cy.wait(500);
+      cy.get("#confirm-button").click();
+      
+    }
+  });
+
+  it("click next page", () => {
+    cy.get("#next").click();
+    cy.wait(1000);
+    // add reuslt recipes of next page
+    for (let i = 0; i < 12; i++) {
+      cy.get(".card").eq(i).shadow().find(".card-body .add-to-cookbook #card-btn").click();
+      cy.wait(500);
+      cy.get("#confirm-button").click();
+      
+    }
     cy.wait(1500);
-    cy.get(".card")
-      .eq(2)
-      .shadow()
-      .find(".card-title")
-      .invoke("text")
-      .then((recipe) => {
-        cy.visit("/cookbook");
-        cy.get("recipe-card").shadow().contains(recipe);
-      });
+    cy.visit("/cookbook").then(() => {
+      cy.get("recipe-card").should("have.length", 24);
+    });
   });
 });
