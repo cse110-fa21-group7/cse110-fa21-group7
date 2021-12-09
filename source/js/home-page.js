@@ -106,7 +106,6 @@ function makePage(previousPage) {
  */
 function recipeCards() {
   console.log(`${page}`);
-  console.log(recipeObject);
   const section = document.querySelector(`.${page}`);
   // Loop through recipeObject array
   recipeObject.forEach((e) => {
@@ -298,7 +297,7 @@ function createCaurtedList() {
  */
 function pageBtn(previousPage, nextPage) {
   previousPage.addEventListener("click", () => {
-    fetchNewResult(false);
+    fetchNewResult(false, previousPage);
   });
   nextPage.addEventListener("click", () => {
     fetchNewResult(true, previousPage);
