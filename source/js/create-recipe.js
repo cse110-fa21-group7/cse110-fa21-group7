@@ -237,9 +237,9 @@ form.addEventListener("submit", function (event) {
   // location.href = "/cookbook";
 });
 
-const closeModalButtons = document.querySelectorAll('[data-close-button]');
+const confirmBtn = document.querySelector("#confirm-button");
 
-closeModalBtn.addEventListener("click", () => {
+confirmBtn.addEventListener("click", () => {
   modal.classList.remove("active");
   location.href = "/cookbook";
 });
