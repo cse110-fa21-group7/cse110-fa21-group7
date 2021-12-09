@@ -27,7 +27,8 @@ function getPage() {
     recipeObject = userRecipe;
   }
   if (url.includes("fetchID")) {
-    editButton.innerHTML = "add";
+    const thei = editButton.querySelector("i");
+    thei.classList.replace("fa-pencil-square-o", "fa-plus-square-o");
     deleteButton.style.display = "none";
     recipeObject = JSON.parse(localStorage.getItem("storedRecipes"));
   }
@@ -106,9 +107,9 @@ function populateHTML() {
 }
 /** Sets event listeners */
 editButton.addEventListener("click", () => {
-  if (editButton.innerHTML === "add") {
+  // check current read recipe page is fetchId or bookID
+  if (editButton.querySelector("i").classList.contains("fa-plus-square-o")) {
     // add current recipe to cook book
-
     userRecipe[recipeID] = recipeObject[recipeID];
     localStorage.setItem("userRecipes", JSON.stringify(userRecipe));
     modalAdd.classList.add("active");

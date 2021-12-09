@@ -16,7 +16,7 @@ body {
   --card-shadow-color: #939697;
   --is-solid: solid;
   --border-color: black;
-
+  --recipe-body-button-color:black;
   --primary: #b9ebd2;
   --hum: #000000;
   --nav-back: rgb(255, 255, 255);
@@ -31,6 +31,7 @@ body {
   --card-bg-color: #2c2929;
   --is-solid: solid;
   --border-color: rgb(175, 174, 174);
+  --recipe-body-button-color:#86c7a7;
 
   --hum: #ffffff;
   --nav-back: rgb(0, 0, 0);
