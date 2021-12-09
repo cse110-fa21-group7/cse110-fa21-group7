@@ -5,7 +5,11 @@
 
 ## product page
 
+[Deployed website](https://cse110-fa21-group7.github.io/cse110-fa21-group7/)
 
+## JSdocs page
+
+[JSdocs](https://cse110-fa21-group7.github.io/cse110-fa21-group7/)
 
 ## Setup
 
