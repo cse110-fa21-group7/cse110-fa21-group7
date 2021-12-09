@@ -76,9 +76,8 @@ body {
   padding: 20px;
 }
 
-.recipe-title {
-  padding-top: 1rem;
-  margin: 0 0 0;
+#recipe-title {
+  width:72%;
 }
 
 .recipe-desc {
@@ -170,28 +169,31 @@ ul.info-row {
   position: absolute;
   top: 0;
   right: 0;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  margin: 0.5rem;
+  color:var(--recipe-body-button-color);
 }
 
+
 .recipe-body .btn-primary {
-  position: absolute;
   top: 1rem;
   right: 3rem;
   height: 2.5rem;
-  background-color: Transparent;
-  background-repeat: no-repeat;
-  border: none;
-  outline: none;
-  margin: 0.5rem;
 }
 
 .recipe-body .btn-danger {
-  position: absolute;
-  top: 1rem;
+  top: .85rem;
   right: 1rem;
   height: 2.5rem;
-  background-color: Transparent;
-  background-repeat: no-repeat;
-  border: none;
-  outline: none;
-  margin: 0.5rem;
+}
+
+.recipe-body .btn-danger:hover  {
+  color: #f00;
+}
+
+.recipe-body .btn-primary:hover  {
+  color: #7851a9;
 }
