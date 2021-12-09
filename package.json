@@ -14,8 +14,16 @@
     "scss": "node-sass --watch scss -o css"
   },
   "jest": {
-    "preset": "jest-cypress",
-    "verbose": true
+    "preset": [
+      "jest-cypress"
+    ],
+    "testEnvironment": "node",
+    "transform": {
+      "node_modules/variables/.+\\.(j|t)sx?$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!variables/.*)"
+    ]
   },
   "dependencies": {
     "connect-multiparty": "^2.2.0",

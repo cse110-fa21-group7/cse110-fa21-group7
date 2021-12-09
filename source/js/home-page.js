@@ -259,7 +259,7 @@ function dictToArr(dict) {
  * @param {Number} total
  * @return {Array}
  */
-function getRandom(total) {
+export function getRandom(total) {
   const randomArray = [];
   const array = [];
   for (let i = 1; i <= total; i++) {
@@ -299,8 +299,8 @@ nextPage.addEventListener("click", () => {
 //  remove all elements have same class name
 const removeElements = (elms) => elms.forEach((el) => el.remove());
 /**
- * Helper function, gave back 8 random numbers from 30 numbers
- * @param {Boolean} nextFlag next page or previous page
+ * Result page next page and previous page
+ * @param {Boolean} nextFlag next page flag
  */
 function fetchNewResult(nextFlag) {
   const url = localStorage.getItem("query");
