@@ -18,6 +18,7 @@ async function init() {
   console.log(userRecipes);
   currID = parseInt(localStorage.getItem("currID"));
   checkID();
+  eventListeners();
 }
 
 /** Populate forms by ID this is for update recipe form
@@ -101,148 +102,153 @@ function checkID() {
   populateForm();
 }
 
-// *********  All event listener list here ************* //
-const form = document.getElementById("recipeForm");
 /**
- * when user want to upload the image, we will upload it to imgur.
- * Also, create a url for us.
- * @param {FormData} dataform
+ * function for all the event listeners
  */
-// Image upload, saves URL to recipe object
-const file = document.getElementById("recipeImage");
-file.addEventListener("change", (e) => {
-  formdata = new FormData();
-  // if user did not upload image, just return this back
-  if (e.target.files[0] === undefined) return;
-  formdata.append("image", e.target.files[0]);
-  fetch("create/image", {
-    method: "post",
-    body: formdata,
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      const divImg = document.getElementById("img-spot");
-      const childImgs = divImg.getElementsByTagName("img");
-      let img;
-      if (childImgs.length == 0) {
-        img = document.createElement("img");
-        divImg.append(img);
-      } else {
-        img = childImgs[0];
-      }
-      console.log(`URL: ${data.link}`);
-      img.src = data.link;
-      img.height = "200";
-      img.referrerPolicy = "no-referrer";
-      recipe["image"] = data.link;
-    });
-});
+function eventListeners() {
+  // *********  All event listener list here ************* //
+  const form = document.getElementById("recipeForm");
+  /**
+   * when user want to upload the image, we will upload it to imgur.
+   * Also, create a url for us.
+   * @param {FormData} dataform
+   */
+  // Image upload, saves URL to recipe object
+  const file = document.getElementById("recipeImage");
+  file.addEventListener("change", (e) => {
+    formdata = new FormData();
+    // if user did not upload image, just return this back
+    if (e.target.files[0] === undefined) return;
+    formdata.append("image", e.target.files[0]);
+    fetch("create/image", {
+      method: "post",
+      body: formdata,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const divImg = document.getElementById("img-spot");
+        const childImgs = divImg.getElementsByTagName("img");
+        let img;
+        if (childImgs.length == 0) {
+          img = document.createElement("img");
+          divImg.append(img);
+        } else {
+          img = childImgs[0];
+        }
+        console.log(`URL: ${data.link}`);
+        img.src = data.link;
+        img.height = "200";
+        img.referrerPolicy = "no-referrer";
+        recipe["image"] = data.link;
+      });
+  });
 
-// Create additional ingredient element
-const addIng = form.querySelector("#add-ingredient");
-addIng.addEventListener("click", function (event) {
-  console.log("Add ingredient");
-  const ingsDiv = document.getElementById("ingredients");
-  const ingElems = ingsDiv.querySelectorAll(".ingredient");
-  const numIngs = ingElems.length;
+  // Create additional ingredient element
+  const addIng = form.querySelector("#add-ingredient");
+  addIng.addEventListener("click", function (event) {
+    console.log("Add ingredient");
+    const ingsDiv = document.getElementById("ingredients");
+    const ingElems = ingsDiv.querySelectorAll(".ingredient");
+    const numIngs = ingElems.length;
 
-  // Setting hard upper bound per ADR
-  if (numIngs >= MAX_INGREDIENTS) {
-    console.log("Maximum amount of ingredients");
-    return;
-  }
+    // Setting hard upper bound per ADR
+    if (numIngs >= MAX_INGREDIENTS) {
+      console.log("Maximum amount of ingredients");
+      return;
+    }
 
-  const ingAdded = ingElems[0].cloneNode(true);
-  console.log(`numIngs: ${numIngs}`);
-  ingAdded.querySelector(
-    ".ingredient-name > .name-label"
-  ).innerText = `Ingredient ${numIngs + 1}`;
-  ingAdded.querySelector(".ingredient-name > .form-control").value = "";
-  ingAdded.querySelector(".ingredient-amount > .form-control").value = "";
-  ingsDiv.appendChild(ingAdded);
-});
+    const ingAdded = ingElems[0].cloneNode(true);
+    console.log(`numIngs: ${numIngs}`);
+    ingAdded.querySelector(
+      ".ingredient-name > .name-label"
+    ).innerText = `Ingredient ${numIngs + 1}`;
+    ingAdded.querySelector(".ingredient-name > .form-control").value = "";
+    ingAdded.querySelector(".ingredient-amount > .form-control").value = "";
+    ingsDiv.appendChild(ingAdded);
+  });
 
-// Create additional step element
-const addStep = form.querySelector("#add-step");
-addStep.addEventListener("click", function (event) {
-  console.log("Add step");
-  const stepsDiv = document.getElementById("steps");
-  const stepElems = stepsDiv.querySelectorAll(".step-sec");
-  const numSteps = stepElems.length;
+  // Create additional step element
+  const addStep = form.querySelector("#add-step");
+  addStep.addEventListener("click", function (event) {
+    console.log("Add step");
+    const stepsDiv = document.getElementById("steps");
+    const stepElems = stepsDiv.querySelectorAll(".step-sec");
+    const numSteps = stepElems.length;
 
-  // Setting hard upper bound per ADR
-  if (numSteps >= MAX_STEPS) {
-    console.log("Maximum amount of steps");
-    return;
-  }
+    // Setting hard upper bound per ADR
+    if (numSteps >= MAX_STEPS) {
+      console.log("Maximum amount of steps");
+      return;
+    }
 
-  const stepAdded = stepElems[0].cloneNode(true);
-  console.log(`numSteps: ${numSteps}`);
-  stepAdded.querySelector(".recipeStep-label").innerText = `Step ${
-    numSteps + 1
-  }`;
-  stepAdded.querySelector(".step-sec > .form-control").value = "";
-  stepsDiv.appendChild(stepAdded);
-});
+    const stepAdded = stepElems[0].cloneNode(true);
+    console.log(`numSteps: ${numSteps}`);
+    stepAdded.querySelector(".recipeStep-label").innerText = `Step ${
+      numSteps + 1
+    }`;
+    stepAdded.querySelector(".step-sec > .form-control").value = "";
+    stepsDiv.appendChild(stepAdded);
+  });
 
-// remove ingredient
-const removeIng = form.querySelector("#remove-ingredient");
-removeIng.addEventListener("click", function (event) {
-  console.log("Remove ingredient");
-  const ingsDiv = document.getElementById("ingredients");
-  const ingElems = ingsDiv.querySelectorAll(".ingredient");
-  if (ingElems.length > 1) {
-    ingElems[ingElems.length - 1].remove();
-  }
-});
-// remove steps
-const removeStep = form.querySelector("#remove-step");
-removeStep.addEventListener("click", function (event) {
-  console.log("Remove step");
-  const stepsDiv = document.getElementById("steps");
-  const stepElems = stepsDiv.querySelectorAll(".step-sec");
-  if (stepElems.length > 1) {
-    stepElems[stepElems.length - 1].remove();
-  }
-});
+  // remove ingredient
+  const removeIng = form.querySelector("#remove-ingredient");
+  removeIng.addEventListener("click", function (event) {
+    console.log("Remove ingredient");
+    const ingsDiv = document.getElementById("ingredients");
+    const ingElems = ingsDiv.querySelectorAll(".ingredient");
+    if (ingElems.length > 1) {
+      ingElems[ingElems.length - 1].remove();
+    }
+  });
+  // remove steps
+  const removeStep = form.querySelector("#remove-step");
+  removeStep.addEventListener("click", function (event) {
+    console.log("Remove step");
+    const stepsDiv = document.getElementById("steps");
+    const stepElems = stepsDiv.querySelectorAll(".step-sec");
+    if (stepElems.length > 1) {
+      stepElems[stepElems.length - 1].remove();
+    }
+  });
 
-// Form submission, saves recipe to localStorage
-form.addEventListener("submit", function (event) {
-  // Stop form submission
-  event.preventDefault();
-  console.log("Submit button clicked");
-  const allValid = checkValid();
-  if (!allValid) return;
-  // dupdate means
-  if (updateFlag) {
-    userRecipes[recipeID] = recipe;
-  }
-  // we add new recipe to user cookbook
-  else {
-    currID += 1;
-    userRecipes[currID] = recipe;
-  }
-  // save all of object to local storage
-  localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
-  localStorage.setItem("currID", currID);
+  // Form submission, saves recipe to localStorage
+  form.addEventListener("submit", function (event) {
+    // Stop form submission
+    event.preventDefault();
+    console.log("Submit button clicked");
+    const allValid = checkValid();
+    if (!allValid) return;
+    // dupdate means
+    if (updateFlag) {
+      userRecipes[recipeID] = recipe;
+    }
+    // we add new recipe to user cookbook
+    else {
+      currID += 1;
+      userRecipes[currID] = recipe;
+    }
+    // save all of object to local storage
+    localStorage.setItem("userRecipes", JSON.stringify(userRecipes));
+    localStorage.setItem("currID", currID);
 
-  // back to cookbook page
-  if (updateFlag) {
-    modal.classList.add('active');
-    message.innerHTML = "You have successfully updated a recipe!";
-  } else {
-    modal.classList.add('active');
-    message.innerHTML = "You have successfully created a recipe!";
-  }
-  // location.href = "/cookbook";
-});
+    // back to cookbook page
+    if (updateFlag) {
+      modal.classList.add("active");
+      message.innerHTML = "You have successfully updated a recipe!";
+    } else {
+      modal.classList.add("active");
+      message.innerHTML = "You have successfully created a recipe!";
+    }
+    // location.href = "/cookbook";
+  });
 
-const confirmBtn = document.querySelector("#confirm-button");
+  const confirmBtn = document.querySelector("#confirm-button");
 
-confirmBtn.addEventListener("click", () => {
-  modal.classList.remove("active");
-  location.href = "/cookbook";
-});
+  confirmBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
+    location.href = "/cookbook";
+  });
+}
 
 /**  Show a message in the invalid-feedback div below the input element
  * @param {HTMLElement} input
@@ -250,7 +256,7 @@ confirmBtn.addEventListener("click", () => {
  * @param {Boolean} type
  * @return {Boolean}
  */
-function showMessage(input, message, type) {
+export function showMessage(input, message, type) {
   // get the small element and set the message
   const msg = input.parentNode.querySelector("div.invalid-feedback");
   // console.log(msg);
@@ -273,7 +279,7 @@ function showMessage(input, message, type) {
  * @param {String} message
  * @return {Function}
  */
-function showError(input, message) {
+export function showError(input, message) {
   return showMessage(input, message, false);
 }
 
@@ -282,7 +288,7 @@ function showError(input, message) {
  * @param {HTMLElement} input
  * @return {Function}
  */
-function showSuccess(input) {
+export function showSuccess(input) {
   return showMessage(input, "", true);
 }
 
@@ -292,7 +298,7 @@ function showSuccess(input) {
  * @param {String} message
  * @return {Function}
  */
-function hasValue(input, message) {
+export function hasValue(input, message) {
   if (input.value.trim() === "") {
     return showError(input, message);
   }
@@ -305,7 +311,7 @@ function hasValue(input, message) {
  * @param {String} message
  * @return {Function}
  */
-function hasFloat(input, message) {
+export function hasFloat(input, message) {
   if (isNaN(parseFloat(input.value.trim()))) {
     return showError(input, message);
   }
