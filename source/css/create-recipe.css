@@ -104,3 +104,10 @@ span {
   font-size: 0.875em;
   color: #ff7851;
 }
+
+img{
+  margin-left: auto; 
+  margin-right: auto;
+  display: block;
+  text-align: center;
+}
