@@ -2,7 +2,6 @@ label {
   float: left;
   font-size: 18px;
   margin-left: 15px;
-  width: 180px;
   clear: left;
   text-align: right;
   padding-right: 10px;
@@ -21,9 +20,12 @@ h2 {
 
 input {
   height: 20px;
-  flex: 0 0 200px;
+  flex: 0 0 300px;
   margin-left: 10px;
   margin-bottom: 10px;
+  border: 1 px solid #ced4da;
+  border-radius: 0.6rem;
+  font-size: 1.25rem;
 }
 
 textarea {
@@ -110,3 +112,20 @@ img{
   margin-right: auto;
   display: block;
 }
+
+fieldset > div {
+  margin: auto;
+  text-align: center;
+  width: 90%;
+}
+
+
+
+
+
+
+
+
+
+
+
