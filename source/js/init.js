@@ -1,4 +1,3 @@
-window.addEventListener("DOMContentLoaded", asapInit);
 /**
  * Entry point for initialization scripts
  */
