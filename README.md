@@ -3,7 +3,7 @@
 
 [Team Page](https://github.com/cse110-fa21-group7/cse110-fa21-group7/blob/main/admin/team.md)
 
-## product page
+## Product Introduction
 ASAP-Recipe is a web application with mobile support, which allows users to create their own cookbook to manage recipes, search recipes online and add searched recipes to their cookbook. We also provide a curated list with carefully-selected healthy, cheap and delicous recipes. In user's cookbook, we build a system for our user to create, add, edit and delete their recipes easily.  
 Our aim is to create an easy-to-use recipe manage system and keep it As Simple As Possible. Feel free to check out our app
 [ASAP-Recipe](https://asap-recipe-app.herokuapp.com/).
