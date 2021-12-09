@@ -14,7 +14,7 @@ describe("Tests for curated list", () => {
   });
 
   it("check number of recipes", () => {
-    cy.get("recipe-card").should("have.length", 8);
+    cy.get("recipe-card").should("have.length", 12);
   });
 
   it("check add button", () => {
