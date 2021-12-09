@@ -129,8 +129,10 @@ function toReadRecipe(recipeCard, id) {
   recipeCard.addEventListener("click", (e) => {
     let url = `/read/fetchID?id=${id}`;
     if (page === "curatedList") {
+      // when user click recipe card add button or not
       if (recipeCard.flag) addToCookbook(recipeCard, id);
       else {
+        // if current recipe is already in user cookbook.
         if (id in userRecipe) url = `/read/bookID?id=${id}`;
         window.location.href = url;
       }
@@ -138,6 +140,13 @@ function toReadRecipe(recipeCard, id) {
       url = `/read/bookID?id=${id}`;
       window.location.href = url;
     } else if (page === "results") {
+      // if current recipe is already in user cookbook.
+      // we do not need to fetch its info which can save more points
+      if (id in userRecipe) {
+        url = `/read/bookID?id=${id}`;
+        window.location.href = url;
+        return;
+      }
       fetchFullRecipe(id).then(() => {
         // when user want to add current recipe to cookbook by using add btn on recipe card
         if (recipeCard.flag) addToCookbook(recipeCard, id);
