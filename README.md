@@ -8,6 +8,10 @@ ASAP-Recipe is a web application with mobile support, which allows users to crea
 Our aim is to create an easy-to-use recipe manage system and keep it As Simple As Possible. Feel free to check out our app
 [ASAP-Recipe](https://asap-recipe-app.herokuapp.com/).
 
+## JSdocs page
+
+[JSdocs](https://cse110-fa21-group7.github.io/cse110-fa21-group7/)
+
 ## Setup
 
 Follow these steps to set up a local copy of this repo:
