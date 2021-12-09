@@ -148,3 +148,29 @@ body{
 .recipeInfo-sec{
   text-align: center;
 }
+
+.dark .form-control {
+  background-color: #666;
+  color: #86c7a7;
+  font-weight: 600;
+  text-shadow:1px 1px 7px #86c7a7;
+
+}
+
+.dark ::placeholder {
+  color: #86c7a7;
+  font-weight:400;
+}
+
+.buttons {
+  width:90%;
+}
+
+.buttons > button {
+  margin-left:10%;
+  margin-right:10%;
+}
+
+button {
+  border: 1px;
+}
