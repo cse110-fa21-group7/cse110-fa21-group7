@@ -8,15 +8,18 @@ let userRecipe;
 async function init() {
   await asapInit(); // wait for init local storage
   userRecipe = JSON.parse(localStorage.getItem("userRecipes"));
-  makePage();
+  const previousPage = document.querySelector("#previous");
+  const nextPage = document.querySelector("#next");
+  makePage(previousPage);
   addSortListener();
-  pageBtn();
+  pageBtn(previousPage, nextPage);
 }
 
 /**
  * make page depends on what page you want to show
+ * @param {HTMLElement} previousPage
  */
-function makePage() {
+function makePage(previousPage) {
   const queryString = window.location.href;
   console.log(queryString);
   const intro = document.querySelector(".search-introduction");
@@ -290,15 +293,15 @@ function createCaurtedList() {
 }
 /**
  * Result page next page and previous page
+ * @param {HTMLElement} previousPage
+ * @param {HTMLElement} nextPage
  */
-function pageBtn() {
-  const previousPage = document.querySelector("#previous");
-  const nextPage = document.querySelector("#next");
+function pageBtn(previousPage, nextPage) {
   previousPage.addEventListener("click", () => {
     fetchNewResult(false);
   });
   nextPage.addEventListener("click", () => {
-    fetchNewResult(true);
+    fetchNewResult(true, previousPage);
   });
 }
 
@@ -307,8 +310,9 @@ const removeElements = (elms) => elms.forEach((el) => el.remove());
 /**
  * Result page next page and previous page
  * @param {Boolean} nextFlag next page flag
+ * @param {HTMLElement} previousPage
  */
-function fetchNewResult(nextFlag) {
+function fetchNewResult(nextFlag, previousPage) {
   const url = localStorage.getItem("query");
   let offset = parseInt(localStorage.getItem("offset"));
   if (nextFlag && offset === 0) previousPage.style.display = "block";
