@@ -20,11 +20,7 @@ describe("Tests for search&result page", () => {
   });
   it("add recipe to cookbook", () => {
     for (let i = 0; i < 12; i++) {
-      cy.get(".card")
-        .eq(i)
-        .shadow()
-        .find("#card-btn")
-        .click();
+      cy.get(".card").eq(i).shadow().find("#card-btn").click();
       cy.wait(500);
       cy.get("#confirm-button").click();
     }
