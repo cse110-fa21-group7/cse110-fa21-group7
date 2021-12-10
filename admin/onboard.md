@@ -8,7 +8,7 @@ Follow these steps to set up a local copy of this repo:
 2. install Node.js and npm
 3. In your local run ` npm install`run to install the dev dependencies
 4. create .env file in your root directory. Then go to https://spoonacular.com/ to register a API key for yourself.
-5. Copy these 2 lines to you .evn file.
+5. Copy these 2 lines to your .evn file.
 >API_RECIPE_VALUE = "YOUR spoonacular API KEY" 
 >
 >API_IMGUR_KEY = "1b99956c57a5642"
