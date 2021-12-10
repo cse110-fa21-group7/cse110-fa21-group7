@@ -42,10 +42,10 @@ Follow these steps to set up a local copy of this repo:
 
 ![](onboard-img/edit&delete.gif)
 
-### cool feature change to dark mode
+### Dark mode
 
 ![](onboard-img/dark.gif)
 
-### more cool features random curated list & sort your recipes
+### Random curated list & sort your recipes
 
 ![](onboard-img/more.gif)
