@@ -12,7 +12,7 @@ Follow these steps to set up a local copy of this repo:
 >API_RECIPE_VALUE = "YOUR spoonacular API KEY" 
 >
 >API_IMGUR_KEY = "1b99956c57a5642"
-6. Do not forget to replace the API_RECIPE_VALUE to your spoonacular API key.
+6. Do not forget to replace the **YOUR spoonacular API KEY**
 8. Use `npm run dev` to start the server of our app and check it out via http://localhost:7777.
 9. Now you can start coding.
 
