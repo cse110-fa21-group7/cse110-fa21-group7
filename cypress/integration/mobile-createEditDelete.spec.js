@@ -1,12 +1,14 @@
 describe("Tests for create-edit-delete recipe", () => {
   before(() => {
     cy.visit("/create");
+    cy.viewport("iphone-xr");
     cy.wait(500);
 
     cy.saveLocalStorage();
   });
 
   beforeEach(() => {
+    cy.viewport("iphone-xr");
     cy.restoreLocalStorage();
   });
   afterEach(() => {
@@ -14,7 +16,8 @@ describe("Tests for create-edit-delete recipe", () => {
   });
 
   it("enter create recipe page", () => {
-    cy.get("#forms").contains("Create Recipe Form");
+    cy.get(".hamburger > :nth-child(2)").click();
+    cy.get('.mobile-nav > [href="/create"]').click();
   });
 
   it("input basic recipe info", () => {
@@ -38,7 +41,6 @@ describe("Tests for create-edit-delete recipe", () => {
     cy.get(".ingredient-name input").eq(3).type("Fourth Ingredient");
     cy.get(".ingredient-amount input").eq(3).type("4g");
   });
-
   it("input steps info", () => {
     // input steps
     cy.get(".step-sec textarea").eq(0).type("First Step");
@@ -50,7 +52,6 @@ describe("Tests for create-edit-delete recipe", () => {
     cy.get(".step-sec textarea").eq(2).type("Third Step");
     cy.get(".step-sec textarea").eq(3).type("Fourth Step");
   });
-
   it("submit user recipe", () => {
     // submit
     cy.get(".btn-submit").click();
@@ -76,6 +77,7 @@ describe("Tests for create-edit-delete recipe", () => {
     cy.get("#time").contains("10");
     cy.get("#servings").contains("2");
     cy.get("#cost").contains("Cost: $10");
+
     cy.contains("First Ingredient 1g");
     cy.contains("Second Ingredient 2g");
     cy.contains("Third Ingredient 3g");
@@ -135,8 +137,8 @@ describe("Tests for create-edit-delete recipe", () => {
   it("check whether recipe is edited successfully", () => {
     // enter edited recipe
     cy.get(".card").eq(0).shadow().find(".card-body ").click();
-    // check edited information
 
+    // check edited information
     cy.get("#recipe-title").contains("edit test");
     cy.get("#recipe-desc").contains("edit recipe description");
     cy.get("#time").contains("11");

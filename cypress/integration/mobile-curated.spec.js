@@ -1,12 +1,14 @@
-describe("Tests for curated list", () => {
+describe("Tests for curated list for mobile version", () => {
   before(() => {
     cy.visit("/");
     cy.wait(500);
+    cy.viewport("iphone-xr");
 
     cy.saveLocalStorage();
   });
 
   beforeEach(() => {
+    cy.viewport("iphone-xr");
     cy.restoreLocalStorage();
   });
   afterEach(() => {
@@ -26,9 +28,9 @@ describe("Tests for curated list", () => {
         .find(".card-body .add-to-cookbook i")
         .click();
     }
-
     // after adding recipe to cookbook, check cookbook
-    cy.visit("/cookbook");
+    cy.get(".hamburger > :nth-child(2)").click();
+    cy.get('.mobile-nav > [href="/cookbook"]').click();
     cy.get("recipe-card").should("have.length", 12);
   });
 });
