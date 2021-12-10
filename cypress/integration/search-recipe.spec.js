@@ -26,22 +26,22 @@ describe("Tests for search&result page", () => {
     }
   });
 
-  it("click next page", () => {
-    cy.get("#next").click();
-    cy.wait(1000);
-    // add reuslt recipes of next page
-    for (let i = 0; i < 12; i++) {
-      cy.get(".card")
-        .eq(i)
-        .shadow()
-        .find(".card-body .add-to-cookbook #card-btn")
-        .click();
-      cy.wait(500);
-      cy.get("#confirm-button").click();
-    }
-    cy.wait(1500);
-    cy.visit("/cookbook").then(() => {
-      cy.get("recipe-card").should("have.length", 24);
-    });
-  });
+  // it("click next page", () => {
+  //   cy.get("#next").click();
+  //   cy.wait(1000);
+  //   // add reuslt recipes of next page
+  //   for (let i = 0; i < 12; i++) {
+  //     cy.get(".card")
+  //       .eq(i)
+  //       .shadow()
+  //       .find(".card-body .add-to-cookbook #card-btn")
+  //       .click();
+  //     cy.wait(500);
+  //     cy.get("#confirm-button").click();
+  //   }
+  //   cy.wait(1500);
+  //   cy.visit("/cookbook").then(() => {
+  //     cy.get("recipe-card").should("have.length", 24);
+  //   });
+  // });
 });
