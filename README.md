@@ -13,7 +13,7 @@ Our aim is to create an easy-to-use recipe manage system and keep it As Simple A
 ## Final project videos
 
 - [Final public video](https://www.youtube.com/watch?v=rSflT3tu3ok)
-- [Final private video](https://www.youtube.com/watch?v=y8WKW2WWaho)
+- [Final private video](https://www.youtube.com/watch?v=y8WKW2WWaho) 
 
 ## JSdocs page
 
