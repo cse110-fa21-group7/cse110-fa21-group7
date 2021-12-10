@@ -4,6 +4,7 @@ import { fetchRecipes, fetchFullRecipe } from "./search-recipe.js";
 window.addEventListener("DOMContentLoaded", init);
 
 const NUM_CURATED_RECIPES = 12;
+const NUM_TOTAL_CURATED_RECIPES = 46;
 
 let recipeObject;
 let page;
@@ -283,8 +284,9 @@ export function getRandom(total) {
  * Helper function, gave back 8 random numbers from 30 numbers
  * @return {Dictionary}
  */
+
 export function createCaurtedList() {
-  const randomArray = getRandom(31);
+  const randomArray = getRandom(NUM_TOTAL_CURATED_RECIPES);
   console.log(randomArray);
   const tempStored = JSON.parse(localStorage.getItem("storedRecipes"));
   const returnRecipes = {};
