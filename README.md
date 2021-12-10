@@ -2,7 +2,7 @@
 
 # Group 7
 
-[Team Page](main/admin/team.md)
+[Team Page](admin/team.md)
 
 ## Product Introduction
 
@@ -26,14 +26,14 @@ Follow these steps to set up a local copy of this repo:
 1. Clone this repo to your local machine
 2. install Node.js and npm
 3. In your local run ` npm install`run to install the dev dependencies
-4. More details in [onboarding document](main/admin/onboard.md).
+4. More details in [onboarding document](admin/onboard.md).
 
 ## Group materials
 
-The [admin](main/admin) directory contains all the group stuffs:
+The [admin](admin) directory contains all the group stuffs:
 
-- [Pipeline](main/admin/cipipeline)
-- [Meetings](main/admin/meetings)
+- [Pipeline](admin/cipipeline)
+- [Meetings](admin/meetings)
 
 ## Source code
 
