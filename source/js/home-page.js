@@ -4,7 +4,7 @@ import { fetchRecipes, fetchFullRecipe } from "./search-recipe.js";
 window.addEventListener("DOMContentLoaded", init);
 
 const NUM_CURATED_RECIPES = 12;
-const NUM_TOTAL_CURATED_RECIPES = 41;
+const NUM_TOTAL_CURATED_RECIPES = 46;
 
 let recipeObject;
 let page;
