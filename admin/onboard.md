@@ -9,8 +9,8 @@ Follow these steps to set up a local copy of this repo:
 3. In your local run ` npm install`run to install the dev dependencies
 4. create .env file in your root directory. Then go to https://spoonacular.com/ to register a API key for yourself.
 5. Copy these 2 lines to you .evn file.
-`API_RECIPE_VALUE = "YOUR spoonacular API KEY" 
-API_IMGUR_KEY = "1b99956c57a5642"` 
+>API_RECIPE_VALUE = "YOUR spoonacular API KEY" 
+>API_IMGUR_KEY = "1b99956c57a5642"
 6. Do not forget to replace the API_RECIPE_VALUE to your spoonacular API key.
 8. Use `npm run dev` to start the server of our app and check it out via http://localhost:7777.
 9. Now you can start coding.
