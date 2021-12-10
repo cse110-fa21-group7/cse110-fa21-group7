@@ -324,7 +324,6 @@ export function hasFloat(input, message) {
 function checkValid() {
   const TITLE_REQUIRED = "Please enter your recipe title";
   const INGREDIENT_NAME_REQUIRED = "Please enter your ingredient name";
-  const INGREDIENT_AMOUNT_REQUIRED = "Please enter your ingredient amount";
   const STEP_REQUIRED = "Please enter your recipe instructions";
   let allValid = true;
 
@@ -392,10 +391,10 @@ function checkValid() {
       ingElem.querySelector(".ingredient-name > input"),
       INGREDIENT_NAME_REQUIRED
     );
-    const ingredientAmountValid = hasValue(
-      ingElem.querySelector(".ingredient-amount > input"),
-      INGREDIENT_AMOUNT_REQUIRED
-    );
+    // const ingredientAmountValid = hasValue(
+    //   ingElem.querySelector(".ingredient-amount > input"),
+    //   INGREDIENT_AMOUNT_REQUIRED
+    // );
     recipeIng["name"] = ingElem
       .querySelector(".ingredient-name > input")
       .value.trim();
@@ -403,7 +402,7 @@ function checkValid() {
       .querySelector(".ingredient-amount > input")
       .value.trim();
 
-    if (ingredientNameValid && ingredientAmountValid) {
+    if (ingredientNameValid) {
       ingredients.push(recipeIng);
     } else {
       allValid = false;
