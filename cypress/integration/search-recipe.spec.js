@@ -23,7 +23,7 @@ describe("Tests for search&result page", () => {
       cy.get(".card")
         .eq(i)
         .shadow()
-        .find(".card-body .add-to-cookbook #card-btn")
+        .find("#card-btn")
         .click();
       cy.wait(500);
       cy.get("#confirm-button").click();
