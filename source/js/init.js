@@ -1,5 +1,5 @@
 /**
- * Entry point for initialization script
+ * Entry point for the initialization script
  */
 export async function asapInit() {
   const theme = localStorage.getItem("theme");
